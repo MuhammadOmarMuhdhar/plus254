@@ -8,6 +8,7 @@ import logging
 import pdfplumber
 import pandas as pd
 from datasets import Dataset
+from huggingface_hub import HfApi
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -26,6 +27,7 @@ BASE_URL = "https://eatta.co.ke"
 
 
 def scrape_eatta():
+    """scrapes: https://eatta.co.ke/statistics"""
     try:
         logger.info("Fetching statistics page")
         page = requests.get(f"{BASE_URL}/statistics")
@@ -104,7 +106,12 @@ def extract_table(pdf_bytes):
                 (df["Sale week"] - 1) * 7, unit="D"
             )
             df = df.drop("Sale week", axis=1)
-            df = df.rename(columns={"Average price 2026 (USD)": "Average price (USD)"})
+            df = df.rename(
+                            columns={
+                                "Average price 2026 (USD)": "Average price (USD)",
+                                "Tea sold in Kgs 2026": "Tea sold (Kgs)",
+                                "Tea offered in Kgs 2026": "Tea offered (Kgs)",
+                                })
 
         logger.info(f"Table extracted: {len(df)} rows")
         return df
@@ -115,13 +122,32 @@ def extract_table(pdf_bytes):
 
 def save_to_hf(df):
     try:
-        logger.info("Uploading to HuggingFace")
+        logger.info("Pushing dataset to HuggingFace")
         start = time.time()
         dataset = Dataset.from_pandas(df)
-        dataset.push_to_hub(HF_REPO_ID, token=HF_TOKEN)
-        logger.info(f"Uploaded in {time.time() - start:.1f}s")
+        dataset.push_to_hub(
+            HF_REPO_ID,
+            token=HF_TOKEN,
+            private=False,
+        )
+        logger.info(f"Dataset pushed in {time.time() - start:.1f}s")
+        logger.info(f"Dataset URL: https://huggingface.co/datasets/{HF_REPO_ID}")
+
+        logger.info("Uploading CSV to HuggingFace")
+        start_csv = time.time()
+        api = HfApi()
+        csv_bytes = df.to_csv(index=False)
+        api.upload_file(
+            path_or_fileobj=csv_bytes.encode(),
+            path_in_repo="tea.csv",
+            repo_id=HF_REPO_ID,
+            repo_type="dataset",
+            token=HF_TOKEN,
+        )
+        logger.info(f"CSV uploaded in {time.time() - start_csv:.1f}s")
+        logger.info(f"CSV URL: https://huggingface.co/datasets/{HF_REPO_ID}/resolve/main/tea.csv")
     except Exception as e:
-        logger.error(f"Failed to upload to HF: {type(e).__name__}: {e}")
+        logger.error(f"Failed to push to HF: {type(e).__name__}: {e}")
         raise
 
 
