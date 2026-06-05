@@ -1,0 +1,48 @@
+{#- Custom header for plus254 -#}
+{% set class = "md-header" %}
+{% if "navigation.tabs.sticky" in features %}
+  {% set class = class ~ " md-header--shadow md-header--lifted" %}
+{% else %}
+  {% set class = class ~ " md-header--shadow" %}
+{% endif %}
+<header class="{{ class }}" data-md-component="header">
+  <nav class="md-header__inner" aria-label="{{ lang.t('header') }}">
+
+    {# Logo / Site name — links to home #}
+    <a href="{{ nav.homepage.url | url }}" title="{{ config.site_name | e }}" class="md-header__logo" aria-label="{{ config.site_name }}" data-md-component="logo">
+      <span class="logo-text">
+        <span class="logo-plus">plus</span><span class="logo-num">254</span>
+      </span>
+    </a>
+
+    {# Desktop nav links (skip homepage) #}
+    <div class="md-header__nav">
+      {% for nav_item in nav %}
+        {% if not nav_item.is_homepage %}
+          <a href="{{ nav_item.url | url }}" class="md-header__link{% if nav_item.active %} md-header__link--active{% endif %}">
+            {{ nav_item.title }}
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    {# Mobile drawer toggle #}
+    <label class="md-header__button md-icon md-header__drawer" for="__drawer">
+      {% set icon = config.theme.icon.menu or "material/menu" %}
+      {% include ".icons/" ~ icon ~ ".svg" %}
+    </label>
+
+    {# Default Material search toggle #}
+    {% if "material/search" in config.plugins %}
+      {% set search = config.plugins["material/search"] | attr("config") %}
+      {% if search.enabled %}
+        <label class="md-header__button md-icon md-header__search" for="__search">
+          {% set icon = config.theme.icon.search or "material/magnify" %}
+          {% include ".icons/" ~ icon ~ ".svg" %}
+        </label>
+        {% include "partials/search.html" %}
+      {% endif %}
+    {% endif %}
+
+  </nav>
+</header>

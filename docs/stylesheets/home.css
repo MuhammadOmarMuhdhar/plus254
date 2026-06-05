@@ -1,0 +1,444 @@
+  body {
+    background-color: #e0f0e8;
+  }
+
+  .hero-wrap {
+    background: transparent;
+    border-radius: 0;
+    border: none;
+    overflow: hidden;
+    margin: 0 0 1.5rem 0;
+  }
+
+  /* ─── Hero: Two-Column Layout ─── */
+  .hero {
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+    padding: 0.5rem 2rem 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .hero-text {
+    flex: 1 1 55%;
+    min-width: 0;
+    padding-top: 2.5rem;
+  }
+
+  .hero-panel {
+    flex: 1 1 40%;
+    min-width: 320px;
+    margin-top: 0;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: 0;
+    background: #6cb999;
+    color: #fff;
+    border: 1px solid #1f6f54;
+    margin-bottom: 1.25rem;
+    letter-spacing: 0.04em;
+  }
+
+  .hero h1 {
+    font-size: 2.4rem;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #000;
+    margin-bottom: 1rem;
+  }
+
+  .hero p {
+    font-size: 1.05rem;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+
+  .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+
+  .hero-btns .btn-primary {
+    background: #1f6f54;
+    color: #fff;
+    padding: 11px 24px;
+    border-radius: 0;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+  }
+  .hero-btns .btn-primary:hover { background: #6cb999; color: #fff; }
+
+  .hero-btns .btn-secondary {
+    background: transparent;
+    color: #1f6f54;
+    border: 1.5px solid #1f6f54;
+    padding: 11px 24px;
+    border-radius: 0;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+  }
+  .hero-btns .btn-secondary:hover { background: #f5f5f5; color: #1f6f54; }
+
+  .hero-divider { height: 1px; background: #6cb999; margin: 0 2rem; }
+
+  /* ─── Dataset Availability Table ─── */
+  .dataset-panel {
+    background-color: #6cb999;
+    border: 1px solid #1f6f54;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+
+  .dataset-panel h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #111;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 10px 20px;
+    border-bottom: 1px solid #1f6f54;
+  }
+
+  .dataset-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    color: #000;
+  }
+
+  .dataset-table thead th {
+    text-align: left;
+    font-weight: 600;
+    color: #000;
+    padding: 8px 20px;
+    border-bottom: 2px solid #1f6f54;
+  }
+
+  .dataset-table thead th:last-child {
+    text-align: right;
+  }
+
+  .dataset-table tbody td {
+    padding: 12px 20px;
+    border-bottom: 1px solid #1f6f54;
+    vertical-align: middle;
+  }
+
+  .dataset-table tbody td:last-child {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .dataset-table tbody tr:hover {
+    background-color: #5aa88a;
+  }
+
+  .dataset-table .status-live {
+    color: #1f6f54;
+    font-weight: 600;
+  }
+
+  .dataset-table .status-planned {
+    color: #999;
+    font-style: italic;
+  }
+
+  .dataset-footer {
+    padding: 14px 20px;
+    border-top: 1px solid #1f6f54;
+  }
+
+  .dataset-footer a {
+    font-size: 13px;
+    font-weight: 500;
+    color: #1f6f54;
+    text-decoration: none;
+  }
+
+  .dataset-footer a:hover {
+    text-decoration: underline;
+    color: #145c42;
+  }
+
+  .hero-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    padding: 2rem;
+  }
+
+  .hero-card {
+    background: #e0f0e8;
+    border: 1px solid #6cb999;
+    border-radius: 0;
+    padding: 2rem 1.5rem;
+    text-decoration: none;
+    transition: border-color 0.15s;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+  }
+  .hero-card:hover { border-color: #1f6f54; }
+
+  .hero-card h3 { font-size: 16px; font-weight: 600; color: #000; margin-bottom: 8px; }
+  .hero-card p  { font-size: 14px; color: #000; line-height: 1.6; margin: 0 0 16px 0; flex: 1; }
+
+  .card-arrow {
+    display: block;
+    font-size: 15px;
+    color: #1f6f54;
+    font-weight: 500;
+    margin-top: auto;
+  }
+
+  /* ─── Forex Marquee ─── */
+  .forex-marquee-wrap {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    margin-top: -2.5rem;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    background: #e0f0e8;
+    border-bottom: 1px solid #6cb999;
+    padding: 6px 0;
+  }
+
+  .forex-marquee {
+    display: flex;
+    width: max-content;
+  }
+
+  .forex-marquee-content {
+    display: flex;
+    animation: marquee-scroll 30s linear infinite;
+    width: max-content;
+  }
+
+  .forex-marquee-wrap:hover .forex-marquee-content {
+    animation-play-state: paused;
+  }
+
+  @keyframes marquee-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .forex-item {
+    flex-shrink: 0;
+    padding: 0 24px;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    white-space: nowrap;
+    border-right: 1px solid rgba(31, 111, 84, 0.3);
+  }
+
+  .forex-item:last-child {
+    border-right: none;
+  }
+
+  .forex-pair {
+    font-size: 12px;
+    font-weight: 500;
+    color: #000;
+    letter-spacing: 0.04em;
+  }
+
+  .forex-value {
+    font-size: 14px;
+    font-weight: 600;
+    color: #000;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .forex-change {
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .change-up { color: #c0392b; }
+  .change-down { color: #1f6f54; }
+
+  /* ─── Data Section ─── */
+  .data-section {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* ─── Data Visuals: Chart + Info ─── */
+  .data-visuals {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+
+  .data-chart {
+    flex: 1 1 72%;
+    min-width: 0;
+    border: 1px solid #1f6f54;
+    padding: 1.5rem;
+    background: #e0f0e8;
+  }
+
+  .data-info {
+    flex: 1 1 25%;
+    min-width: 0;
+    padding-top: 0.5rem;
+  }
+
+  .data-info h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 1rem;
+  }
+
+  .data-info p {
+    font-size: 1rem;
+    color: #000;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  .data-info a {
+    font-size: 14px;
+    font-weight: 500;
+    color: #1f6f54;
+    text-decoration: none;
+  }
+
+  .data-info a:hover {
+    text-decoration: underline;
+    color: #145c42;
+  }
+
+  /* ─── Custom Header ─── */
+  .md-header {
+    background: #e0f0e8;
+    border-bottom: 1px solid #6cb999;
+    box-shadow: none;
+  }
+
+  .md-header__inner {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 1.5rem 1rem 0 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* Logo */
+  .md-header__logo {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    padding-bottom: 0.75rem;
+  }
+
+  .logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  .logo-plus { color: #000; }
+  .logo-num  { color: #1f6f54; }
+
+  /* Nav links */
+  .md-header__nav {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-end;
+    flex: 1;
+    margin-left: 2rem;
+  }
+
+  .md-header__link {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #333;
+    text-decoration: none;
+    padding: 0.75rem 0;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.15s;
+  }
+
+  .md-header__link:hover {
+    text-decoration: none;
+    border-bottom: 2px solid #1f6f54;
+  }
+
+  .md-header__link--active {
+    border-bottom: 2px solid #1f6f54;
+  }
+
+  /* Search & drawer icons */
+  .md-header__button {
+    color: #333;
+    align-self: center;
+    padding-bottom: 0.75rem;
+  }
+  .md-header__button:hover {
+    background: transparent;
+    border: none;
+    color: #333;
+  }
+
+  .md-header__drawer { display: none; }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .md-header__nav { display: none; }
+    .md-header__drawer { display: flex; }
+
+    .hero {
+      flex-direction: column;
+      gap: 2rem;
+      padding: 1.5rem 1rem 2rem;
+    }
+
+    .hero-panel {
+      min-width: 0;
+      width: 100%;
+      margin-top: 0;
+    }
+
+    .hero-text { width: 100%; }
+
+    .hero h1 { font-size: 2rem; }
+
+    .dataset-table tbody td,
+    .dataset-table thead th {
+      padding: 10px 16px;
+    }
+
+    .data-section {
+      padding: 1.5rem 1rem;
+    }
+
+    .data-visuals {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .data-chart {
+      flex: 1 1 100%;
+      padding: 1rem;
+    }
+
+    .data-info {
+      flex: 1 1 100%;
+      padding-top: 0;
+    }
+
+  }

@@ -1,0 +1,25 @@
+site_name: plus254
+
+theme:
+  name: material
+  custom_dir: overrides
+  palette:
+    primary: custom
+    accent: custom
+  font:
+    text: Inter
+    code: Roboto Mono
+
+extra_css:
+  - stylesheets/home.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/you/your-repo
+
+nav:
+  - Home: index.md
+  - Quick Start: quick-start.md
+  - Reference: reference.md
+  - Examples: examples.md
