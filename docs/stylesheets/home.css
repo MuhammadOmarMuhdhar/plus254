@@ -1,5 +1,9 @@
-  body {
+  body, .md-header {
     background-color: #e0f0e8;
+    background-image:
+      linear-gradient(rgba(108, 185, 153, 0.3) 1px, transparent 1px),
+      linear-gradient(to right, rgba(108, 185, 153, 0.3) 1px, transparent 1px);
+    background-size: 20px 20px;
   }
 
   .hero-wrap {
@@ -174,7 +178,7 @@
   }
 
   .hero-card {
-    background: #e0f0e8;
+    background: transparent;
     border: 1px solid #6cb999;
     border-radius: 0;
     padding: 2rem 1.5rem;
@@ -205,7 +209,7 @@
     margin-top: -2.5rem;
     margin-bottom: 1.5rem;
     overflow: hidden;
-    background: #e0f0e8;
+    background: transparent;
     border-bottom: 1px solid #6cb999;
     padding: 6px 0;
   }
@@ -285,7 +289,7 @@
     min-width: 0;
     border: 1px solid #1f6f54;
     padding: 1.5rem;
-    background: #e0f0e8;
+    background: transparent;
   }
 
   .data-info {
@@ -322,7 +326,6 @@
 
   /* ─── Custom Header ─── */
   .md-header {
-    background: #e0f0e8;
     border-bottom: 1px solid #6cb999;
     box-shadow: none;
   }
