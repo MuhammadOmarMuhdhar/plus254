@@ -1,6 +1,6 @@
 {
-    "forex_end_period":"https://www.centralbank.go.ke/uploads/exchange_rates/677633335_Quarterly%20exchange%20rate%20(end%20period).csv",
-    "forex_period_average":"https://www.centralbank.go.ke/uploads/exchange_rates/2034093818_Quarterly%20Exchange%20rate%20(period%20average).csv",
+    "forex_end_period":"https://www.centralbank.go.ke/uploads/exchange_rates/677633335_Monthly%20exchange%20rate%20(end%20period).csv",
+    "forex_period_average":"https://www.centralbank.go.ke/uploads/exchange_rates/2034093818_Monthly%20Exchange%20rate%20(period%20average).csv",
     "monetary_survey":"https://www.centralbank.go.ke/uploads/monetary_and_finance_statistics/274043565_Depository%20Corporation%20Survey%20-%20CSV.csv",
     "bop_annual":"https://www.centralbank.go.ke/uploads/balance_of_payment_statistics/1657248905_Balance%20of%20Payments%20Statement%20(Annual%20Calender%20Year).csv",
     "exports_global":"https://www.centralbank.go.ke/uploads/balance_of_payment_statistics/310335175_Value%20of%20Exports%20to%20Selected%20Rest%20of%20World%20Countries.csv",

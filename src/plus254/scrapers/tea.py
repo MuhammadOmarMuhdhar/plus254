@@ -1,5 +1,4 @@
 import io
-import os
 import time
 import requests
 from bs4 import BeautifulSoup
@@ -7,9 +6,8 @@ from urllib.parse import quote
 import logging
 import pdfplumber
 import pandas as pd
-from datasets import Dataset, load_dataset
-from huggingface_hub import HfApi
 from dotenv import load_dotenv
+from plus254.utils.hf_utils import save_to_hf
 
 load_dotenv()
 
@@ -19,9 +17,6 @@ logging.basicConfig(
     datefmt="%Y-%m-%d %H:%M:%S",
 )
 logger = logging.getLogger(__name__)
-
-HF_REPO_ID = os.environ.get("HF_REPO_ID")
-HF_TOKEN = os.environ.get("HF_TOKEN")
 
 BASE_URL = "https://eatta.co.ke"
 
@@ -120,54 +115,6 @@ def extract_table(pdf_bytes):
         raise
 
 
-def save_to_hf(df):
-    try:
-        logger.info("Pushing dataset to HuggingFace")
-        start = time.time()
-        try: 
-            existing_dataset = load_dataset(HF_REPO_ID, token=HF_TOKEN, split="train")
-            existing_df = existing_dataset.to_pandas()
-            logger.info(f"Existing dataset loaded: {len(existing_df)} rows")
-
-            combined_df = pd.concat([existing_df, df], ignore_index=True)
-            combined_df["Date"] = pd.to_datetime(combined_df["Date"])
-            combined_df = combined_df.drop_duplicates(subset=["Date"], keep="last")
-            combined_df = combined_df.sort_values("Date").reset_index(drop=True)
-            logger.info(f"Combined dataset: {len(combined_df)} rows ({len(combined_df) - len(existing_df)} new)")
-
-        except Exception as e:
-            logger.warning(f"Could not load existing dataset (first run?): {e}")
-            combined_df = df
-
-
-        logger.info("Pushing dataset to HuggingFace")
-        start = time.time()
-        dataset = Dataset.from_pandas(combined_df)
-        dataset.push_to_hub(
-            HF_REPO_ID,
-            token=HF_TOKEN,
-            private=False,
-        )
-        logger.info(f"Dataset pushed in {time.time() - start:.1f}s")
-
-        logger.info("Uploading CSV to HuggingFace")
-        start_csv = time.time()
-        api = HfApi()
-        csv_bytes = combined_df.to_csv(index=False)
-        api.upload_file(
-            path_or_fileobj=csv_bytes.encode(),
-            path_in_repo="tea.csv",
-            repo_id=HF_REPO_ID,
-            repo_type="dataset",
-            token=HF_TOKEN,
-        )
-        logger.info(f"CSV uploaded in {time.time() - start_csv:.1f}s")
-
-    except Exception as e:
-        logger.error(f"Failed to push to HF: {type(e).__name__}: {e}")
-        raise
-
-
 def run():
     logger.info("Tea scraper started")
     start = time.time()
@@ -175,7 +122,7 @@ def run():
         soup = scrape_eatta()
         pdf_bytes, pdf_name = extract_pdf(soup)
         df = extract_table(pdf_bytes)
-        save_to_hf(df)
+        save_to_hf(df, config_name="tea", save_csv=True, csv_filename="tea.csv")
         logger.info(f"Completed in {time.time() - start:.1f}s")
     except Exception:
         logger.exception("Pipeline failed")
