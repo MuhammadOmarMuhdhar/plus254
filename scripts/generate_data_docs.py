@@ -1,15 +1,3 @@
-#!/usr/bin/env python3
-"""Generate dataset documentation from live data on Hugging Face.
-
-Outputs:
-  - docs/datasets/*.md               — Human-readable Markdown per dataset
-  - docs/datasets/index.md           — Dataset index page
-  - src/plus254/api/schema/*.json    — Machine-readable JSON schemas
-
-Usage:
-  python scripts/generate_data_docs.py
-"""
-
 import sys
 from pathlib import Path
 
