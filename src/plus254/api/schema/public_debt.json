@@ -1,0 +1,93 @@
+{
+  "config": "public_debt",
+  "slug": "centralbank",
+  "name": "Public Debt",
+  "source": "Central Bank of Kenya",
+  "description": "Monthly public debt (domestic and external)",
+  "url": "https://www.centralbank.go.ke/uploads/government_finance_statistics/565446111_Public%20Debt.csv",
+  "row_count": 930,
+  "columns": [
+    {
+      "name": "Year",
+      "type": "int64",
+      "description": "Calendar year",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 930,
+      "sample_values": [
+        1999,
+        1999,
+        2000,
+        2000,
+        2000
+      ],
+      "stats": {
+        "count": 930,
+        "mean": 2012.574193548387,
+        "std": 7.471753817398966,
+        "min": 1999.0,
+        "25%": 2006.0,
+        "50%": 2013.0,
+        "75%": 2019.0,
+        "max": 2025.0
+      }
+    },
+    {
+      "name": "Month",
+      "type": "object",
+      "description": "Calendar month name",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 930,
+      "sample_values": [
+        "September",
+        "December",
+        "March",
+        "June",
+        "July"
+      ],
+      "stats": null
+    },
+    {
+      "name": "Metric",
+      "type": "object",
+      "description": "Debt component (domestic debt, external debt, total)",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 930,
+      "sample_values": [
+        "domestic debt",
+        "domestic debt",
+        "domestic debt",
+        "domestic debt",
+        "domestic debt"
+      ],
+      "stats": null
+    },
+    {
+      "name": "Value",
+      "type": "float64",
+      "description": "Debt in KES millions (comma-formatted number)",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 930,
+      "sample_values": [
+        183417.0,
+        190300.0,
+        201463.22,
+        206127.0,
+        202362.0
+      ],
+      "stats": {
+        "count": 930,
+        "mean": 2404969.371678495,
+        "std": 2632898.3013226483,
+        "min": 183417.0,
+        "25%": 532894.3075,
+        "50%": 1183561.6099999999,
+        "75%": 3657245.0375,
+        "max": 12299476.37
+      }
+    }
+  ]
+}

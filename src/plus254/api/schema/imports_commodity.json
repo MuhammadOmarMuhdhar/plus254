@@ -1,0 +1,93 @@
+{
+  "config": "imports_commodity",
+  "slug": "centralbank",
+  "name": "Value of Imports by Commodity",
+  "source": "Central Bank of Kenya",
+  "description": "Monthly value of direct imports classified by SITC sections",
+  "url": "https://www.centralbank.go.ke/uploads/balance_of_payment_statistics/1126743207_Value%20of%20Direct%20Imports%20by%20Commodities.csv",
+  "row_count": 3320,
+  "columns": [
+    {
+      "name": "Year",
+      "type": "int64",
+      "description": "Calendar year",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 3320,
+      "sample_values": [
+        1998,
+        1998,
+        1998,
+        1998,
+        1998
+      ],
+      "stats": {
+        "count": 3320,
+        "mean": 2011.9156626506024,
+        "std": 7.9962401819828335,
+        "min": 1998.0,
+        "25%": 2005.0,
+        "50%": 2012.0,
+        "75%": 2019.0,
+        "max": 2026.0
+      }
+    },
+    {
+      "name": "Month",
+      "type": "object",
+      "description": "Calendar month name",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 3320,
+      "sample_values": [
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+      ],
+      "stats": null
+    },
+    {
+      "name": "Metric",
+      "type": "object",
+      "description": "SITC commodity section (e.g., food and live animals, chemicals, machinery and transport equipment, total)",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 3320,
+      "sample_values": [
+        "food and live animals",
+        "food and live animals",
+        "food and live animals",
+        "food and live animals",
+        "food and live animals"
+      ],
+      "stats": null
+    },
+    {
+      "name": "Value",
+      "type": "float64",
+      "description": "Import value in KES millions (comma-formatted number)",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 3320,
+      "sample_values": [
+        1413.87,
+        533.13,
+        586.56,
+        522.81,
+        717.97
+      ],
+      "stats": {
+        "count": 3320,
+        "mean": 22462.592593373494,
+        "std": 42207.77544697834,
+        "min": 36.09,
+        "25%": 2277.2175,
+        "50%": 7664.275,
+        "75%": 23063.785,
+        "max": 332367.64
+      }
+    }
+  ]
+}

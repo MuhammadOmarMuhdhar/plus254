@@ -1,0 +1,93 @@
+{
+  "config": "domestic_exports",
+  "slug": "centralbank",
+  "name": "Value of Selected Domestic Exports",
+  "source": "Central Bank of Kenya",
+  "description": "Monthly value of selected domestic export commodities",
+  "url": "https://www.centralbank.go.ke/uploads/balance_of_payment_statistics/1306010805_Value%20of%20Selected%20Domestic%20Exports%20-%20Selected%20Comms.csv",
+  "row_count": 2987,
+  "columns": [
+    {
+      "name": "Year",
+      "type": "int64",
+      "description": "Calendar year",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 2987,
+      "sample_values": [
+        1998,
+        1998,
+        1998,
+        1998,
+        1998
+      ],
+      "stats": {
+        "count": 2987,
+        "mean": 2011.9173083361231,
+        "std": 7.99720679550983,
+        "min": 1998.0,
+        "25%": 2005.0,
+        "50%": 2012.0,
+        "75%": 2019.0,
+        "max": 2026.0
+      }
+    },
+    {
+      "name": "Month",
+      "type": "object",
+      "description": "Calendar month name",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 2987,
+      "sample_values": [
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+      ],
+      "stats": null
+    },
+    {
+      "name": "Metric",
+      "type": "object",
+      "description": "Export commodity (e.g., coffee, tea, petroleum, horticulture, total)",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 2987,
+      "sample_values": [
+        "coffee",
+        "coffee",
+        "coffee",
+        "coffee",
+        "coffee"
+      ],
+      "stats": null
+    },
+    {
+      "name": "Value",
+      "type": "float64",
+      "description": "Export value in KES millions (comma-formatted number)",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 2987,
+      "sample_values": [
+        500.47,
+        536.21,
+        584.32,
+        578.74,
+        574.54
+      ],
+      "stats": {
+        "count": 2987,
+        "mean": 8078.078454111148,
+        "std": 13787.331201281675,
+        "min": 4.98,
+        "25%": 503.805,
+        "50%": 2527.26,
+        "75%": 9460.5,
+        "max": 91579.94
+      }
+    }
+  ]
+}

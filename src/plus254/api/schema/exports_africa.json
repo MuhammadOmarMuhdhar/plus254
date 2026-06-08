@@ -1,0 +1,93 @@
+{
+  "config": "exports_africa",
+  "slug": "centralbank",
+  "name": "Value of Exports to Africa",
+  "source": "Central Bank of Kenya",
+  "description": "Monthly value of exports to selected African countries",
+  "url": "https://www.centralbank.go.ke/uploads/balance_of_payment_statistics/1216083243_Value%20of%20Exports%20to%20Selected%20Africa%20Countries.csv",
+  "row_count": 4067,
+  "columns": [
+    {
+      "name": "Year",
+      "type": "int64",
+      "description": "Calendar year",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 4067,
+      "sample_values": [
+        1998,
+        1998,
+        1998,
+        1998,
+        1998
+      ],
+      "stats": {
+        "count": 4067,
+        "mean": 2011.6294566019178,
+        "std": 8.15746093993071,
+        "min": 1998.0,
+        "25%": 2005.0,
+        "50%": 2012.0,
+        "75%": 2019.0,
+        "max": 2026.0
+      }
+    },
+    {
+      "name": "Month",
+      "type": "object",
+      "description": "Calendar month name",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 4067,
+      "sample_values": [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May"
+      ],
+      "stats": null
+    },
+    {
+      "name": "Metric",
+      "type": "object",
+      "description": "Destination African country (e.g., uganda, tanzania, egypt, total)",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 4067,
+      "sample_values": [
+        "uganda",
+        "uganda",
+        "uganda",
+        "uganda",
+        "uganda"
+      ],
+      "stats": null
+    },
+    {
+      "name": "Value",
+      "type": "float64",
+      "description": "Export value in KES millions (comma-formatted number)",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 4067,
+      "sample_values": [
+        1386.42,
+        1204.81,
+        1478.77,
+        1629.02,
+        1466.8
+      ],
+      "stats": {
+        "count": 4067,
+        "mean": 4053.113308194261,
+        "std": 10355.685501468888,
+        "min": 0.0,
+        "25%": 338.95759169999997,
+        "50%": 1056.552182,
+        "75%": 2765.26,
+        "max": 120186.87
+      }
+    }
+  ]
+}

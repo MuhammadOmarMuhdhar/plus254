@@ -1,0 +1,93 @@
+{
+  "config": "forex_period_average",
+  "slug": "centralbank",
+  "name": "Monthly Exchange Rates (Period Average)",
+  "source": "Central Bank of Kenya",
+  "description": "Monthly exchange rates of major currencies against KES (period average)",
+  "url": "https://www.centralbank.go.ke/uploads/exchange_rates/2034093818_Monthly%20Exchange%20rate%20(period%20average).csv",
+  "row_count": 7980,
+  "columns": [
+    {
+      "name": "Year",
+      "type": "int64",
+      "description": "Calendar year",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 7980,
+      "sample_values": [
+        1993,
+        1993,
+        1993,
+        1993,
+        1993
+      ],
+      "stats": {
+        "count": 7980,
+        "mean": 2009.6962406015039,
+        "std": 9.57731637769022,
+        "min": 1993.0,
+        "25%": 2001.0,
+        "50%": 2010.0,
+        "75%": 2018.0,
+        "max": 2026.0
+      }
+    },
+    {
+      "name": "Month",
+      "type": "object",
+      "description": "Calendar month name",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 7980,
+      "sample_values": [
+        "January",
+        "January",
+        "January",
+        "January",
+        "January"
+      ],
+      "stats": null
+    },
+    {
+      "name": "Metric",
+      "type": "object",
+      "description": "Foreign currency name (e.g., united states dollar, sterling pound)",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 7980,
+      "sample_values": [
+        "united states dollar",
+        "sterling pound",
+        "deutch mark",
+        "canadian dollar",
+        "french franc"
+      ],
+      "stats": null
+    },
+    {
+      "name": "Value",
+      "type": "float64",
+      "description": "Period-average exchange rate in KES per unit of foreign currency (comma-formatted number)",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 7980,
+      "sample_values": [
+        36.23,
+        55.62,
+        22.44,
+        28.36,
+        6.62
+      ],
+      "stats": {
+        "count": 7980,
+        "mean": 41.55093734335839,
+        "std": 40.20531351313708,
+        "min": 1.08,
+        "25%": 11.25,
+        "50%": 21.72,
+        "75%": 70.08749999999999,
+        "max": 202.88
+      }
+    }
+  ]
+}

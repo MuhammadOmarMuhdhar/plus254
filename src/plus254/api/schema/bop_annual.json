@@ -1,0 +1,77 @@
+{
+  "config": "bop_annual",
+  "slug": "centralbank",
+  "name": "Balance of Payments (Annual)",
+  "source": "Central Bank of Kenya",
+  "description": "Annual balance of payments statement",
+  "url": "https://www.centralbank.go.ke/uploads/balance_of_payment_statistics/1657248905_Balance%20of%20Payments%20Statement%20(Annual%20Calender%20Year).csv",
+  "row_count": 357,
+  "columns": [
+    {
+      "name": "Category",
+      "type": "object",
+      "description": "BPM6 balance of payments category (e.g., A. Current Account, n.i.e., General government)",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 357,
+      "sample_values": [
+        "A. Current Account, n.i.e.",
+        "Other debt instruments",
+        "Central bank",
+        "Deposit-taking corporations, except the central bank",
+        "General government"
+      ],
+      "stats": null
+    },
+    {
+      "name": "Year",
+      "type": "int64",
+      "description": "Calendar year",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 357,
+      "sample_values": [
+        2019,
+        2019,
+        2019,
+        2019,
+        2019
+      ],
+      "stats": {
+        "count": 357,
+        "mean": 2022.0,
+        "std": 2.002807018925233,
+        "min": 2019.0,
+        "25%": 2020.0,
+        "50%": 2022.0,
+        "75%": 2024.0,
+        "max": 2025.0
+      }
+    },
+    {
+      "name": "Value",
+      "type": "float64",
+      "description": "Value in USD millions (comma-formatted number)",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 357,
+      "sample_values": [
+        -507653.0,
+        57834.0,
+        0.0,
+        55710.0,
+        0.0
+      ],
+      "stats": {
+        "count": 357,
+        "mean": 111566.80325656442,
+        "std": 512985.74708364235,
+        "min": -1400944.0,
+        "25%": -306.704603,
+        "50%": 9230.0,
+        "75%": 133316.0,
+        "max": 3062906.0
+      }
+    }
+  ]
+}

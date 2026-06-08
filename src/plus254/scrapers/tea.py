@@ -8,6 +8,7 @@ import pdfplumber
 import pandas as pd
 from dotenv import load_dotenv
 from plus254.utils.hf_utils import save_to_hf
+from plus254.utils.df_utils import clean_numeric_values, set_month_categorical
 
 load_dotenv()
 
@@ -100,13 +101,29 @@ def extract_table(pdf_bytes):
             df["Date"] = pd.to_datetime("2026-01-01") + pd.to_timedelta(
                 (df["Sale week"] - 1) * 7, unit="D"
             )
-            df = df.drop("Sale week", axis=1)
-            df = df.rename(
-                            columns={
-                                "Average price 2026 (USD)": "Average price (USD)",
-                                "Tea sold in Kgs 2026": "Tea sold (Kgs)",
-                                "Tea offered in Kgs 2026": "Tea offered (Kgs)",
-                                })
+            df = df.rename(columns={
+                "Average price 2026 (USD)": "Average price (USD)",
+                "Tea sold in Kgs 2026": "Tea sold (Kgs)",
+                "Tea offered in Kgs 2026": "Tea offered (Kgs)",
+                "Unsold Teas in % 2026": "Unsold tea (%)",
+            })
+
+            metric_cols = ["Average price (USD)", "Tea sold (Kgs)", "Tea offered (Kgs)", "Unsold tea (%)"]
+            df = df.melt(
+                id_vars=["Date", "Sale week"],
+                value_vars=metric_cols,
+                var_name="Metric",
+                value_name="Value",
+            )
+
+            df = clean_numeric_values(df, "Value")
+            df = df.rename(columns={"Sale week": "Sale Week"})
+            df["Year"] = df["Date"].dt.year.astype(int)
+            df["Month"] = df["Date"].dt.month_name()
+            df = df.sort_values(["Date", "Sale Week", "Metric"]).reset_index(drop=True)
+            df = set_month_categorical(df, "Month")
+            df = df.loc[:, ~df.columns.str.startswith("__")]
+            df = df[["Date", "Year", "Month", "Sale Week", "Metric", "Value"]]
 
         logger.info(f"Table extracted: {len(df)} rows")
         return df
@@ -122,7 +139,7 @@ def run():
         soup = scrape_eatta()
         pdf_bytes, pdf_name = extract_pdf(soup)
         df = extract_table(pdf_bytes)
-        save_to_hf(df, config_name="tea", save_csv=True, csv_filename="tea.csv")
+        save_to_hf(df, config_name="tea", save_csv=True, csv_filename="tea.csv", overwrite=True)
         logger.info(f"Completed in {time.time() - start:.1f}s")
     except Exception:
         logger.exception("Pipeline failed")

@@ -1,0 +1,137 @@
+{
+  "config": "tea",
+  "slug": "teaboard",
+  "name": "Tea Production and Exports",
+  "source": "Tea Board of Kenya",
+  "description": "Weekly tea auction data \u2014 production, export volume, and prices",
+  "url": "https://eatta.co.ke/statistics",
+  "row_count": 84,
+  "columns": [
+    {
+      "name": "Date",
+      "type": "datetime64[ns]",
+      "description": "Auction date (ISO 8601)",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 84,
+      "sample_values": [
+        "2026-01-01 00:00:00",
+        "2026-01-01 00:00:00",
+        "2026-01-01 00:00:00",
+        "2026-01-01 00:00:00",
+        "2026-01-08 00:00:00"
+      ],
+      "stats": {
+        "min": "2026-01-01 00:00:00",
+        "max": "2026-05-21 00:00:00"
+      }
+    },
+    {
+      "name": "Year",
+      "type": "int64",
+      "description": "Calendar year",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 84,
+      "sample_values": [
+        2026,
+        2026,
+        2026,
+        2026,
+        2026
+      ],
+      "stats": {
+        "count": 84,
+        "mean": 2026.0,
+        "std": 0.0,
+        "min": 2026.0,
+        "25%": 2026.0,
+        "50%": 2026.0,
+        "75%": 2026.0,
+        "max": 2026.0
+      }
+    },
+    {
+      "name": "Month",
+      "type": "object",
+      "description": "Calendar month name",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 84,
+      "sample_values": [
+        "January",
+        "January",
+        "January",
+        "January",
+        "January"
+      ],
+      "stats": null
+    },
+    {
+      "name": "Sale Week",
+      "type": "int64",
+      "description": "Sequential auction batch number (starts at 1 each year)",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 84,
+      "sample_values": [
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "stats": {
+        "count": 84,
+        "mean": 11.0,
+        "std": 6.091669207609664,
+        "min": 1.0,
+        "25%": 6.0,
+        "50%": 11.0,
+        "75%": 16.0,
+        "max": 21.0
+      }
+    },
+    {
+      "name": "Metric",
+      "type": "object",
+      "description": "Auction metric (Average price (USD), Tea sold (Kgs), Tea offered (Kgs), Unsold tea (%))",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 84,
+      "sample_values": [
+        "Average price (USD)",
+        "Tea offered (Kgs)",
+        "Tea sold (Kgs)",
+        "Unsold tea (%)",
+        "Average price (USD)"
+      ],
+      "stats": null
+    },
+    {
+      "name": "Value",
+      "type": "float64",
+      "description": "Metric value",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 84,
+      "sample_values": [
+        2.13,
+        9575196.0,
+        8243508.0,
+        14.0,
+        2.19
+      ],
+      "stats": {
+        "count": 84,
+        "mean": 4963936.206190476,
+        "std": 5067907.037747309,
+        "min": 2.09,
+        "25%": 5.82,
+        "50%": 3763009.0,
+        "75%": 9667279.5,
+        "max": 12827153.0
+      }
+    }
+  ]
+}

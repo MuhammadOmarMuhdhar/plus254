@@ -1,0 +1,93 @@
+{
+  "config": "imports_global",
+  "slug": "centralbank",
+  "name": "Value of Imports from Rest of World",
+  "source": "Central Bank of Kenya",
+  "description": "Monthly value of direct imports from selected countries outside Africa",
+  "url": "https://www.centralbank.go.ke/uploads/balance_of_payment_statistics/1436491729_Value%20of%20Direct%20Imports%20from%20Selected%20Rest%20of%20the%20World%20Countries.csv",
+  "row_count": 4371,
+  "columns": [
+    {
+      "name": "Year",
+      "type": "int64",
+      "description": "Calendar year",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 4371,
+      "sample_values": [
+        1998,
+        1998,
+        1998,
+        1998,
+        1998
+      ],
+      "stats": {
+        "count": 4371,
+        "mean": 2011.732326698696,
+        "std": 8.108627806577442,
+        "min": 1998.0,
+        "25%": 2005.0,
+        "50%": 2012.0,
+        "75%": 2019.0,
+        "max": 2026.0
+      }
+    },
+    {
+      "name": "Month",
+      "type": "object",
+      "description": "Calendar month name",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 4371,
+      "sample_values": [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May"
+      ],
+      "stats": null
+    },
+    {
+      "name": "Metric",
+      "type": "object",
+      "description": "Origin country (e.g., u.k, u.s.a, china, india, total)",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 4371,
+      "sample_values": [
+        "u.k",
+        "u.k",
+        "u.k",
+        "u.k",
+        "u.k"
+      ],
+      "stats": null
+    },
+    {
+      "name": "Value",
+      "type": "float64",
+      "description": "Import value in KES millions (comma-formatted number)",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 4371,
+      "sample_values": [
+        1870.74,
+        1725.03,
+        1986.62,
+        1581.62,
+        1835.51
+      ],
+      "stats": {
+        "count": 4371,
+        "mean": 17128.709361702127,
+        "std": 38763.90042166063,
+        "min": 88.27,
+        "25%": 1739.975,
+        "50%": 3845.89,
+        "75%": 12251.810000000001,
+        "max": 332367.64
+      }
+    }
+  ]
+}

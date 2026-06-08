@@ -1,0 +1,365 @@
+forex_end_period:
+  name: Monthly Exchange Rates (End Period)
+  slug: centralbank
+  source: Central Bank of Kenya
+  description: Monthly exchange rates of major currencies against KES (end period)
+  url: https://www.centralbank.go.ke/uploads/exchange_rates/677633335_Monthly%20exchange%20rate%20(end%20period).csv
+  columns:
+    Year:
+      type: integer
+      description: Calendar year
+    Month:
+      type: string
+      description: Calendar month name (e.g., January)
+    Metric:
+      type: string
+      description: Foreign currency name (e.g., united states dollar, sterling pound)
+    Value:
+      type: string
+      description: End-period exchange rate in KES per unit of foreign currency (comma-formatted number)
+
+forex_period_average:
+  name: Monthly Exchange Rates (Period Average)
+  slug: centralbank
+  source: Central Bank of Kenya
+  description: Monthly exchange rates of major currencies against KES (period average)
+  url: https://www.centralbank.go.ke/uploads/exchange_rates/2034093818_Monthly%20Exchange%20rate%20(period%20average).csv
+  columns:
+    Year:
+      type: integer
+      description: Calendar year
+    Month:
+      type: string
+      description: Calendar month name
+    Metric:
+      type: string
+      description: Foreign currency name (e.g., united states dollar, sterling pound)
+    Value:
+      type: string
+      description: Period-average exchange rate in KES per unit of foreign currency (comma-formatted number)
+
+monetary_survey:
+  name: Depository Corporation Survey
+  slug: centralbank
+  source: Central Bank of Kenya
+  description: Monetary aggregates from the Depository Corporation Survey
+  url: https://www.centralbank.go.ke/uploads/monetary_and_finance_statistics/274043565_Depository%20Corporation%20Survey%20-%20CSV.csv
+  columns:
+    Section:
+      type: string
+      description: Sub-survey section (Central Bank of Kenya, Other Depository Corporation Survey, Depository Corporation Survey)
+    Indicator:
+      type: string
+      description: Monetary indicator name (e.g., Excess reserves, Required reserves, Broad Money M3)
+    Year:
+      type: integer
+      description: Calendar year
+    Month:
+      type: string
+      description: Calendar month name
+    Value:
+      type: float
+      description: Monetary value in KES millions
+
+bop_annual:
+  name: Balance of Payments (Annual)
+  slug: centralbank
+  source: Central Bank of Kenya
+  description: Annual balance of payments statement
+  url: https://www.centralbank.go.ke/uploads/balance_of_payment_statistics/1657248905_Balance%20of%20Payments%20Statement%20(Annual%20Calender%20Year).csv
+  columns:
+    Category:
+      type: string
+      description: BPM6 balance of payments category (e.g., A. Current Account, n.i.e., General government)
+    Year:
+      type: integer
+      description: Calendar year
+    Value:
+      type: string
+      description: Value in USD millions (comma-formatted number)
+
+exports_global:
+  name: Value of Exports to Rest of World
+  slug: centralbank
+  source: Central Bank of Kenya
+  description: Monthly value of exports to selected countries outside Africa
+  url: https://www.centralbank.go.ke/uploads/balance_of_payment_statistics/310335175_Value%20of%20Exports%20to%20Selected%20Rest%20of%20World%20Countries.csv
+  columns:
+    Year:
+      type: integer
+      description: Calendar year
+    Month:
+      type: string
+      description: Calendar month name
+    Metric:
+      type: string
+      description: Destination country or region (e.g., u.k, germany, u.s.a, total)
+    Value:
+      type: string
+      description: Export value in KES millions (comma-formatted number)
+
+exports_africa:
+  name: Value of Exports to Africa
+  slug: centralbank
+  source: Central Bank of Kenya
+  description: Monthly value of exports to selected African countries
+  url: https://www.centralbank.go.ke/uploads/balance_of_payment_statistics/1216083243_Value%20of%20Exports%20to%20Selected%20Africa%20Countries.csv
+  columns:
+    Year:
+      type: integer
+      description: Calendar year
+    Month:
+      type: string
+      description: Calendar month name
+    Metric:
+      type: string
+      description: Destination African country (e.g., uganda, tanzania, egypt, total)
+    Value:
+      type: string
+      description: Export value in KES millions (comma-formatted number)
+
+domestic_exports:
+  name: Value of Selected Domestic Exports
+  slug: centralbank
+  source: Central Bank of Kenya
+  description: Monthly value of selected domestic export commodities
+  url: https://www.centralbank.go.ke/uploads/balance_of_payment_statistics/1306010805_Value%20of%20Selected%20Domestic%20Exports%20-%20Selected%20Comms.csv
+  columns:
+    Year:
+      type: integer
+      description: Calendar year
+    Month:
+      type: string
+      description: Calendar month name
+    Metric:
+      type: string
+      description: Export commodity (e.g., coffee, tea, petroleum, horticulture, total)
+    Value:
+      type: string
+      description: Export value in KES millions (comma-formatted number)
+
+imports_global:
+  name: Value of Imports from Rest of World
+  slug: centralbank
+  source: Central Bank of Kenya
+  description: Monthly value of direct imports from selected countries outside Africa
+  url: https://www.centralbank.go.ke/uploads/balance_of_payment_statistics/1436491729_Value%20of%20Direct%20Imports%20from%20Selected%20Rest%20of%20the%20World%20Countries.csv
+  columns:
+    Year:
+      type: integer
+      description: Calendar year
+    Month:
+      type: string
+      description: Calendar month name
+    Metric:
+      type: string
+      description: Origin country (e.g., u.k, u.s.a, china, india, total)
+    Value:
+      type: string
+      description: Import value in KES millions (comma-formatted number)
+
+imports_africa:
+  name: Value of Imports from Africa
+  slug: centralbank
+  source: Central Bank of Kenya
+  description: Monthly value of direct imports from selected African countries
+  url: https://www.centralbank.go.ke/uploads/balance_of_payment_statistics/1764709360_Value%20of%20Direct%20Imports%20from%20Selected%20African%20Countries.csv
+  columns:
+    Year:
+      type: integer
+      description: Calendar year
+    Month:
+      type: string
+      description: Calendar month name
+    Metric:
+      type: string
+      description: Origin African country (e.g., uganda, tanzania, south africa, total)
+    Value:
+      type: string
+      description: Import value in KES millions (comma-formatted number)
+
+imports_commodity:
+  name: Value of Imports by Commodity
+  slug: centralbank
+  source: Central Bank of Kenya
+  description: Monthly value of direct imports classified by SITC sections
+  url: https://www.centralbank.go.ke/uploads/balance_of_payment_statistics/1126743207_Value%20of%20Direct%20Imports%20by%20Commodities.csv
+  columns:
+    Year:
+      type: integer
+      description: Calendar year
+    Month:
+      type: string
+      description: Calendar month name
+    Metric:
+      type: string
+      description: SITC commodity section (e.g., food and live animals, chemicals, machinery and transport equipment, total)
+    Value:
+      type: string
+      description: Import value in KES millions (comma-formatted number)
+
+principal_exports:
+  name: Principal Exports — Volume, Value, Unit Prices
+  slug: centralbank
+  source: Central Bank of Kenya
+  description: Monthly volume, value, and average unit prices of principal exports (coffee, tea, horticulture)
+  url: https://www.centralbank.go.ke/uploads/balance_of_payment_statistics/766913717_Principal%20Exports_Volume,%20Value%20and%20Unit%20Prices.csv
+  columns:
+    Year:
+      type: integer
+      description: Calendar year
+    Month:
+      type: string
+      description: Calendar month name
+    Metric:
+      type: string
+      description: Commodity and measure (coffee volume, coffee value, coffee average, tea volume, tea value, tea average, horticulture volume, horticulture value, horticulture average)
+    Value:
+      type: string
+      description: Volume in Kgs, value in KES millions, or average price in KES per kg (comma-formatted number; see Metric for unit)
+
+fiscal_revenue:
+  name: Government Revenue
+  slug: centralbank
+  source: Central Bank of Kenya
+  description: Monthly government revenue breakdown
+  url: https://www.centralbank.go.ke/uploads/government_finance_statistics/2118703754_Revenue%20and%20Expenditure.csv
+  columns:
+    Fiscal year:
+      type: integer
+      description: Fiscal year (e.g., 1999 means FY 1999/2000)
+    Month:
+      type: string
+      description: Calendar month name
+    Metric:
+      type: string
+      description: Revenue category (e.g., import duty, excise duty, income tax, vat, total revenue)
+    Value:
+      type: string
+      description: Revenue in KES millions (comma-formatted number)
+
+fiscal_grants:
+  name: Government Grants
+  slug: centralbank
+  source: Central Bank of Kenya
+  description: Monthly government grants received
+  url: https://www.centralbank.go.ke/uploads/government_finance_statistics/2118703754_Revenue%20and%20Expenditure.csv
+  columns:
+    Fiscal year:
+      type: integer
+      description: Fiscal year (e.g., 1999 means FY 1999/2000)
+    Month:
+      type: string
+      description: Calendar month name
+    Metric:
+      type: string
+      description: Grant type (programme grants, project grants, total grants)
+    Value:
+      type: string
+      description: Grants in KES millions (comma-formatted number)
+
+fiscal_expenditure:
+  name: Government Expenditure
+  slug: centralbank
+  source: Central Bank of Kenya
+  description: Monthly government expenditure breakdown
+  url: https://www.centralbank.go.ke/uploads/government_finance_statistics/2118703754_Revenue%20and%20Expenditure.csv
+  columns:
+    Fiscal year:
+      type: integer
+      description: Fiscal year (e.g., 1999 means FY 1999/2000)
+    Month:
+      type: string
+      description: Calendar month name
+    Metric:
+      type: string
+      description: Expenditure category (e.g., domestic interest, wages salaries, development expenditure, total expenditure)
+    Value:
+      type: string
+      description: Expenditure in KES millions (comma-formatted number)
+
+public_debt:
+  name: Public Debt
+  slug: centralbank
+  source: Central Bank of Kenya
+  description: Monthly public debt (domestic and external)
+  url: https://www.centralbank.go.ke/uploads/government_finance_statistics/565446111_Public%20Debt.csv
+  columns:
+    Year:
+      type: integer
+      description: Calendar year
+    Month:
+      type: string
+      description: Calendar month name
+    Metric:
+      type: string
+      description: Debt component (domestic debt, external debt, total)
+    Value:
+      type: string
+      description: Debt in KES millions (comma-formatted number)
+
+domestic_debt:
+  name: Domestic Debt by Instrument
+  slug: centralbank
+  source: Central Bank of Kenya
+  description: Monthly domestic debt breakdown by instrument (T-bills, bonds, etc.)
+  url: https://www.centralbank.go.ke/uploads/government_finance_statistics/1263030173_Domestic%20Debt%20by%20Instrument.csv
+  columns:
+    Year:
+      type: integer
+      description: Calendar year
+    Month:
+      type: string
+      description: Calendar month name
+    Metric:
+      type: string
+      description: Debt instrument (treasury bills, treasury bonds, government stocks, advances from commercial banks, total domestic debt)
+    Value:
+      type: string
+      description: Debt in KES millions
+
+gdp_quarterly:
+  name: Quarterly GDP
+  slug: centralbank
+  source: Central Bank of Kenya
+  description: Quarterly GDP estimates by sector
+  url: https://www.centralbank.go.ke/uploads/national_accounts_statistics/1084903161_Quarterly%20GDP.csv
+  columns:
+    Activity:
+      type: string
+      description: Economic sector or activity (e.g., Agriculture, Manufacturing, Construction, Total GDP)
+    Value:
+      type: float
+      description: GDP value in KES millions
+    Year:
+      type: integer
+      description: Calendar year
+    Quarter:
+      type: string
+      description: Calendar quarter (Q1, Q2, Q3, Q4)
+
+tea:
+  name: Tea Production and Exports
+  slug: teaboard
+  source: Tea Board of Kenya
+  description: Weekly tea auction data — production, export volume, and prices
+  url: https://eatta.co.ke/statistics
+  columns:
+    Date:
+      type: datetime
+      description: Auction date (ISO 8601)
+    Year:
+      type: integer
+      description: Calendar year
+    Month:
+      type: string
+      description: Calendar month name
+    Sale Week:
+      type: integer
+      description: Sequential auction batch number (starts at 1 each year)
+    Metric:
+      type: string
+      description: Auction metric (Average price (USD), Tea sold (Kgs), Tea offered (Kgs), Unsold tea (%))
+    Value:
+      type: float
+      description: Metric value

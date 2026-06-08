@@ -1,0 +1,93 @@
+{
+  "config": "fiscal_revenue",
+  "slug": "centralbank",
+  "name": "Government Revenue",
+  "source": "Central Bank of Kenya",
+  "description": "Monthly government revenue breakdown",
+  "url": "https://www.centralbank.go.ke/uploads/government_finance_statistics/2118703754_Revenue%20and%20Expenditure.csv",
+  "row_count": 2326,
+  "columns": [
+    {
+      "name": "Fiscal year",
+      "type": "int64",
+      "description": "Fiscal year (e.g., 1999 means FY 1999/2000)",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 2326,
+      "sample_values": [
+        1999,
+        1999,
+        2000,
+        2000,
+        2000
+      ],
+      "stats": {
+        "count": 2326,
+        "mean": 2013.134135855546,
+        "std": 7.569325465695178,
+        "min": 1999.0,
+        "25%": 2007.0,
+        "50%": 2014.0,
+        "75%": 2020.0,
+        "max": 2026.0
+      }
+    },
+    {
+      "name": "Month",
+      "type": "object",
+      "description": "Calendar month name",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 2326,
+      "sample_values": [
+        "September",
+        "December",
+        "March",
+        "June",
+        "July"
+      ],
+      "stats": null
+    },
+    {
+      "name": "Metric",
+      "type": "object",
+      "description": "Revenue category (e.g., import duty, excise duty, income tax, vat, total revenue)",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 2326,
+      "sample_values": [
+        "import duty",
+        "import duty",
+        "import duty",
+        "import duty",
+        "import duty"
+      ],
+      "stats": null
+    },
+    {
+      "name": "Value",
+      "type": "float64",
+      "description": "Revenue in KES millions (comma-formatted number)",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 2326,
+      "sample_values": [
+        7157.0,
+        13912.0,
+        21407.0,
+        28605.0,
+        2813.0
+      ],
+      "stats": {
+        "count": 2326,
+        "mean": 215787.29429511089,
+        "std": 355462.3430796764,
+        "min": 987.0,
+        "25%": 28213.709977500002,
+        "50%": 73828.76926,
+        "75%": 231773.139975,
+        "max": 2956871.282
+      }
+    }
+  ]
+}

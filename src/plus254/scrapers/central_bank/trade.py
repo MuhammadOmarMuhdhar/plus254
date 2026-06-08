@@ -4,6 +4,7 @@ from plus254.utils.df_utils import (
     convert_month_to_name,
     set_month_categorical,
     capitalize_columns,
+    clean_numeric_values,
 )
 
 
@@ -30,6 +31,7 @@ def process_exports_global(df_dict):
         value_name="value",
     )
 
+    df_long = clean_numeric_values(df_long, "value")
     df_long = set_month_categorical(df_long, "month")
     df_long = capitalize_columns(df_long)
     return df_long
@@ -58,6 +60,7 @@ def process_exports_africa(df_dict):
         value_name="value",
     )
 
+    df_long = clean_numeric_values(df_long, "value")
     df_long = set_month_categorical(df_long, "month")
     df_long = capitalize_columns(df_long)
     return df_long
@@ -86,6 +89,7 @@ def process_domestic_exports(df_dict):
         value_name="value",
     )
 
+    df_long = clean_numeric_values(df_long, "value")
     df_long = set_month_categorical(df_long, "month")
     df_long = capitalize_columns(df_long)
     return df_long
@@ -115,6 +119,7 @@ def process_imports_global(df_dict):
         value_name="value",
     )
 
+    df_long = clean_numeric_values(df_long, "value")
     df_long = set_month_categorical(df_long, "month")
     df_long = capitalize_columns(df_long)
     return df_long
@@ -143,6 +148,7 @@ def process_imports_africa(df_dict):
         value_name="value",
     )
 
+    df_long = clean_numeric_values(df_long, "value")
     df_long = set_month_categorical(df_long, "month")
     df_long = capitalize_columns(df_long)
     return df_long
@@ -179,6 +185,7 @@ def process_imports_commodity(df_dict):
         value_name="value",
     )
 
+    df_long = clean_numeric_values(df_long, "value")
     df_long = set_month_categorical(df_long, "month")
     df_long = capitalize_columns(df_long)
     return df_long
@@ -214,6 +221,7 @@ def process_principal_exports(df_dict):
         value_name="value",
     )
 
+    df_long = clean_numeric_values(df_long, "value")
     df_long = set_month_categorical(df_long, "month")
     df_long = capitalize_columns(df_long)
     return df_long

@@ -1,0 +1,93 @@
+{
+  "config": "domestic_debt",
+  "slug": "centralbank",
+  "name": "Domestic Debt by Instrument",
+  "source": "Central Bank of Kenya",
+  "description": "Monthly domestic debt breakdown by instrument (T-bills, bonds, etc.)",
+  "url": "https://www.centralbank.go.ke/uploads/government_finance_statistics/1263030173_Domestic%20Debt%20by%20Instrument.csv",
+  "row_count": 2191,
+  "columns": [
+    {
+      "name": "Year",
+      "type": "int64",
+      "description": "Calendar year",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 2191,
+      "sample_values": [
+        1999,
+        1999,
+        2000,
+        2000,
+        2000
+      ],
+      "stats": {
+        "count": 2191,
+        "mean": 2000.961661341853,
+        "std": 0.2228699814629232,
+        "min": 1999.0,
+        "25%": 2001.0,
+        "50%": 2001.0,
+        "75%": 2001.0,
+        "max": 2001.0
+      }
+    },
+    {
+      "name": "Month",
+      "type": "object",
+      "description": "Calendar month name",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 2191,
+      "sample_values": [
+        "September",
+        "December",
+        "March",
+        "June",
+        "July"
+      ],
+      "stats": null
+    },
+    {
+      "name": "Metric",
+      "type": "object",
+      "description": "Debt instrument (treasury bills, treasury bonds, government stocks, advances from commercial banks, total domestic debt)",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 2191,
+      "sample_values": [
+        "treasury bills",
+        "treasury bills",
+        "treasury bills",
+        "treasury bills",
+        "treasury bills"
+      ],
+      "stats": null
+    },
+    {
+      "name": "Value",
+      "type": "float64",
+      "description": "Debt in KES millions",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 2191,
+      "sample_values": [
+        115068.55,
+        121658.53,
+        131224.49,
+        131029.45,
+        132167.45
+      ],
+      "stats": {
+        "count": 2191,
+        "mean": 527793.2866691455,
+        "std": 1164629.4166767574,
+        "min": -575.9616384,
+        "25%": 1252.71,
+        "50%": 29769.47,
+        "75%": 390643.75,
+        "max": 7149722.198
+      }
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "config": "imports_africa",
+  "slug": "centralbank",
+  "name": "Value of Imports from Africa",
+  "source": "Central Bank of Kenya",
+  "description": "Monthly value of direct imports from selected African countries",
+  "url": "https://www.centralbank.go.ke/uploads/balance_of_payment_statistics/1764709360_Value%20of%20Direct%20Imports%20from%20Selected%20African%20Countries.csv",
+  "row_count": 2710,
+  "columns": [
+    {
+      "name": "Year",
+      "type": "int64",
+      "description": "Calendar year",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 2710,
+      "sample_values": [
+        1998,
+        1998,
+        1998,
+        1998,
+        1998
+      ],
+      "stats": {
+        "count": 2710,
+        "mean": 2011.6354243542435,
+        "std": 8.155371067397972,
+        "min": 1998.0,
+        "25%": 2005.0,
+        "50%": 2012.0,
+        "75%": 2019.0,
+        "max": 2026.0
+      }
+    },
+    {
+      "name": "Month",
+      "type": "object",
+      "description": "Calendar month name",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 2710,
+      "sample_values": [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May"
+      ],
+      "stats": null
+    },
+    {
+      "name": "Metric",
+      "type": "object",
+      "description": "Origin African country (e.g., uganda, tanzania, south africa, total)",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 2710,
+      "sample_values": [
+        "uganda",
+        "uganda",
+        "uganda",
+        "uganda",
+        "uganda"
+      ],
+      "stats": null
+    },
+    {
+      "name": "Value",
+      "type": "float64",
+      "description": "Import value in KES millions (comma-formatted number)",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 2710,
+      "sample_values": [
+        2.06,
+        3.52,
+        5.72,
+        5.43,
+        11.65
+      ],
+      "stats": {
+        "count": 2710,
+        "mean": 2762.0336111094653,
+        "std": 4387.597035905127,
+        "min": 0.0,
+        "25%": 181.88500000000002,
+        "50%": 1131.805,
+        "75%": 3329.29,
+        "max": 28475.48
+      }
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "config": "principal_exports",
+  "slug": "centralbank",
+  "name": "Principal Exports \u2014 Volume, Value, Unit Prices",
+  "source": "Central Bank of Kenya",
+  "description": "Monthly volume, value, and average unit prices of principal exports (coffee, tea, horticulture)",
+  "url": "https://www.centralbank.go.ke/uploads/balance_of_payment_statistics/766913717_Principal%20Exports_Volume,%20Value%20and%20Unit%20Prices.csv",
+  "row_count": 2988,
+  "columns": [
+    {
+      "name": "Year",
+      "type": "int64",
+      "description": "Calendar year",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 2988,
+      "sample_values": [
+        1998,
+        1998,
+        1998,
+        1998,
+        1998
+      ],
+      "stats": {
+        "count": 2988,
+        "mean": 2011.9156626506024,
+        "std": 7.996374031551931,
+        "min": 1998.0,
+        "25%": 2005.0,
+        "50%": 2012.0,
+        "75%": 2019.0,
+        "max": 2026.0
+      }
+    },
+    {
+      "name": "Month",
+      "type": "object",
+      "description": "Calendar month name",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 2988,
+      "sample_values": [
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+      ],
+      "stats": null
+    },
+    {
+      "name": "Metric",
+      "type": "object",
+      "description": "Commodity and measure (coffee volume, coffee value, coffee average, tea volume, tea value, tea average, horticulture volume, horticulture value, horticulture average)",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 2988,
+      "sample_values": [
+        "coffee volume",
+        "coffee volume",
+        "coffee volume",
+        "coffee volume",
+        "coffee volume"
+      ],
+      "stats": null
+    },
+    {
+      "name": "Value",
+      "type": "float64",
+      "description": "Volume in Kgs, value in KES millions, or average price in KES per kg (comma-formatted number; see Metric for unit)",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 2988,
+      "sample_values": [
+        2759.82,
+        3243.7,
+        4158.57,
+        3958.47,
+        3565.01
+      ],
+      "stats": {
+        "count": 2988,
+        "mean": 99304.28122155288,
+        "std": 157096.24242768998,
+        "min": 130.21,
+        "25%": 4437.565,
+        "50%": 21906.239999999998,
+        "75%": 162741.875,
+        "max": 1084511.07
+      }
+    }
+  ]
+}

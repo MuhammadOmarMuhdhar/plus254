@@ -2,6 +2,7 @@ from plus254.utils.df_utils import (
     convert_month_to_name,
     set_month_categorical,
     capitalize_columns,
+    clean_numeric_values,
 )
 
 
@@ -28,10 +29,12 @@ def process_fiscal_revenue_expenditure(df_dict):
         "non tax revenue", "total revenue",
     ]
     revenue = df[id_vars + revenue_cols].melt(id_vars=id_vars, var_name="metric", value_name="value")
+    revenue = clean_numeric_values(revenue, "value")
     revenue = set_month_categorical(revenue, "month")
 
     grants_cols = ["programme grants", "project grants", "total grants"]
     grants = df[id_vars + grants_cols].melt(id_vars=id_vars, var_name="metric", value_name="value")
+    grants = clean_numeric_values(grants, "value")
     grants = set_month_categorical(grants, "month")
 
     expenditure_cols = [
@@ -39,6 +42,7 @@ def process_fiscal_revenue_expenditure(df_dict):
         "total recurrent expenditure", "county transfer", "development expenditure", "total expenditure",
     ]
     expenditure = df[id_vars + expenditure_cols].melt(id_vars=id_vars, var_name="metric", value_name="value")
+    expenditure = clean_numeric_values(expenditure, "value")
     expenditure = set_month_categorical(expenditure, "month")
 
     revenue = capitalize_columns(revenue)

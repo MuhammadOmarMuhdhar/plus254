@@ -4,6 +4,7 @@ from plus254.utils.df_utils import (
     convert_month_to_name,
     set_month_categorical,
     capitalize_columns,
+    clean_numeric_values,
 )
 
 
@@ -23,6 +24,7 @@ def process_forex_df(df_dict):
             var_name="metric",
             value_name="value",
         )
+        df_long = clean_numeric_values(df_long, "value")
         df_long = set_month_categorical(df_long, "month")
         df_long = df_long.sort_values(["year", "month"]).reset_index(drop=True)
         df_long = capitalize_columns(df_long)

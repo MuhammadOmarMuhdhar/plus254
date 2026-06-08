@@ -1,0 +1,93 @@
+{
+  "config": "gdp_quarterly",
+  "slug": "centralbank",
+  "name": "Quarterly GDP",
+  "source": "Central Bank of Kenya",
+  "description": "Quarterly GDP estimates by sector",
+  "url": "https://www.centralbank.go.ke/uploads/national_accounts_statistics/1084903161_Quarterly%20GDP.csv",
+  "row_count": 2725,
+  "columns": [
+    {
+      "name": "Activity",
+      "type": "object",
+      "description": "Economic sector or activity (e.g., Agriculture, Manufacturing, Construction, Total GDP)",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 2725,
+      "sample_values": [
+        "Accommodation & restaurant",
+        "Agriculture",
+        "All Industries at basic prices",
+        "Construction",
+        "Education"
+      ],
+      "stats": null
+    },
+    {
+      "name": "Value",
+      "type": "float64",
+      "description": "GDP value in KES millions",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 2725,
+      "sample_values": [
+        20371.0,
+        312740.0,
+        1231237.0,
+        50218.0,
+        61140.0
+      ],
+      "stats": {
+        "count": 2725,
+        "mean": 197844.951533945,
+        "std": 525256.0808187759,
+        "min": -86324.78,
+        "25%": 4.92,
+        "50%": 2023.0,
+        "75%": 127815.0,
+        "max": 2947724.47
+      }
+    },
+    {
+      "name": "Year",
+      "type": "int64",
+      "description": "Calendar year",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 2725,
+      "sample_values": [
+        2009,
+        2009,
+        2009,
+        2009,
+        2009
+      ],
+      "stats": {
+        "count": 2725,
+        "mean": 2017.234862385321,
+        "std": 4.772723222430509,
+        "min": 2009.0,
+        "25%": 2013.0,
+        "50%": 2017.0,
+        "75%": 2021.0,
+        "max": 2025.0
+      }
+    },
+    {
+      "name": "Quarter",
+      "type": "object",
+      "description": "Calendar quarter (Q1, Q2, Q3, Q4)",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 2725,
+      "sample_values": [
+        "Q1",
+        "Q1",
+        "Q1",
+        "Q1",
+        "Q1"
+      ],
+      "stats": null
+    }
+  ]
+}

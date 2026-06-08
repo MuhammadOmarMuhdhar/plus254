@@ -1,8 +1,12 @@
 from flask import Flask, jsonify, abort
 from .config import DATASETS
 from .data import get_dataset
+from pathlib import Path
+import json as json_lib
 
 app = Flask(__name__)
+
+_SCHEMA_DIR = Path(__file__).resolve().parent / "schema"
 
 @app.get("/")
 def list_datasets():
@@ -43,6 +47,15 @@ def get_dataset_endpoint(slug, config_name):
         })
     except Exception as e:
         abort(500, description=f"Failed to load dataset: {str(e)}")
+
+
+@app.get("/schema/<slug>/<config_name>")
+def get_dataset_schema(slug, config_name):
+    schema_path = _SCHEMA_DIR / f"{config_name}.json"
+    if not schema_path.exists():
+        abort(404, description=f"Schema not found: {config_name}")
+    with open(schema_path) as f:
+        return jsonify(json_lib.load(f))
 
 
 if __name__ == "__main__":
