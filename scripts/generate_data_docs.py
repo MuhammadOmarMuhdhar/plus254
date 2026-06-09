@@ -12,10 +12,8 @@ from plus254.api.config import DATASETS
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 YAML_PATH = PROJECT_ROOT / "src" / "plus254" / "api" / "datasets.yaml"
 DOCS_DIR = PROJECT_ROOT / "docs" / "datasets"
+ASTRO_DIR = PROJECT_ROOT / "website" / "src" / "content" / "dataset"
 SCHEMA_DIR = PROJECT_ROOT / "src" / "plus254" / "api" / "schema"
-
-with open(YAML_PATH) as f:
-    schema_config = yaml.safe_load(f)
 
 
 def describe_column(series):
@@ -57,19 +55,37 @@ def esc(text):
     return str(text).replace("|", "\\|")
 
 
-def generate_markdown(config_name, df, info, columns_info):
+def _fmt_num(v):
+    return f"{v:.4g}" if abs(v) > 1e6 else f"{v:.2f}"
+
+
+def _render_header(config_name, df, info):
     lines = []
-    lines.append(f"# {info['name']}")
+    endpoint = f"GET /{info['slug']}/{config_name}"
+    lines.append("---")
+    lines.append(f'title: "{info["name"]}"')
+    lines.append(f'description: "{info["description"]}"')
+    lines.append(f'source: "{info["source"]}"')
+    lines.append(f"endpoint: \"{endpoint}\"")
+    lines.append(f"rows: {len(df)}")
+    lines.append(f'category: "{info["slug"]}"')
+    if info.get("url"):
+        lines.append(f'sourceUrl: "{info["url"]}"')
+    lines.append("---")
     lines.append("")
     lines.append(info["description"])
     lines.append("")
     lines.append(f"- **Source:** {info['source']}")
-    lines.append(f"- **API endpoint:** `GET /{info['slug']}/{config_name}`")
+    lines.append(f"- **API endpoint:** `{endpoint}`")
     lines.append(f"- **Rows:** {len(df)}")
     if info.get("url"):
         lines.append(f"- **Source URL:** [{info['url']}]({info['url']})")
     lines.append("")
+    return lines
 
+
+def _render_column_table(columns_info, df):
+    lines = []
     lines.append("## Columns")
     lines.append("")
     lines.append("| Column | Type | Description | Nullable | Null count | Unique |")
@@ -81,20 +97,14 @@ def generate_markdown(config_name, df, info, columns_info):
             f"| {esc(col)} | {esc(col_info['dtype'])} | {esc(col_info.get('description', ''))} | {nullable} | {col_info['null_count']} | {unique} |"
         )
     lines.append("")
+    return lines
 
-    lines.append("## Sample Values")
-    lines.append("")
-    for col, col_info in columns_info.items():
-        samples = col_info["sample_values"]
-        if samples:
-            sample_str = ", ".join(str(s) for s in samples[:3])
-            suffix = " ..." if len(samples) > 3 else ""
-            lines.append(f"- **{esc(col)}:** {esc(sample_str)}{suffix}")
-    lines.append("")
 
+def _render_stats_table(columns_info):
     numeric_cols = {
         c: v for c, v in columns_info.items() if "stats" in v and "mean" in v["stats"]
     }
+    lines = []
     if numeric_cols:
         lines.append("## Summary Statistics")
         lines.append("")
@@ -102,12 +112,15 @@ def generate_markdown(config_name, df, info, columns_info):
         lines.append("|--------|-------|------|-----|-----|-----|-----|-----|-----|")
         for col, cinfo in numeric_cols.items():
             s = cinfo["stats"]
-            fmt = lambda v: f"{v:.4g}" if abs(v) > 1e6 else f"{v:.2f}"
             lines.append(
-                f"| {esc(col)} | {s['count']} | {fmt(s['mean'])} | {fmt(s['std'])} | {fmt(s['min'])} | {fmt(s['25%'])} | {fmt(s['50%'])} | {fmt(s['75%'])} | {fmt(s['max'])} |"
+                f"| {esc(col)} | {s['count']} | {_fmt_num(s['mean'])} | {_fmt_num(s['std'])} | {_fmt_num(s['min'])} | {_fmt_num(s['25%'])} | {_fmt_num(s['50%'])} | {_fmt_num(s['75%'])} | {_fmt_num(s['max'])} |"
             )
         lines.append("")
+    return lines
 
+
+def _render_sample_data(df):
+    lines = []
     lines.append("## Sample Data")
     lines.append("")
     sample = df.head(5)
@@ -118,7 +131,15 @@ def generate_markdown(config_name, df, info, columns_info):
         cells = [esc(str(row[c])) for c in sample.columns]
         lines.append("| " + " | ".join(cells) + " |")
     lines.append("")
+    return lines
 
+
+def generate_markdown(config_name, df, info, columns_info):
+    lines = []
+    lines.extend(_render_header(config_name, df, info))
+    lines.extend(_render_column_table(columns_info, df))
+    lines.extend(_render_stats_table(columns_info))
+    lines.extend(_render_sample_data(df))
     return "\n".join(lines)
 
 
@@ -148,9 +169,38 @@ def generate_index(datasets_info):
     return "\n".join(lines)
 
 
+def _build_schema(config_name, info, row_count, columns_info):
+    return {
+        "config": config_name,
+        "slug": info["slug"],
+        "name": info["name"],
+        "source": info["source"],
+        "description": info["description"],
+        "url": info.get("url", ""),
+        "row_count": row_count,
+        "columns": [
+            {
+                "name": col,
+                "type": col_info["dtype"],
+                "description": col_info.get("description", ""),
+                "nullable": col_info["nullable"],
+                "null_count": col_info["null_count"],
+                "non_null_count": col_info["non_null_count"],
+                "sample_values": col_info["sample_values"][:5],
+                "stats": col_info.get("stats"),
+            }
+            for col, col_info in columns_info.items()
+        ],
+    }
+
+
 def run():
     DOCS_DIR.mkdir(parents=True, exist_ok=True)
+    ASTRO_DIR.mkdir(parents=True, exist_ok=True)
     SCHEMA_DIR.mkdir(parents=True, exist_ok=True)
+
+    with open(YAML_PATH) as f:
+        schema_config = yaml.safe_load(f)
 
     datasets_info = {}
 
@@ -177,28 +227,7 @@ def run():
         row_count = len(df)
         datasets_info[config_name] = {**info, "row_count": row_count}
 
-        schema = {
-            "config": config_name,
-            "slug": info["slug"],
-            "name": info["name"],
-            "source": info["source"],
-            "description": info["description"],
-            "url": info.get("url", ""),
-            "row_count": row_count,
-            "columns": [
-                {
-                    "name": col,
-                    "type": col_info["dtype"],
-                    "description": col_info.get("description", ""),
-                    "nullable": col_info["nullable"],
-                    "null_count": col_info["null_count"],
-                    "non_null_count": col_info["non_null_count"],
-                    "sample_values": col_info["sample_values"][:5],
-                    "stats": col_info.get("stats"),
-                }
-                for col, col_info in columns_info.items()
-            ],
-        }
+        schema = _build_schema(config_name, info, row_count, columns_info)
 
         schema_path = SCHEMA_DIR / f"{config_name}.json"
         with open(schema_path, "w") as f:
@@ -210,6 +239,10 @@ def run():
         with open(md_path, "w") as f:
             f.write(md)
         print(f"  Markdown -> {md_path}")
+        astro_path = ASTRO_DIR / f"{config_name}.md"
+        with open(astro_path, "w") as f:
+            f.write(md)
+        print(f"  Markdown -> {astro_path}")
 
     index_md = generate_index(datasets_info)
     index_path = DOCS_DIR / "index.md"
