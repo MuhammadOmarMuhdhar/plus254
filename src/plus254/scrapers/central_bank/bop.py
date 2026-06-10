@@ -1,6 +1,7 @@
 from plus254.utils.df_utils import (
     normalize_columns,
-    capitalize_columns,
+    snake_case_columns,
+    lowercase_values,
     clean_numeric_values,
 )
 
@@ -23,5 +24,6 @@ def process_bop_annual(df_dict):
     df_long = df_long.sort_values(["year"]).reset_index(drop=True)
     df_long.rename(columns={"bpm6 concept": "category"}, inplace=True)
 
-    df_long = capitalize_columns(df_long)
+    df_long = lowercase_values(df_long)
+    df_long = snake_case_columns(df_long)
     return df_long

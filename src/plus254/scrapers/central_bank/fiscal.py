@@ -1,7 +1,8 @@
 from plus254.utils.df_utils import (
     convert_month_to_name,
     set_month_categorical,
-    capitalize_columns,
+    snake_case_columns,
+    lowercase_values,
     clean_numeric_values,
 )
 
@@ -45,8 +46,11 @@ def process_fiscal_revenue_expenditure(df_dict):
     expenditure = clean_numeric_values(expenditure, "value")
     expenditure = set_month_categorical(expenditure, "month")
 
-    revenue = capitalize_columns(revenue)
-    grants = capitalize_columns(grants)
-    expenditure = capitalize_columns(expenditure)
+    revenue = lowercase_values(revenue)
+    revenue = snake_case_columns(revenue)
+    grants = lowercase_values(grants)
+    grants = snake_case_columns(grants)
+    expenditure = lowercase_values(expenditure)
+    expenditure = snake_case_columns(expenditure)
 
     return {"revenue": revenue, "grants": grants, "expenditure": expenditure}

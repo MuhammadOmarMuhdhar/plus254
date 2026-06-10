@@ -3,7 +3,8 @@ from plus254.utils.df_utils import (
     normalize_columns,
     convert_month_to_name,
     set_month_categorical,
-    capitalize_columns,
+    snake_case_columns,
+    lowercase_values,
     clean_numeric_values,
 )
 
@@ -33,7 +34,8 @@ def process_exports_global(df_dict):
 
     df_long = clean_numeric_values(df_long, "value")
     df_long = set_month_categorical(df_long, "month")
-    df_long = capitalize_columns(df_long)
+    df_long = lowercase_values(df_long)
+    df_long = snake_case_columns(df_long)
     return df_long
 
 
@@ -62,7 +64,8 @@ def process_exports_africa(df_dict):
 
     df_long = clean_numeric_values(df_long, "value")
     df_long = set_month_categorical(df_long, "month")
-    df_long = capitalize_columns(df_long)
+    df_long = lowercase_values(df_long)
+    df_long = snake_case_columns(df_long)
     return df_long
 
 
@@ -91,7 +94,8 @@ def process_domestic_exports(df_dict):
 
     df_long = clean_numeric_values(df_long, "value")
     df_long = set_month_categorical(df_long, "month")
-    df_long = capitalize_columns(df_long)
+    df_long = lowercase_values(df_long)
+    df_long = snake_case_columns(df_long)
     return df_long
 
 
@@ -121,7 +125,8 @@ def process_imports_global(df_dict):
 
     df_long = clean_numeric_values(df_long, "value")
     df_long = set_month_categorical(df_long, "month")
-    df_long = capitalize_columns(df_long)
+    df_long = lowercase_values(df_long)
+    df_long = snake_case_columns(df_long)
     return df_long
 
 
@@ -150,7 +155,8 @@ def process_imports_africa(df_dict):
 
     df_long = clean_numeric_values(df_long, "value")
     df_long = set_month_categorical(df_long, "month")
-    df_long = capitalize_columns(df_long)
+    df_long = lowercase_values(df_long)
+    df_long = snake_case_columns(df_long)
     return df_long
 
 
@@ -187,7 +193,8 @@ def process_imports_commodity(df_dict):
 
     df_long = clean_numeric_values(df_long, "value")
     df_long = set_month_categorical(df_long, "month")
-    df_long = capitalize_columns(df_long)
+    df_long = lowercase_values(df_long)
+    df_long = snake_case_columns(df_long)
     return df_long
 
 
@@ -223,5 +230,6 @@ def process_principal_exports(df_dict):
 
     df_long = clean_numeric_values(df_long, "value")
     df_long = set_month_categorical(df_long, "month")
-    df_long = capitalize_columns(df_long)
+    df_long = lowercase_values(df_long)
+    df_long = snake_case_columns(df_long)
     return df_long

@@ -8,39 +8,39 @@
   "row_count": 12325,
   "columns": [
     {
-      "name": "Section",
+      "name": "section",
       "type": "object",
       "description": "Sub-survey section (Central Bank of Kenya, Other Depository Corporation Survey, Depository Corporation Survey)",
       "nullable": false,
       "null_count": 0,
       "non_null_count": 12325,
       "sample_values": [
-        "Central Bank of Kenya",
-        "Central Bank of Kenya",
-        "Central Bank of Kenya",
-        "Central Bank of Kenya",
-        "Central Bank of Kenya"
+        "central bank of kenya",
+        "central bank of kenya",
+        "central bank of kenya",
+        "central bank of kenya",
+        "central bank of kenya"
       ],
       "stats": null
     },
     {
-      "name": "Indicator",
+      "name": "indicator",
       "type": "object",
       "description": "Monetary indicator name (e.g., Excess reserves, Required reserves, Broad Money M3)",
       "nullable": false,
       "null_count": 0,
       "non_null_count": 12325,
       "sample_values": [
-        "    Excess reserves",
-        "    Required reserves",
-        "Banks Reserves at CBK",
-        "County Government (Net)",
-        "Credit to Other Depository Corporations"
+        "    excess reserves",
+        "    required reserves",
+        "banks reserves at cbk",
+        "county government (net)",
+        "credit to other depository corporations"
       ],
       "stats": null
     },
     {
-      "name": "Year",
+      "name": "year",
       "type": "int64",
       "description": "Calendar year",
       "nullable": false,
@@ -65,7 +65,7 @@
       }
     },
     {
-      "name": "Month",
+      "name": "month",
       "type": "object",
       "description": "Calendar month name",
       "nullable": false,
@@ -81,7 +81,7 @@
       "stats": null
     },
     {
-      "name": "Value",
+      "name": "value",
       "type": "float64",
       "description": "Monetary value in KES millions",
       "nullable": false,

@@ -3,7 +3,8 @@ import pandas as pd
 from plus254.utils.df_utils import (
     clean_numeric_values,
     set_month_categorical,
-    capitalize_columns,
+    snake_case_columns,
+    lowercase_values,
 )
 
 
@@ -56,5 +57,6 @@ def process_monetary_survey(df_dict):
 
     df_long = set_month_categorical(df_long, "month")
     df_long = df_long.sort_values(["year", "month"]).reset_index(drop=True)
-    df_long = capitalize_columns(df_long)
+    df_long = lowercase_values(df_long)
+    df_long = snake_case_columns(df_long)
     return df_long

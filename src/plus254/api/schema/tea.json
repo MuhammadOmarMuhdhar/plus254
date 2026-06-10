@@ -8,7 +8,7 @@
   "row_count": 84,
   "columns": [
     {
-      "name": "Date",
+      "name": "date",
       "type": "datetime64[ns]",
       "description": "Auction date (ISO 8601)",
       "nullable": false,
@@ -27,7 +27,7 @@
       }
     },
     {
-      "name": "Year",
+      "name": "year",
       "type": "int64",
       "description": "Calendar year",
       "nullable": false,
@@ -52,23 +52,17 @@
       }
     },
     {
-      "name": "Month",
+      "name": "month",
       "type": "object",
       "description": "Calendar month name",
-      "nullable": false,
-      "null_count": 0,
-      "non_null_count": 84,
-      "sample_values": [
-        "January",
-        "January",
-        "January",
-        "January",
-        "January"
-      ],
+      "nullable": true,
+      "null_count": 84,
+      "non_null_count": 0,
+      "sample_values": [],
       "stats": null
     },
     {
-      "name": "Sale Week",
+      "name": "sale_week",
       "type": "int64",
       "description": "Sequential auction batch number (starts at 1 each year)",
       "nullable": false,
@@ -93,23 +87,23 @@
       }
     },
     {
-      "name": "Metric",
+      "name": "metric",
       "type": "object",
       "description": "Auction metric (Average price (USD), Tea sold (Kgs), Tea offered (Kgs), Unsold tea (%))",
       "nullable": false,
       "null_count": 0,
       "non_null_count": 84,
       "sample_values": [
-        "Average price (USD)",
-        "Tea offered (Kgs)",
-        "Tea sold (Kgs)",
-        "Unsold tea (%)",
-        "Average price (USD)"
+        "average price (usd)",
+        "tea offered (kgs)",
+        "tea sold (kgs)",
+        "unsold tea (%)",
+        "average price (usd)"
       ],
       "stats": null
     },
     {
-      "name": "Value",
+      "name": "value",
       "type": "float64",
       "description": "Metric value",
       "nullable": false,

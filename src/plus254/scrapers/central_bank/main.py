@@ -90,7 +90,7 @@ def run():
         results = run_all(df_dict)
         logger.info(f"Saving {len(results)} datasets")
         for name, df in results.items():
-            save_to_hf(df, config_name=name)
+            save_to_hf(df, config_name=name, overwrite=False)
         logger.info(f"Completed in {time.time() - start:.1f}s")
     except Exception:
         logger.exception("Pipeline failed")

@@ -37,7 +37,14 @@ def clean_numeric_values(df, col="value"):
     return df
 
 
-def capitalize_columns(df):
+def snake_case_columns(df):
     df = df.copy()
-    df.columns = df.columns.str.capitalize()
+    df.columns = df.columns.str.strip().str.lower().str.replace(r"\s+", "_", regex=True)
+    return df
+
+
+def lowercase_values(df):
+    df = df.copy()
+    for col in df.select_dtypes(include="object").columns:
+        df[col] = df[col].str.lower()
     return df

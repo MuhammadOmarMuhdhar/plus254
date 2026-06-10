@@ -1,7 +1,8 @@
 import numpy as np
 from plus254.utils.df_utils import (
     clean_numeric_values,
-    capitalize_columns,
+    snake_case_columns,
+    lowercase_values,
 )
 
 
@@ -32,6 +33,7 @@ def process_gdp_quarterly(df_dict):
     df_long = clean_numeric_values(df_long, "value")
 
     df_long = df_long.sort_values(["year", "quarter", "activity"]).reset_index(drop=True)
-    df_long = capitalize_columns(df_long)
+    df_long = lowercase_values(df_long)
+    df_long = snake_case_columns(df_long)
 
     return df_long

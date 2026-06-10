@@ -3,7 +3,8 @@ from plus254.utils.df_utils import (
     normalize_columns,
     convert_month_to_name,
     set_month_categorical,
-    capitalize_columns,
+    snake_case_columns,
+    lowercase_values,
     clean_numeric_values,
 )
 
@@ -27,7 +28,8 @@ def process_forex_df(df_dict):
         df_long = clean_numeric_values(df_long, "value")
         df_long = set_month_categorical(df_long, "month")
         df_long = df_long.sort_values(["year", "month"]).reset_index(drop=True)
-        df_long = capitalize_columns(df_long)
+        df_long = lowercase_values(df_long)
+        df_long = snake_case_columns(df_long)
         df_results[forex_df] = df_long
 
     return df_results

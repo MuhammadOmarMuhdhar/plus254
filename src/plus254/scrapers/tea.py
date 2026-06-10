@@ -8,7 +8,7 @@ import pdfplumber
 import pandas as pd
 from dotenv import load_dotenv
 from plus254.utils.hf_utils import save_to_hf
-from plus254.utils.df_utils import clean_numeric_values, set_month_categorical
+from plus254.utils.df_utils import clean_numeric_values, set_month_categorical, snake_case_columns, lowercase_values
 
 load_dotenv()
 
@@ -117,13 +117,14 @@ def extract_table(pdf_bytes):
             )
 
             df = clean_numeric_values(df, "Value")
-            df = df.rename(columns={"Sale week": "Sale Week"})
             df["Year"] = df["Date"].dt.year.astype(int)
             df["Month"] = df["Date"].dt.month_name()
-            df = df.sort_values(["Date", "Sale Week", "Metric"]).reset_index(drop=True)
-            df = set_month_categorical(df, "Month")
+            df = lowercase_values(df)
+            df = snake_case_columns(df)
+            df = df.sort_values(["date", "sale_week", "metric"]).reset_index(drop=True)
+            df = set_month_categorical(df, "month")
             df = df.loc[:, ~df.columns.str.startswith("__")]
-            df = df[["Date", "Year", "Month", "Sale Week", "Metric", "Value"]]
+            df = df[["date", "year", "month", "sale_week", "metric", "value"]]
 
         logger.info(f"Table extracted: {len(df)} rows")
         return df
@@ -139,7 +140,7 @@ def run():
         soup = scrape_eatta()
         pdf_bytes, pdf_name = extract_pdf(soup)
         df = extract_table(pdf_bytes)
-        save_to_hf(df, config_name="tea", save_csv=True, csv_filename="tea.csv", overwrite=True)
+        save_to_hf(df, config_name="tea", save_csv=True, csv_filename="tea.csv", overwrite=False)
         logger.info(f"Completed in {time.time() - start:.1f}s")
     except Exception:
         logger.exception("Pipeline failed")
