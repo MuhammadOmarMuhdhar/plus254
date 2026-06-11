@@ -9,7 +9,7 @@ from plus254.utils.df_utils import (
 )
 
 
-def process_forex_df(df_dict):
+def process_forex(df_dict):
     df_results = {}
 
     for forex_df in ["forex_end_period", "forex_period_average"]:

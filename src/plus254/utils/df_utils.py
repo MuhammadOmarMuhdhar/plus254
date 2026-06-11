@@ -1,7 +1,6 @@
 import numpy as np
 import pandas as pd
 
-
 def extract_columns(df, header_row, data_start_row):
     df = df.copy()
     df.columns = df.iloc[header_row].reset_index(drop=True)
@@ -39,7 +38,14 @@ def clean_numeric_values(df, col="value"):
 
 def snake_case_columns(df):
     df = df.copy()
-    df.columns = df.columns.str.strip().str.lower().str.replace(r"\s+", "_", regex=True)
+    df.columns = (
+        df.columns
+        .str.strip()
+        .str.lower()
+        .str.replace(r"[\s\.\n]+", "_", regex=True)  
+        .str.replace(r"_+", "_", regex=True)         
+        .str.strip("_")                              
+    )
     return df
 
 

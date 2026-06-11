@@ -4,7 +4,7 @@ import pandas as pd
 from dotenv import load_dotenv
 from plus254.utils.hf_utils import save_to_hf
 from plus254.scrapers.central_bank import central_bank_links
-from plus254.scrapers.central_bank.forex import process_forex_df
+from plus254.scrapers.central_bank.forex import process_forex
 from plus254.scrapers.central_bank.monetary import process_monetary_survey
 from plus254.scrapers.central_bank.bop import process_bop_annual
 from plus254.scrapers.central_bank.trade import (
@@ -31,7 +31,7 @@ logger = logging.getLogger(__name__)
 
 
 PROCESSORS = {
-    "forex": process_forex_df,
+    "forex": process_forex,
     "monetary_survey": process_monetary_survey,
     "bop_annual": process_bop_annual,
     "exports_global": process_exports_global,

@@ -1,3 +1,4 @@
+import pandas as pd
 from plus254.utils.df_utils import (
     normalize_columns,
     snake_case_columns,
