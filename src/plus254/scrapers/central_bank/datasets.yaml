@@ -337,29 +337,3 @@ gdp_quarterly:
     quarter:
       type: string
       description: Calendar quarter (Q1, Q2, Q3, Q4)
-
-tea:
-  name: Tea Production and Exports
-  slug: teaboard
-  source: Tea Board of Kenya
-  description: Weekly tea auction data — production, export volume, and prices
-  url: https://eatta.co.ke/statistics
-  columns:
-    date:
-      type: datetime
-      description: Auction date (ISO 8601)
-    year:
-      type: integer
-      description: Calendar year
-    month:
-      type: string
-      description: Calendar month name
-    sale_week:
-      type: integer
-      description: Sequential auction batch number (starts at 1 each year)
-    metric:
-      type: string
-      description: Auction metric (Average price (USD), Tea sold (Kgs), Tea offered (Kgs), Unsold tea (%))
-    value:
-      type: float
-      description: Metric value
