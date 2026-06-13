@@ -1,5 +1,4 @@
 import yaml
-
 from .forex import process_forex
 from .monetary import process_monetary_survey
 from .bop import process_bop_annual
