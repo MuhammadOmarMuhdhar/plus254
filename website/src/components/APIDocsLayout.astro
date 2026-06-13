@@ -13,6 +13,8 @@ const navItems = [
   { id: "clients", label: "Client Libraries", href: "/api-docs/clients/" },
   { id: "errors", label: "Error Handling", href: "/api-docs/errors/" },
 ];
+
+const activeLabel = navItems.find((item) => item.id === activeSection)?.label ?? "";
 ---
 
 <div class="docs-layout">
@@ -29,6 +31,27 @@ const navItems = [
         ))
       }
     </nav>
+
+    <details class="sidebar-mobile">
+      <summary class="sidebar-mobile-summary">
+        <span class="sidebar-mobile-label">{activeLabel}</span>
+        <svg class="sidebar-mobile-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="4 6 8 10 12 6" />
+        </svg>
+      </summary>
+      <div class="sidebar-mobile-nav">
+        {
+          navItems.map((item) => (
+            <a
+              href={item.href}
+              class:list={["sidebar-mobile-link", { active: activeSection === item.id }]}
+            >
+              {item.label}
+            </a>
+          ))
+        }
+      </div>
+    </details>
   </aside>
 
   <main class="docs-main">
@@ -371,6 +394,172 @@ const navItems = [
     .sidebar-link.active {
       border-left-color: transparent;
       border-bottom-color: #1f6f54;
+    }
+  }
+
+  .sidebar-mobile {
+    display: none;
+  }
+
+  .sidebar-mobile-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-sm) var(--space-md);
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    color: var(--color-warm-dark);
+    cursor: pointer;
+    min-height: 44px;
+    list-style: none;
+    border: 1px solid #1f6f54;
+    background: #6cb999;
+  }
+
+  .sidebar-mobile-summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .sidebar-mobile-summary::marker {
+    display: none;
+  }
+
+  .sidebar-mobile-summary:focus-visible {
+    outline: 2px solid #1f6f54;
+    outline-offset: -2px;
+  }
+
+  .sidebar-mobile-chevron {
+    transition: transform 0.2s var(--ease-out);
+    color: var(--color-warm-dark);
+  }
+
+  .sidebar-mobile[open] .sidebar-mobile-chevron {
+    transform: rotate(180deg);
+  }
+
+  .sidebar-mobile-nav {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #1f6f54;
+    border-top: none;
+    background: #6cb999;
+  }
+
+  .sidebar-mobile-link {
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--color-warm-dark);
+    text-decoration: none;
+    padding: var(--space-sm) var(--space-md);
+    border-left: 2px solid transparent;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.15s var(--ease-out), color 0.15s var(--ease-out);
+  }
+
+  .sidebar-mobile-link:hover {
+    color: var(--color-warm-dark);
+    background: rgba(31, 111, 84, 0.08);
+  }
+
+  .sidebar-mobile-link.active {
+    color: var(--color-warm-dark);
+    border-left-color: var(--color-warm-dark);
+    font-weight: var(--font-semibold);
+    background: rgba(31, 111, 84, 0.12);
+  }
+
+  .sidebar-mobile-link:focus-visible {
+    outline: 2px solid #1f6f54;
+    outline-offset: -2px;
+  }
+
+  @media (max-width: 480px) {
+    .sidebar-nav {
+      display: none;
+    }
+
+    .sidebar {
+      position: static;
+      width: 100%;
+      padding-top: 0;
+    }
+
+    .sidebar-mobile {
+      display: block;
+    }
+
+    .code-block {
+      overflow-x: visible;
+      white-space: pre-wrap;
+      word-break: break-word;
+      overflow-wrap: break-word;
+      font-size: var(--text-xs);
+    }
+
+    .code-block code {
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .docs-intro,
+    .step-text,
+    .endpoint-desc,
+    .endpoint-label {
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
+
+    .param-table thead,
+    .dataset-table thead {
+      display: none;
+    }
+
+    .param-table tbody tr,
+    .dataset-table tbody tr {
+      display: block;
+      padding: var(--space-sm) var(--space-md);
+      border-bottom: 1px solid rgba(31, 111, 84, 0.15);
+    }
+
+    .param-table tbody tr:last-child,
+    .dataset-table tbody tr:last-child {
+      border-bottom: none;
+    }
+
+    .param-table tbody tr:nth-child(even),
+    .dataset-table tbody tr:nth-child(even) {
+      background: transparent;
+    }
+
+    .param-table td,
+    .dataset-table td {
+      display: flex;
+      flex-direction: column;
+      padding: var(--space-2xs) 0;
+      border: none;
+      background: transparent;
+    }
+
+    .param-table td::before,
+    .dataset-table td::before {
+      content: attr(data-label);
+      display: block;
+      font-family: var(--font-sans);
+      font-size: var(--text-xs);
+      font-weight: var(--font-semibold);
+      color: var(--color-warm-light);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 0.125rem;
+    }
+
+    .dataset-panel .dataset-table tbody tr {
+      padding: var(--space-xs) var(--space-md);
     }
   }
 </style>

@@ -1,9 +1,10 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import AboutLayout from "../components/AboutLayout.astro";
 ---
 
 <BaseLayout title="About — plus254">
-  <article class="about-content">
+  <AboutLayout activeSection="mission">
     <header class="page-heading">
       <h1>About +254</h1>
     </header>
@@ -88,15 +89,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
       <a href="https://github.com/you/your-repo" class="github-link">View on GitHub <span aria-hidden="true">→</span></a>
     </section>
-  </article>
+  </AboutLayout>
 </BaseLayout>
 
 <style>
-  .about-content {
-    max-width: 960px;
-    margin: 0 auto;
-  }
-
   .page-heading {
     margin-bottom: var(--space-lg);
   }
@@ -109,6 +105,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     line-height: var(--leading-tight);
     letter-spacing: var(--tracking-tight);
     margin: 0 0 var(--space-sm);
+  }
+
+  .section[id] {
+    scroll-margin-top: 3rem;
   }
 
   .section + .section {

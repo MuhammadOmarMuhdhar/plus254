@@ -17,12 +17,12 @@ import APIDocsLayout from "../../components/APIDocsLayout.astro";
             <tr><th>Field</th><th>Type</th><th>Description</th></tr>
           </thead>
           <tbody>
-            <tr><td><code>count</code></td><td>number</td><td>Total number of datasets available</td></tr>
-            <tr><td><code>groups</code></td><td>object</td><td>Datasets keyed by source slug. Each group contains an array of dataset objects.</td></tr>
-            <tr><td><code>groups.&#123;slug&#125;[].config</code></td><td>string</td><td>Dataset config name, used in path parameters</td></tr>
-            <tr><td><code>groups.&#123;slug&#125;[].name</code></td><td>string</td><td>Human-readable dataset title</td></tr>
-            <tr><td><code>groups.&#123;slug&#125;[].description</code></td><td>string</td><td>Short description of the dataset</td></tr>
-            <tr><td><code>groups.&#123;slug&#125;[].source</code></td><td>string</td><td>Institution that publishes the data</td></tr>
+            <tr><td data-label="Field"><code>count</code></td><td data-label="Type">number</td><td data-label="Description">Total number of datasets available</td></tr>
+            <tr><td data-label="Field"><code>groups</code></td><td data-label="Type">object</td><td data-label="Description">Datasets keyed by source slug. Each group contains an array of dataset objects.</td></tr>
+            <tr><td data-label="Field"><code>groups.&#123;slug&#125;[].config</code></td><td data-label="Type">string</td><td data-label="Description">Dataset config name, used in path parameters</td></tr>
+            <tr><td data-label="Field"><code>groups.&#123;slug&#125;[].name</code></td><td data-label="Type">string</td><td data-label="Description">Human-readable dataset title</td></tr>
+            <tr><td data-label="Field"><code>groups.&#123;slug&#125;[].description</code></td><td data-label="Type">string</td><td data-label="Description">Short description of the dataset</td></tr>
+            <tr><td data-label="Field"><code>groups.&#123;slug&#125;[].source</code></td><td data-label="Type">string</td><td data-label="Description">Institution that publishes the data</td></tr>
           </tbody>
         </table>
       </div>
@@ -34,10 +34,10 @@ import APIDocsLayout from "../../components/APIDocsLayout.astro";
             <tr><th>Field</th><th>Type</th><th>Description</th></tr>
           </thead>
           <tbody>
-            <tr><td><code>source</code></td><td>string</td><td>Institution that publishes the data</td></tr>
-            <tr><td><code>description</code></td><td>string</td><td>Short description of the dataset</td></tr>
-            <tr><td><code>url</code></td><td>string</td><td>Link to the original source data</td></tr>
-            <tr><td><code>data</code></td><td>array</td><td>Array of record objects. Each record&#8217;s fields correspond to the dataset columns.</td></tr>
+            <tr><td data-label="Field"><code>source</code></td><td data-label="Type">string</td><td data-label="Description">Institution that publishes the data</td></tr>
+            <tr><td data-label="Field"><code>description</code></td><td data-label="Type">string</td><td data-label="Description">Short description of the dataset</td></tr>
+            <tr><td data-label="Field"><code>url</code></td><td data-label="Type">string</td><td data-label="Description">Link to the original source data</td></tr>
+            <tr><td data-label="Field"><code>data</code></td><td data-label="Type">array</td><td data-label="Description">Array of record objects. Each record&#8217;s fields correspond to the dataset columns.</td></tr>
           </tbody>
         </table>
       </div>
@@ -49,12 +49,12 @@ import APIDocsLayout from "../../components/APIDocsLayout.astro";
             <tr><th>Field</th><th>Type</th><th>Description</th></tr>
           </thead>
           <tbody>
-            <tr><td><code>config</code></td><td>string</td><td>Dataset config name</td></tr>
-            <tr><td><code>slug</code></td><td>string</td><td>Source group slug</td></tr>
-            <tr><td><code>name</code></td><td>string</td><td>Human-readable dataset title</td></tr>
-            <tr><td><code>source</code></td><td>string</td><td>Institution that publishes the data</td></tr>
-            <tr><td><code>row_count</code></td><td>number</td><td>Number of records in the dataset</td></tr>
-            <tr><td><code>columns[]</code></td><td>array</td><td>Column definitions (see below)</td></tr>
+            <tr><td data-label="Field"><code>config</code></td><td data-label="Type">string</td><td data-label="Description">Dataset config name</td></tr>
+            <tr><td data-label="Field"><code>slug</code></td><td data-label="Type">string</td><td data-label="Description">Source group slug</td></tr>
+            <tr><td data-label="Field"><code>name</code></td><td data-label="Type">string</td><td data-label="Description">Human-readable dataset title</td></tr>
+            <tr><td data-label="Field"><code>source</code></td><td data-label="Type">string</td><td data-label="Description">Institution that publishes the data</td></tr>
+            <tr><td data-label="Field"><code>row_count</code></td><td data-label="Type">number</td><td data-label="Description">Number of records in the dataset</td></tr>
+            <tr><td data-label="Field"><code>columns[]</code></td><td data-label="Type">array</td><td data-label="Description">Column definitions (see below)</td></tr>
           </tbody>
         </table>
       </div>
@@ -66,13 +66,13 @@ import APIDocsLayout from "../../components/APIDocsLayout.astro";
             <tr><th>Field</th><th>Type</th><th>Description</th></tr>
           </thead>
           <tbody>
-            <tr><td><code>name</code></td><td>string</td><td>Column name</td></tr>
-            <tr><td><code>type</code></td><td>string</td><td>Data type (<code>int64</code>, <code>float64</code>, <code>object</code>)</td></tr>
-            <tr><td><code>description</code></td><td>string</td><td>What the column represents</td></tr>
-            <tr><td><code>nullable</code></td><td>boolean</td><td>Whether null values are allowed</td></tr>
-            <tr><td><code>null_count</code></td><td>number</td><td>Number of null values in the column</td></tr>
-            <tr><td><code>sample_values</code></td><td>array</td><td>Up to 5 example values from the column</td></tr>
-            <tr><td><code>stats</code></td><td>object|null</td><td>Numeric summary (mean, std, min, max, quartiles) for numeric columns; null for non-numeric</td></tr>
+            <tr><td data-label="Field"><code>name</code></td><td data-label="Type">string</td><td data-label="Description">Column name</td></tr>
+            <tr><td data-label="Field"><code>type</code></td><td data-label="Type">string</td><td data-label="Description">Data type (<code>int64</code>, <code>float64</code>, <code>object</code>)</td></tr>
+            <tr><td data-label="Field"><code>description</code></td><td data-label="Type">string</td><td data-label="Description">What the column represents</td></tr>
+            <tr><td data-label="Field"><code>nullable</code></td><td data-label="Type">boolean</td><td data-label="Description">Whether null values are allowed</td></tr>
+            <tr><td data-label="Field"><code>null_count</code></td><td data-label="Type">number</td><td data-label="Description">Number of null values in the column</td></tr>
+            <tr><td data-label="Field"><code>sample_values</code></td><td data-label="Type">array</td><td data-label="Description">Up to 5 example values from the column</td></tr>
+            <tr><td data-label="Field"><code>stats</code></td><td data-label="Type">object|null</td><td data-label="Description">Numeric summary (mean, std, min, max, quartiles) for numeric columns; null for non-numeric</td></tr>
           </tbody>
         </table>
       </div>
