@@ -1,0 +1,104 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import APIDocsLayout from "../../components/APIDocsLayout.astro";
+---
+
+<BaseLayout title="Endpoints - plus254 API Reference">
+  <APIDocsLayout activeSection="endpoints">
+    <section id="endpoints" class="section">
+      <h2 class="section-eyebrow">Endpoints</h2>
+
+      <h3 class="endpoint-heading"><span class="method get">GET</span> <code>/</code></h3>
+      <p class="endpoint-desc">List all available datasets grouped by source slug. Returns the count and metadata for every dataset.</p>
+
+      <p class="endpoint-label">Example request</p>
+      <pre class="code-block"><code>curl https://api.plus254.dev/</code></pre>
+
+      <p class="endpoint-label">Example response</p>
+      <pre class="code-block"><code>&#123;
+  "count": 19,
+  "groups": &#123;
+    "centralbank": [
+      &#123;
+        "config": "forex_period_average",
+        "name": "Monthly Exchange Rates (Period Average)",
+        "description": "Monthly exchange rates of major currencies against KES (period average)",
+        "source": "Central Bank of Kenya"
+      }
+    ]
+  }
+}</code></pre>
+
+      <h3 class="endpoint-heading"><span class="method get">GET</span> <code>/&lt;slug&gt;/&lt;config_name&gt;</code></h3>
+      <p class="endpoint-desc">Retrieve all records for a specific dataset. The slug and config name correspond to the dataset&#8217;s grouping and identifier from the list endpoint.</p>
+
+      <table class="param-table">
+        <thead>
+          <tr><th>Parameter</th><th>Type</th><th>Description</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>slug</code></td><td>string</td><td>Source group slug, e.g. <code>centralbank</code></td></tr>
+          <tr><td><code>config_name</code></td><td>string</td><td>Dataset config name, e.g. <code>forex_period_average</code></td></tr>
+        </tbody>
+      </table>
+
+      <p class="endpoint-label">Example request</p>
+      <pre class="code-block"><code>curl https://api.plus254.dev/centralbank/forex_period_average</code></pre>
+
+      <p class="endpoint-label">Example response</p>
+      <pre class="code-block"><code>&#123;
+  "source": "Central Bank of Kenya",
+  "description": "Monthly exchange rates of major currencies against KES (period average)",
+  "url": "https://www.centralbank.go.ke/...",
+  "data": [
+    &#123;
+      "year": 1993,
+      "month": "January",
+      "metric": "united states dollar",
+      "value": 36.23
+    }
+  ]
+}</code></pre>
+
+      <h3 class="endpoint-heading"><span class="method get">GET</span> <code>/schema/&lt;slug&gt;/&lt;config_name&gt;</code></h3>
+      <p class="endpoint-desc">Retrieve the column schema for a dataset, including data types, null counts, summary statistics, and sample values.</p>
+
+      <table class="param-table">
+        <thead>
+          <tr><th>Parameter</th><th>Type</th><th>Description</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>slug</code></td><td>string</td><td>Source group slug, e.g. <code>centralbank</code></td></tr>
+          <tr><td><code>config_name</code></td><td>string</td><td>Dataset config name, e.g. <code>forex_period_average</code></td></tr>
+        </tbody>
+      </table>
+
+      <p class="endpoint-label">Example request</p>
+      <pre class="code-block"><code>curl https://api.plus254.dev/schema/centralbank/forex_period_average</code></pre>
+
+      <p class="endpoint-label">Example response (abbreviated)</p>
+      <pre class="code-block"><code>&#123;
+  "config": "forex_period_average",
+  "slug": "centralbank",
+  "name": "Monthly Exchange Rates (Period Average)",
+  "source": "Central Bank of Kenya",
+  "row_count": 7980,
+  "columns": [
+    &#123;
+      "name": "year",
+      "type": "int64",
+      "nullable": false,
+      "null_count": 0,
+      "stats": &#123;
+        "min": 1993,
+        "max": 2026,
+        "mean": 2009.7
+      }
+    }
+  ]
+}</code></pre>
+    </section>
+
+    <a href="/api-docs/response-format/" class="next-btn">Next: Response Format <span aria-hidden="true">→</span></a>
+  </APIDocsLayout>
+</BaseLayout>

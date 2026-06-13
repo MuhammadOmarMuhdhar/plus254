@@ -1,0 +1,172 @@
+<section class="action-groups">
+  <h2 class="section-title">Reference Guide</h2>
+
+  <div class="group">
+    <span class="group-label">Learn & Explore</span>
+    <div class="action-grid action-grid--medium">
+      <a href="/examples/" class="action-item">
+        <div class="action-header">
+          <span class="action-title">Examples</span>
+          <span class="action-arrow" aria-hidden="true">→</span>
+        </div>
+        <p class="action-desc">Real-world code and Jupyter notebooks.</p>
+      </a>
+      <a href="/blog/" class="action-item">
+        <div class="action-header">
+          <span class="action-title">Blog</span>
+          <span class="action-arrow" aria-hidden="true">→</span>
+        </div>
+        <p class="action-desc">Updates, case studies, and data stories.</p>
+      </a>
+      <a href="/datasets/" class="action-item">
+        <div class="action-header">
+          <span class="action-title">Data Sources</span>
+          <span class="action-arrow" aria-hidden="true">→</span>
+        </div>
+        <p class="action-desc">Where the data comes from and how it's updated.</p>
+      </a>
+    </div>
+  </div>
+
+  <div class="group">
+    <span class="group-label">Support</span>
+    <div class="action-grid action-grid--medium">
+      <a href="/api-docs/" class="action-item">
+        <div class="action-header">
+          <span class="action-title">API Reference</span>
+          <span class="action-arrow" aria-hidden="true">→</span>
+        </div>
+        <p class="action-desc">Full endpoint and parameter documentation.</p>
+      </a>
+      <a href="/changelog/" class="action-item">
+        <div class="action-header">
+          <span class="action-title">Changelog</span>
+          <span class="action-arrow" aria-hidden="true">→</span>
+        </div>
+        <p class="action-desc">Version history and breaking changes.</p>
+      </a>
+      <a href="/support/" class="action-item">
+        <div class="action-header">
+          <span class="action-title">Support</span>
+          <span class="action-arrow" aria-hidden="true">→</span>
+        </div>
+        <p class="action-desc">Contact, GitHub issues, and community.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .action-groups {
+    padding: var(--space-lg) 0 var(--space-lg);
+  }
+
+  .section-title {
+    font-family: var(--font-serif);
+    font-size: var(--text-xl);
+    font-weight: var(--font-semibold);
+    letter-spacing: -0.01em;
+    color: var(--color-warm-dark);
+    margin: 0 0 var(--space-lg);
+    line-height: 1.2;
+  }
+
+  .group {
+    margin-bottom: var(--space-md);
+  }
+
+  .group-label {
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    color: var(--color-warm-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: var(--space-xs);
+  }
+
+  .action-grid {
+    display: grid;
+    gap: var(--space-smd);
+  }
+
+  .action-grid--medium {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .action-item {
+    display: block;
+    background-color: #6cb999;
+    border: 1px solid rgba(31, 111, 84, 0.35);
+    padding: var(--space-md);
+    text-decoration: none;
+    transition: border-color 0.2s var(--ease-out);
+  }
+
+  .action-item:hover {
+    border-color: #1f6f54;
+  }
+
+  .action-item:active {
+    transform: translateY(1px);
+  }
+
+  .action-item:focus-visible {
+    outline: 2px solid #1f6f54;
+    outline-offset: 2px;
+  }
+
+  .action-header {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-md);
+    margin-bottom: var(--space-xs);
+  }
+
+  .action-title {
+    font-family: var(--font-sans);
+    font-size: var(--text-md);
+    font-weight: var(--font-semibold);
+    color: var(--color-warm-dark);
+    flex: 1;
+  }
+
+  .action-arrow {
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    color: #1f6f54;
+    font-weight: var(--font-medium);
+    transition: transform 0.2s var(--ease-out);
+  }
+
+  .action-item:hover .action-arrow {
+    transform: translateX(4px);
+  }
+
+  .action-desc {
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    color: var(--color-warm-mid);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .action-groups {
+      padding: 0 0 var(--space-md);
+    }
+
+    .group {
+      margin-bottom: var(--space-md);
+    }
+
+    .action-grid--medium {
+      grid-template-columns: 1fr;
+    }
+
+    .action-item {
+      padding: var(--space-md);
+    }
+  }
+</style>

@@ -1,0 +1,60 @@
+---
+const link = "/about/#data-processing-decisions";
+---
+
+<section class="mission">
+  <h2 class="section-label">Mission</h2>
+  <p class="mission-text">
+    Data about Kenya is buried in PDFs, messy Excel files, poorly documented, and hard to access. Getting it ready for analysis or development is a headache. +254 extracts data from Kenyan institutions, cleans and processes it, and serves it through a plug-and-play API.
+  </p>
+  <a href={link} class="mission-link">How we process data <span aria-hidden="true">→</span></a>
+</section>
+
+<style>
+  .mission {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: var(--space-lg) 0 var(--space-lg);
+  }
+
+  .section-label {
+    font-family: var(--font-sans);
+    font-size: var(--text-md);
+    font-weight: var(--font-semibold);
+    color: var(--color-warm-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: var(--space-sm);
+  }
+
+  .mission-text {
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+    font-weight: var(--font-regular);
+    color: var(--color-warm-mid);
+    line-height: 1.6;
+    margin: 0 0 var(--space-md);
+    max-width: 65ch;
+  }
+
+  .mission-link {
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: #1f6f54;
+    text-decoration: none;
+    transition: color 0.15s var(--ease-out);
+    display: inline-block;
+  }
+
+  .mission-link:hover {
+    text-decoration: underline;
+    color: #145c42;
+  }
+
+  .mission-link:focus-visible {
+    outline: 2px solid #1f6f54;
+    outline-offset: 2px;
+  }
+</style>

@@ -1,0 +1,340 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="About — plus254">
+  <article class="about-content">
+    <header class="page-heading">
+      <h1>About +254</h1>
+    </header>
+
+    <section class="section section--mission" id="mission">
+      <span class="eyebrow">Mission</span>
+      <div class="narrative">
+        <p class="lead">Access to reliable data is essential for understanding Kenya. An initial attempt to act on this belief was to begin a blog; to explore the country's economic trends, trade patterns, and the factors that shape daily life. It quickly became clear that there was a barrier; the lack of adequate infrastructure to extract usable data. Hours were spent across multiple days, simply searching for data, extracting it, and making it ready to use.</p>
+        <p>It became clear that there needed to be better infrastructure for accessing public data. That is why +254 was built; a way to make data from official sources easy to find and retrieve, in a format that is ready for any use case.</p>
+        <p>Public data should be public; truly public. The mission is to make it easier for researchers, journalists, developers, and policymakers to engage with the numbers that shape this country.</p>
+      </div>
+    </section>
+
+    <section class="section section--process" id="data-processing-decisions">
+      <span class="eyebrow">How we process data</span>
+      <p class="section-intro">Every dataset goes through a consistent pipeline to ensure reliability, consistency, and usability regardless of the original source format.</p>
+
+      <div class="process-grid">
+        <div class="process-step">
+          <span class="step-number">01</span>
+          <h3 class="step-title">Extraction</h3>
+          <p class="step-desc">Data is collected from official publications, institutional websites, and public APIs. Sources are documented and linked for each dataset.</p>
+        </div>
+        <div class="process-step">
+          <span class="step-number">02</span>
+          <h3 class="step-title">Validation</h3>
+          <p class="step-desc">Schemas are enforced at the column level — null counts, unique values, and statistical summaries are generated to provide full transparency into what the data contains and where gaps exist.</p>
+        </div>
+        <div class="process-step">
+          <span class="step-number">03</span>
+          <h3 class="step-title">Cleaning</h3>
+          <p class="step-desc">Cleaning is limited to standardization: date formats are normalized, units are made consistent, and column names are stripped of source-specific quirks. The underlying values are preserved as-is; data is never fabricated or imputed.</p>
+        </div>
+        <div class="process-step">
+          <span class="step-number">04</span>
+          <h3 class="step-title">Publication</h3>
+          <p class="step-desc">Datasets are served through a REST API in a consistent format. Every dataset uses the same conventions so that working with one dataset feels familiar across all of them.</p>
+        </div>
+      </div>
+
+      <div class="conventions">
+        <h3 class="conventions-heading">Conventions</h3>
+        <div class="conventions-grid">
+          <div class="convention-item">
+            <h4 class="convention-term">Long-form tidy data</h4>
+            <p class="convention-desc">Every dataset is structured as identifier columns and a metric/value pair — rows can be filtered, grouped, or plotted without restructuring. This is why <code>Metric</code> and <code>Value</code> columns appear consistently throughout.</p>
+          </div>
+          <div class="convention-item">
+            <h4 class="convention-term">TitleCase column naming</h4>
+            <p class="convention-desc">All column names are TitleCase (<code>Year</code>, <code>Month</code>, <code>Metric</code>, <code>Value</code>), enforced programmatically. Raw source headers — often inconsistent or poorly labelled — are never exposed directly.</p>
+          </div>
+          <div class="convention-item">
+            <h4 class="convention-term">Month handling</h4>
+            <p class="convention-desc">Months are stored as full names (<code>January</code>) and set as an ordered categorical, ensuring chronological (not alphabetical) sorting in charts and tables.</p>
+          </div>
+          <div class="convention-item">
+            <h4 class="convention-term">Descriptive code</h4>
+            <p class="convention-desc">The extraction and cleaning code uses long, readable variable names — <code>domestic_debt_by_instrument</code>, <code>total_recurrent_expenditure</code> — so the pipeline is self-documenting and auditable.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--support" id="support">
+      <span class="eyebrow">Support & contributions</span>
+      <p class="section-intro">+254 is an open-source project. The code, pipelines, and dataset definitions are available on GitHub.</p>
+
+      <div class="support-items">
+        <div class="support-item">
+          <span class="support-item-label">Report an issue.</span>
+          <span class="support-item-text">If the data is incorrect, missing values are found, or an endpoint does not behave as expected, open a GitHub issue. Include the dataset name and as much detail as possible.</span>
+        </div>
+        <div class="support-item">
+          <span class="support-item-label">Suggest a dataset.</span>
+          <span class="support-item-text">Know a source that should be added? Open an issue with the URL and a description of what it contains. The scraper system is modular — new datasets can be integrated without affecting existing ones.</span>
+        </div>
+        <div class="support-item">
+          <span class="support-item-label">Contribute code.</span>
+          <span class="support-item-text">Pull requests are welcome. The codebase uses long, descriptive variable names and a consistent pipeline pattern, making it straightforward to understand and extend.</span>
+        </div>
+      </div>
+
+      <a href="https://github.com/you/your-repo" class="github-link">View on GitHub <span aria-hidden="true">→</span></a>
+    </section>
+  </article>
+</BaseLayout>
+
+<style>
+  .about-content {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .page-heading {
+    margin-bottom: var(--space-lg);
+  }
+
+  .page-heading h1 {
+    font-family: var(--font-serif);
+    font-size: var(--text-2xl);
+    font-weight: var(--font-semibold);
+    color: var(--color-warm-dark);
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-tight);
+    margin: 0 0 var(--space-sm);
+  }
+
+  .section + .section {
+    margin-top: var(--space-fluid-2xl);
+  }
+
+  .eyebrow {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: var(--text-md);
+    font-weight: var(--font-semibold);
+    color: var(--color-warm-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: var(--space-md);
+  }
+
+  .section-intro {
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+    color: var(--color-warm-mid);
+    line-height: var(--leading-relaxed);
+    margin: 0 0 var(--space-lg);
+    max-width: 65ch;
+  }
+
+  .narrative {
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+    color: var(--color-warm-mid);
+    line-height: var(--leading-relaxed);
+    max-width: 65ch;
+  }
+
+  .narrative p {
+    margin: 0;
+  }
+
+  .narrative p + p {
+    margin-top: var(--space-smd);
+  }
+
+  .narrative .lead {
+    color: var(--color-warm-dark);
+  }
+
+  .process-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg) var(--space-md);
+    margin-bottom: var(--space-fluid-xl);
+  }
+
+  .process-step {
+    background: #6cb999;
+    border: 1px solid rgba(31, 111, 84, 0.35);
+    padding: var(--space-md);
+    transition: border-color 0.2s var(--ease-out);
+  }
+
+  .process-step:hover {
+    border-color: #1f6f54;
+  }
+
+  .step-number {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: var(--text-xs);
+    font-weight: var(--font-semibold);
+    color: var(--color-warm-dark);
+    letter-spacing: var(--tracking-wider);
+    font-variant-numeric: tabular-nums;
+    margin-bottom: var(--space-2xs);
+  }
+
+  .step-title {
+    font-family: var(--font-sans);
+    font-size: var(--text-md);
+    font-weight: var(--font-semibold);
+    color: var(--color-warm-dark);
+    margin: 0 0 var(--space-xs);
+    line-height: var(--leading-snug);
+  }
+
+  .step-desc {
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+    color: var(--color-warm-dark);
+    line-height: var(--leading-relaxed);
+    margin: 0;
+    max-width: 55ch;
+  }
+
+  .conventions {
+    background: #6cb999;
+    border: 1px solid #1f6f54;
+  }
+
+  .conventions-heading {
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    color: var(--color-warm-dark);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin: 0;
+    padding: var(--space-xs) var(--space-md);
+    border-bottom: 1px solid #1f6f54;
+  }
+
+  .conventions-grid {
+    display: block;
+  }
+
+  .convention-item {
+    padding: var(--space-sm) var(--space-md);
+    border-bottom: 1px solid rgba(31, 111, 84, 0.3);
+  }
+
+  .convention-item:last-child {
+    border-bottom: none;
+  }
+
+  .convention-term {
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+    font-weight: var(--font-semibold);
+    color: var(--color-warm-dark);
+    margin: 0 0 var(--space-2xs);
+    line-height: var(--leading-snug);
+  }
+
+  .convention-desc {
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+    color: var(--color-warm-dark);
+    line-height: var(--leading-relaxed);
+    margin: 0;
+    max-width: 55ch;
+  }
+
+  .convention-desc code {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    background: rgba(31, 111, 84, 0.15);
+    padding: 0.125rem 0.375rem;
+    color: var(--color-warm-dark);
+  }
+
+  .support-items {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+    max-width: 65ch;
+  }
+
+  .support-item {
+    background: #6cb999;
+    border: 1px solid rgba(31, 111, 84, 0.35);
+    padding: var(--space-md);
+    transition: border-color 0.2s var(--ease-out);
+  }
+
+  .support-item:hover {
+    border-color: #1f6f54;
+  }
+
+  .support-item-label {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+    font-weight: var(--font-semibold);
+    color: var(--color-warm-dark);
+    line-height: var(--leading-relaxed);
+  }
+
+  .support-item-text {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+    color: var(--color-warm-dark);
+    line-height: var(--leading-relaxed);
+  }
+
+  .github-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: #1f6f54;
+    text-decoration: none;
+    padding: var(--space-sm) var(--space-md);
+    border: 1.5px solid #1f6f54;
+    transition: background-color 0.2s var(--ease-out), color 0.2s var(--ease-out);
+  }
+
+  .github-link:hover {
+    background: #1f6f54;
+    color: #fff;
+  }
+
+  .github-link:focus-visible {
+    outline: 2px solid #1f6f54;
+    outline-offset: 2px;
+  }
+
+  @media (max-width: 768px) {
+    .page-heading {
+      margin-bottom: var(--space-fluid-lg);
+    }
+
+    .process-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-md);
+      margin-bottom: var(--space-fluid-lg);
+    }
+
+    .convention-item {
+      padding: var(--space-xs) var(--space-md);
+    }
+
+    .section + .section {
+      margin-top: var(--space-fluid-xl);
+    }
+  }
+</style>

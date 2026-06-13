@@ -1,0 +1,267 @@
+---
+const datasets = [
+  { category: "Census & Population", frequency: "Annually" },
+  { category: "Agriculture & Tea", frequency: "Weekly" },
+  { category: "Economic Indicators", frequency: "Monthly" },
+  { category: "Trade & Exports", frequency: "Monthly" },
+  { category: "Exchange Rates", frequency: "Daily" },
+  { category: "Government Finance", frequency: "Monthly" },
+  { category: "Education", frequency: "Annually" },
+  { category: "Health & Demographics", frequency: "Periodic" },
+];
+---
+
+<section class="hero">
+  <div class="hero-text">
+    <span class="hero-badge">+254</span>
+    <h1>Kenya's official data, curated and queryable</h1>
+    <p>Economic indicators, agricultural figures, trade data, and demographic records from Kenyan institutions, cleaned and ready to use.</p>
+    <div class="hero-btns">
+      <a href="/datasets/" class="btn-primary">Explore data <span aria-hidden="true">→</span></a>
+      <a href="/api-docs/" class="btn-secondary">API docs <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+
+  <div class="hero-panel">
+    <div class="dataset-panel">
+      <h4>Available Datasets</h4>
+      <table class="dataset-table">
+        <thead>
+          <tr>
+            <th scope="col">Category</th>
+            <th scope="col">Frequency</th>
+          </tr>
+        </thead>
+        <tbody>
+          {datasets.map((d) => (
+            <tr>
+              <td>{d.category}</td>
+              <td><span class="status-live">{d.frequency}</span></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <div class="dataset-footer">
+        <a href="/datasets/">View full catalog <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    display: flex;
+    gap: var(--space-lg);
+    align-items: flex-start;
+    padding: var(--space-md) 0 var(--space-xl);
+  }
+
+  .hero-text {
+    flex: 1 1 55%;
+    min-width: 0;
+    padding-top: var(--space-lg);
+  }
+
+  .hero-panel {
+    flex: 1 1 40%;
+    min-width: 320px;
+    margin-top: 0;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    padding: var(--space-2xs) var(--space-sm);
+    border-radius: 0;
+    background: #6cb999;
+    color: var(--color-warm-dark);
+    border: 1px solid #1f6f54;
+    margin-bottom: var(--space-md);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .hero h1 {
+    font-family: var(--font-serif);
+    font-size: var(--text-2xl);
+    font-weight: var(--font-semibold);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--color-warm-dark);
+    margin-bottom: var(--space-sm);
+    margin-top: 0;
+  }
+
+  .hero p {
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+    font-weight: var(--font-regular);
+    color: var(--color-warm-light);
+    line-height: 1.6;
+    margin-bottom: var(--space-lg);
+    max-width: 60ch;
+  }
+
+  .hero-btns {
+    display: flex;
+    gap: var(--space-xs);
+    flex-wrap: wrap;
+  }
+
+  .hero-btns .btn-primary {
+    background: #1f6f54;
+    color: #fff;
+    padding: var(--space-sm) var(--space-md);
+    border-radius: 0;
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    text-decoration: none;
+    transition: background-color 0.2s var(--ease-out), transform 0.1s var(--ease-out);
+  }
+
+  .hero-btns .btn-primary:hover {
+    background: #6cb999;
+    color: #fff;
+  }
+
+  .hero-btns .btn-primary:active {
+    transform: translateY(1px);
+    background: #145c42;
+  }
+
+  .hero-btns .btn-primary:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px #1f6f54;
+  }
+
+  .hero-btns .btn-secondary {
+    background: transparent;
+    color: #1f6f54;
+    border: 1.5px solid #1f6f54;
+    padding: var(--space-sm) var(--space-md);
+    border-radius: 0;
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    text-decoration: none;
+    transition: background-color 0.2s var(--ease-out), transform 0.1s var(--ease-out);
+  }
+
+  .hero-btns .btn-secondary:hover {
+    background: #f5f5f5;
+    color: #1f6f54;
+  }
+
+  .hero-btns .btn-secondary:active {
+    transform: translateY(1px);
+    background: #e5e5e5;
+  }
+
+  .hero-btns .btn-secondary:focus-visible {
+    outline: 2px solid #1f6f54;
+    outline-offset: 3px;
+  }
+
+  .dataset-panel {
+    background-color: #6cb999;
+    border: 1px solid #1f6f54;
+    font-family: var(--font-sans);
+  }
+
+  .dataset-panel h4 {
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    color: var(--color-warm-dark);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin: 0;
+    padding: var(--space-xs) var(--space-md);
+    border-bottom: 1px solid #1f6f54;
+  }
+
+  .dataset-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    color: var(--color-warm-dark);
+  }
+
+  .dataset-table thead th {
+    text-align: left;
+    font-weight: var(--font-semibold);
+    color: var(--color-warm-dark);
+    padding: var(--space-xs) var(--space-md);
+    border-bottom: 2px solid #1f6f54;
+  }
+
+  .dataset-table thead th:last-child {
+    text-align: right;
+  }
+
+  .dataset-table tbody td {
+    padding: var(--space-sm) var(--space-md);
+    border-bottom: 1px solid #1f6f54;
+    vertical-align: middle;
+  }
+
+  .dataset-table tbody td:last-child {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .status-live {
+    color: #1f6f54;
+    font-weight: var(--font-semibold);
+  }
+
+  .dataset-footer {
+    padding: var(--space-sm) var(--space-md);
+    border-top: 1px solid #1f6f54;
+  }
+
+  .dataset-footer a {
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--color-warm-dark);
+    text-decoration: none;
+    transition: color 0.15s var(--ease-out);
+  }
+
+  .dataset-footer a:hover {
+    text-decoration: underline;
+    color: #000;
+  }
+
+  .dataset-footer a:focus-visible {
+    outline: 2px solid var(--color-warm-dark);
+    outline-offset: 2px;
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      flex-direction: column;
+      gap: var(--space-lg);
+      padding: var(--space-md) 0 var(--space-lg);
+    }
+
+    .hero-panel {
+      min-width: 0;
+      width: 100%;
+      margin-top: 0;
+    }
+
+    .hero-text { width: 100%; }
+
+    .dataset-table tbody td,
+    .dataset-table thead th {
+      padding: var(--space-xs) var(--space-md);
+    }
+  }
+</style>

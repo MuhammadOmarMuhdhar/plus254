@@ -1,0 +1,147 @@
+---
+const navItems = [
+  { label: "About", href: "/about/" },
+  { label: "Datasets", href: "/datasets/" },
+  { label: "API Docs", href: "/api-docs/" },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="header">
+  <nav class="header__inner" aria-label="Main navigation">
+    <a href="/" class="header__logo" aria-label="plus254 home">
+      <span class="logo-text">
+        <span class="logo-plus">plus</span><span class="logo-num">254</span>
+      </span>
+    </a>
+
+    <div class="header__nav">
+      {navItems.map((item) => (
+        <a
+          href={item.href}
+          class:list={[
+            "header__link",
+            { "header__link--active": currentPath.startsWith(item.href) },
+          ]}
+        >
+          {item.label}
+        </a>
+      ))}
+    </div>
+
+    <label class="header__drawer" for="menu-drawer" aria-label="Open menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6" />
+        <line x1="3" y1="12" x2="21" y2="12" />
+        <line x1="3" y1="18" x2="21" y2="18" />
+      </svg>
+    </label>
+  </nav>
+</header>
+
+<style>
+  .header {
+    border-top: 3px solid #1f6f54;
+    border-bottom: 1px solid rgba(31, 111, 84, 0.15);
+    background-color: #ffffff;
+    background-image:
+      linear-gradient(rgba(108, 185, 153, 0.15) 1px, transparent 1px),
+      linear-gradient(to right, rgba(108, 185, 153, 0.15) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  .header__inner {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: var(--space-md) var(--space-md) 0 var(--space-md);
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .header__logo {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    padding-bottom: var(--space-sm);
+  }
+
+  .header__logo:focus-visible {
+    outline: 2px solid #1f6f54;
+    outline-offset: 2px;
+  }
+
+  .logo-text {
+    font-family: var(--font-serif);
+    font-size: var(--text-xl);
+    font-weight: var(--font-semibold);
+    letter-spacing: -0.02em;
+  }
+
+  .logo-plus { color: var(--color-warm-dark); }
+  .logo-num  { color: #1f6f54; }
+
+  .header__nav {
+    display: flex;
+    gap: var(--space-md);
+    align-items: flex-end;
+    flex: 1;
+    margin-left: var(--space-md);
+  }
+
+  .header__link {
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    color: var(--color-warm-mid);
+    text-decoration: none;
+    padding: var(--space-sm) var(--space-xs);
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s var(--ease-out), color 0.2s var(--ease-out);
+    min-height: 44px;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .header__link:hover {
+    text-decoration: none;
+    border-bottom: 2px solid #1f6f54;
+    color: var(--color-warm-dark);
+  }
+
+  .header__link:focus-visible {
+    outline: 2px solid #1f6f54;
+    outline-offset: 2px;
+    border-bottom-color: transparent;
+  }
+
+  .header__link--active {
+    border-bottom: 2px solid #1f6f54;
+    color: var(--color-warm-dark);
+  }
+
+  .header__drawer {
+    display: none;
+    color: var(--color-warm-mid);
+    align-self: center;
+    padding-bottom: var(--space-sm);
+    min-height: 44px;
+    min-width: 44px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .header__drawer:hover {
+    background: transparent;
+    border: none;
+    color: var(--color-warm-mid);
+  }
+
+  @media (max-width: 768px) {
+    .header__nav { display: none; }
+    .header__drawer { display: flex; }
+  }
+</style>
