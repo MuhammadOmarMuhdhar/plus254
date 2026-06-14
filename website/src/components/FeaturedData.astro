@@ -1,0 +1,140 @@
+<section class="featured-data">
+  <div class="featured-inner">
+    <div class="featured-text">
+      <h2 class="section-label">Featured Data</h2>
+      <h3 class="featured-title">How the Iran war is affecting Kenya's tea industry</h3>
+      <p class="featured-desc">Kenya's tea industry generates roughly 23% of Kenya's foreign-exchange earnings. Since the Iran–Israel conflict escalated, unsold tea at the Mombasa auction has doubled.</p>
+      <a href="/datasets/tea/" class="featured-link">Explore tea data <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="featured-chart">
+      <div class="chart-wrapper">
+        <iframe
+          title="Mombasa Tea Auction Supply and Demand Index"
+          aria-label="Line chart"
+          id="datawrapper-chart-tKoO3"
+          src="https://datawrapper.dwcdn.net/tKoO3/11/"
+          frameborder="0"
+          style="width: 0; min-width: 100% !important; border: none;"
+          height="400"
+          loading="lazy"
+          scrolling="no"
+          data-external="1"
+        ></iframe>
+        <script type="text/javascript">
+          (function() {
+            function resize() {
+              window.addEventListener("message", function(e) {
+                if (e.data["datawrapper-height"] !== void 0) {
+                  var t = document.querySelectorAll("iframe");
+                  for (var n in e.data["datawrapper-height"])
+                    for (var r = 0, i; i = t[r]; r++)
+                      if (i.contentWindow === e.source) {
+                        var a = e.data["datawrapper-height"][n] + "px";
+                        i.style.height = a;
+                      }
+                }
+              });
+            }
+            resize();
+          })();
+        </script>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .featured-data {
+    padding: var(--space-lg) 0 var(--space-md);
+  }
+
+  .section-label {
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    color: var(--color-warm-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: var(--space-smd);
+  }
+
+  .featured-inner {
+    display: flex;
+    gap: var(--space-lg);
+    align-items: flex-start;
+  }
+
+  .featured-text {
+    flex: 1 1 30%;
+    min-width: 0;
+  }
+
+  .featured-title {
+    font-family: var(--font-serif);
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    color: var(--color-warm-dark);
+    margin: 0 0 var(--space-sm);
+  }
+
+  .featured-desc {
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+    color: var(--color-warm-mid);
+    line-height: 1.6;
+    margin: 0 0 var(--space-smd);
+  }
+
+  .featured-link {
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: #1f6f54;
+    text-decoration: none;
+    transition: color 0.15s var(--ease-out);
+    display: inline-block;
+  }
+
+  .featured-link:hover {
+    text-decoration: underline;
+    color: #145c42;
+  }
+
+  .featured-link:focus-visible {
+    outline: 2px solid #1f6f54;
+    outline-offset: 2px;
+  }
+
+  .featured-chart {
+    flex: 1 1 70%;
+    min-width: 0;
+  }
+
+  .chart-wrapper {
+    width: 100%;
+  }
+
+  .chart-wrapper iframe {
+    display: block;
+  }
+
+  @media (max-width: 768px) {
+    .featured-inner {
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+
+    .featured-data {
+      padding: var(--space-md) 0;
+    }
+
+    .featured-chart {
+      max-width: 100%;
+      width: 100%;
+      min-height: 0;
+    }
+  }
+</style>

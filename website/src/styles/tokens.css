@@ -44,5 +44,5 @@
   --space-fluid-xl: clamp(3rem, 6vw, 4rem);
   --space-fluid-2xl: clamp(4rem, 8vw, 6rem);
 
-  --ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
 }
