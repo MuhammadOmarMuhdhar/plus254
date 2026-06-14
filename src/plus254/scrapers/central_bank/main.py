@@ -1,5 +1,7 @@
 import logging
 import time
+from pathlib import Path
+
 import pandas as pd
 from dotenv import load_dotenv
 from plus254.utils.hf_utils import save_to_hf
@@ -89,8 +91,9 @@ def run():
         df_dict = fetch_all()
         results = run_all(df_dict)
         logger.info(f"Saving {len(results)} datasets")
+        yaml_path = Path(__file__).parent / "datasets.yaml"
         for name, df in results.items():
-            save_to_hf(df, config_name=name, overwrite=False)
+            save_to_hf(df, config_name=name, overwrite=False, yaml_path=yaml_path)
         logger.info(f"Completed in {time.time() - start:.1f}s")
     except Exception:
         logger.exception("Pipeline failed")

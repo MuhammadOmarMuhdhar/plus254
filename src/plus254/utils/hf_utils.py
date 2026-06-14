@@ -1,6 +1,10 @@
 import os
 import time
 import logging
+from datetime import datetime
+from pathlib import Path
+
+import yaml
 import pandas as pd
 from datasets import Dataset, load_dataset
 from huggingface_hub import HfApi
@@ -11,7 +15,7 @@ load_dotenv()
 logger = logging.getLogger(__name__)
 
 
-def save_to_hf(df, repo_id=None, token=None, config_name="default", save_csv=False, csv_filename="data.csv", overwrite=False):
+def save_to_hf(df, repo_id=None, token=None, config_name="default", save_csv=False, csv_filename="data.csv", overwrite=False, yaml_path=None):
     repo_id = repo_id or os.environ.get("HF_REPO_ID")
     token = token or os.environ.get("HF_TOKEN")
 
@@ -51,3 +55,15 @@ def save_to_hf(df, repo_id=None, token=None, config_name="default", save_csv=Fal
             token=token,
         )
         logger.info(f"CSV uploaded in {time.time() - csv_start:.1f}s")
+
+    if yaml_path:
+        yaml_path = Path(yaml_path)
+        if yaml_path.exists():
+            now = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
+            with open(yaml_path) as f:
+                raw = yaml.safe_load(f)
+            if raw and config_name in raw:
+                raw[config_name]["last_updated"] = now
+                with open(yaml_path, "w") as f:
+                    yaml.dump(raw, f, default_flow_style=False, sort_keys=False, allow_unicode=True)
+                logger.info(f"Updated last_updated in {yaml_path} for '{config_name}'")

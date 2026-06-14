@@ -1,5 +1,7 @@
 import logging
 import time
+from pathlib import Path
+
 import pandas as pd
 from dotenv import load_dotenv
 from plus254.utils.hf_utils import save_to_hf
@@ -25,7 +27,7 @@ def run():
         df = extract_table(pdf_bytes)
         procesed_df = process_registered_voters(df)
         logger.info(f"Saving {pdf_name} to hf")
-        save_to_hf(procesed_df, config_name=pdf_name, overwrite=False)
+        save_to_hf(procesed_df, config_name=pdf_name.replace(".pdf", ""), overwrite=False, yaml_path=Path(__file__).parent / "datasets.yaml")
         logger.info(f"Completed in {time.time() - start:.1f}s")
     except Exception:
         logger.exception("Pipeline failed")

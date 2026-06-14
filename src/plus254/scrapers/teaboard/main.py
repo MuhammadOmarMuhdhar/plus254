@@ -1,5 +1,7 @@
 import io
 import time
+from pathlib import Path
+
 import requests
 from bs4 import BeautifulSoup
 from urllib.parse import quote
@@ -140,7 +142,7 @@ def run():
         soup = scrape_eatta()
         pdf_bytes, pdf_name = extract_pdf(soup)
         df = extract_table(pdf_bytes)
-        save_to_hf(df, config_name="tea", save_csv=True, csv_filename="tea.csv", overwrite=False)
+        save_to_hf(df, config_name="tea", save_csv=True, csv_filename="tea.csv", overwrite=False, yaml_path=Path(__file__).parent / "datasets.yaml")
         logger.info(f"Completed in {time.time() - start:.1f}s")
     except Exception:
         logger.exception("Pipeline failed")

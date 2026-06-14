@@ -1,0 +1,7 @@
+kilimo:
+  name: Kenya Agricultural Statistics
+  slug: kilimo
+  source: Kenya Agricultural Observatory Platform (Kilimo)
+  description: Agricultural production, value, and market data across Kenyan counties
+  url: https://statistics.kilimo.go.ke
+  columns: {}
