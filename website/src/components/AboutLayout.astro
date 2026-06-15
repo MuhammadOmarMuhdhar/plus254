@@ -1,13 +1,15 @@
 ---
 export interface Props {
-  activeSection: "mission" | "data-processing" | "support";
+  activeSection: "mission" | "data-processing" | "sourcing" | "conventions" | "support";
 }
 
 const { activeSection } = Astro.props;
 
 const navItems = [
   { id: "mission", label: "Mission", href: "#mission" },
+  { id: "sourcing", label: "Sourcing", href: "#how-we-source-data" },
   { id: "data-processing", label: "Data Processing", href: "#data-processing-decisions" },
+  { id: "conventions", label: "Conventions", href: "#conventions" },
   { id: "support", label: "Support & Contributions", href: "#support" },
 ];
 
@@ -245,6 +247,8 @@ const activeLabel = navItems.find((item) => item.id === activeSection)?.label ??
   const navMap = {
     'mission': 'Mission',
     'data-processing-decisions': 'Data Processing',
+    'how-we-source-data': 'Sourcing',
+    'conventions': 'Conventions',
     'support': 'Support & Contributions'
   };
 
