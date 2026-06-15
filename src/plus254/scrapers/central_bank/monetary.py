@@ -51,8 +51,9 @@ def process_monetary_survey(df_dict):
     df_long["month"] = pd.to_datetime(df_long["month"], format="%b").dt.strftime("%B")
 
     df_long = clean_numeric_values(df_long, "value")
-    df_long = df_long[["section", "indicator", "year", "month", "value"]].sort_values(
-        ["section", "indicator", "year", "month"]
+    df_long = df_long.rename(columns={"indicator": "metric"})
+    df_long = df_long[["section", "metric", "year", "month", "value"]].sort_values(
+        ["section", "metric", "year", "month"]
     ).reset_index(drop=True)
 
     df_long = set_month_categorical(df_long, "month")

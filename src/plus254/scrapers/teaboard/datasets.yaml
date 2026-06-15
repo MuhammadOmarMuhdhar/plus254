@@ -19,7 +19,7 @@ tea:
       description: Sequential auction batch number (starts at 1 each year)
     metric:
       type: string
-      description: Auction metric (Average price (USD), Tea sold (Kgs), Tea offered (Kgs), Unsold tea (%))
+      description: Auction metric name (Average price (USD), Tea sold (Kgs), Tea offered (Kgs), Unsold tea (%))
     value:
       type: float
-      description: Metric value
+      description: Numeric value of the metric

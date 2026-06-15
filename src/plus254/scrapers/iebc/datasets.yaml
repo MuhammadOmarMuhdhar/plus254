@@ -35,6 +35,6 @@ rov_per_polling_station:
     polling_station_name:
       type: string
       description: Polling station name
-    registered_voters:
+    value:
       type: integer
       description: Number of registered voters at the polling station

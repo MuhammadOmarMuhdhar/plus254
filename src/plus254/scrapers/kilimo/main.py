@@ -89,13 +89,23 @@ def run():
         logger.info(f"Fetched {len(df)} rows, {len(indicators)} indicators")
 
         for item in indicators:
+
+            if item == "Poulation": 
+                continue
+            
             indicator_df = df[df["indicator_name"] == item].reset_index(drop=True)
             indicator_df = normalize_columns(indicator_df)
             indicator_df = clean_numeric_values(indicator_df, "item")
             indicator_df = lowercase_values(indicator_df)
             indicator_df = snake_case_columns(indicator_df)
             indicator_df["area_level"] = indicator_df["area_level"].replace("admin_1", "county")
-            indicator_df = indicator_df[["time_period", "area_level", "area_name", "domain_name", "item_name", "data_value"]]
+            indicator_df = indicator_df.rename(columns={
+                "time_period": "year",
+                "domain_name": "metric",
+                "item_name": "item",
+                "data_value": "value",
+            })
+            indicator_df = indicator_df[["year", "area_level", "area_name", "metric", "item", "value"]]
 
             config_name = slugify(item)
             logger.info(f"Saving '{item}' as '{config_name}' ({len(indicator_df)} rows)")

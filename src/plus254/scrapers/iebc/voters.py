@@ -15,5 +15,6 @@ def process_registered_voters(df):
     df = clean_numeric_values(df, "registered voters")
     df = lowercase_values(df)
     df = snake_case_columns(df)
+    df = df.rename(columns={"registered_voters": "value"})
 
     return df

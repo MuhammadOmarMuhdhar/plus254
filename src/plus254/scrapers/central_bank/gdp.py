@@ -33,8 +33,10 @@ def process_gdp_quarterly(df_dict):
 
     df_long = clean_numeric_values(df_long, "value")
 
-    df_long = df_long.sort_values(["year", "quarter", "activity"]).reset_index(drop=True)
+    df_long = df_long.rename(columns={"activity": "metric"})
+    df_long = df_long.sort_values(["year", "quarter", "metric"]).reset_index(drop=True)
     df_long = lowercase_values(df_long)
     df_long = snake_case_columns(df_long)
+    df_long = df_long[["year", "quarter", "metric", "value"]]
 
     return df_long

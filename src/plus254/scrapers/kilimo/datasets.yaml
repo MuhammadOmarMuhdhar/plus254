@@ -5,3 +5,517 @@ kilimo:
   description: Agricultural production, value, and market data across Kenyan counties
   url: https://statistics.kilimo.go.ke
   columns: {}
+  last_updated: '2026-06-15T12:42:19'
+
+production_value_livestock:
+  name: Production Value (Livestock)
+  slug: kilimo
+  source: Kenya Agricultural Observatory Platform (Kilimo)
+  description: Value of livestock production across Kenyan counties
+  url: https://statistics.kilimo.go.ke
+  columns:
+    year:
+      type: string
+      description: Calendar year
+    area_level:
+      type: string
+      description: Geographic level (always county)
+    area_name:
+      type: string
+      description: County name (lowercased)
+    metric:
+      type: string
+      description: Sub-domain or category within the indicator (lowercased)
+    item:
+      type: string
+      description: Specific item or commodity being measured (lowercased)
+    value:
+      type: float
+      description: Numeric value of the indicator
+  last_updated: '2026-06-15T12:42:19'
+
+crop_area:
+  name: Crop Area
+  slug: kilimo
+  source: Kenya Agricultural Observatory Platform (Kilimo)
+  description: Area under crop cultivation across Kenyan counties
+  url: https://statistics.kilimo.go.ke
+  columns:
+    year:
+      type: string
+      description: Calendar year
+    area_level:
+      type: string
+      description: Geographic level (always county)
+    area_name:
+      type: string
+      description: County name (lowercased)
+    metric:
+      type: string
+      description: Sub-domain or category within the indicator (lowercased)
+    item:
+      type: string
+      description: Specific item or commodity being measured (lowercased)
+    value:
+      type: float
+      description: Numeric value of the indicator
+  last_updated: '2026-06-15T12:42:19'
+
+production_quantity_livestock:
+  name: Production Quantity (Livestock)
+  slug: kilimo
+  source: Kenya Agricultural Observatory Platform (Kilimo)
+  description: Quantity of livestock production across Kenyan counties
+  url: https://statistics.kilimo.go.ke
+  columns:
+    year:
+      type: string
+      description: Calendar year
+    area_level:
+      type: string
+      description: Geographic level (always county)
+    area_name:
+      type: string
+      description: County name (lowercased)
+    metric:
+      type: string
+      description: Sub-domain or category within the indicator (lowercased)
+    item:
+      type: string
+      description: Specific item or commodity being measured (lowercased)
+    value:
+      type: float
+      description: Numeric value of the indicator
+  last_updated: '2026-06-15T12:42:19'
+
+livestock_population:
+  name: Livestock Population
+  slug: kilimo
+  source: Kenya Agricultural Observatory Platform (Kilimo)
+  description: Livestock population counts across Kenyan counties
+  url: https://statistics.kilimo.go.ke
+  columns:
+    year:
+      type: string
+      description: Calendar year
+    area_level:
+      type: string
+      description: Geographic level (always county)
+    area_name:
+      type: string
+      description: County name (lowercased)
+    metric:
+      type: string
+      description: Sub-domain or category within the indicator (lowercased)
+    item:
+      type: string
+      description: Specific item or commodity being measured (lowercased)
+    value:
+      type: float
+      description: Numeric value of the indicator
+  last_updated: '2026-06-15T12:42:19'
+
+crop_yield:
+  name: Crop Yield
+  slug: kilimo
+  source: Kenya Agricultural Observatory Platform (Kilimo)
+  description: Crop yield per unit area across Kenyan counties
+  url: https://statistics.kilimo.go.ke
+  columns:
+    year:
+      type: string
+      description: Calendar year
+    area_level:
+      type: string
+      description: Geographic level (always county)
+    area_name:
+      type: string
+      description: County name (lowercased)
+    metric:
+      type: string
+      description: Sub-domain or category within the indicator (lowercased)
+    item:
+      type: string
+      description: Specific item or commodity being measured (lowercased)
+    value:
+      type: float
+      description: Numeric value of the indicator
+  last_updated: '2026-06-15T12:42:19'
+
+production_value_crops:
+  name: Production Value (Crops)
+  slug: kilimo
+  source: Kenya Agricultural Observatory Platform (Kilimo)
+  description: Value of crop production across Kenyan counties
+  url: https://statistics.kilimo.go.ke
+  columns:
+    year:
+      type: string
+      description: Calendar year
+    area_level:
+      type: string
+      description: Geographic level (always county)
+    area_name:
+      type: string
+      description: County name (lowercased)
+    metric:
+      type: string
+      description: Sub-domain or category within the indicator (lowercased)
+    item:
+      type: string
+      description: Specific item or commodity being measured (lowercased)
+    value:
+      type: float
+      description: Numeric value of the indicator
+  last_updated: '2026-06-15T12:42:19'
+
+production_quantity_crops:
+  name: Production Quantity (Crops)
+  slug: kilimo
+  source: Kenya Agricultural Observatory Platform (Kilimo)
+  description: Quantity of crop production across Kenyan counties
+  url: https://statistics.kilimo.go.ke
+  columns:
+    year:
+      type: string
+      description: Calendar year
+    area_level:
+      type: string
+      description: Geographic level (always county)
+    area_name:
+      type: string
+      description: County name (lowercased)
+    metric:
+      type: string
+      description: Sub-domain or category within the indicator (lowercased)
+    item:
+      type: string
+      description: Specific item or commodity being measured (lowercased)
+    value:
+      type: float
+      description: Numeric value of the indicator
+  last_updated: '2026-06-15T12:42:19'
+
+production_area:
+  name: Production Area
+  slug: kilimo
+  source: Kenya Agricultural Observatory Platform (Kilimo)
+  description: Area under agricultural production across Kenyan counties
+  url: https://statistics.kilimo.go.ke
+  columns:
+    year:
+      type: string
+      description: Calendar year
+    area_level:
+      type: string
+      description: Geographic level (always county)
+    area_name:
+      type: string
+      description: County name (lowercased)
+    metric:
+      type: string
+      description: Sub-domain or category within the indicator (lowercased)
+    item:
+      type: string
+      description: Specific item or commodity being measured (lowercased)
+    value:
+      type: float
+      description: Numeric value of the indicator
+  last_updated: '2026-06-15T12:42:19'
+
+export_quantity:
+  name: Export Quantity
+  slug: kilimo
+  source: Kenya Agricultural Observatory Platform (Kilimo)
+  description: Quantity of agricultural exports across Kenyan counties
+  url: https://statistics.kilimo.go.ke
+  columns:
+    year:
+      type: string
+      description: Calendar year
+    area_level:
+      type: string
+      description: Geographic level (always county)
+    area_name:
+      type: string
+      description: County name (lowercased)
+    metric:
+      type: string
+      description: Sub-domain or category within the indicator (lowercased)
+    item:
+      type: string
+      description: Specific item or commodity being measured (lowercased)
+    value:
+      type: float
+      description: Numeric value of the indicator
+  last_updated: '2026-06-15T12:42:19'
+
+import_quantity:
+  name: Import Quantity
+  slug: kilimo
+  source: Kenya Agricultural Observatory Platform (Kilimo)
+  description: Quantity of agricultural imports across Kenyan counties
+  url: https://statistics.kilimo.go.ke
+  columns:
+    year:
+      type: string
+      description: Calendar year
+    area_level:
+      type: string
+      description: Geographic level (always county)
+    area_name:
+      type: string
+      description: County name (lowercased)
+    metric:
+      type: string
+      description: Sub-domain or category within the indicator (lowercased)
+    item:
+      type: string
+      description: Specific item or commodity being measured (lowercased)
+    value:
+      type: float
+      description: Numeric value of the indicator
+  last_updated: '2026-06-15T12:42:19'
+
+apparent_consumption:
+  name: Apparent Consumption
+  slug: kilimo
+  source: Kenya Agricultural Observatory Platform (Kilimo)
+  description: Apparent consumption of agricultural commodities across Kenyan counties
+  url: https://statistics.kilimo.go.ke
+  columns:
+    year:
+      type: string
+      description: Calendar year
+    area_level:
+      type: string
+      description: Geographic level (always county)
+    area_name:
+      type: string
+      description: County name (lowercased)
+    metric:
+      type: string
+      description: Sub-domain or category within the indicator (lowercased)
+    item:
+      type: string
+      description: Specific item or commodity being measured (lowercased)
+    value:
+      type: float
+      description: Numeric value of the indicator
+  last_updated: '2026-06-15T12:42:19'
+
+total_value_of_import:
+  name: Total Value of Imports
+  slug: kilimo
+  source: Kenya Agricultural Observatory Platform (Kilimo)
+  description: Total value of agricultural imports across Kenyan counties
+  url: https://statistics.kilimo.go.ke
+  columns:
+    year:
+      type: string
+      description: Calendar year
+    area_level:
+      type: string
+      description: Geographic level (always county)
+    area_name:
+      type: string
+      description: County name (lowercased)
+    metric:
+      type: string
+      description: Sub-domain or category within the indicator (lowercased)
+    item:
+      type: string
+      description: Specific item or commodity being measured (lowercased)
+    value:
+      type: float
+      description: Numeric value of the indicator
+  last_updated: '2026-06-15T12:42:19'
+
+total_value_of_export:
+  name: Total Value of Exports
+  slug: kilimo
+  source: Kenya Agricultural Observatory Platform (Kilimo)
+  description: Total value of agricultural exports across Kenyan counties
+  url: https://statistics.kilimo.go.ke
+  columns:
+    year:
+      type: string
+      description: Calendar year
+    area_level:
+      type: string
+      description: Geographic level (always county)
+    area_name:
+      type: string
+      description: County name (lowercased)
+    metric:
+      type: string
+      description: Sub-domain or category within the indicator (lowercased)
+    item:
+      type: string
+      description: Specific item or commodity being measured (lowercased)
+    value:
+      type: float
+      description: Numeric value of the indicator
+  last_updated: '2026-06-15T12:42:19'
+
+political_governance_economic_investments:
+  name: Political Governance & Economic Investments
+  slug: kilimo
+  source: Kenya Agricultural Observatory Platform (Kilimo)
+  description: Political governance and economic investment indicators in agriculture across Kenyan counties
+  url: https://statistics.kilimo.go.ke
+  columns:
+    year:
+      type: string
+      description: Calendar year
+    area_level:
+      type: string
+      description: Geographic level (always county)
+    area_name:
+      type: string
+      description: County name (lowercased)
+    metric:
+      type: string
+      description: Sub-domain or category within the indicator (lowercased)
+    item:
+      type: string
+      description: Specific item or commodity being measured (lowercased)
+    value:
+      type: float
+      description: Numeric value of the indicator
+  last_updated: '2026-06-15T12:42:19'
+
+cane_deliveries:
+  name: Cane Deliveries
+  slug: kilimo
+  source: Kenya Agricultural Observatory Platform (Kilimo)
+  description: Sugarcane deliveries to millers across Kenyan counties
+  url: https://statistics.kilimo.go.ke
+  columns:
+    year:
+      type: string
+      description: Calendar year
+    area_level:
+      type: string
+      description: Geographic level (always county)
+    area_name:
+      type: string
+      description: County name (lowercased)
+    metric:
+      type: string
+      description: Sub-domain or category within the indicator (lowercased)
+    item:
+      type: string
+      description: Specific item or commodity being measured (lowercased)
+    value:
+      type: float
+      description: Numeric value of the indicator
+  last_updated: '2026-06-15T12:42:19'
+
+quantity_of_gok_subsidized_fertilizer:
+  name: GOK Subsidized Fertilizer Quantity
+  slug: kilimo
+  source: Kenya Agricultural Observatory Platform (Kilimo)
+  description: Quantity of government-subsidized fertilizer distributed across Kenyan counties
+  url: https://statistics.kilimo.go.ke
+  columns:
+    year:
+      type: string
+      description: Calendar year
+    area_level:
+      type: string
+      description: Geographic level (always county)
+    area_name:
+      type: string
+      description: County name (lowercased)
+    metric:
+      type: string
+      description: Sub-domain or category within the indicator (lowercased)
+    item:
+      type: string
+      description: Specific item or commodity being measured (lowercased)
+    value:
+      type: float
+      description: Numeric value of the indicator
+  last_updated: '2026-06-15T12:42:19'
+
+gok_fertilizer_subsidy_beneficiaries:
+  name: GOK Fertilizer Subsidy Beneficiaries
+  slug: kilimo
+  source: Kenya Agricultural Observatory Platform (Kilimo)
+  description: Beneficiaries of the government fertilizer subsidy program across Kenyan counties
+  url: https://statistics.kilimo.go.ke
+  columns:
+    year:
+      type: string
+      description: Calendar year
+    area_level:
+      type: string
+      description: Geographic level (always county)
+    area_name:
+      type: string
+      description: County name (lowercased)
+    metric:
+      type: string
+      description: Sub-domain or category within the indicator (lowercased)
+    item:
+      type: string
+      description: Specific item or commodity being measured (lowercased)
+    value:
+      type: float
+      description: Numeric value of the indicator
+  last_updated: '2026-06-15T12:42:19'
+
+gok_fertilizer_subsidy_funds_allocated:
+  name: GOK Fertilizer Subsidy Funds Allocated
+  slug: kilimo
+  source: Kenya Agricultural Observatory Platform (Kilimo)
+  description: Funds allocated for the government fertilizer subsidy program across Kenyan counties
+  url: https://statistics.kilimo.go.ke
+  columns:
+    year:
+      type: string
+      description: Calendar year
+    area_level:
+      type: string
+      description: Geographic level (always county)
+    area_name:
+      type: string
+      description: County name (lowercased)
+    metric:
+      type: string
+      description: Sub-domain or category within the indicator (lowercased)
+    item:
+      type: string
+      description: Specific item or commodity being measured (lowercased)
+    value:
+      type: float
+      description: Numeric value of the indicator
+  last_updated: '2026-06-15T12:42:19'
+
+gok_fertilizer_subsidy_expenditure:
+  name: GOK Fertilizer Subsidy Expenditure
+  slug: kilimo
+  source: Kenya Agricultural Observatory Platform (Kilimo)
+  description: Expenditure on the government fertilizer subsidy program across Kenyan counties
+  url: https://statistics.kilimo.go.ke
+  columns:
+    year:
+      type: string
+      description: Calendar year
+    area_level:
+      type: string
+      description: Geographic level (always county)
+    area_name:
+      type: string
+      description: County name (lowercased)
+    metric:
+      type: string
+      description: Sub-domain or category within the indicator (lowercased)
+    item:
+      type: string
+      description: Specific item or commodity being measured (lowercased)
+    value:
+      type: float
+      description: Numeric value of the indicator
+  last_updated: '2026-06-15T12:42:19'

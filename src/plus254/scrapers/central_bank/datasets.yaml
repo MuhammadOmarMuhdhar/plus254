@@ -48,7 +48,7 @@ monetary_survey:
     section:
       type: string
       description: Sub-survey section (Central Bank of Kenya, Other Depository Corporation Survey, Depository Corporation Survey)
-    indicator:
+    metric:
       type: string
       description: Monetary indicator name (e.g., Excess reserves, Required reserves, Broad Money M3)
     year:
@@ -68,12 +68,12 @@ bop_annual:
   description: Annual balance of payments statement
   url: https://www.centralbank.go.ke/uploads/balance_of_payment_statistics/1657248905_Balance%20of%20Payments%20Statement%20(Annual%20Calender%20Year).csv
   columns:
-    category:
-      type: string
-      description: BPM6 balance of payments category (e.g., A. Current Account, n.i.e., General government)
     year:
       type: integer
       description: Calendar year
+    metric:
+      type: string
+      description: BPM6 balance of payments category (e.g., A. Current Account, n.i.e., General government)
     value:
       type: string
       description: Value in USD millions (comma-formatted number)
@@ -325,15 +325,15 @@ gdp_quarterly:
   description: Quarterly GDP estimates by sector
   url: https://www.centralbank.go.ke/uploads/national_accounts_statistics/1084903161_Quarterly%20GDP.csv
   columns:
-    activity:
-      type: string
-      description: Economic sector or activity (e.g., Agriculture, Manufacturing, Construction, Total GDP)
-    value:
-      type: float
-      description: GDP value in KES millions
     year:
       type: integer
       description: Calendar year
     quarter:
       type: string
       description: Calendar quarter (Q1, Q2, Q3, Q4)
+    metric:
+      type: string
+      description: Economic sector or activity (e.g., Agriculture, Manufacturing, Construction, Total GDP)
+    value:
+      type: float
+      description: GDP value in KES millions
