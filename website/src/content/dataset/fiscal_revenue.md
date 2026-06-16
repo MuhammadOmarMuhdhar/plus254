@@ -2,18 +2,11 @@
 title: "Government Revenue"
 description: "Monthly government revenue breakdown"
 source: "Central Bank of Kenya"
-endpoint: "GET /centralbank/fiscal_revenue"
+endpoint: "GET /economy/fiscal_revenue"
 rows: 2326
-category: "centralbank"
+topic: "economy"
 sourceUrl: "https://www.centralbank.go.ke/uploads/government_finance_statistics/2118703754_Revenue%20and%20Expenditure.csv"
 ---
-
-Monthly government revenue breakdown
-
-- **Source:** Central Bank of Kenya
-- **API endpoint:** `GET /centralbank/fiscal_revenue`
-- **Rows:** 2326
-- **Source URL:** [https://www.centralbank.go.ke/uploads/government_finance_statistics/2118703754_Revenue%20and%20Expenditure.csv](https://www.centralbank.go.ke/uploads/government_finance_statistics/2118703754_Revenue%20and%20Expenditure.csv)
 
 ## Columns
 
@@ -26,10 +19,10 @@ Monthly government revenue breakdown
 
 ## Summary Statistics
 
-| Column | Count | Mean | Std | Min | 25% | 50% | 75% | Max |
-|--------|-------|------|-----|-----|-----|-----|-----|-----|
-| fiscal_year | 2326 | 2013.13 | 7.57 | 1999.00 | 2007.00 | 2014.00 | 2020.00 | 2026.00 |
-| value | 2326 | 215787.29 | 355462.34 | 987.00 | 28213.71 | 73828.77 | 231773.14 | 2.957e+06 |
+| Column | Count | Mean | Std | Min | Max |
+|--------|-------|------|-----|-----|-----|
+| fiscal_year | 2326 | 2013.13 | 7.57 | 1999.00 | 2026.00 |
+| value | 2326 | 215787.29 | 355462.34 | 987.00 | 2.957e+06 |
 
 ## Sample Data
 

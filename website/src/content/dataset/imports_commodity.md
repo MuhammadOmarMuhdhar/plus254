@@ -2,18 +2,11 @@
 title: "Value of Imports by Commodity"
 description: "Monthly value of direct imports classified by SITC sections"
 source: "Central Bank of Kenya"
-endpoint: "GET /centralbank/imports_commodity"
+endpoint: "GET /economy/imports_commodity"
 rows: 3320
-category: "centralbank"
+topic: "economy"
 sourceUrl: "https://www.centralbank.go.ke/uploads/balance_of_payment_statistics/1126743207_Value%20of%20Direct%20Imports%20by%20Commodities.csv"
 ---
-
-Monthly value of direct imports classified by SITC sections
-
-- **Source:** Central Bank of Kenya
-- **API endpoint:** `GET /centralbank/imports_commodity`
-- **Rows:** 3320
-- **Source URL:** [https://www.centralbank.go.ke/uploads/balance_of_payment_statistics/1126743207_Value%20of%20Direct%20Imports%20by%20Commodities.csv](https://www.centralbank.go.ke/uploads/balance_of_payment_statistics/1126743207_Value%20of%20Direct%20Imports%20by%20Commodities.csv)
 
 ## Columns
 
@@ -26,10 +19,10 @@ Monthly value of direct imports classified by SITC sections
 
 ## Summary Statistics
 
-| Column | Count | Mean | Std | Min | 25% | 50% | 75% | Max |
-|--------|-------|------|-----|-----|-----|-----|-----|-----|
-| year | 3320 | 2011.92 | 8.00 | 1998.00 | 2005.00 | 2012.00 | 2019.00 | 2026.00 |
-| value | 3320 | 22462.59 | 42207.78 | 36.09 | 2277.22 | 7664.27 | 23063.78 | 332367.64 |
+| Column | Count | Mean | Std | Min | Max |
+|--------|-------|------|-----|-----|-----|
+| year | 3320 | 2011.92 | 8.00 | 1998.00 | 2026.00 |
+| value | 3320 | 22462.59 | 42207.78 | 36.09 | 332367.64 |
 
 ## Sample Data
 

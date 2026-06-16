@@ -2,18 +2,11 @@
 title: "Government Expenditure"
 description: "Monthly government expenditure breakdown"
 source: "Central Bank of Kenya"
-endpoint: "GET /centralbank/fiscal_expenditure"
+endpoint: "GET /economy/fiscal_expenditure"
 rows: 2656
-category: "centralbank"
+topic: "economy"
 sourceUrl: "https://www.centralbank.go.ke/uploads/government_finance_statistics/2118703754_Revenue%20and%20Expenditure.csv"
 ---
-
-Monthly government expenditure breakdown
-
-- **Source:** Central Bank of Kenya
-- **API endpoint:** `GET /centralbank/fiscal_expenditure`
-- **Rows:** 2656
-- **Source URL:** [https://www.centralbank.go.ke/uploads/government_finance_statistics/2118703754_Revenue%20and%20Expenditure.csv](https://www.centralbank.go.ke/uploads/government_finance_statistics/2118703754_Revenue%20and%20Expenditure.csv)
 
 ## Columns
 
@@ -26,10 +19,10 @@ Monthly government expenditure breakdown
 
 ## Summary Statistics
 
-| Column | Count | Mean | Std | Min | 25% | 50% | 75% | Max |
-|--------|-------|------|-----|-----|-----|-----|-----|-----|
-| fiscal_year | 2656 | 2013.09 | 7.54 | 1999.00 | 2007.00 | 2013.00 | 2020.00 | 2026.00 |
-| value | 2656 | 236916.46 | 426253.67 | 0.00 | 21307.58 | 85394.30 | 249362.48 | 3.968e+06 |
+| Column | Count | Mean | Std | Min | Max |
+|--------|-------|------|-----|-----|-----|
+| fiscal_year | 2656 | 2013.09 | 7.54 | 1999.00 | 2026.00 |
+| value | 2656 | 236916.46 | 426253.67 | 0.00 | 3.968e+06 |
 
 ## Sample Data
 

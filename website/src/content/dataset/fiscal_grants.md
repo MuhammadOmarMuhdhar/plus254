@@ -2,18 +2,11 @@
 title: "Government Grants"
 description: "Monthly government grants received"
 source: "Central Bank of Kenya"
-endpoint: "GET /centralbank/fiscal_grants"
+endpoint: "GET /economy/fiscal_grants"
 rows: 893
-category: "centralbank"
+topic: "economy"
 sourceUrl: "https://www.centralbank.go.ke/uploads/government_finance_statistics/2118703754_Revenue%20and%20Expenditure.csv"
 ---
-
-Monthly government grants received
-
-- **Source:** Central Bank of Kenya
-- **API endpoint:** `GET /centralbank/fiscal_grants`
-- **Rows:** 893
-- **Source URL:** [https://www.centralbank.go.ke/uploads/government_finance_statistics/2118703754_Revenue%20and%20Expenditure.csv](https://www.centralbank.go.ke/uploads/government_finance_statistics/2118703754_Revenue%20and%20Expenditure.csv)
 
 ## Columns
 
@@ -26,10 +19,10 @@ Monthly government grants received
 
 ## Summary Statistics
 
-| Column | Count | Mean | Std | Min | 25% | 50% | 75% | Max |
-|--------|-------|------|-----|-----|-----|-----|-----|-----|
-| fiscal_year | 893 | 2012.63 | 7.73 | 1999.00 | 2006.00 | 2012.00 | 2020.00 | 2026.00 |
-| value | 893 | 6818.60 | 8279.77 | 0.00 | 0.00 | 3890.00 | 11204.86 | 76373.33 |
+| Column | Count | Mean | Std | Min | Max |
+|--------|-------|------|-----|-----|-----|
+| fiscal_year | 893 | 2012.63 | 7.73 | 1999.00 | 2026.00 |
+| value | 893 | 6818.60 | 8279.77 | 0.00 | 76373.33 |
 
 ## Sample Data
 

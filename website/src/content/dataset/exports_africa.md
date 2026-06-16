@@ -2,18 +2,11 @@
 title: "Value of Exports to Africa"
 description: "Monthly value of exports to selected African countries"
 source: "Central Bank of Kenya"
-endpoint: "GET /centralbank/exports_africa"
+endpoint: "GET /economy/exports_africa"
 rows: 4067
-category: "centralbank"
+topic: "economy"
 sourceUrl: "https://www.centralbank.go.ke/uploads/balance_of_payment_statistics/1216083243_Value%20of%20Exports%20to%20Selected%20Africa%20Countries.csv"
 ---
-
-Monthly value of exports to selected African countries
-
-- **Source:** Central Bank of Kenya
-- **API endpoint:** `GET /centralbank/exports_africa`
-- **Rows:** 4067
-- **Source URL:** [https://www.centralbank.go.ke/uploads/balance_of_payment_statistics/1216083243_Value%20of%20Exports%20to%20Selected%20Africa%20Countries.csv](https://www.centralbank.go.ke/uploads/balance_of_payment_statistics/1216083243_Value%20of%20Exports%20to%20Selected%20Africa%20Countries.csv)
 
 ## Columns
 
@@ -26,10 +19,10 @@ Monthly value of exports to selected African countries
 
 ## Summary Statistics
 
-| Column | Count | Mean | Std | Min | 25% | 50% | 75% | Max |
-|--------|-------|------|-----|-----|-----|-----|-----|-----|
-| year | 4067 | 2011.63 | 8.16 | 1998.00 | 2005.00 | 2012.00 | 2019.00 | 2026.00 |
-| value | 4067 | 4053.11 | 10355.69 | 0.00 | 338.96 | 1056.55 | 2765.26 | 120186.87 |
+| Column | Count | Mean | Std | Min | Max |
+|--------|-------|------|-----|-----|-----|
+| year | 4067 | 2011.63 | 8.16 | 1998.00 | 2026.00 |
+| value | 4067 | 4053.11 | 10355.69 | 0.00 | 120186.87 |
 
 ## Sample Data
 

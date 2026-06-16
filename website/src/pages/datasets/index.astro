@@ -1,117 +1,243 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import DatasetsLayout from "../../components/DatasetsLayout.astro";
 import { getCollection } from "astro:content";
 
 const datasets = await getCollection("dataset");
 const grouped = datasets.reduce(
   (acc, d) => {
-    (acc[d.data.category] ??= []).push(d);
+    (acc[d.data.topic] ??= []).push(d);
     return acc;
   },
   {} as Record<string, typeof datasets>,
 );
-const categoryNames: Record<string, string> = {
-  centralbank: "Central Bank of Kenya",
-  teaboard: "Tea Board of Kenya",
+const topicNames: Record<string, string> = {
+  economy: "Economy",
+  agriculture: "Agriculture",
+  governance: "Governance",
 };
+const topicOrder = ["economy", "agriculture", "governance"];
+const sources = [...new Set(datasets.map((d) => d.data.source))];
+const topicCount = Object.keys(grouped).length;
+const topicPlaceholder = "{topic}";
+const datasetPlaceholder = "{dataset}";
 ---
 
 <BaseLayout title="Datasets — plus254">
-  <h1>Datasets</h1>
-  <p>Browse the full catalog of datasets below. Each entry includes column descriptions, sample data, and API endpoint details — click a dataset name to explore.</p>
+  <DatasetsLayout>
+    <header class="page-heading">
+      <h1>Datasets</h1>
+    </header>
 
-  {Object.entries(grouped).map(([category, items]) => (
-    <div class="dataset-panel">
-      <h4>{categoryNames[category] || category}</h4>
-      <table class="dataset-table">
-        <thead>
-          <tr>
-            <th>Dataset</th>
-            <th>Description</th>
-            <th class="num">Rows</th>
-            <th class="num">Endpoint</th>
-          </tr>
-        </thead>
-        <tbody>
-          {items.map((d) => (
-            <tr>
-              <td><a href={`/datasets/${d.id}/`}>{d.data.title}</a></td>
-              <td>{d.data.description}</td>
-              <td class="num">{d.data.rows}</td>
-              <td class="num"><code>{d.data.endpoint}</code></td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  ))}
+    <section class="section" id="overview">
+      <span class="eyebrow">Overview</span>
+      <div class="narrative">
+        <p>
+          This is the full catalog of every dataset available through the +254 API.
+          Datasets are organized by topic: Economy, Agriculture, and Governance.
+        </p>
+        <p>
+          Every dataset follows the same tidy long-form structure: identifier columns
+          for dimensions like year, month, or region, paired with a Metric and Value
+          column. This means any dataset can be filtered, grouped, or plotted the same
+          way, without restructuring. Each entry includes column descriptions, summary
+          statistics, and sample data alongside its API endpoint.
+        </p>
+        <p>
+          The catalog currently contains {datasets.length} datasets sourced from {sources.length} official publications.
+          Every dataset is accessible via <code>GET /api/v1/{topicPlaceholder}/{datasetPlaceholder}</code>.
+          Responses are paginated JSON with the same structure across all endpoints.
+          Browse the <a href="/api-docs/">API reference</a> for authentication,
+          query parameters, and response formats.
+        </p>
+      </div>
+    </section>
+
+    {
+      topicOrder.map((topic) => {
+        const items = grouped[topic];
+        if (!items) return null;
+        return (
+          <section class="section" id={topic}>
+            <span class="eyebrow">{topicNames[topic] || topic}</span>
+            <p class="topic-count">{items.length} {items.length === 1 ? "dataset" : "datasets"}</p>
+            <div class="ds-grid">
+              {
+                items.map((d) => (
+                  <a href={`/datasets/${d.id}/`} class="ds-card">
+                    <div class="ds-card-header">
+                      <span class="ds-card-title">{d.data.title}</span>
+                      <span class="ds-card-arrow" aria-hidden="true">&rarr;</span>
+                    </div>
+                    <p class="ds-card-desc">{d.data.description}</p>
+                  </a>
+                ))
+              }
+            </div>
+          </section>
+        );
+      })
+    }
+  </DatasetsLayout>
 </BaseLayout>
 
 <style>
-  h1 {
+  .page-heading {
+    margin-bottom: var(--space-md);
+  }
+
+  .page-heading h1 {
     font-family: var(--font-serif);
-    font-size: var(--text-2xl);
+    font-size: var(--text-xl);
     font-weight: var(--font-semibold);
     color: var(--color-warm-dark);
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-tight);
     margin: 0 0 var(--space-sm);
   }
 
-  p {
-    color: var(--color-warm-light);
-    margin-bottom: var(--space-lg);
+  .section {
+    margin-bottom: var(--space-fluid-xl);
   }
 
-  .dataset-panel {
-    background-color: #6cb999;
-    border: 1px solid #1f6f54;
-    font-family: var(--font-sans);
-    margin-bottom: var(--space-lg);
+  .section--last {
+    margin-bottom: 0;
   }
 
-  .dataset-panel h4 {
+  .eyebrow {
+    display: block;
     font-family: var(--font-sans);
     font-size: var(--text-sm);
     font-weight: var(--font-semibold);
+    color: var(--color-warm-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: var(--space-2xs);
+  }
+
+  .narrative {
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+    color: var(--color-warm-mid);
+    line-height: var(--leading-relaxed);
+    max-width: 65ch;
+  }
+
+  .narrative p {
+    margin: 0;
+  }
+
+  .narrative p + p {
+    margin-top: var(--space-smd);
+  }
+
+  .stat {
+    font-weight: var(--font-semibold);
     color: var(--color-warm-dark);
+  }
+
+  .topic-count {
+    font-family: var(--font-sans);
+    font-size: var(--text-xs);
+    font-weight: var(--font-semibold);
+    color: var(--color-warm-light);
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    margin: 0;
-    padding: var(--space-xs) var(--space-md);
-    border-bottom: 1px solid #1f6f54;
+    margin: 0 0 var(--space-smd);
   }
 
-  .dataset-table {
-    width: 100%;
-    border-collapse: collapse;
+  /* ===== Card grid (matching ActionGrids) ===== */
+  .ds-grid {
+    display: grid;
+    gap: var(--space-smd);
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ds-card {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: #6cb999;
+    border: 1px solid rgba(31, 111, 84, 0.35);
+    padding: var(--space-md);
+    padding-right: calc(var(--space-md) + 1.25rem);
+    text-decoration: none;
+    min-height: 130px;
+    transition: border-color 0.25s var(--ease-out), background-color 0.25s var(--ease-out), transform 0.15s var(--ease-out);
+  }
+
+  .ds-card:hover {
+    border-color: #1f6f54;
+    background-color: #66b392;
+  }
+
+  .ds-card:active {
+    transform: translateY(1px);
+  }
+
+  .ds-card:focus-visible {
+    outline: 2px solid #1f6f54;
+    outline-offset: 2px;
+  }
+
+  .ds-card-header {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-md);
+    margin-bottom: var(--space-xs);
+  }
+
+  .ds-card-title {
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+    font-weight: var(--font-semibold);
+    color: var(--color-warm-dark);
+    flex: 1;
+  }
+
+  .ds-card-arrow {
+    position: absolute;
+    top: var(--space-md);
+    right: var(--space-md);
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    color: #1f6f54;
+    font-weight: var(--font-medium);
+    transition: transform 0.2s var(--ease-out);
+  }
+
+  .ds-card:hover .ds-card-arrow {
+    transform: translateX(4px);
+  }
+
+  .ds-card-desc {
+    flex: 1;
     font-family: var(--font-sans);
     font-size: var(--text-sm);
     color: var(--color-warm-dark);
+    line-height: 1.5;
+    margin: 0;
+    opacity: 0.75;
   }
 
-  .dataset-table thead th {
-    text-align: left;
-    font-weight: var(--font-semibold);
+  .section-outro {
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+    color: var(--color-warm-mid);
+    line-height: var(--leading-relaxed);
+    margin: 0;
+    max-width: 65ch;
+  }
+
+  .section-outro code {
+    font-family: var(--font-mono);
+    font-size: 0.85em;
+    background: rgba(31, 111, 84, 0.15);
+    padding: 0.0625rem 0.25rem;
     color: var(--color-warm-dark);
-    padding: var(--space-xs) var(--space-md);
-    border-bottom: 2px solid #1f6f54;
   }
 
-  .dataset-table thead th.num {
-    text-align: right;
-  }
-
-  .dataset-table tbody td {
-    padding: var(--space-sm) var(--space-md);
-    border-bottom: 1px solid #1f6f54;
-    vertical-align: middle;
-  }
-
-  .dataset-table tbody td.num {
-    text-align: right;
-    font-variant-numeric: tabular-nums;
-  }
-
-  .dataset-table a {
+  .section-outro a {
     color: var(--color-warm-dark);
     text-decoration: underline;
     text-decoration-color: rgba(31, 111, 84, 0.4);
@@ -119,14 +245,26 @@ const categoryNames: Record<string, string> = {
     transition: text-decoration-color 0.15s var(--ease-out);
   }
 
-  .dataset-table a:hover {
+  .section-outro a:hover {
     text-decoration-color: #1f6f54;
   }
 
-  .dataset-table code {
-    font-family: var(--font-mono);
-    font-size: 0.9em;
-    background: rgba(31, 111, 84, 0.1);
-    padding: 0.125rem 0.375rem;
+  .section-outro a:focus-visible {
+    outline: 2px solid #1f6f54;
+    outline-offset: 2px;
+  }
+
+  @media (max-width: 768px) {
+    .page-heading {
+      margin-bottom: var(--space-fluid-lg);
+    }
+
+    .ds-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .ds-card {
+      padding: var(--space-md);
+    }
   }
 </style>

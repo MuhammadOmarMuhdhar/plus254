@@ -1,0 +1,460 @@
+---
+import { getCollection } from "astro:content";
+
+export interface Props {
+  activeSlug?: string;
+}
+
+const { activeSlug } = Astro.props;
+
+const datasets = await getCollection("dataset");
+const grouped = datasets.reduce(
+  (acc, d) => {
+    (acc[d.data.topic] ??= []).push(d);
+    return acc;
+  },
+  {} as Record<string, typeof datasets>,
+);
+
+const topicNames: Record<string, string> = {
+  economy: "Economy",
+  agriculture: "Agriculture",
+  governance: "Governance",
+};
+
+const topicOrder = ["economy", "agriculture", "governance"];
+
+const isLanding = !activeSlug;
+const activeTopic = activeSlug
+  ? datasets.find((d) => d.id === activeSlug)?.data.topic
+  : undefined;
+
+const activeLabel = activeSlug
+  ? datasets.find((d) => d.id === activeSlug)?.data.title ?? "Datasets"
+  : "Overview";
+---
+
+<div class="docs-layout">
+  <aside class="sidebar">
+    <nav class="sidebar-nav">
+      <a
+        href="/datasets/"
+        class:list={["nav-link", { active: isLanding }]}
+      >
+        Overview
+      </a>
+
+      {
+        topicOrder.map((topic) => {
+          const items = grouped[topic];
+          if (!items) return null;
+          const isOpen = activeTopic === topic;
+          return (
+            <details class="topic-group" open={isOpen || undefined}>
+              <summary class="topic-heading" data-topic={topic}>
+                <span class="topic-heading-inner">
+                  <span>{topicNames[topic] || topic}</span>
+                  <svg class="topic-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="4 5.5 7 8.5 10 5.5" />
+                  </svg>
+                </span>
+              </summary>
+              <div class="topic-items">
+                {
+                  items.map((d) => (
+                    <a
+                      href={`/datasets/${d.id}/`}
+                      class:list={["dataset-link", { active: activeSlug === d.id }]}
+                    >
+                      {d.data.title}
+                    </a>
+                  ))
+                }
+              </div>
+            </details>
+          );
+        })
+      }
+    </nav>
+
+    <details class="sidebar-mobile">
+      <summary class="sidebar-mobile-summary">
+        <span class="sidebar-mobile-label">{activeLabel}</span>
+        <svg class="sidebar-mobile-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="4 6 8 10 12 6" />
+        </svg>
+      </summary>
+      <div class="sidebar-mobile-nav">
+        <a href="/datasets/" class:list={["sidebar-mobile-link", { active: isLanding }]}>Overview</a>
+        {
+          topicOrder.map((topic) => {
+            const items = grouped[topic];
+            if (!items) return null;
+            return (
+              <div class="sidebar-mobile-group">
+                <span class="sidebar-mobile-topic-label">{topicNames[topic] || topic}</span>
+                {
+                  items.map((d) => (
+                    <a
+                      href={`/datasets/${d.id}/`}
+                      class:list={["sidebar-mobile-link", { active: activeSlug === d.id }]}
+                    >
+                      {d.data.title}
+                    </a>
+                  ))
+                }
+              </div>
+            );
+          })
+        }
+      </div>
+    </details>
+  </aside>
+
+  <main class="docs-main">
+    <slot />
+  </main>
+</div>
+
+<style>
+  .docs-layout {
+    display: flex;
+    gap: var(--space-md);
+    align-items: flex-start;
+  }
+
+  .sidebar {
+    width: 185px;
+    flex-shrink: 0;
+    position: sticky;
+    top: var(--space-lg);
+    padding-top: var(--space-sm);
+    max-height: calc(100vh - 4rem);
+    overflow-y: auto;
+  }
+
+  .sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+  }
+
+  .nav-link {
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--color-warm-light);
+    text-decoration: none;
+    padding: var(--space-xs) var(--space-sm);
+    border-left: 2px solid transparent;
+    transition: color 0.15s var(--ease-out), border-color 0.15s var(--ease-out);
+  }
+
+  .nav-link:hover {
+    color: var(--color-warm-dark);
+    border-left-color: rgba(31, 111, 84, 0.3);
+  }
+
+  .nav-link.active {
+    color: #1f6f54;
+    border-left-color: #1f6f54;
+    font-weight: var(--font-semibold);
+  }
+
+  .nav-link:focus-visible {
+    outline: 2px solid #1f6f54;
+    outline-offset: 2px;
+  }
+
+  .topic-group {
+    border: none;
+    margin: 0;
+  }
+
+  .topic-heading {
+    display: block;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    border-left: 2px solid transparent;
+    transition: border-color 0.15s var(--ease-out);
+  }
+
+  .topic-heading::-webkit-details-marker {
+    display: none;
+  }
+
+  .topic-heading::marker {
+    display: none;
+  }
+
+  .topic-heading:hover {
+    border-left-color: rgba(31, 111, 84, 0.3);
+  }
+
+  .topic-heading.active {
+    border-left-color: #1f6f54;
+  }
+
+  .topic-heading:focus-visible {
+    outline: 2px solid #1f6f54;
+    outline-offset: 2px;
+  }
+
+  .topic-heading-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-xs);
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--color-warm-light);
+    cursor: pointer;
+    user-select: none;
+    padding: var(--space-xs) var(--space-sm);
+    transition: color 0.15s var(--ease-out);
+  }
+
+  .topic-heading:hover .topic-heading-inner {
+    color: var(--color-warm-dark);
+  }
+
+  .topic-heading.active .topic-heading-inner {
+    color: #1f6f54;
+    font-weight: var(--font-semibold);
+  }
+
+  .topic-chevron {
+    flex-shrink: 0;
+    transition: transform 0.2s var(--ease-out);
+    color: var(--color-warm-light);
+  }
+
+  .topic-group[open] .topic-chevron {
+    transform: rotate(180deg);
+  }
+
+  .topic-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .dataset-link {
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--color-warm-light);
+    text-decoration: none;
+    padding: var(--space-2xs) var(--space-sm) var(--space-2xs) var(--space-lg);
+    border-left: 2px solid transparent;
+    transition: color 0.15s var(--ease-out), border-color 0.15s var(--ease-out);
+    line-height: var(--leading-snug);
+  }
+
+  .dataset-link:hover {
+    color: var(--color-warm-dark);
+    border-left-color: rgba(31, 111, 84, 0.3);
+  }
+
+  .dataset-link.active {
+    color: #1f6f54;
+    border-left-color: #1f6f54;
+    font-weight: var(--font-semibold);
+  }
+
+  .dataset-link:focus-visible {
+    outline: 2px solid #1f6f54;
+    outline-offset: 2px;
+  }
+
+  .docs-main {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .sidebar-mobile {
+    display: none;
+  }
+
+  .sidebar-mobile-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-sm) var(--space-md);
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    color: var(--color-warm-dark);
+    cursor: pointer;
+    min-height: 44px;
+    list-style: none;
+    border: 1px solid #1f6f54;
+    background: #6cb999;
+  }
+
+  .sidebar-mobile-summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .sidebar-mobile-summary::marker {
+    display: none;
+  }
+
+  .sidebar-mobile-summary:focus-visible {
+    outline: 2px solid #1f6f54;
+    outline-offset: -2px;
+  }
+
+  .sidebar-mobile-chevron {
+    transition: transform 0.2s var(--ease-out);
+    color: var(--color-warm-dark);
+  }
+
+  .sidebar-mobile[open] .sidebar-mobile-chevron {
+    transform: rotate(180deg);
+  }
+
+  .sidebar-mobile-nav {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #1f6f54;
+    border-top: none;
+    background: #6cb999;
+    max-height: 60vh;
+    overflow-y: auto;
+  }
+
+  .sidebar-mobile-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sidebar-mobile-topic-label {
+    font-family: var(--font-sans);
+    font-size: var(--text-xs);
+    font-weight: var(--font-semibold);
+    color: var(--color-warm-light);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: var(--space-sm) var(--space-md) var(--space-2xs);
+  }
+
+  .sidebar-mobile-link {
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--color-warm-dark);
+    text-decoration: none;
+    padding: var(--space-xs) var(--space-md);
+    border-left: 2px solid transparent;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.15s var(--ease-out), color 0.15s var(--ease-out);
+  }
+
+  .sidebar-mobile-link:hover {
+    color: var(--color-warm-dark);
+    background: rgba(31, 111, 84, 0.08);
+  }
+
+  .sidebar-mobile-link.active {
+    color: var(--color-warm-dark);
+    border-left-color: var(--color-warm-dark);
+    font-weight: var(--font-semibold);
+    background: rgba(31, 111, 84, 0.12);
+  }
+
+  .sidebar-mobile-link:focus-visible {
+    outline: 2px solid #1f6f54;
+    outline-offset: -2px;
+  }
+
+  @media (max-width: 900px) {
+    .docs-layout {
+      flex-direction: column;
+      gap: var(--space-lg);
+    }
+    .sidebar {
+      position: static;
+      width: 100%;
+      padding-top: 0;
+      max-height: none;
+      overflow-y: visible;
+    }
+    .sidebar-nav {
+      flex-direction: column;
+      gap: 0;
+      padding: 0 0 var(--space-sm) 0;
+      border-bottom: 1px solid rgba(31, 111, 84, 0.15);
+    }
+    .topic-heading {
+      white-space: nowrap;
+    }
+    .topic-items {
+      margin-left: var(--space-md);
+    }
+    .dataset-link {
+      padding: var(--space-2xs) var(--space-sm);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .sidebar-nav {
+      display: none;
+    }
+    .sidebar {
+      position: static;
+      width: 100%;
+      padding-top: 0;
+    }
+    .sidebar-mobile {
+      display: block;
+    }
+  }
+</style>
+
+<script>
+  const isLanding = document.querySelector('.nav-link.active') !== null;
+  if (isLanding) {
+    const sectionIds = ['overview', 'economy', 'agriculture', 'governance', 'explore'];
+    const navMap = {
+      'overview': 'overview',
+      'economy': 'economy',
+      'agriculture': 'agriculture',
+      'governance': 'governance',
+      'explore': 'explore',
+    };
+    const overviewLink = document.querySelector('.nav-link');
+    const topicHeadings = document.querySelectorAll('.topic-heading');
+    const label = document.querySelector('.sidebar-mobile-label');
+
+    function updateActive(id) {
+      overviewLink.classList.toggle('active', id === 'overview');
+      topicHeadings.forEach(el => {
+        el.classList.toggle('active', el.dataset.topic === id);
+      });
+      if (label && navMap[id]) {
+        const displayNames = { overview: 'Overview', economy: 'Economy', agriculture: 'Agriculture', governance: 'Governance', explore: 'Using the API' };
+        label.textContent = displayNames[id] || 'Overview';
+      }
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          updateActive(entry.target.id);
+        }
+      }
+    }, {
+      rootMargin: '-80px 0px -75% 0px',
+    });
+
+    for (const id of sectionIds) {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    }
+  }
+</script>

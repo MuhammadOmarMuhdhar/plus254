@@ -2,18 +2,11 @@
 title: "Value of Selected Domestic Exports"
 description: "Monthly value of selected domestic export commodities"
 source: "Central Bank of Kenya"
-endpoint: "GET /centralbank/domestic_exports"
+endpoint: "GET /economy/domestic_exports"
 rows: 2987
-category: "centralbank"
+topic: "economy"
 sourceUrl: "https://www.centralbank.go.ke/uploads/balance_of_payment_statistics/1306010805_Value%20of%20Selected%20Domestic%20Exports%20-%20Selected%20Comms.csv"
 ---
-
-Monthly value of selected domestic export commodities
-
-- **Source:** Central Bank of Kenya
-- **API endpoint:** `GET /centralbank/domestic_exports`
-- **Rows:** 2987
-- **Source URL:** [https://www.centralbank.go.ke/uploads/balance_of_payment_statistics/1306010805_Value%20of%20Selected%20Domestic%20Exports%20-%20Selected%20Comms.csv](https://www.centralbank.go.ke/uploads/balance_of_payment_statistics/1306010805_Value%20of%20Selected%20Domestic%20Exports%20-%20Selected%20Comms.csv)
 
 ## Columns
 
@@ -26,10 +19,10 @@ Monthly value of selected domestic export commodities
 
 ## Summary Statistics
 
-| Column | Count | Mean | Std | Min | 25% | 50% | 75% | Max |
-|--------|-------|------|-----|-----|-----|-----|-----|-----|
-| year | 2987 | 2011.92 | 8.00 | 1998.00 | 2005.00 | 2012.00 | 2019.00 | 2026.00 |
-| value | 2987 | 8078.08 | 13787.33 | 4.98 | 503.81 | 2527.26 | 9460.50 | 91579.94 |
+| Column | Count | Mean | Std | Min | Max |
+|--------|-------|------|-----|-----|-----|
+| year | 2987 | 2011.92 | 8.00 | 1998.00 | 2026.00 |
+| value | 2987 | 8078.08 | 13787.33 | 4.98 | 91579.94 |
 
 ## Sample Data
 

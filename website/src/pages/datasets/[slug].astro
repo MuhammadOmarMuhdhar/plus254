@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import DatasetsLayout from "../../components/DatasetsLayout.astro";
 import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
@@ -12,42 +13,104 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);
+const topicNames: Record<string, string> = {
+  economy: "Economy",
+  agriculture: "Agriculture",
+  governance: "Governance",
+};
+const topicLabel = topicNames[entry.data.topic] ?? entry.data.topic;
 ---
 
 <BaseLayout title={`${entry.data.title} — plus254`}>
-  <article>
-    <h1>{entry.data.title}</h1>
+  <DatasetsLayout activeSlug={entry.id}>
+    <header class="page-heading">
+      <p class="breadcrumb">{topicLabel}</p>
+      <h1>{entry.data.title}</h1>
+      <p class="subtitle">{entry.data.description}</p>
+    </header>
+
+    <div class="meta-tags">
+      <span class="meta-tag">{entry.data.source}</span>
+      <span class="meta-tag"><code>{entry.data.endpoint}</code></span>
+      <span class="meta-tag">{entry.data.rows.toLocaleString()} rows</span>
+      {entry.data.sourceUrl && <span class="meta-tag meta-tag--url">{entry.data.sourceUrl}</span>}
+    </div>
+
     <div class="meta">
       <Content />
     </div>
-  </article>
+  </DatasetsLayout>
 </BaseLayout>
 
 <style>
-  h1 {
+  .page-heading {
+    margin-bottom: var(--space-md);
+  }
+
+  .breadcrumb {
+    font-family: var(--font-sans);
+    font-size: var(--text-xs);
+    font-weight: var(--font-semibold);
+    color: var(--color-warm-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: 0 0 var(--space-2xs);
+  }
+
+  .page-heading h1 {
     font-family: var(--font-serif);
-    font-size: var(--text-2xl);
+    font-size: var(--text-xl);
     font-weight: var(--font-semibold);
     color: var(--color-warm-dark);
-    margin: 0 0 var(--space-sm);
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-tight);
+    margin: 0 0 var(--space-xs);
   }
 
-  .meta :global(p) {
-    color: var(--color-warm-mid);
-    line-height: 1.6;
-    margin-bottom: var(--space-sm);
+  .subtitle {
+    font-family: var(--font-sans);
     font-size: var(--text-base);
+    color: var(--color-warm-mid);
+    line-height: var(--leading-relaxed);
+    margin: 0;
+    max-width: 65ch;
   }
 
-  .meta :global(ul) {
-    color: var(--color-warm-mid);
-    line-height: 1.6;
-    padding-left: var(--space-md);
+  .meta-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
     margin-bottom: var(--space-lg);
   }
 
-  .meta :global(li) {
-    margin-bottom: var(--space-2xs);
+  .meta-tag {
+    font-family: var(--font-sans);
+    font-size: var(--text-xs);
+    font-weight: var(--font-medium);
+    color: var(--color-warm-dark);
+    background: #6cb999;
+    border: 1px solid rgba(31, 111, 84, 0.35);
+    padding: var(--space-2xs) var(--space-xs);
+    line-height: var(--leading-normal);
+  }
+
+  .meta-tag code {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+  }
+
+  .meta-tag--url {
+    max-width: 100%;
+    word-break: break-all;
+  }
+
+  .meta :global(p) {
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+    color: var(--color-warm-mid);
+    line-height: var(--leading-relaxed);
+    margin: 0 0 var(--space-sm);
+    max-width: 65ch;
   }
 
   .meta :global(code) {
@@ -55,6 +118,7 @@ const { Content } = await render(entry);
     font-size: 0.9em;
     background: rgba(108, 185, 153, 0.15);
     padding: 0.125rem 0.375rem;
+    color: var(--color-warm-dark);
   }
 
   .meta :global(h2) {
@@ -95,6 +159,7 @@ const { Content } = await render(entry);
     padding: var(--space-sm) var(--space-md);
     border-bottom: 1px solid #1f6f54;
     vertical-align: middle;
+    word-break: break-word;
   }
 
   .meta :global(h2 ~ table tbody tr:last-child td) {

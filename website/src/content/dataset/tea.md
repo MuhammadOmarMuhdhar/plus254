@@ -2,18 +2,11 @@
 title: "Tea Production and Exports"
 description: "Weekly tea auction data — production, export volume, and prices"
 source: "Tea Board of Kenya"
-endpoint: "GET /teaboard/tea"
+endpoint: "GET /agriculture/tea"
 rows: 84
-category: "teaboard"
+topic: "agriculture"
 sourceUrl: "https://eatta.co.ke/statistics"
 ---
-
-Weekly tea auction data — production, export volume, and prices
-
-- **Source:** Tea Board of Kenya
-- **API endpoint:** `GET /teaboard/tea`
-- **Rows:** 84
-- **Source URL:** [https://eatta.co.ke/statistics](https://eatta.co.ke/statistics)
 
 ## Columns
 
@@ -23,16 +16,16 @@ Weekly tea auction data — production, export volume, and prices
 | year | int64 | Calendar year | No | 0 | 1 |
 | month | object | Calendar month name | Yes | 84 | 0 |
 | sale_week | int64 | Sequential auction batch number (starts at 1 each year) | No | 0 | 21 |
-| metric | object | Auction metric (Average price (USD), Tea sold (Kgs), Tea offered (Kgs), Unsold tea (%)) | No | 0 | 4 |
-| value | float64 | Metric value | No | 0 | 69 |
+| metric | object | Auction metric name (Average price (USD), Tea sold (Kgs), Tea offered (Kgs), Unsold tea (%)) | No | 0 | 4 |
+| value | float64 | Numeric value of the metric | No | 0 | 69 |
 
 ## Summary Statistics
 
-| Column | Count | Mean | Std | Min | 25% | 50% | 75% | Max |
-|--------|-------|------|-----|-----|-----|-----|-----|-----|
-| year | 84 | 2026.00 | 0.00 | 2026.00 | 2026.00 | 2026.00 | 2026.00 | 2026.00 |
-| sale_week | 84 | 11.00 | 6.09 | 1.00 | 6.00 | 11.00 | 16.00 | 21.00 |
-| value | 84 | 4.964e+06 | 5.068e+06 | 2.09 | 5.82 | 3.763e+06 | 9.667e+06 | 1.283e+07 |
+| Column | Count | Mean | Std | Min | Max |
+|--------|-------|------|-----|-----|-----|
+| year | 84 | 2026.00 | 0.00 | 2026.00 | 2026.00 |
+| sale_week | 84 | 11.00 | 6.09 | 1.00 | 21.00 |
+| value | 84 | 4.964e+06 | 5.068e+06 | 2.09 | 1.283e+07 |
 
 ## Sample Data
 

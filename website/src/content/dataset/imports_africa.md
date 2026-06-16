@@ -2,18 +2,11 @@
 title: "Value of Imports from Africa"
 description: "Monthly value of direct imports from selected African countries"
 source: "Central Bank of Kenya"
-endpoint: "GET /centralbank/imports_africa"
+endpoint: "GET /economy/imports_africa"
 rows: 2710
-category: "centralbank"
+topic: "economy"
 sourceUrl: "https://www.centralbank.go.ke/uploads/balance_of_payment_statistics/1764709360_Value%20of%20Direct%20Imports%20from%20Selected%20African%20Countries.csv"
 ---
-
-Monthly value of direct imports from selected African countries
-
-- **Source:** Central Bank of Kenya
-- **API endpoint:** `GET /centralbank/imports_africa`
-- **Rows:** 2710
-- **Source URL:** [https://www.centralbank.go.ke/uploads/balance_of_payment_statistics/1764709360_Value%20of%20Direct%20Imports%20from%20Selected%20African%20Countries.csv](https://www.centralbank.go.ke/uploads/balance_of_payment_statistics/1764709360_Value%20of%20Direct%20Imports%20from%20Selected%20African%20Countries.csv)
 
 ## Columns
 
@@ -26,10 +19,10 @@ Monthly value of direct imports from selected African countries
 
 ## Summary Statistics
 
-| Column | Count | Mean | Std | Min | 25% | 50% | 75% | Max |
-|--------|-------|------|-----|-----|-----|-----|-----|-----|
-| year | 2710 | 2011.64 | 8.16 | 1998.00 | 2005.00 | 2012.00 | 2019.00 | 2026.00 |
-| value | 2710 | 2762.03 | 4387.60 | 0.00 | 181.89 | 1131.81 | 3329.29 | 28475.48 |
+| Column | Count | Mean | Std | Min | Max |
+|--------|-------|------|-----|-----|-----|
+| year | 2710 | 2011.64 | 8.16 | 1998.00 | 2026.00 |
+| value | 2710 | 2762.03 | 4387.60 | 0.00 | 28475.48 |
 
 ## Sample Data
 

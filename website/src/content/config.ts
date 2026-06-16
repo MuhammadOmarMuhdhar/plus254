@@ -7,7 +7,7 @@ const dataset = defineCollection({
     source: z.string(),
     endpoint: z.string(),
     rows: z.number(),
-    category: z.string(),
+    topic: z.string(),
     sourceUrl: z.string().url().optional(),
   }),
 });
