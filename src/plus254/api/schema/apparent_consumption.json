@@ -1,0 +1,116 @@
+{
+  "config": "apparent_consumption",
+  "slug": "agriculture",
+  "name": "Apparent Consumption",
+  "source": "Kenya Agricultural Observatory Platform (Kilimo)",
+  "description": "Apparent consumption of agricultural commodities across Kenyan counties",
+  "url": "https://statistics.kilimo.go.ke",
+  "row_count": 62,
+  "columns": [
+    {
+      "name": "year",
+      "type": "object",
+      "description": "Calendar year",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 62,
+      "sample_values": [
+        "2024",
+        "2024",
+        "2023",
+        "2022",
+        "2022"
+      ],
+      "stats": null
+    },
+    {
+      "name": "area_level",
+      "type": "object",
+      "description": "Geographic level (always county)",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 62,
+      "sample_values": [
+        "country",
+        "country",
+        "country",
+        "country",
+        "county"
+      ],
+      "stats": null
+    },
+    {
+      "name": "area_name",
+      "type": "object",
+      "description": "County name (lowercased)",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 62,
+      "sample_values": [
+        "kenya",
+        "kenya",
+        "kenya",
+        "kenya",
+        "narok"
+      ],
+      "stats": null
+    },
+    {
+      "name": "metric",
+      "type": "object",
+      "description": "Sub-domain or category within the indicator (lowercased)",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 62,
+      "sample_values": [
+        "crops",
+        "land, inputs and sustainability",
+        "crops",
+        "crops",
+        "crops"
+      ],
+      "stats": null
+    },
+    {
+      "name": "item",
+      "type": "object",
+      "description": "Specific item or commodity being measured (lowercased)",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 62,
+      "sample_values": [
+        "tea( green leaf tea)",
+        "fertilizer",
+        "tea( green leaf tea)",
+        "tea( green leaf tea)",
+        "cowpeas"
+      ],
+      "stats": null
+    },
+    {
+      "name": "value",
+      "type": "float64",
+      "description": "Numeric value of the indicator",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 62,
+      "sample_values": [
+        37502000.0,
+        723637.0,
+        37303000.0,
+        36352809.0,
+        20.0
+      ],
+      "stats": {
+        "count": 62,
+        "mean": 15554525.483870968,
+        "std": 10334870.066798477,
+        "min": 20.0,
+        "25%": 8445780.75,
+        "50%": 13849781.5,
+        "75%": 17709603.0,
+        "max": 40474033.0
+      }
+    }
+  ]
+}

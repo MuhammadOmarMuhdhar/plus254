@@ -1,6 +1,6 @@
 rov_per_polling_station:
   name: Registered Voters per Polling Station
-  slug: iebc
+  slug: governance
   source: Independent Electoral and Boundaries Commission (IEBC) Kenya
   description: Number of registered voters per polling station across all 47 counties for the 2022 General Election
   url: https://www.iebc.or.ke/docs/rov_per_polling_station.pdf

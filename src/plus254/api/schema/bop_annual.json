@@ -1,28 +1,12 @@
 {
   "config": "bop_annual",
-  "slug": "centralbank",
+  "slug": "economy",
   "name": "Balance of Payments (Annual)",
   "source": "Central Bank of Kenya",
   "description": "Annual balance of payments statement",
   "url": "https://www.centralbank.go.ke/uploads/balance_of_payment_statistics/1657248905_Balance%20of%20Payments%20Statement%20(Annual%20Calender%20Year).csv",
   "row_count": 357,
   "columns": [
-    {
-      "name": "category",
-      "type": "object",
-      "description": "BPM6 balance of payments category (e.g., A. Current Account, n.i.e., General government)",
-      "nullable": false,
-      "null_count": 0,
-      "non_null_count": 357,
-      "sample_values": [
-        "a. current account, n.i.e.",
-        "other debt instruments",
-        "central bank",
-        "deposit-taking corporations, except the central bank",
-        "general government"
-      ],
-      "stats": null
-    },
     {
       "name": "year",
       "type": "int64",
@@ -47,6 +31,22 @@
         "75%": 2024.0,
         "max": 2025.0
       }
+    },
+    {
+      "name": "metric",
+      "type": "object",
+      "description": "BPM6 balance of payments category (e.g., A. Current Account, n.i.e., General government)",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 357,
+      "sample_values": [
+        "a. current account, n.i.e.",
+        "other debt instruments",
+        "central bank",
+        "deposit-taking corporations, except the central bank",
+        "general government"
+      ],
+      "stats": null
     },
     {
       "name": "value",

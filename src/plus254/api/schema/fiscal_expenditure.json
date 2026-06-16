@@ -1,6 +1,6 @@
 {
   "config": "fiscal_expenditure",
-  "slug": "centralbank",
+  "slug": "economy",
   "name": "Government Expenditure",
   "source": "Central Bank of Kenya",
   "description": "Monthly government expenditure breakdown",

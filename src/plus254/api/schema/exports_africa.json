@@ -1,6 +1,6 @@
 {
   "config": "exports_africa",
-  "slug": "centralbank",
+  "slug": "economy",
   "name": "Value of Exports to Africa",
   "source": "Central Bank of Kenya",
   "description": "Monthly value of exports to selected African countries",

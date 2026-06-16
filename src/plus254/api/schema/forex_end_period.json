@@ -1,6 +1,6 @@
 {
   "config": "forex_end_period",
-  "slug": "centralbank",
+  "slug": "economy",
   "name": "Monthly Exchange Rates (End Period)",
   "source": "Central Bank of Kenya",
   "description": "Monthly exchange rates of major currencies against KES (end period)",

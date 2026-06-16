@@ -1,6 +1,6 @@
 {
   "config": "monetary_survey",
-  "slug": "centralbank",
+  "slug": "economy",
   "name": "Depository Corporation Survey",
   "source": "Central Bank of Kenya",
   "description": "Monetary aggregates from the Depository Corporation Survey",
@@ -24,7 +24,7 @@
       "stats": null
     },
     {
-      "name": "indicator",
+      "name": "metric",
       "type": "object",
       "description": "Monetary indicator name (e.g., Excess reserves, Required reserves, Broad Money M3)",
       "nullable": false,

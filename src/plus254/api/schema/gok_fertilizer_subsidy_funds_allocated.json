@@ -1,0 +1,116 @@
+{
+  "config": "gok_fertilizer_subsidy_funds_allocated",
+  "slug": "agriculture",
+  "name": "GOK Fertilizer Subsidy Funds Allocated",
+  "source": "Kenya Agricultural Observatory Platform (Kilimo)",
+  "description": "Funds allocated for the government fertilizer subsidy program across Kenyan counties",
+  "url": "https://statistics.kilimo.go.ke",
+  "row_count": 12,
+  "columns": [
+    {
+      "name": "year",
+      "type": "object",
+      "description": "Calendar year",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 12,
+      "sample_values": [
+        "2020",
+        "2019",
+        "2018",
+        "2017",
+        "2016"
+      ],
+      "stats": null
+    },
+    {
+      "name": "area_level",
+      "type": "object",
+      "description": "Geographic level (always county)",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 12,
+      "sample_values": [
+        "country",
+        "country",
+        "country",
+        "country",
+        "country"
+      ],
+      "stats": null
+    },
+    {
+      "name": "area_name",
+      "type": "object",
+      "description": "County name (lowercased)",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 12,
+      "sample_values": [
+        "kenya",
+        "kenya",
+        "kenya",
+        "kenya",
+        "kenya"
+      ],
+      "stats": null
+    },
+    {
+      "name": "metric",
+      "type": "object",
+      "description": "Sub-domain or category within the indicator (lowercased)",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 12,
+      "sample_values": [
+        "land, inputs and sustainability",
+        "land, inputs and sustainability",
+        "land, inputs and sustainability",
+        "land, inputs and sustainability",
+        "land, inputs and sustainability"
+      ],
+      "stats": null
+    },
+    {
+      "name": "item",
+      "type": "object",
+      "description": "Specific item or commodity being measured (lowercased)",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 12,
+      "sample_values": [
+        "fertilizer",
+        "fertilizer",
+        "fertilizer",
+        "fertilizer",
+        "fertilizer"
+      ],
+      "stats": null
+    },
+    {
+      "name": "value",
+      "type": "float64",
+      "description": "Numeric value of the indicator",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 12,
+      "sample_values": [
+        0.0,
+        6300000000.0,
+        5569300200.0,
+        4598000000.0,
+        5459662652.0
+      ],
+      "stats": {
+        "count": 12,
+        "mean": 3759542177.6666665,
+        "std": 1807921763.680301,
+        "min": 0.0,
+        "25%": 3157500000.0,
+        "50%": 3942900142.0,
+        "75%": 4813415663.0,
+        "max": 6300000000.0
+      }
+    }
+  ]
+}

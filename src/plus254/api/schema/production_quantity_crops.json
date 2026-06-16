@@ -1,0 +1,116 @@
+{
+  "config": "production_quantity_crops",
+  "slug": "agriculture",
+  "name": "Production Quantity (Crops)",
+  "source": "Kenya Agricultural Observatory Platform (Kilimo)",
+  "description": "Quantity of crop production across Kenyan counties",
+  "url": "https://statistics.kilimo.go.ke",
+  "row_count": 5352,
+  "columns": [
+    {
+      "name": "year",
+      "type": "object",
+      "description": "Calendar year",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 5352,
+      "sample_values": [
+        "2025",
+        "2025",
+        "2025",
+        "2025",
+        "2025"
+      ],
+      "stats": null
+    },
+    {
+      "name": "area_level",
+      "type": "object",
+      "description": "Geographic level (always county)",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 5352,
+      "sample_values": [
+        "county",
+        "county",
+        "county",
+        "county",
+        "county"
+      ],
+      "stats": null
+    },
+    {
+      "name": "area_name",
+      "type": "object",
+      "description": "County name (lowercased)",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 5352,
+      "sample_values": [
+        "bungoma",
+        "bungoma",
+        "busia",
+        "busia",
+        "busia"
+      ],
+      "stats": null
+    },
+    {
+      "name": "metric",
+      "type": "object",
+      "description": "Sub-domain or category within the indicator (lowercased)",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 5352,
+      "sample_values": [
+        "crops",
+        "crops",
+        "crops",
+        "crops",
+        "crops"
+      ],
+      "stats": null
+    },
+    {
+      "name": "item",
+      "type": "object",
+      "description": "Specific item or commodity being measured (lowercased)",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 5352,
+      "sample_values": [
+        "bambara groundnuts",
+        "sesame",
+        "sesame",
+        "sunflower",
+        "bambara groundnuts"
+      ],
+      "stats": null
+    },
+    {
+      "name": "value",
+      "type": "float64",
+      "description": "Numeric value of the indicator",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 5352,
+      "sample_values": [
+        94.0,
+        7.0,
+        29.0,
+        132.0,
+        82.0
+      ],
+      "stats": {
+        "count": 5352,
+        "mean": 1803143.7708540657,
+        "std": 17192886.16794324,
+        "min": 0.0,
+        "25%": 105.75,
+        "50%": 2449.1800000000003,
+        "75%": 26799.5,
+        "max": 373145981.0
+      }
+    }
+  ]
+}

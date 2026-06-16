@@ -1,15 +1,6 @@
-kilimo:
-  name: Kenya Agricultural Statistics
-  slug: kilimo
-  source: Kenya Agricultural Observatory Platform (Kilimo)
-  description: Agricultural production, value, and market data across Kenyan counties
-  url: https://statistics.kilimo.go.ke
-  columns: {}
-  last_updated: '2026-06-15T12:42:19'
-
 production_value_livestock:
   name: Production Value (Livestock)
-  slug: kilimo
+  slug: agriculture
   source: Kenya Agricultural Observatory Platform (Kilimo)
   description: Value of livestock production across Kenyan counties
   url: https://statistics.kilimo.go.ke
@@ -36,7 +27,7 @@ production_value_livestock:
 
 crop_area:
   name: Crop Area
-  slug: kilimo
+  slug: agriculture
   source: Kenya Agricultural Observatory Platform (Kilimo)
   description: Area under crop cultivation across Kenyan counties
   url: https://statistics.kilimo.go.ke
@@ -63,7 +54,7 @@ crop_area:
 
 production_quantity_livestock:
   name: Production Quantity (Livestock)
-  slug: kilimo
+  slug: agriculture
   source: Kenya Agricultural Observatory Platform (Kilimo)
   description: Quantity of livestock production across Kenyan counties
   url: https://statistics.kilimo.go.ke
@@ -90,7 +81,7 @@ production_quantity_livestock:
 
 livestock_population:
   name: Livestock Population
-  slug: kilimo
+  slug: agriculture
   source: Kenya Agricultural Observatory Platform (Kilimo)
   description: Livestock population counts across Kenyan counties
   url: https://statistics.kilimo.go.ke
@@ -117,7 +108,7 @@ livestock_population:
 
 crop_yield:
   name: Crop Yield
-  slug: kilimo
+  slug: agriculture
   source: Kenya Agricultural Observatory Platform (Kilimo)
   description: Crop yield per unit area across Kenyan counties
   url: https://statistics.kilimo.go.ke
@@ -144,7 +135,7 @@ crop_yield:
 
 production_value_crops:
   name: Production Value (Crops)
-  slug: kilimo
+  slug: agriculture
   source: Kenya Agricultural Observatory Platform (Kilimo)
   description: Value of crop production across Kenyan counties
   url: https://statistics.kilimo.go.ke
@@ -171,7 +162,7 @@ production_value_crops:
 
 production_quantity_crops:
   name: Production Quantity (Crops)
-  slug: kilimo
+  slug: agriculture
   source: Kenya Agricultural Observatory Platform (Kilimo)
   description: Quantity of crop production across Kenyan counties
   url: https://statistics.kilimo.go.ke
@@ -198,7 +189,7 @@ production_quantity_crops:
 
 production_area:
   name: Production Area
-  slug: kilimo
+  slug: agriculture
   source: Kenya Agricultural Observatory Platform (Kilimo)
   description: Area under agricultural production across Kenyan counties
   url: https://statistics.kilimo.go.ke
@@ -225,7 +216,7 @@ production_area:
 
 export_quantity:
   name: Export Quantity
-  slug: kilimo
+  slug: agriculture
   source: Kenya Agricultural Observatory Platform (Kilimo)
   description: Quantity of agricultural exports across Kenyan counties
   url: https://statistics.kilimo.go.ke
@@ -252,7 +243,7 @@ export_quantity:
 
 import_quantity:
   name: Import Quantity
-  slug: kilimo
+  slug: agriculture
   source: Kenya Agricultural Observatory Platform (Kilimo)
   description: Quantity of agricultural imports across Kenyan counties
   url: https://statistics.kilimo.go.ke
@@ -279,7 +270,7 @@ import_quantity:
 
 apparent_consumption:
   name: Apparent Consumption
-  slug: kilimo
+  slug: agriculture
   source: Kenya Agricultural Observatory Platform (Kilimo)
   description: Apparent consumption of agricultural commodities across Kenyan counties
   url: https://statistics.kilimo.go.ke
@@ -306,7 +297,7 @@ apparent_consumption:
 
 total_value_of_import:
   name: Total Value of Imports
-  slug: kilimo
+  slug: agriculture
   source: Kenya Agricultural Observatory Platform (Kilimo)
   description: Total value of agricultural imports across Kenyan counties
   url: https://statistics.kilimo.go.ke
@@ -333,7 +324,7 @@ total_value_of_import:
 
 total_value_of_export:
   name: Total Value of Exports
-  slug: kilimo
+  slug: agriculture
   source: Kenya Agricultural Observatory Platform (Kilimo)
   description: Total value of agricultural exports across Kenyan counties
   url: https://statistics.kilimo.go.ke
@@ -360,7 +351,7 @@ total_value_of_export:
 
 political_governance_economic_investments:
   name: Political Governance & Economic Investments
-  slug: kilimo
+  slug: agriculture
   source: Kenya Agricultural Observatory Platform (Kilimo)
   description: Political governance and economic investment indicators in agriculture across Kenyan counties
   url: https://statistics.kilimo.go.ke
@@ -387,7 +378,7 @@ political_governance_economic_investments:
 
 cane_deliveries:
   name: Cane Deliveries
-  slug: kilimo
+  slug: agriculture
   source: Kenya Agricultural Observatory Platform (Kilimo)
   description: Sugarcane deliveries to millers across Kenyan counties
   url: https://statistics.kilimo.go.ke
@@ -414,7 +405,7 @@ cane_deliveries:
 
 quantity_of_gok_subsidized_fertilizer:
   name: GOK Subsidized Fertilizer Quantity
-  slug: kilimo
+  slug: agriculture
   source: Kenya Agricultural Observatory Platform (Kilimo)
   description: Quantity of government-subsidized fertilizer distributed across Kenyan counties
   url: https://statistics.kilimo.go.ke
@@ -441,7 +432,7 @@ quantity_of_gok_subsidized_fertilizer:
 
 gok_fertilizer_subsidy_beneficiaries:
   name: GOK Fertilizer Subsidy Beneficiaries
-  slug: kilimo
+  slug: agriculture
   source: Kenya Agricultural Observatory Platform (Kilimo)
   description: Beneficiaries of the government fertilizer subsidy program across Kenyan counties
   url: https://statistics.kilimo.go.ke
@@ -468,7 +459,7 @@ gok_fertilizer_subsidy_beneficiaries:
 
 gok_fertilizer_subsidy_funds_allocated:
   name: GOK Fertilizer Subsidy Funds Allocated
-  slug: kilimo
+  slug: agriculture
   source: Kenya Agricultural Observatory Platform (Kilimo)
   description: Funds allocated for the government fertilizer subsidy program across Kenyan counties
   url: https://statistics.kilimo.go.ke
@@ -495,7 +486,7 @@ gok_fertilizer_subsidy_funds_allocated:
 
 gok_fertilizer_subsidy_expenditure:
   name: GOK Fertilizer Subsidy Expenditure
-  slug: kilimo
+  slug: agriculture
   source: Kenya Agricultural Observatory Platform (Kilimo)
   description: Expenditure on the government fertilizer subsidy program across Kenyan counties
   url: https://statistics.kilimo.go.ke

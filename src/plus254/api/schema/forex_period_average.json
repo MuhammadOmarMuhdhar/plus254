@@ -1,6 +1,6 @@
 {
   "config": "forex_period_average",
-  "slug": "centralbank",
+  "slug": "economy",
   "name": "Monthly Exchange Rates (Period Average)",
   "source": "Central Bank of Kenya",
   "description": "Monthly exchange rates of major currencies against KES (period average)",

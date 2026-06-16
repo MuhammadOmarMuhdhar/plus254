@@ -1,6 +1,6 @@
 {
   "config": "fiscal_revenue",
-  "slug": "centralbank",
+  "slug": "economy",
   "name": "Government Revenue",
   "source": "Central Bank of Kenya",
   "description": "Monthly government revenue breakdown",

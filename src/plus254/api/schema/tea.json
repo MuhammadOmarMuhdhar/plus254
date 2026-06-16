@@ -1,6 +1,6 @@
 {
   "config": "tea",
-  "slug": "teaboard",
+  "slug": "agriculture",
   "name": "Tea Production and Exports",
   "source": "Tea Board of Kenya",
   "description": "Weekly tea auction data \u2014 production, export volume, and prices",
@@ -89,7 +89,7 @@
     {
       "name": "metric",
       "type": "object",
-      "description": "Auction metric (Average price (USD), Tea sold (Kgs), Tea offered (Kgs), Unsold tea (%))",
+      "description": "Auction metric name (Average price (USD), Tea sold (Kgs), Tea offered (Kgs), Unsold tea (%))",
       "nullable": false,
       "null_count": 0,
       "non_null_count": 84,
@@ -105,7 +105,7 @@
     {
       "name": "value",
       "type": "float64",
-      "description": "Metric value",
+      "description": "Numeric value of the metric",
       "nullable": false,
       "null_count": 0,
       "non_null_count": 84,

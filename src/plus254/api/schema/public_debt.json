@@ -1,6 +1,6 @@
 {
   "config": "public_debt",
-  "slug": "centralbank",
+  "slug": "economy",
   "name": "Public Debt",
   "source": "Central Bank of Kenya",
   "description": "Monthly public debt (domestic and external)",

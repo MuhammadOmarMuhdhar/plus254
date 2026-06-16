@@ -1,0 +1,196 @@
+{
+  "config": "rov_per_polling_station",
+  "slug": "governance",
+  "name": "Registered Voters per Polling Station",
+  "source": "Independent Electoral and Boundaries Commission (IEBC) Kenya",
+  "description": "Number of registered voters per polling station across all 47 counties for the 2022 General Election",
+  "url": "https://www.iebc.or.ke/docs/rov_per_polling_station.pdf",
+  "row_count": 37250,
+  "columns": [
+    {
+      "name": "county_code",
+      "type": "object",
+      "description": "3-digit numeric county code",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 37250,
+      "sample_values": [
+        "001",
+        "001",
+        "001",
+        "001",
+        "001"
+      ],
+      "stats": null
+    },
+    {
+      "name": "county_name",
+      "type": "object",
+      "description": "County name",
+      "nullable": true,
+      "null_count": 1,
+      "non_null_count": 37249,
+      "sample_values": [
+        "mombasa",
+        "mombasa",
+        "mombasa",
+        "mombasa",
+        "mombasa"
+      ],
+      "stats": null
+    },
+    {
+      "name": "const_code",
+      "type": "object",
+      "description": "Constituency code",
+      "nullable": true,
+      "null_count": 1,
+      "non_null_count": 37249,
+      "sample_values": [
+        "001",
+        "001",
+        "001",
+        "001",
+        "001"
+      ],
+      "stats": null
+    },
+    {
+      "name": "const_name",
+      "type": "object",
+      "description": "Constituency name",
+      "nullable": true,
+      "null_count": 1,
+      "non_null_count": 37249,
+      "sample_values": [
+        "changamwe",
+        "changamwe",
+        "changamwe",
+        "changamwe",
+        "changamwe"
+      ],
+      "stats": null
+    },
+    {
+      "name": "caw_code",
+      "type": "object",
+      "description": "County Assembly Ward code",
+      "nullable": true,
+      "null_count": 1,
+      "non_null_count": 37249,
+      "sample_values": [
+        "0001",
+        "0001",
+        "0001",
+        "0001",
+        "0001"
+      ],
+      "stats": null
+    },
+    {
+      "name": "caw_name",
+      "type": "object",
+      "description": "County Assembly Ward name",
+      "nullable": true,
+      "null_count": 1,
+      "non_null_count": 37249,
+      "sample_values": [
+        "port reitz",
+        "port reitz",
+        "port reitz",
+        "port reitz",
+        "port reitz"
+      ],
+      "stats": null
+    },
+    {
+      "name": "reg_centre_code",
+      "type": "object",
+      "description": "Registration Centre code",
+      "nullable": true,
+      "null_count": 1,
+      "non_null_count": 37249,
+      "sample_values": [
+        "001",
+        "001",
+        "001",
+        "001",
+        "001"
+      ],
+      "stats": null
+    },
+    {
+      "name": "reg_centre_name",
+      "type": "object",
+      "description": "Registration Centre name",
+      "nullable": true,
+      "null_count": 1,
+      "non_null_count": 37249,
+      "sample_values": [
+        "bomu primary school",
+        "bomu primary school",
+        "bomu primary school",
+        "bomu primary school",
+        "bomu primary school"
+      ],
+      "stats": null
+    },
+    {
+      "name": "polling_station_code",
+      "type": "object",
+      "description": "Unique polling station code",
+      "nullable": true,
+      "null_count": 1,
+      "non_null_count": 37249,
+      "sample_values": [
+        "001001000100101",
+        "001001000100102",
+        "001001000100103",
+        "001001000100104",
+        "001001000100105"
+      ],
+      "stats": null
+    },
+    {
+      "name": "polling_station_name_name",
+      "type": "object",
+      "description": "",
+      "nullable": true,
+      "null_count": 1,
+      "non_null_count": 37249,
+      "sample_values": [
+        "bomu primary school",
+        "bomu primary school",
+        "bomu primary school",
+        "bomu primary school",
+        "bomu primary school"
+      ],
+      "stats": null
+    },
+    {
+      "name": "value",
+      "type": "float64",
+      "description": "Number of registered voters at the polling station",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 37250,
+      "sample_values": [
+        673.0,
+        673.0,
+        673.0,
+        672.0,
+        672.0
+      ],
+      "stats": {
+        "count": 37250,
+        "mean": 1082.8005906040269,
+        "std": 114609.81702712293,
+        "min": 1.0,
+        "25%": 389.0,
+        "50%": 510.0,
+        "75%": 628.0,
+        "max": 22120458.0
+      }
+    }
+  ]
+}
