@@ -419,13 +419,12 @@ const activeLabel = activeSlug
 <script>
   const isLanding = document.querySelector('.nav-link.active') !== null;
   if (isLanding) {
-    const sectionIds = ['overview', 'economy', 'agriculture', 'governance', 'explore'];
+    const sectionIds = ['overview', 'economy', 'agriculture', 'governance'];
     const navMap = {
       'overview': 'overview',
       'economy': 'economy',
       'agriculture': 'agriculture',
       'governance': 'governance',
-      'explore': 'explore',
     };
     const overviewLink = document.querySelector('.nav-link');
     const topicHeadings = document.querySelectorAll('.topic-heading');
@@ -437,7 +436,7 @@ const activeLabel = activeSlug
         el.classList.toggle('active', el.dataset.topic === id);
       });
       if (label && navMap[id]) {
-        const displayNames = { overview: 'Overview', economy: 'Economy', agriculture: 'Agriculture', governance: 'Governance', explore: 'Using the API' };
+        const displayNames = { overview: 'Overview', economy: 'Economy', agriculture: 'Agriculture', governance: 'Governance' };
         label.textContent = displayNames[id] || 'Overview';
       }
     }

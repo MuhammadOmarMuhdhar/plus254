@@ -18,7 +18,6 @@ const topicNames: Record<string, string> = {
 };
 const topicOrder = ["economy", "agriculture", "governance"];
 const sources = [...new Set(datasets.map((d) => d.data.source))];
-const topicCount = Object.keys(grouped).length;
 const topicPlaceholder = "{topic}";
 const datasetPlaceholder = "{dataset}";
 ---
@@ -100,10 +99,6 @@ const datasetPlaceholder = "{dataset}";
     margin-bottom: var(--space-fluid-xl);
   }
 
-  .section--last {
-    margin-bottom: 0;
-  }
-
   .eyebrow {
     display: block;
     font-family: var(--font-sans);
@@ -131,9 +126,29 @@ const datasetPlaceholder = "{dataset}";
     margin-top: var(--space-smd);
   }
 
-  .stat {
-    font-weight: var(--font-semibold);
+  .narrative code {
+    font-family: var(--font-mono);
+    font-size: 0.85em;
+    background: rgba(31, 111, 84, 0.15);
+    padding: 0.0625rem 0.25rem;
     color: var(--color-warm-dark);
+  }
+
+  .narrative a {
+    color: var(--color-warm-dark);
+    text-decoration: underline;
+    text-decoration-color: rgba(31, 111, 84, 0.4);
+    text-underline-offset: 2px;
+    transition: text-decoration-color 0.15s var(--ease-out);
+  }
+
+  .narrative a:hover {
+    text-decoration-color: #1f6f54;
+  }
+
+  .narrative a:focus-visible {
+    outline: 2px solid #1f6f54;
+    outline-offset: 2px;
   }
 
   .topic-count {
@@ -215,43 +230,9 @@ const datasetPlaceholder = "{dataset}";
     font-family: var(--font-sans);
     font-size: var(--text-sm);
     color: var(--color-warm-dark);
-    line-height: 1.5;
+    line-height: var(--leading-normal);
     margin: 0;
     opacity: 0.75;
-  }
-
-  .section-outro {
-    font-family: var(--font-sans);
-    font-size: var(--text-base);
-    color: var(--color-warm-mid);
-    line-height: var(--leading-relaxed);
-    margin: 0;
-    max-width: 65ch;
-  }
-
-  .section-outro code {
-    font-family: var(--font-mono);
-    font-size: 0.85em;
-    background: rgba(31, 111, 84, 0.15);
-    padding: 0.0625rem 0.25rem;
-    color: var(--color-warm-dark);
-  }
-
-  .section-outro a {
-    color: var(--color-warm-dark);
-    text-decoration: underline;
-    text-decoration-color: rgba(31, 111, 84, 0.4);
-    text-underline-offset: 2px;
-    transition: text-decoration-color 0.15s var(--ease-out);
-  }
-
-  .section-outro a:hover {
-    text-decoration-color: #1f6f54;
-  }
-
-  .section-outro a:focus-visible {
-    outline: 2px solid #1f6f54;
-    outline-offset: 2px;
   }
 
   @media (max-width: 768px) {

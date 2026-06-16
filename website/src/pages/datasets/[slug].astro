@@ -79,7 +79,7 @@ const topicLabel = topicNames[entry.data.topic] ?? entry.data.topic;
   .meta-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--space-xs);
+    gap: var(--space-sm);
     margin-bottom: var(--space-lg);
   }
 
@@ -102,15 +102,6 @@ const topicLabel = topicNames[entry.data.topic] ?? entry.data.topic;
   .meta-tag--url {
     max-width: 100%;
     word-break: break-all;
-  }
-
-  .meta :global(p) {
-    font-family: var(--font-sans);
-    font-size: var(--text-base);
-    color: var(--color-warm-mid);
-    line-height: var(--leading-relaxed);
-    margin: 0 0 var(--space-sm);
-    max-width: 65ch;
   }
 
   .meta :global(code) {
