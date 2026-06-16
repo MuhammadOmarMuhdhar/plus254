@@ -57,20 +57,28 @@ import AboutLayout from "../components/AboutLayout.astro";
       <span class="eyebrow">Conventions</span>
       <div class="conventions-grid">
         <div class="convention-item">
-          <h4 class="convention-term">Long-form tidy data</h4>
-          <p class="convention-desc">Every dataset is structured as identifier columns and a metric/value pair — rows can be filtered, grouped, or plotted without restructuring. This is why <code>Metric</code> and <code>Value</code> columns appear consistently throughout.</p>
+          <h4 class="convention-term">Long-form data</h4>
+          <p class="convention-desc">Every dataset uses a <code>metric</code> and <code>value</code> column pair instead of one column per indicator.</p>
         </div>
         <div class="convention-item">
-          <h4 class="convention-term">TitleCase column naming</h4>
-          <p class="convention-desc">All column names are TitleCase (<code>Year</code>, <code>Month</code>, <code>Metric</code>, <code>Value</code>), enforced programmatically. Raw source headers — often inconsistent or poorly labelled — are never exposed directly.</p>
+          <h4 class="convention-term">snake_case columns</h4>
+          <p class="convention-desc">All column names are snake_case: <code>fiscal_year</code>, <code>area_name</code>, <code>sale_week</code>.</p>
         </div>
         <div class="convention-item">
-          <h4 class="convention-term">Month handling</h4>
-          <p class="convention-desc">Months are stored as full names (<code>January</code>) and set as an ordered categorical, ensuring chronological (not alphabetical) sorting in charts and tables.</p>
+          <h4 class="convention-term">Lowercased values</h4>
+          <p class="convention-desc">Every string value is lowercased: months (<code>january</code>), metric names (<code>total revenue</code>), country names (<code>united states dollar</code>), counties (<code>nairobi</code>).</p>
         </div>
         <div class="convention-item">
-          <h4 class="convention-term">Descriptive code</h4>
-          <p class="convention-desc">The extraction and cleaning code uses long, readable variable names — <code>domestic_debt_by_instrument</code>, <code>total_recurrent_expenditure</code> — so the pipeline is self-documenting and auditable.</p>
+          <h4 class="convention-term">Clean numeric values</h4>
+          <p class="convention-desc">Commas and other formatting are stripped. Every <code>value</code> column is numeric. Rows where a value was not reported are omitted.</p>
+        </div>
+        <div class="convention-item">
+          <h4 class="convention-term">Schema patterns</h4>
+          <p class="convention-desc">Monthly data has <code>year</code> and <code>month</code>, quarterly has <code>year</code> and <code>quarter</code>, annual has just <code>year</code>, and geographic datasets include <code>area_name</code>.</p>
+        </div>
+        <div class="convention-item">
+          <h4 class="convention-term">No imputation</h4>
+          <p class="convention-desc">Values are reported as published. Nothing is estimated, interpolated, or filled in.</p>
         </div>
       </div>
     </section>

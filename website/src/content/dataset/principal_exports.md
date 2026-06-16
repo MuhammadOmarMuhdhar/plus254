@@ -19,17 +19,17 @@ sourceUrl: "https://www.centralbank.go.ke/uploads/balance_of_payment_statistics/
 
 ## Summary Statistics
 
-| Column | Count | Mean | Std | Min | Max |
-|--------|-------|------|-----|-----|-----|
-| year | 2988 | 2011.92 | 8.00 | 1998.00 | 2026.00 |
-| value | 2988 | 99304.28 | 157096.24 | 130.21 | 1.085e+06 |
+| Column | Count | Mean | Std | Min | 25% | 50% | 75% | Max |
+|--------|-------|------|-----|-----|-----|-----|-----|-----|
+| year | 2988 | 2011.92 | 8.00 | 1998.00 | 2005.00 | 2012.00 | 2019.00 | 2026.00 |
+| value | 2988 | 99304.28 | 157096.24 | 130.21 | 4437.56 | 21906.24 | 162741.88 | 1.085e+06 |
 
 ## Sample Data
 
 | year | month | metric | value |
 |---|---|---|---|
-| 1998 | August | coffee volume | 2759.82 |
-| 1998 | September | coffee volume | 3243.7 |
-| 1998 | October | coffee volume | 4158.57 |
-| 1998 | November | coffee volume | 3958.47 |
-| 1998 | December | coffee volume | 3565.01 |
+| 1998 | august | coffee volume | 2759.82 |
+| 1998 | september | coffee volume | 3243.7 |
+| 1998 | october | coffee volume | 4158.57 |
+| 1998 | november | coffee volume | 3958.47 |
+| 1998 | december | coffee volume | 3565.01 |

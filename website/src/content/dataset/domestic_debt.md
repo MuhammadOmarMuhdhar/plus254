@@ -19,17 +19,17 @@ sourceUrl: "https://www.centralbank.go.ke/uploads/government_finance_statistics/
 
 ## Summary Statistics
 
-| Column | Count | Mean | Std | Min | Max |
-|--------|-------|------|-----|-----|-----|
-| year | 2191 | 2000.96 | 0.22 | 1999.00 | 2001.00 |
-| value | 2191 | 527793.29 | 1.165e+06 | -575.96 | 7.15e+06 |
+| Column | Count | Mean | Std | Min | 25% | 50% | 75% | Max |
+|--------|-------|------|-----|-----|-----|-----|-----|-----|
+| year | 2191 | 2000.96 | 0.22 | 1999.00 | 2001.00 | 2001.00 | 2001.00 | 2001.00 |
+| value | 2191 | 527793.29 | 1.165e+06 | -575.96 | 1252.71 | 29769.47 | 390643.75 | 7.15e+06 |
 
 ## Sample Data
 
 | year | month | metric | value |
 |---|---|---|---|
-| 1999 | September | treasury bills | 115068.55 |
-| 1999 | December | treasury bills | 121658.53 |
-| 2000 | March | treasury bills | 131224.49 |
-| 2000 | June | treasury bills | 131029.45 |
-| 2000 | July | treasury bills | 132167.45 |
+| 1999 | september | treasury bills | 115068.55 |
+| 1999 | december | treasury bills | 121658.53 |
+| 2000 | march | treasury bills | 131224.49 |
+| 2000 | june | treasury bills | 131029.45 |
+| 2000 | july | treasury bills | 132167.45 |

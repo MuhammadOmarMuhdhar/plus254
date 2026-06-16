@@ -19,17 +19,17 @@ sourceUrl: "https://www.centralbank.go.ke/uploads/balance_of_payment_statistics/
 
 ## Summary Statistics
 
-| Column | Count | Mean | Std | Min | Max |
-|--------|-------|------|-----|-----|-----|
-| year | 4067 | 2011.63 | 8.16 | 1998.00 | 2026.00 |
-| value | 4067 | 4053.11 | 10355.69 | 0.00 | 120186.87 |
+| Column | Count | Mean | Std | Min | 25% | 50% | 75% | Max |
+|--------|-------|------|-----|-----|-----|-----|-----|-----|
+| year | 4067 | 2011.63 | 8.16 | 1998.00 | 2005.00 | 2012.00 | 2019.00 | 2026.00 |
+| value | 4067 | 4053.11 | 10355.69 | 0.00 | 338.96 | 1056.55 | 2765.26 | 120186.87 |
 
 ## Sample Data
 
 | year | month | metric | value |
 |---|---|---|---|
-| 1998 | January | uganda | 1386.42 |
-| 1998 | February | uganda | 1204.81 |
-| 1998 | March | uganda | 1478.77 |
-| 1998 | April | uganda | 1629.02 |
-| 1998 | May | uganda | 1466.8 |
+| 1998 | january | uganda | 1386.42 |
+| 1998 | february | uganda | 1204.81 |
+| 1998 | march | uganda | 1478.77 |
+| 1998 | april | uganda | 1629.02 |
+| 1998 | may | uganda | 1466.8 |

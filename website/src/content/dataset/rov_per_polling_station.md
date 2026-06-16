@@ -26,9 +26,9 @@ sourceUrl: "https://www.iebc.or.ke/docs/rov_per_polling_station.pdf"
 
 ## Summary Statistics
 
-| Column | Count | Mean | Std | Min | Max |
-|--------|-------|------|-----|-----|-----|
-| value | 37250 | 1082.80 | 114609.82 | 1.00 | 2.212e+07 |
+| Column | Count | Mean | Std | Min | 25% | 50% | 75% | Max |
+|--------|-------|------|-----|-----|-----|-----|-----|-----|
+| value | 37250 | 1082.80 | 114609.82 | 1.00 | 389.00 | 510.00 | 628.00 | 2.212e+07 |
 
 ## Sample Data
 

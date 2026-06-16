@@ -14,7 +14,7 @@ lastUpdated: "2026-06-15T12:42:19"
 | Column | Type | Description | Nullable | Null count | Unique |
 |--------|------|-------------|----------|------------|--------|
 | year | object | Calendar year | No | 0 | 6 |
-| area_level | object | Geographic level (always county) | No | 0 | 1 |
+| area_level | object | Geographic level | No | 0 | 1 |
 | area_name | object | County name (lowercased) | No | 0 | 26 |
 | metric | object | Sub-domain or category within the indicator (lowercased) | No | 0 | 1 |
 | item | object | Specific item or commodity being measured (lowercased) | No | 0 | 42 |
@@ -22,9 +22,9 @@ lastUpdated: "2026-06-15T12:42:19"
 
 ## Summary Statistics
 
-| Column | Count | Mean | Std | Min | Max |
-|--------|-------|------|-----|-----|-----|
-| value | 1146 | 109266.68 | 1.784e+06 | 0.20 | 4.25e+07 |
+| Column | Count | Mean | Std | Min | 25% | 50% | 75% | Max |
+|--------|-------|------|-----|-----|-----|-----|-----|-----|
+| value | 1146 | 109266.68 | 1.784e+06 | 0.20 | 13.00 | 124.50 | 2592.50 | 4.25e+07 |
 
 ## Sample Data
 

@@ -19,17 +19,17 @@ sourceUrl: "https://www.centralbank.go.ke/uploads/balance_of_payment_statistics/
 
 ## Summary Statistics
 
-| Column | Count | Mean | Std | Min | Max |
-|--------|-------|------|-----|-----|-----|
-| year | 3320 | 2011.92 | 8.00 | 1998.00 | 2026.00 |
-| value | 3320 | 22462.59 | 42207.78 | 36.09 | 332367.64 |
+| Column | Count | Mean | Std | Min | 25% | 50% | 75% | Max |
+|--------|-------|------|-----|-----|-----|-----|-----|-----|
+| year | 3320 | 2011.92 | 8.00 | 1998.00 | 2005.00 | 2012.00 | 2019.00 | 2026.00 |
+| value | 3320 | 22462.59 | 42207.78 | 36.09 | 2277.22 | 7664.27 | 23063.78 | 332367.64 |
 
 ## Sample Data
 
 | year | month | metric | value |
 |---|---|---|---|
-| 1998 | August | food and live animals | 1413.87 |
-| 1998 | September | food and live animals | 533.13 |
-| 1998 | October | food and live animals | 586.56 |
-| 1998 | November | food and live animals | 522.81 |
-| 1998 | December | food and live animals | 717.97 |
+| 1998 | august | food and live animals | 1413.87 |
+| 1998 | september | food and live animals | 533.13 |
+| 1998 | october | food and live animals | 586.56 |
+| 1998 | november | food and live animals | 522.81 |
+| 1998 | december | food and live animals | 717.97 |

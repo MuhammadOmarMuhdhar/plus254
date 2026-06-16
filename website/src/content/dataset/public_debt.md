@@ -19,17 +19,17 @@ sourceUrl: "https://www.centralbank.go.ke/uploads/government_finance_statistics/
 
 ## Summary Statistics
 
-| Column | Count | Mean | Std | Min | Max |
-|--------|-------|------|-----|-----|-----|
-| year | 930 | 2012.57 | 7.47 | 1999.00 | 2025.00 |
-| value | 930 | 2.405e+06 | 2.633e+06 | 183417.00 | 1.23e+07 |
+| Column | Count | Mean | Std | Min | 25% | 50% | 75% | Max |
+|--------|-------|------|-----|-----|-----|-----|-----|-----|
+| year | 930 | 2012.57 | 7.47 | 1999.00 | 2006.00 | 2013.00 | 2019.00 | 2025.00 |
+| value | 930 | 2.405e+06 | 2.633e+06 | 183417.00 | 532894.31 | 1.184e+06 | 3.657e+06 | 1.23e+07 |
 
 ## Sample Data
 
 | year | month | metric | value |
 |---|---|---|---|
-| 1999 | September | domestic debt | 183417.0 |
-| 1999 | December | domestic debt | 190300.0 |
-| 2000 | March | domestic debt | 201463.22 |
-| 2000 | June | domestic debt | 206127.0 |
-| 2000 | July | domestic debt | 202362.0 |
+| 1999 | september | domestic debt | 183417.0 |
+| 1999 | december | domestic debt | 190300.0 |
+| 2000 | march | domestic debt | 201463.22 |
+| 2000 | june | domestic debt | 206127.0 |
+| 2000 | july | domestic debt | 202362.0 |

@@ -19,17 +19,17 @@ sourceUrl: "https://www.centralbank.go.ke/uploads/exchange_rates/2034093818_Mont
 
 ## Summary Statistics
 
-| Column | Count | Mean | Std | Min | Max |
-|--------|-------|------|-----|-----|-----|
-| year | 7980 | 2009.70 | 9.58 | 1993.00 | 2026.00 |
-| value | 7980 | 41.55 | 40.21 | 1.08 | 202.88 |
+| Column | Count | Mean | Std | Min | 25% | 50% | 75% | Max |
+|--------|-------|------|-----|-----|-----|-----|-----|-----|
+| year | 7980 | 2009.70 | 9.58 | 1993.00 | 2001.00 | 2010.00 | 2018.00 | 2026.00 |
+| value | 7980 | 41.55 | 40.21 | 1.08 | 11.25 | 21.72 | 70.09 | 202.88 |
 
 ## Sample Data
 
 | year | month | metric | value |
 |---|---|---|---|
-| 1993 | January | united states dollar | 36.23 |
-| 1993 | January | sterling pound | 55.62 |
-| 1993 | January | deutch mark | 22.44 |
-| 1993 | January | canadian dollar | 28.36 |
-| 1993 | January | french franc | 6.62 |
+| 1993 | january | united states dollar | 36.23 |
+| 1993 | january | sterling pound | 55.62 |
+| 1993 | january | deutch mark | 22.44 |
+| 1993 | january | canadian dollar | 28.36 |
+| 1993 | january | french franc | 6.62 |

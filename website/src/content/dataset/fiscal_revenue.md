@@ -19,17 +19,17 @@ sourceUrl: "https://www.centralbank.go.ke/uploads/government_finance_statistics/
 
 ## Summary Statistics
 
-| Column | Count | Mean | Std | Min | Max |
-|--------|-------|------|-----|-----|-----|
-| fiscal_year | 2326 | 2013.13 | 7.57 | 1999.00 | 2026.00 |
-| value | 2326 | 215787.29 | 355462.34 | 987.00 | 2.957e+06 |
+| Column | Count | Mean | Std | Min | 25% | 50% | 75% | Max |
+|--------|-------|------|-----|-----|-----|-----|-----|-----|
+| fiscal_year | 2326 | 2013.13 | 7.57 | 1999.00 | 2007.00 | 2014.00 | 2020.00 | 2026.00 |
+| value | 2326 | 215787.29 | 355462.34 | 987.00 | 28213.71 | 73828.77 | 231773.14 | 2.957e+06 |
 
 ## Sample Data
 
 | fiscal_year | month | metric | value |
 |---|---|---|---|
-| 1999 | September | import duty | 7157.0 |
-| 1999 | December | import duty | 13912.0 |
-| 2000 | March | import duty | 21407.0 |
-| 2000 | June | import duty | 28605.0 |
-| 2000 | July | import duty | 2813.0 |
+| 1999 | september | import duty | 7157.0 |
+| 1999 | december | import duty | 13912.0 |
+| 2000 | march | import duty | 21407.0 |
+| 2000 | june | import duty | 28605.0 |
+| 2000 | july | import duty | 2813.0 |

@@ -19,17 +19,17 @@ sourceUrl: "https://www.centralbank.go.ke/uploads/government_finance_statistics/
 
 ## Summary Statistics
 
-| Column | Count | Mean | Std | Min | Max |
-|--------|-------|------|-----|-----|-----|
-| fiscal_year | 893 | 2012.63 | 7.73 | 1999.00 | 2026.00 |
-| value | 893 | 6818.60 | 8279.77 | 0.00 | 76373.33 |
+| Column | Count | Mean | Std | Min | 25% | 50% | 75% | Max |
+|--------|-------|------|-----|-----|-----|-----|-----|-----|
+| fiscal_year | 893 | 2012.63 | 7.73 | 1999.00 | 2006.00 | 2012.00 | 2020.00 | 2026.00 |
+| value | 893 | 6818.60 | 8279.77 | 0.00 | 0.00 | 3890.00 | 11204.86 | 76373.33 |
 
 ## Sample Data
 
 | fiscal_year | month | metric | value |
 |---|---|---|---|
-| 1999 | September | programme grants | 6.0 |
-| 1999 | December | programme grants | 329.0 |
-| 2000 | March | programme grants | 344.0 |
-| 2000 | June | programme grants | 0.0 |
-| 2000 | July | programme grants | 0.0 |
+| 1999 | september | programme grants | 6.0 |
+| 1999 | december | programme grants | 329.0 |
+| 2000 | march | programme grants | 344.0 |
+| 2000 | june | programme grants | 0.0 |
+| 2000 | july | programme grants | 0.0 |

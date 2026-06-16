@@ -5,19 +5,30 @@ import APIDocsLayout from "../../components/APIDocsLayout.astro";
 
 <BaseLayout title="API Reference plus254">
   <APIDocsLayout activeSection="quickstart">
-    <div class="intro-text">
-      <p class="docs-intro">plus254 provides programmatic access to Kenyan official statistics &mdash; economic indicators, trade data, exchange rates, agricultural figures, and demographic records sourced directly from Kenyan institutions.</p>
-      <p class="docs-intro">Built for data analysts, researchers, and developers who need reliable data without the overhead of scraping PDFs or wrestling with inconsistent formats. Use the REST API directly with any HTTP client.</p>
-    </div>
+    <header class="page-heading">
+      <h1>API Reference</h1>
+    </header>
+
+    <section class="section">
+      <span class="eyebrow">Overview</span>
+      <div class="narrative">
+        <p>plus254 provides programmatic access to Kenyan official statistics &mdash; economic indicators, trade data, exchange rates, agricultural figures, and demographic records sourced directly from Kenyan institutions.</p>
+        <p>Built for data analysts, researchers, and developers who need reliable data without the overhead of scraping PDFs or wrestling with inconsistent formats. Use the REST API directly with any HTTP client.</p>
+      </div>
+    </section>
 
     <section id="quickstart" class="section">
       <h2 class="section-eyebrow">Quickstart</h2>
 
-      <p class="step-text">Make your first API call in under 10 seconds. The API is public and requires no authentication.</p>
+      <div class="narrative">
+        <p>Make your first API call in under 10 seconds. The API is public and requires no authentication.</p>
+      </div>
 
       <pre class="code-block"><code>curl https://api.plus254.dev/</code></pre>
 
-      <p class="step-text">You&#8217;ll receive a list of all available datasets grouped by source:</p>
+      <div class="narrative">
+        <p>You&#8217;ll receive a list of all available datasets grouped by source:</p>
+      </div>
 
       <pre class="code-block"><code>&#123;
   "count": 19,
