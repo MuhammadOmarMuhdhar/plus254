@@ -10,26 +10,114 @@ sourceUrl: "https://www.centralbank.go.ke/uploads/government_finance_statistics/
 
 ## Columns
 
-| Column | Type | Description | Nullable | Null count | Unique |
-|--------|------|-------------|----------|------------|--------|
-| fiscal_year | int64 | Fiscal year (e.g., 1999 means FY 1999/2000) | No | 0 | 28 |
-| month | object | Calendar month name | No | 0 | 12 |
-| metric | object | Revenue category (e.g., import duty, excise duty, income tax, vat, total revenue) | No | 0 | 8 |
-| value | float64 | Revenue in KES millions (comma-formatted number) | No | 0 | 2323 |
+<table class="dataset-table">
+<thead>
+<tr><th>Column</th><th>Type</th><th>Description</th><th>Nullable</th><th>Null count</th><th>Unique</th></tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Column"><code>fiscal_year</code></td>
+<td data-label="Type">int64</td>
+<td data-label="Description">Fiscal year (e.g., 1999 means FY 1999/2000)</td>
+<td data-label="Nullable">No</td>
+<td data-label="Null count">0</td>
+<td data-label="Unique">28</td>
+</tr>
+<tr>
+<td data-label="Column"><code>month</code></td>
+<td data-label="Type">object</td>
+<td data-label="Description">Calendar month name</td>
+<td data-label="Nullable">No</td>
+<td data-label="Null count">0</td>
+<td data-label="Unique">12</td>
+</tr>
+<tr>
+<td data-label="Column"><code>metric</code></td>
+<td data-label="Type">object</td>
+<td data-label="Description">Revenue category (e.g., import duty, excise duty, income tax, vat, total revenue)</td>
+<td data-label="Nullable">No</td>
+<td data-label="Null count">0</td>
+<td data-label="Unique">8</td>
+</tr>
+<tr>
+<td data-label="Column"><code>value</code></td>
+<td data-label="Type">float64</td>
+<td data-label="Description">Revenue in KES millions (comma-formatted number)</td>
+<td data-label="Nullable">No</td>
+<td data-label="Null count">0</td>
+<td data-label="Unique">2323</td>
+</tr>
+</tbody>
+</table>
 
 ## Summary Statistics
 
-| Column | Count | Mean | Std | Min | 25% | 50% | 75% | Max |
-|--------|-------|------|-----|-----|-----|-----|-----|-----|
-| fiscal_year | 2326 | 2013.13 | 7.57 | 1999.00 | 2007.00 | 2014.00 | 2020.00 | 2026.00 |
-| value | 2326 | 215787.29 | 355462.34 | 987.00 | 28213.71 | 73828.77 | 231773.14 | 2.957e+06 |
+<table class="dataset-table">
+<thead>
+<tr><th>Column</th><th>Count</th><th>Mean</th><th>Std</th><th>Min</th><th>25%</th><th>50%</th><th>75%</th><th>Max</th></tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Column"><code>fiscal_year</code></td>
+<td data-label="Count">2326</td>
+<td data-label="Mean">2013.13</td>
+<td data-label="Std">7.57</td>
+<td data-label="Min">1999.00</td>
+<td data-label="25%">2007.00</td>
+<td data-label="50%">2014.00</td>
+<td data-label="75%">2020.00</td>
+<td data-label="Max">2026.00</td>
+</tr>
+<tr>
+<td data-label="Column"><code>value</code></td>
+<td data-label="Count">2326</td>
+<td data-label="Mean">215787.29</td>
+<td data-label="Std">355462.34</td>
+<td data-label="Min">987.00</td>
+<td data-label="25%">28213.71</td>
+<td data-label="50%">73828.77</td>
+<td data-label="75%">231773.14</td>
+<td data-label="Max">2.957e+06</td>
+</tr>
+</tbody>
+</table>
 
 ## Sample Data
 
-| fiscal_year | month | metric | value |
-|---|---|---|---|
-| 1999 | september | import duty | 7157.0 |
-| 1999 | december | import duty | 13912.0 |
-| 2000 | march | import duty | 21407.0 |
-| 2000 | june | import duty | 28605.0 |
-| 2000 | july | import duty | 2813.0 |
+<table class="dataset-table">
+<thead>
+<tr><th>fiscal_year</th><th>month</th><th>metric</th><th>value</th></tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="fiscal_year">1999</td>
+<td data-label="month">september</td>
+<td data-label="metric">import duty</td>
+<td data-label="value">7157.0</td>
+</tr>
+<tr>
+<td data-label="fiscal_year">1999</td>
+<td data-label="month">december</td>
+<td data-label="metric">import duty</td>
+<td data-label="value">13912.0</td>
+</tr>
+<tr>
+<td data-label="fiscal_year">2000</td>
+<td data-label="month">march</td>
+<td data-label="metric">import duty</td>
+<td data-label="value">21407.0</td>
+</tr>
+<tr>
+<td data-label="fiscal_year">2000</td>
+<td data-label="month">june</td>
+<td data-label="metric">import duty</td>
+<td data-label="value">28605.0</td>
+</tr>
+<tr>
+<td data-label="fiscal_year">2000</td>
+<td data-label="month">july</td>
+<td data-label="metric">import duty</td>
+<td data-label="value">2813.0</td>
+</tr>
+</tbody>
+</table>

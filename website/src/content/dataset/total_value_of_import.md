@@ -11,27 +11,129 @@ lastUpdated: "2026-06-15T12:42:19"
 
 ## Columns
 
-| Column | Type | Description | Nullable | Null count | Unique |
-|--------|------|-------------|----------|------------|--------|
-| year | object | Calendar year | No | 0 | 6 |
-| area_level | object | Geographic level | No | 0 | 1 |
-| area_name | object | County name (lowercased) | No | 0 | 1 |
-| metric | object | Sub-domain or category within the indicator (lowercased) | No | 0 | 1 |
-| item | object | Specific item or commodity being measured (lowercased) | No | 0 | 1 |
-| value | float64 | Numeric value of the indicator | No | 0 | 6 |
+<table class="dataset-table">
+<thead>
+<tr><th>Column</th><th>Type</th><th>Description</th><th>Nullable</th><th>Null count</th><th>Unique</th></tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Column"><code>year</code></td>
+<td data-label="Type">object</td>
+<td data-label="Description">Calendar year</td>
+<td data-label="Nullable">No</td>
+<td data-label="Null count">0</td>
+<td data-label="Unique">6</td>
+</tr>
+<tr>
+<td data-label="Column"><code>area_level</code></td>
+<td data-label="Type">object</td>
+<td data-label="Description">Geographic level</td>
+<td data-label="Nullable">No</td>
+<td data-label="Null count">0</td>
+<td data-label="Unique">1</td>
+</tr>
+<tr>
+<td data-label="Column"><code>area_name</code></td>
+<td data-label="Type">object</td>
+<td data-label="Description">County name (lowercased)</td>
+<td data-label="Nullable">No</td>
+<td data-label="Null count">0</td>
+<td data-label="Unique">1</td>
+</tr>
+<tr>
+<td data-label="Column"><code>metric</code></td>
+<td data-label="Type">object</td>
+<td data-label="Description">Sub-domain or category within the indicator (lowercased)</td>
+<td data-label="Nullable">No</td>
+<td data-label="Null count">0</td>
+<td data-label="Unique">1</td>
+</tr>
+<tr>
+<td data-label="Column"><code>item</code></td>
+<td data-label="Type">object</td>
+<td data-label="Description">Specific item or commodity being measured (lowercased)</td>
+<td data-label="Nullable">No</td>
+<td data-label="Null count">0</td>
+<td data-label="Unique">1</td>
+</tr>
+<tr>
+<td data-label="Column"><code>value</code></td>
+<td data-label="Type">float64</td>
+<td data-label="Description">Numeric value of the indicator</td>
+<td data-label="Nullable">No</td>
+<td data-label="Null count">0</td>
+<td data-label="Unique">6</td>
+</tr>
+</tbody>
+</table>
 
 ## Summary Statistics
 
-| Column | Count | Mean | Std | Min | 25% | 50% | 75% | Max |
-|--------|-------|------|-----|-----|-----|-----|-----|-----|
-| value | 8 | 3.496e+10 | 1.803e+10 | 1.565e+10 | 2.226e+10 | 2.812e+10 | 5.499e+10 | 5.659e+10 |
+<table class="dataset-table">
+<thead>
+<tr><th>Column</th><th>Count</th><th>Mean</th><th>Std</th><th>Min</th><th>25%</th><th>50%</th><th>75%</th><th>Max</th></tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Column"><code>value</code></td>
+<td data-label="Count">8</td>
+<td data-label="Mean">3.496e+10</td>
+<td data-label="Std">1.803e+10</td>
+<td data-label="Min">1.565e+10</td>
+<td data-label="25%">2.226e+10</td>
+<td data-label="50%">2.812e+10</td>
+<td data-label="75%">5.499e+10</td>
+<td data-label="Max">5.659e+10</td>
+</tr>
+</tbody>
+</table>
 
 ## Sample Data
 
-| year | area_level | area_name | metric | item | value |
-|---|---|---|---|---|---|
-| 2024 | country | kenya | crops | sugarcane | 30386987370.0 |
-| 2023 | country | kenya | crops | sugarcane | 54460090849.0 |
-| 2021 | country | kenya | crops | sugarcane | 25860198189.0 |
-| 2020 | country | kenya | crops | sugarcane | 24467315258.0 |
-| 2018 | country | kenya | crops | sugarcane | 15650673725.0 |
+<table class="dataset-table">
+<thead>
+<tr><th>year</th><th>area_level</th><th>area_name</th><th>metric</th><th>item</th><th>value</th></tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="year">2024</td>
+<td data-label="area_level">country</td>
+<td data-label="area_name">kenya</td>
+<td data-label="metric">crops</td>
+<td data-label="item">sugarcane</td>
+<td data-label="value">30386987370.0</td>
+</tr>
+<tr>
+<td data-label="year">2023</td>
+<td data-label="area_level">country</td>
+<td data-label="area_name">kenya</td>
+<td data-label="metric">crops</td>
+<td data-label="item">sugarcane</td>
+<td data-label="value">54460090849.0</td>
+</tr>
+<tr>
+<td data-label="year">2021</td>
+<td data-label="area_level">country</td>
+<td data-label="area_name">kenya</td>
+<td data-label="metric">crops</td>
+<td data-label="item">sugarcane</td>
+<td data-label="value">25860198189.0</td>
+</tr>
+<tr>
+<td data-label="year">2020</td>
+<td data-label="area_level">country</td>
+<td data-label="area_name">kenya</td>
+<td data-label="metric">crops</td>
+<td data-label="item">sugarcane</td>
+<td data-label="value">24467315258.0</td>
+</tr>
+<tr>
+<td data-label="year">2018</td>
+<td data-label="area_level">country</td>
+<td data-label="area_name">kenya</td>
+<td data-label="metric">crops</td>
+<td data-label="item">sugarcane</td>
+<td data-label="value">15650673725.0</td>
+</tr>
+</tbody>
+</table>

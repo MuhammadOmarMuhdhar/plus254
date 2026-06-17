@@ -10,26 +10,114 @@ sourceUrl: "https://www.centralbank.go.ke/uploads/balance_of_payment_statistics/
 
 ## Columns
 
-| Column | Type | Description | Nullable | Null count | Unique |
-|--------|------|-------------|----------|------------|--------|
-| year | int64 | Calendar year | No | 0 | 29 |
-| month | object | Calendar month name | No | 0 | 12 |
-| metric | object | Origin African country (e.g., uganda, tanzania, south africa, total) | No | 0 | 8 |
-| value | float64 | Import value in KES millions (comma-formatted number) | No | 0 | 2685 |
+<table class="dataset-table">
+<thead>
+<tr><th>Column</th><th>Type</th><th>Description</th><th>Nullable</th><th>Null count</th><th>Unique</th></tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Column"><code>year</code></td>
+<td data-label="Type">int64</td>
+<td data-label="Description">Calendar year</td>
+<td data-label="Nullable">No</td>
+<td data-label="Null count">0</td>
+<td data-label="Unique">29</td>
+</tr>
+<tr>
+<td data-label="Column"><code>month</code></td>
+<td data-label="Type">object</td>
+<td data-label="Description">Calendar month name</td>
+<td data-label="Nullable">No</td>
+<td data-label="Null count">0</td>
+<td data-label="Unique">12</td>
+</tr>
+<tr>
+<td data-label="Column"><code>metric</code></td>
+<td data-label="Type">object</td>
+<td data-label="Description">Origin African country (e.g., uganda, tanzania, south africa, total)</td>
+<td data-label="Nullable">No</td>
+<td data-label="Null count">0</td>
+<td data-label="Unique">8</td>
+</tr>
+<tr>
+<td data-label="Column"><code>value</code></td>
+<td data-label="Type">float64</td>
+<td data-label="Description">Import value in KES millions (comma-formatted number)</td>
+<td data-label="Nullable">No</td>
+<td data-label="Null count">0</td>
+<td data-label="Unique">2685</td>
+</tr>
+</tbody>
+</table>
 
 ## Summary Statistics
 
-| Column | Count | Mean | Std | Min | 25% | 50% | 75% | Max |
-|--------|-------|------|-----|-----|-----|-----|-----|-----|
-| year | 2710 | 2011.64 | 8.16 | 1998.00 | 2005.00 | 2012.00 | 2019.00 | 2026.00 |
-| value | 2710 | 2762.03 | 4387.60 | 0.00 | 181.89 | 1131.81 | 3329.29 | 28475.48 |
+<table class="dataset-table">
+<thead>
+<tr><th>Column</th><th>Count</th><th>Mean</th><th>Std</th><th>Min</th><th>25%</th><th>50%</th><th>75%</th><th>Max</th></tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Column"><code>year</code></td>
+<td data-label="Count">2710</td>
+<td data-label="Mean">2011.64</td>
+<td data-label="Std">8.16</td>
+<td data-label="Min">1998.00</td>
+<td data-label="25%">2005.00</td>
+<td data-label="50%">2012.00</td>
+<td data-label="75%">2019.00</td>
+<td data-label="Max">2026.00</td>
+</tr>
+<tr>
+<td data-label="Column"><code>value</code></td>
+<td data-label="Count">2710</td>
+<td data-label="Mean">2762.03</td>
+<td data-label="Std">4387.60</td>
+<td data-label="Min">0.00</td>
+<td data-label="25%">181.89</td>
+<td data-label="50%">1131.81</td>
+<td data-label="75%">3329.29</td>
+<td data-label="Max">28475.48</td>
+</tr>
+</tbody>
+</table>
 
 ## Sample Data
 
-| year | month | metric | value |
-|---|---|---|---|
-| 1998 | january | uganda | 2.06 |
-| 1998 | february | uganda | 3.52 |
-| 1998 | march | uganda | 5.72 |
-| 1998 | april | uganda | 5.43 |
-| 1998 | may | uganda | 11.65 |
+<table class="dataset-table">
+<thead>
+<tr><th>year</th><th>month</th><th>metric</th><th>value</th></tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="year">1998</td>
+<td data-label="month">january</td>
+<td data-label="metric">uganda</td>
+<td data-label="value">2.06</td>
+</tr>
+<tr>
+<td data-label="year">1998</td>
+<td data-label="month">february</td>
+<td data-label="metric">uganda</td>
+<td data-label="value">3.52</td>
+</tr>
+<tr>
+<td data-label="year">1998</td>
+<td data-label="month">march</td>
+<td data-label="metric">uganda</td>
+<td data-label="value">5.72</td>
+</tr>
+<tr>
+<td data-label="year">1998</td>
+<td data-label="month">april</td>
+<td data-label="metric">uganda</td>
+<td data-label="value">5.43</td>
+</tr>
+<tr>
+<td data-label="year">1998</td>
+<td data-label="month">may</td>
+<td data-label="metric">uganda</td>
+<td data-label="value">11.65</td>
+</tr>
+</tbody>
+</table>

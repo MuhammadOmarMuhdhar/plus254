@@ -10,26 +10,114 @@ sourceUrl: "https://www.centralbank.go.ke/uploads/government_finance_statistics/
 
 ## Columns
 
-| Column | Type | Description | Nullable | Null count | Unique |
-|--------|------|-------------|----------|------------|--------|
-| fiscal_year | int64 | Fiscal year (e.g., 1999 means FY 1999/2000) | No | 0 | 28 |
-| month | object | Calendar month name | No | 0 | 12 |
-| metric | object | Expenditure category (e.g., domestic interest, wages salaries, development expenditure, total expenditure) | No | 0 | 9 |
-| value | float64 | Expenditure in KES millions (comma-formatted number) | No | 0 | 2627 |
+<table class="dataset-table">
+<thead>
+<tr><th>Column</th><th>Type</th><th>Description</th><th>Nullable</th><th>Null count</th><th>Unique</th></tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Column"><code>fiscal_year</code></td>
+<td data-label="Type">int64</td>
+<td data-label="Description">Fiscal year (e.g., 1999 means FY 1999/2000)</td>
+<td data-label="Nullable">No</td>
+<td data-label="Null count">0</td>
+<td data-label="Unique">28</td>
+</tr>
+<tr>
+<td data-label="Column"><code>month</code></td>
+<td data-label="Type">object</td>
+<td data-label="Description">Calendar month name</td>
+<td data-label="Nullable">No</td>
+<td data-label="Null count">0</td>
+<td data-label="Unique">12</td>
+</tr>
+<tr>
+<td data-label="Column"><code>metric</code></td>
+<td data-label="Type">object</td>
+<td data-label="Description">Expenditure category (e.g., domestic interest, wages salaries, development expenditure, total expenditure)</td>
+<td data-label="Nullable">No</td>
+<td data-label="Null count">0</td>
+<td data-label="Unique">9</td>
+</tr>
+<tr>
+<td data-label="Column"><code>value</code></td>
+<td data-label="Type">float64</td>
+<td data-label="Description">Expenditure in KES millions (comma-formatted number)</td>
+<td data-label="Nullable">No</td>
+<td data-label="Null count">0</td>
+<td data-label="Unique">2627</td>
+</tr>
+</tbody>
+</table>
 
 ## Summary Statistics
 
-| Column | Count | Mean | Std | Min | 25% | 50% | 75% | Max |
-|--------|-------|------|-----|-----|-----|-----|-----|-----|
-| fiscal_year | 2656 | 2013.09 | 7.54 | 1999.00 | 2007.00 | 2013.00 | 2020.00 | 2026.00 |
-| value | 2656 | 236916.46 | 426253.67 | 0.00 | 21307.58 | 85394.30 | 249362.48 | 3.968e+06 |
+<table class="dataset-table">
+<thead>
+<tr><th>Column</th><th>Count</th><th>Mean</th><th>Std</th><th>Min</th><th>25%</th><th>50%</th><th>75%</th><th>Max</th></tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Column"><code>fiscal_year</code></td>
+<td data-label="Count">2656</td>
+<td data-label="Mean">2013.09</td>
+<td data-label="Std">7.54</td>
+<td data-label="Min">1999.00</td>
+<td data-label="25%">2007.00</td>
+<td data-label="50%">2013.00</td>
+<td data-label="75%">2020.00</td>
+<td data-label="Max">2026.00</td>
+</tr>
+<tr>
+<td data-label="Column"><code>value</code></td>
+<td data-label="Count">2656</td>
+<td data-label="Mean">236916.46</td>
+<td data-label="Std">426253.67</td>
+<td data-label="Min">0.00</td>
+<td data-label="25%">21307.58</td>
+<td data-label="50%">85394.30</td>
+<td data-label="75%">249362.48</td>
+<td data-label="Max">3.968e+06</td>
+</tr>
+</tbody>
+</table>
 
 ## Sample Data
 
-| fiscal_year | month | metric | value |
-|---|---|---|---|
-| 1999 | september | domestic interest | 3816.0 |
-| 1999 | december | domestic interest | 8935.0 |
-| 2000 | march | domestic interest | 15784.0 |
-| 2000 | june | domestic interest | 20752.0 |
-| 2000 | july | domestic interest | 2739.0 |
+<table class="dataset-table">
+<thead>
+<tr><th>fiscal_year</th><th>month</th><th>metric</th><th>value</th></tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="fiscal_year">1999</td>
+<td data-label="month">september</td>
+<td data-label="metric">domestic interest</td>
+<td data-label="value">3816.0</td>
+</tr>
+<tr>
+<td data-label="fiscal_year">1999</td>
+<td data-label="month">december</td>
+<td data-label="metric">domestic interest</td>
+<td data-label="value">8935.0</td>
+</tr>
+<tr>
+<td data-label="fiscal_year">2000</td>
+<td data-label="month">march</td>
+<td data-label="metric">domestic interest</td>
+<td data-label="value">15784.0</td>
+</tr>
+<tr>
+<td data-label="fiscal_year">2000</td>
+<td data-label="month">june</td>
+<td data-label="metric">domestic interest</td>
+<td data-label="value">20752.0</td>
+</tr>
+<tr>
+<td data-label="fiscal_year">2000</td>
+<td data-label="month">july</td>
+<td data-label="metric">domestic interest</td>
+<td data-label="value">2739.0</td>
+</tr>
+</tbody>
+</table>

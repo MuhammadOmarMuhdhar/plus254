@@ -10,26 +10,114 @@ sourceUrl: "https://www.centralbank.go.ke/uploads/exchange_rates/2034093818_Mont
 
 ## Columns
 
-| Column | Type | Description | Nullable | Null count | Unique |
-|--------|------|-------------|----------|------------|--------|
-| year | int64 | Calendar year | No | 0 | 34 |
-| month | object | Calendar month name | No | 0 | 12 |
-| metric | object | Foreign currency name (e.g., united states dollar, sterling pound) | No | 0 | 29 |
-| value | float64 | Period-average exchange rate in KES per unit of foreign currency (comma-formatted number) | No | 0 | 4807 |
+<table class="dataset-table">
+<thead>
+<tr><th>Column</th><th>Type</th><th>Description</th><th>Nullable</th><th>Null count</th><th>Unique</th></tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Column"><code>year</code></td>
+<td data-label="Type">int64</td>
+<td data-label="Description">Calendar year</td>
+<td data-label="Nullable">No</td>
+<td data-label="Null count">0</td>
+<td data-label="Unique">34</td>
+</tr>
+<tr>
+<td data-label="Column"><code>month</code></td>
+<td data-label="Type">object</td>
+<td data-label="Description">Calendar month name</td>
+<td data-label="Nullable">No</td>
+<td data-label="Null count">0</td>
+<td data-label="Unique">12</td>
+</tr>
+<tr>
+<td data-label="Column"><code>metric</code></td>
+<td data-label="Type">object</td>
+<td data-label="Description">Foreign currency name (e.g., united states dollar, sterling pound)</td>
+<td data-label="Nullable">No</td>
+<td data-label="Null count">0</td>
+<td data-label="Unique">29</td>
+</tr>
+<tr>
+<td data-label="Column"><code>value</code></td>
+<td data-label="Type">float64</td>
+<td data-label="Description">Period-average exchange rate in KES per unit of foreign currency (comma-formatted number)</td>
+<td data-label="Nullable">No</td>
+<td data-label="Null count">0</td>
+<td data-label="Unique">4807</td>
+</tr>
+</tbody>
+</table>
 
 ## Summary Statistics
 
-| Column | Count | Mean | Std | Min | 25% | 50% | 75% | Max |
-|--------|-------|------|-----|-----|-----|-----|-----|-----|
-| year | 7980 | 2009.70 | 9.58 | 1993.00 | 2001.00 | 2010.00 | 2018.00 | 2026.00 |
-| value | 7980 | 41.55 | 40.21 | 1.08 | 11.25 | 21.72 | 70.09 | 202.88 |
+<table class="dataset-table">
+<thead>
+<tr><th>Column</th><th>Count</th><th>Mean</th><th>Std</th><th>Min</th><th>25%</th><th>50%</th><th>75%</th><th>Max</th></tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Column"><code>year</code></td>
+<td data-label="Count">7980</td>
+<td data-label="Mean">2009.70</td>
+<td data-label="Std">9.58</td>
+<td data-label="Min">1993.00</td>
+<td data-label="25%">2001.00</td>
+<td data-label="50%">2010.00</td>
+<td data-label="75%">2018.00</td>
+<td data-label="Max">2026.00</td>
+</tr>
+<tr>
+<td data-label="Column"><code>value</code></td>
+<td data-label="Count">7980</td>
+<td data-label="Mean">41.55</td>
+<td data-label="Std">40.21</td>
+<td data-label="Min">1.08</td>
+<td data-label="25%">11.25</td>
+<td data-label="50%">21.72</td>
+<td data-label="75%">70.09</td>
+<td data-label="Max">202.88</td>
+</tr>
+</tbody>
+</table>
 
 ## Sample Data
 
-| year | month | metric | value |
-|---|---|---|---|
-| 1993 | january | united states dollar | 36.23 |
-| 1993 | january | sterling pound | 55.62 |
-| 1993 | january | deutch mark | 22.44 |
-| 1993 | january | canadian dollar | 28.36 |
-| 1993 | january | french franc | 6.62 |
+<table class="dataset-table">
+<thead>
+<tr><th>year</th><th>month</th><th>metric</th><th>value</th></tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="year">1993</td>
+<td data-label="month">january</td>
+<td data-label="metric">united states dollar</td>
+<td data-label="value">36.23</td>
+</tr>
+<tr>
+<td data-label="year">1993</td>
+<td data-label="month">january</td>
+<td data-label="metric">sterling pound</td>
+<td data-label="value">55.62</td>
+</tr>
+<tr>
+<td data-label="year">1993</td>
+<td data-label="month">january</td>
+<td data-label="metric">deutch mark</td>
+<td data-label="value">22.44</td>
+</tr>
+<tr>
+<td data-label="year">1993</td>
+<td data-label="month">january</td>
+<td data-label="metric">canadian dollar</td>
+<td data-label="value">28.36</td>
+</tr>
+<tr>
+<td data-label="year">1993</td>
+<td data-label="month">january</td>
+<td data-label="metric">french franc</td>
+<td data-label="value">6.62</td>
+</tr>
+</tbody>
+</table>

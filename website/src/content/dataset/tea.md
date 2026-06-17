@@ -10,29 +10,151 @@ sourceUrl: "https://eatta.co.ke/statistics"
 
 ## Columns
 
-| Column | Type | Description | Nullable | Null count | Unique |
-|--------|------|-------------|----------|------------|--------|
-| date | datetime64[ns] | Auction date (ISO 8601) | No | 0 | 21 |
-| year | int64 | Calendar year | No | 0 | 1 |
-| month | object | Calendar month name | Yes | 84 | 0 |
-| sale_week | int64 | Sequential auction batch number (starts at 1 each year) | No | 0 | 21 |
-| metric | object | Auction metric name (Average price (USD), Tea sold (Kgs), Tea offered (Kgs), Unsold tea (%)) | No | 0 | 4 |
-| value | float64 | Numeric value of the metric | No | 0 | 69 |
+<table class="dataset-table">
+<thead>
+<tr><th>Column</th><th>Type</th><th>Description</th><th>Nullable</th><th>Null count</th><th>Unique</th></tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Column"><code>date</code></td>
+<td data-label="Type">datetime64[ns]</td>
+<td data-label="Description">Auction date (ISO 8601)</td>
+<td data-label="Nullable">No</td>
+<td data-label="Null count">0</td>
+<td data-label="Unique">21</td>
+</tr>
+<tr>
+<td data-label="Column"><code>year</code></td>
+<td data-label="Type">int64</td>
+<td data-label="Description">Calendar year</td>
+<td data-label="Nullable">No</td>
+<td data-label="Null count">0</td>
+<td data-label="Unique">1</td>
+</tr>
+<tr>
+<td data-label="Column"><code>month</code></td>
+<td data-label="Type">object</td>
+<td data-label="Description">Calendar month name</td>
+<td data-label="Nullable">Yes</td>
+<td data-label="Null count">84</td>
+<td data-label="Unique">0</td>
+</tr>
+<tr>
+<td data-label="Column"><code>sale_week</code></td>
+<td data-label="Type">int64</td>
+<td data-label="Description">Sequential auction batch number (starts at 1 each year)</td>
+<td data-label="Nullable">No</td>
+<td data-label="Null count">0</td>
+<td data-label="Unique">21</td>
+</tr>
+<tr>
+<td data-label="Column"><code>metric</code></td>
+<td data-label="Type">object</td>
+<td data-label="Description">Auction metric name (Average price (USD), Tea sold (Kgs), Tea offered (Kgs), Unsold tea (%))</td>
+<td data-label="Nullable">No</td>
+<td data-label="Null count">0</td>
+<td data-label="Unique">4</td>
+</tr>
+<tr>
+<td data-label="Column"><code>value</code></td>
+<td data-label="Type">float64</td>
+<td data-label="Description">Numeric value of the metric</td>
+<td data-label="Nullable">No</td>
+<td data-label="Null count">0</td>
+<td data-label="Unique">69</td>
+</tr>
+</tbody>
+</table>
 
 ## Summary Statistics
 
-| Column | Count | Mean | Std | Min | 25% | 50% | 75% | Max |
-|--------|-------|------|-----|-----|-----|-----|-----|-----|
-| year | 84 | 2026.00 | 0.00 | 2026.00 | 2026.00 | 2026.00 | 2026.00 | 2026.00 |
-| sale_week | 84 | 11.00 | 6.09 | 1.00 | 6.00 | 11.00 | 16.00 | 21.00 |
-| value | 84 | 4.964e+06 | 5.068e+06 | 2.09 | 5.82 | 3.763e+06 | 9.667e+06 | 1.283e+07 |
+<table class="dataset-table">
+<thead>
+<tr><th>Column</th><th>Count</th><th>Mean</th><th>Std</th><th>Min</th><th>25%</th><th>50%</th><th>75%</th><th>Max</th></tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Column"><code>year</code></td>
+<td data-label="Count">84</td>
+<td data-label="Mean">2026.00</td>
+<td data-label="Std">0.00</td>
+<td data-label="Min">2026.00</td>
+<td data-label="25%">2026.00</td>
+<td data-label="50%">2026.00</td>
+<td data-label="75%">2026.00</td>
+<td data-label="Max">2026.00</td>
+</tr>
+<tr>
+<td data-label="Column"><code>sale_week</code></td>
+<td data-label="Count">84</td>
+<td data-label="Mean">11.00</td>
+<td data-label="Std">6.09</td>
+<td data-label="Min">1.00</td>
+<td data-label="25%">6.00</td>
+<td data-label="50%">11.00</td>
+<td data-label="75%">16.00</td>
+<td data-label="Max">21.00</td>
+</tr>
+<tr>
+<td data-label="Column"><code>value</code></td>
+<td data-label="Count">84</td>
+<td data-label="Mean">4.964e+06</td>
+<td data-label="Std">5.068e+06</td>
+<td data-label="Min">2.09</td>
+<td data-label="25%">5.82</td>
+<td data-label="50%">3.763e+06</td>
+<td data-label="75%">9.667e+06</td>
+<td data-label="Max">1.283e+07</td>
+</tr>
+</tbody>
+</table>
 
 ## Sample Data
 
-| date | year | month | sale_week | metric | value |
-|---|---|---|---|---|---|
-| 2026-01-01 00:00:00 | 2026 | None | 1 | average price (usd) | 2.13 |
-| 2026-01-01 00:00:00 | 2026 | None | 1 | tea offered (kgs) | 9575196.0 |
-| 2026-01-01 00:00:00 | 2026 | None | 1 | tea sold (kgs) | 8243508.0 |
-| 2026-01-01 00:00:00 | 2026 | None | 1 | unsold tea (%) | 14.0 |
-| 2026-01-08 00:00:00 | 2026 | None | 2 | average price (usd) | 2.19 |
+<table class="dataset-table">
+<thead>
+<tr><th>date</th><th>year</th><th>month</th><th>sale_week</th><th>metric</th><th>value</th></tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="date">2026-01-01 00:00:00</td>
+<td data-label="year">2026</td>
+<td data-label="month">None</td>
+<td data-label="sale_week">1</td>
+<td data-label="metric">average price (usd)</td>
+<td data-label="value">2.13</td>
+</tr>
+<tr>
+<td data-label="date">2026-01-01 00:00:00</td>
+<td data-label="year">2026</td>
+<td data-label="month">None</td>
+<td data-label="sale_week">1</td>
+<td data-label="metric">tea offered (kgs)</td>
+<td data-label="value">9575196.0</td>
+</tr>
+<tr>
+<td data-label="date">2026-01-01 00:00:00</td>
+<td data-label="year">2026</td>
+<td data-label="month">None</td>
+<td data-label="sale_week">1</td>
+<td data-label="metric">tea sold (kgs)</td>
+<td data-label="value">8243508.0</td>
+</tr>
+<tr>
+<td data-label="date">2026-01-01 00:00:00</td>
+<td data-label="year">2026</td>
+<td data-label="month">None</td>
+<td data-label="sale_week">1</td>
+<td data-label="metric">unsold tea (%)</td>
+<td data-label="value">14.0</td>
+</tr>
+<tr>
+<td data-label="date">2026-01-08 00:00:00</td>
+<td data-label="year">2026</td>
+<td data-label="month">None</td>
+<td data-label="sale_week">2</td>
+<td data-label="metric">average price (usd)</td>
+<td data-label="value">2.19</td>
+</tr>
+</tbody>
+</table>

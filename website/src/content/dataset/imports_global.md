@@ -10,26 +10,114 @@ sourceUrl: "https://www.centralbank.go.ke/uploads/balance_of_payment_statistics/
 
 ## Columns
 
-| Column | Type | Description | Nullable | Null count | Unique |
-|--------|------|-------------|----------|------------|--------|
-| year | int64 | Calendar year | No | 0 | 29 |
-| month | object | Calendar month name | No | 0 | 12 |
-| metric | object | Origin country (e.g., u.k, u.s.a, china, india, total) | No | 0 | 13 |
-| value | float64 | Import value in KES millions (comma-formatted number) | No | 0 | 4340 |
+<table class="dataset-table">
+<thead>
+<tr><th>Column</th><th>Type</th><th>Description</th><th>Nullable</th><th>Null count</th><th>Unique</th></tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Column"><code>year</code></td>
+<td data-label="Type">int64</td>
+<td data-label="Description">Calendar year</td>
+<td data-label="Nullable">No</td>
+<td data-label="Null count">0</td>
+<td data-label="Unique">29</td>
+</tr>
+<tr>
+<td data-label="Column"><code>month</code></td>
+<td data-label="Type">object</td>
+<td data-label="Description">Calendar month name</td>
+<td data-label="Nullable">No</td>
+<td data-label="Null count">0</td>
+<td data-label="Unique">12</td>
+</tr>
+<tr>
+<td data-label="Column"><code>metric</code></td>
+<td data-label="Type">object</td>
+<td data-label="Description">Origin country (e.g., u.k, u.s.a, china, india, total)</td>
+<td data-label="Nullable">No</td>
+<td data-label="Null count">0</td>
+<td data-label="Unique">13</td>
+</tr>
+<tr>
+<td data-label="Column"><code>value</code></td>
+<td data-label="Type">float64</td>
+<td data-label="Description">Import value in KES millions (comma-formatted number)</td>
+<td data-label="Nullable">No</td>
+<td data-label="Null count">0</td>
+<td data-label="Unique">4340</td>
+</tr>
+</tbody>
+</table>
 
 ## Summary Statistics
 
-| Column | Count | Mean | Std | Min | 25% | 50% | 75% | Max |
-|--------|-------|------|-----|-----|-----|-----|-----|-----|
-| year | 4371 | 2011.73 | 8.11 | 1998.00 | 2005.00 | 2012.00 | 2019.00 | 2026.00 |
-| value | 4371 | 17128.71 | 38763.90 | 88.27 | 1739.97 | 3845.89 | 12251.81 | 332367.64 |
+<table class="dataset-table">
+<thead>
+<tr><th>Column</th><th>Count</th><th>Mean</th><th>Std</th><th>Min</th><th>25%</th><th>50%</th><th>75%</th><th>Max</th></tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Column"><code>year</code></td>
+<td data-label="Count">4371</td>
+<td data-label="Mean">2011.73</td>
+<td data-label="Std">8.11</td>
+<td data-label="Min">1998.00</td>
+<td data-label="25%">2005.00</td>
+<td data-label="50%">2012.00</td>
+<td data-label="75%">2019.00</td>
+<td data-label="Max">2026.00</td>
+</tr>
+<tr>
+<td data-label="Column"><code>value</code></td>
+<td data-label="Count">4371</td>
+<td data-label="Mean">17128.71</td>
+<td data-label="Std">38763.90</td>
+<td data-label="Min">88.27</td>
+<td data-label="25%">1739.97</td>
+<td data-label="50%">3845.89</td>
+<td data-label="75%">12251.81</td>
+<td data-label="Max">332367.64</td>
+</tr>
+</tbody>
+</table>
 
 ## Sample Data
 
-| year | month | metric | value |
-|---|---|---|---|
-| 1998 | january | u.k | 1870.74 |
-| 1998 | february | u.k | 1725.03 |
-| 1998 | march | u.k | 1986.62 |
-| 1998 | april | u.k | 1581.62 |
-| 1998 | may | u.k | 1835.51 |
+<table class="dataset-table">
+<thead>
+<tr><th>year</th><th>month</th><th>metric</th><th>value</th></tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="year">1998</td>
+<td data-label="month">january</td>
+<td data-label="metric">u.k</td>
+<td data-label="value">1870.74</td>
+</tr>
+<tr>
+<td data-label="year">1998</td>
+<td data-label="month">february</td>
+<td data-label="metric">u.k</td>
+<td data-label="value">1725.03</td>
+</tr>
+<tr>
+<td data-label="year">1998</td>
+<td data-label="month">march</td>
+<td data-label="metric">u.k</td>
+<td data-label="value">1986.62</td>
+</tr>
+<tr>
+<td data-label="year">1998</td>
+<td data-label="month">april</td>
+<td data-label="metric">u.k</td>
+<td data-label="value">1581.62</td>
+</tr>
+<tr>
+<td data-label="year">1998</td>
+<td data-label="month">may</td>
+<td data-label="metric">u.k</td>
+<td data-label="value">1835.51</td>
+</tr>
+</tbody>
+</table>
