@@ -193,9 +193,12 @@ import AboutLayout from "../components/AboutLayout.astro";
   }
 
   .process-step {
-    background: #6cb999;
+    background: var(--color-green-bg);
     border: 1px solid rgba(31, 111, 84, 0.35);
     padding: var(--space-md);
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
     transition: border-color 0.2s var(--ease-out);
   }
 

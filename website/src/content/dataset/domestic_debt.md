@@ -84,40 +84,35 @@ sourceUrl: "https://www.centralbank.go.ke/uploads/government_finance_statistics/
 
 ## Sample Data
 
-<table class="dataset-table">
-<thead>
-<tr><th>year</th><th>month</th><th>metric</th><th>value</th></tr>
-</thead>
-<tbody>
-<tr>
-<td data-label="year">1999</td>
-<td data-label="month">september</td>
-<td data-label="metric">treasury bills</td>
-<td data-label="value">115068.55</td>
-</tr>
-<tr>
-<td data-label="year">1999</td>
-<td data-label="month">december</td>
-<td data-label="metric">treasury bills</td>
-<td data-label="value">121658.53</td>
-</tr>
-<tr>
-<td data-label="year">2000</td>
-<td data-label="month">march</td>
-<td data-label="metric">treasury bills</td>
-<td data-label="value">131224.49</td>
-</tr>
-<tr>
-<td data-label="year">2000</td>
-<td data-label="month">june</td>
-<td data-label="metric">treasury bills</td>
-<td data-label="value">131029.45</td>
-</tr>
-<tr>
-<td data-label="year">2000</td>
-<td data-label="month">july</td>
-<td data-label="metric">treasury bills</td>
-<td data-label="value">132167.45</td>
-</tr>
-</tbody>
-</table>
+<pre class="code-block"><code>[
+  {
+    &quot;year&quot;: 1999,
+    &quot;month&quot;: &quot;september&quot;,
+    &quot;metric&quot;: &quot;treasury bills&quot;,
+    &quot;value&quot;: 115068.55
+  },
+  {
+    &quot;year&quot;: 1999,
+    &quot;month&quot;: &quot;december&quot;,
+    &quot;metric&quot;: &quot;treasury bills&quot;,
+    &quot;value&quot;: 121658.53
+  },
+  {
+    &quot;year&quot;: 2000,
+    &quot;month&quot;: &quot;march&quot;,
+    &quot;metric&quot;: &quot;treasury bills&quot;,
+    &quot;value&quot;: 131224.49
+  },
+  {
+    &quot;year&quot;: 2000,
+    &quot;month&quot;: &quot;june&quot;,
+    &quot;metric&quot;: &quot;treasury bills&quot;,
+    &quot;value&quot;: 131029.45
+  },
+  {
+    &quot;year&quot;: 2000,
+    &quot;month&quot;: &quot;july&quot;,
+    &quot;metric&quot;: &quot;treasury bills&quot;,
+    &quot;value&quot;: 132167.45
+  }
+]</code></pre>

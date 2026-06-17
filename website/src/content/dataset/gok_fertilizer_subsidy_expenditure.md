@@ -90,50 +90,45 @@ lastUpdated: "2026-06-15T12:42:19"
 
 ## Sample Data
 
-<table class="dataset-table">
-<thead>
-<tr><th>year</th><th>area_level</th><th>area_name</th><th>metric</th><th>item</th><th>value</th></tr>
-</thead>
-<tbody>
-<tr>
-<td data-label="year">2020</td>
-<td data-label="area_level">country</td>
-<td data-label="area_name">kenya</td>
-<td data-label="metric">land, inputs and sustainability</td>
-<td data-label="item">fertilizer</td>
-<td data-label="value">0.0</td>
-</tr>
-<tr>
-<td data-label="year">2019</td>
-<td data-label="area_level">country</td>
-<td data-label="area_name">kenya</td>
-<td data-label="metric">land, inputs and sustainability</td>
-<td data-label="item">fertilizer</td>
-<td data-label="value">2773060000.0</td>
-</tr>
-<tr>
-<td data-label="year">2018</td>
-<td data-label="area_level">country</td>
-<td data-label="area_name">kenya</td>
-<td data-label="metric">land, inputs and sustainability</td>
-<td data-label="item">fertilizer</td>
-<td data-label="value">3170200000.0</td>
-</tr>
-<tr>
-<td data-label="year">2017</td>
-<td data-label="area_level">country</td>
-<td data-label="area_name">kenya</td>
-<td data-label="metric">land, inputs and sustainability</td>
-<td data-label="item">fertilizer</td>
-<td data-label="value">2100000000.0</td>
-</tr>
-<tr>
-<td data-label="year">2016</td>
-<td data-label="area_level">country</td>
-<td data-label="area_name">kenya</td>
-<td data-label="metric">land, inputs and sustainability</td>
-<td data-label="item">fertilizer</td>
-<td data-label="value">2804000000.0</td>
-</tr>
-</tbody>
-</table>
+<pre class="code-block"><code>[
+  {
+    &quot;year&quot;: &quot;2020&quot;,
+    &quot;area_level&quot;: &quot;country&quot;,
+    &quot;area_name&quot;: &quot;kenya&quot;,
+    &quot;metric&quot;: &quot;land, inputs and sustainability&quot;,
+    &quot;item&quot;: &quot;fertilizer&quot;,
+    &quot;value&quot;: 0.0
+  },
+  {
+    &quot;year&quot;: &quot;2019&quot;,
+    &quot;area_level&quot;: &quot;country&quot;,
+    &quot;area_name&quot;: &quot;kenya&quot;,
+    &quot;metric&quot;: &quot;land, inputs and sustainability&quot;,
+    &quot;item&quot;: &quot;fertilizer&quot;,
+    &quot;value&quot;: 2773060000.0
+  },
+  {
+    &quot;year&quot;: &quot;2018&quot;,
+    &quot;area_level&quot;: &quot;country&quot;,
+    &quot;area_name&quot;: &quot;kenya&quot;,
+    &quot;metric&quot;: &quot;land, inputs and sustainability&quot;,
+    &quot;item&quot;: &quot;fertilizer&quot;,
+    &quot;value&quot;: 3170200000.0
+  },
+  {
+    &quot;year&quot;: &quot;2017&quot;,
+    &quot;area_level&quot;: &quot;country&quot;,
+    &quot;area_name&quot;: &quot;kenya&quot;,
+    &quot;metric&quot;: &quot;land, inputs and sustainability&quot;,
+    &quot;item&quot;: &quot;fertilizer&quot;,
+    &quot;value&quot;: 2100000000.0
+  },
+  {
+    &quot;year&quot;: &quot;2016&quot;,
+    &quot;area_level&quot;: &quot;country&quot;,
+    &quot;area_name&quot;: &quot;kenya&quot;,
+    &quot;metric&quot;: &quot;land, inputs and sustainability&quot;,
+    &quot;item&quot;: &quot;fertilizer&quot;,
+    &quot;value&quot;: 2804000000.0
+  }
+]</code></pre>

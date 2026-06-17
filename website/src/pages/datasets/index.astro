@@ -172,12 +172,15 @@ const datasetPlaceholder = "{dataset}";
     display: flex;
     flex-direction: column;
     position: relative;
-    background-color: #6cb999;
+    background-color: var(--color-green-bg);
     border: 1px solid rgba(31, 111, 84, 0.35);
-    padding: var(--space-md);
+    padding: var(--space-md) var(--space-md) var(--space-sm);
     padding-right: calc(var(--space-md) + 1.25rem);
     text-decoration: none;
-    min-height: 130px;
+    min-height: 12rem;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
     transition: border-color 0.25s var(--ease-out), background-color 0.25s var(--ease-out), transform 0.15s var(--ease-out);
   }
 
@@ -226,7 +229,6 @@ const datasetPlaceholder = "{dataset}";
   }
 
   .ds-card-desc {
-    flex: 1;
     font-family: var(--font-sans);
     font-size: var(--text-sm);
     color: var(--color-warm-dark);

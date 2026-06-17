@@ -90,50 +90,45 @@ lastUpdated: "2026-06-15T12:42:19"
 
 ## Sample Data
 
-<table class="dataset-table">
-<thead>
-<tr><th>year</th><th>area_level</th><th>area_name</th><th>metric</th><th>item</th><th>value</th></tr>
-</thead>
-<tbody>
-<tr>
-<td data-label="year">2024</td>
-<td data-label="area_level">country</td>
-<td data-label="area_name">kenya</td>
-<td data-label="metric">crops</td>
-<td data-label="item">pyrethrum</td>
-<td data-label="value">30584.0</td>
-</tr>
-<tr>
-<td data-label="year">2024</td>
-<td data-label="area_level">country</td>
-<td data-label="area_name">kenya</td>
-<td data-label="metric">crops</td>
-<td data-label="item">bixa</td>
-<td data-label="value">65100.0</td>
-</tr>
-<tr>
-<td data-label="year">2024</td>
-<td data-label="area_level">country</td>
-<td data-label="area_name">kenya</td>
-<td data-label="metric">crops</td>
-<td data-label="item">miraa</td>
-<td data-label="value">4776964.0</td>
-</tr>
-<tr>
-<td data-label="year">2024</td>
-<td data-label="area_level">country</td>
-<td data-label="area_name">kenya</td>
-<td data-label="metric">crops</td>
-<td data-label="item">tea( green leaf tea)</td>
-<td data-label="value">594503000.0</td>
-</tr>
-<tr>
-<td data-label="year">2024</td>
-<td data-label="area_level">country</td>
-<td data-label="area_name">kenya</td>
-<td data-label="metric">crops</td>
-<td data-label="item">cashew nuts</td>
-<td data-label="value">419.79</td>
-</tr>
-</tbody>
-</table>
+<pre class="code-block"><code>[
+  {
+    &quot;year&quot;: &quot;2024&quot;,
+    &quot;area_level&quot;: &quot;country&quot;,
+    &quot;area_name&quot;: &quot;kenya&quot;,
+    &quot;metric&quot;: &quot;crops&quot;,
+    &quot;item&quot;: &quot;pyrethrum&quot;,
+    &quot;value&quot;: 30584.0
+  },
+  {
+    &quot;year&quot;: &quot;2024&quot;,
+    &quot;area_level&quot;: &quot;country&quot;,
+    &quot;area_name&quot;: &quot;kenya&quot;,
+    &quot;metric&quot;: &quot;crops&quot;,
+    &quot;item&quot;: &quot;bixa&quot;,
+    &quot;value&quot;: 65100.0
+  },
+  {
+    &quot;year&quot;: &quot;2024&quot;,
+    &quot;area_level&quot;: &quot;country&quot;,
+    &quot;area_name&quot;: &quot;kenya&quot;,
+    &quot;metric&quot;: &quot;crops&quot;,
+    &quot;item&quot;: &quot;miraa&quot;,
+    &quot;value&quot;: 4776964.0
+  },
+  {
+    &quot;year&quot;: &quot;2024&quot;,
+    &quot;area_level&quot;: &quot;country&quot;,
+    &quot;area_name&quot;: &quot;kenya&quot;,
+    &quot;metric&quot;: &quot;crops&quot;,
+    &quot;item&quot;: &quot;tea( green leaf tea)&quot;,
+    &quot;value&quot;: 594503000.0
+  },
+  {
+    &quot;year&quot;: &quot;2024&quot;,
+    &quot;area_level&quot;: &quot;country&quot;,
+    &quot;area_name&quot;: &quot;kenya&quot;,
+    &quot;metric&quot;: &quot;crops&quot;,
+    &quot;item&quot;: &quot;cashew nuts&quot;,
+    &quot;value&quot;: 419.79
+  }
+]</code></pre>

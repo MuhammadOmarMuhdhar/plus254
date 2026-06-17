@@ -272,6 +272,9 @@ const activeLabel = activeSlug
   .docs-main {
     flex: 1;
     min-width: 0;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .sidebar-mobile {
@@ -290,8 +293,8 @@ const activeLabel = activeSlug
     cursor: pointer;
     min-height: 44px;
     list-style: none;
-    border: 1px solid #1f6f54;
-    background: #6cb999;
+    border: 1px solid var(--color-green);
+    background: var(--color-green-bg);
   }
 
   .sidebar-mobile-summary::-webkit-details-marker {

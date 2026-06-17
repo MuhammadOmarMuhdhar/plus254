@@ -90,50 +90,45 @@ lastUpdated: "2026-06-15T12:42:19"
 
 ## Sample Data
 
-<table class="dataset-table">
-<thead>
-<tr><th>year</th><th>area_level</th><th>area_name</th><th>metric</th><th>item</th><th>value</th></tr>
-</thead>
-<tbody>
-<tr>
-<td data-label="year">2025</td>
-<td data-label="area_level">county</td>
-<td data-label="area_name">baringo</td>
-<td data-label="metric">livestock</td>
-<td data-label="item">pork</td>
-<td data-label="value">6562080.0</td>
-</tr>
-<tr>
-<td data-label="year">2025</td>
-<td data-label="area_level">county</td>
-<td data-label="area_name">baringo</td>
-<td data-label="metric">livestock</td>
-<td data-label="item">honey</td>
-<td data-label="value">698504400.0</td>
-</tr>
-<tr>
-<td data-label="year">2025</td>
-<td data-label="area_level">county</td>
-<td data-label="area_name">baringo</td>
-<td data-label="metric">crops</td>
-<td data-label="item">wool</td>
-<td data-label="value">378936.0</td>
-</tr>
-<tr>
-<td data-label="year">2025</td>
-<td data-label="area_level">county</td>
-<td data-label="area_name">baringo</td>
-<td data-label="metric">livestock</td>
-<td data-label="item">wax</td>
-<td data-label="value">30479155.0</td>
-</tr>
-<tr>
-<td data-label="year">2025</td>
-<td data-label="area_level">county</td>
-<td data-label="area_name">baringo</td>
-<td data-label="metric">livestock</td>
-<td data-label="item">meat goat (chevon)</td>
-<td data-label="value">703983150.0</td>
-</tr>
-</tbody>
-</table>
+<pre class="code-block"><code>[
+  {
+    &quot;year&quot;: &quot;2025&quot;,
+    &quot;area_level&quot;: &quot;county&quot;,
+    &quot;area_name&quot;: &quot;baringo&quot;,
+    &quot;metric&quot;: &quot;livestock&quot;,
+    &quot;item&quot;: &quot;pork&quot;,
+    &quot;value&quot;: 6562080.0
+  },
+  {
+    &quot;year&quot;: &quot;2025&quot;,
+    &quot;area_level&quot;: &quot;county&quot;,
+    &quot;area_name&quot;: &quot;baringo&quot;,
+    &quot;metric&quot;: &quot;livestock&quot;,
+    &quot;item&quot;: &quot;honey&quot;,
+    &quot;value&quot;: 698504400.0
+  },
+  {
+    &quot;year&quot;: &quot;2025&quot;,
+    &quot;area_level&quot;: &quot;county&quot;,
+    &quot;area_name&quot;: &quot;baringo&quot;,
+    &quot;metric&quot;: &quot;crops&quot;,
+    &quot;item&quot;: &quot;wool&quot;,
+    &quot;value&quot;: 378936.0
+  },
+  {
+    &quot;year&quot;: &quot;2025&quot;,
+    &quot;area_level&quot;: &quot;county&quot;,
+    &quot;area_name&quot;: &quot;baringo&quot;,
+    &quot;metric&quot;: &quot;livestock&quot;,
+    &quot;item&quot;: &quot;wax&quot;,
+    &quot;value&quot;: 30479155.0
+  },
+  {
+    &quot;year&quot;: &quot;2025&quot;,
+    &quot;area_level&quot;: &quot;county&quot;,
+    &quot;area_name&quot;: &quot;baringo&quot;,
+    &quot;metric&quot;: &quot;livestock&quot;,
+    &quot;item&quot;: &quot;meat goat (chevon)&quot;,
+    &quot;value&quot;: 703983150.0
+  }
+]</code></pre>

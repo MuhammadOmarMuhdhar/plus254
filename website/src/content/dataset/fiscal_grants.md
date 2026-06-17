@@ -84,40 +84,35 @@ sourceUrl: "https://www.centralbank.go.ke/uploads/government_finance_statistics/
 
 ## Sample Data
 
-<table class="dataset-table">
-<thead>
-<tr><th>fiscal_year</th><th>month</th><th>metric</th><th>value</th></tr>
-</thead>
-<tbody>
-<tr>
-<td data-label="fiscal_year">1999</td>
-<td data-label="month">september</td>
-<td data-label="metric">programme grants</td>
-<td data-label="value">6.0</td>
-</tr>
-<tr>
-<td data-label="fiscal_year">1999</td>
-<td data-label="month">december</td>
-<td data-label="metric">programme grants</td>
-<td data-label="value">329.0</td>
-</tr>
-<tr>
-<td data-label="fiscal_year">2000</td>
-<td data-label="month">march</td>
-<td data-label="metric">programme grants</td>
-<td data-label="value">344.0</td>
-</tr>
-<tr>
-<td data-label="fiscal_year">2000</td>
-<td data-label="month">june</td>
-<td data-label="metric">programme grants</td>
-<td data-label="value">0.0</td>
-</tr>
-<tr>
-<td data-label="fiscal_year">2000</td>
-<td data-label="month">july</td>
-<td data-label="metric">programme grants</td>
-<td data-label="value">0.0</td>
-</tr>
-</tbody>
-</table>
+<pre class="code-block"><code>[
+  {
+    &quot;fiscal_year&quot;: 1999,
+    &quot;month&quot;: &quot;september&quot;,
+    &quot;metric&quot;: &quot;programme grants&quot;,
+    &quot;value&quot;: 6.0
+  },
+  {
+    &quot;fiscal_year&quot;: 1999,
+    &quot;month&quot;: &quot;december&quot;,
+    &quot;metric&quot;: &quot;programme grants&quot;,
+    &quot;value&quot;: 329.0
+  },
+  {
+    &quot;fiscal_year&quot;: 2000,
+    &quot;month&quot;: &quot;march&quot;,
+    &quot;metric&quot;: &quot;programme grants&quot;,
+    &quot;value&quot;: 344.0
+  },
+  {
+    &quot;fiscal_year&quot;: 2000,
+    &quot;month&quot;: &quot;june&quot;,
+    &quot;metric&quot;: &quot;programme grants&quot;,
+    &quot;value&quot;: 0.0
+  },
+  {
+    &quot;fiscal_year&quot;: 2000,
+    &quot;month&quot;: &quot;july&quot;,
+    &quot;metric&quot;: &quot;programme grants&quot;,
+    &quot;value&quot;: 0.0
+  }
+]</code></pre>

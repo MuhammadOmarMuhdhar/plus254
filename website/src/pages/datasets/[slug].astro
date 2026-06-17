@@ -88,10 +88,13 @@ const topicLabel = topicNames[entry.data.topic] ?? entry.data.topic;
     font-size: var(--text-xs);
     font-weight: var(--font-medium);
     color: var(--color-warm-dark);
-    background: #6cb999;
+    background: var(--color-green-bg);
     border: 1px solid rgba(31, 111, 84, 0.35);
     padding: var(--space-2xs) var(--space-xs);
     line-height: var(--leading-normal);
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    max-width: 100%;
   }
 
   .meta-tag code {
@@ -113,8 +116,8 @@ const topicLabel = topicNames[entry.data.topic] ?? entry.data.topic;
   }
 
   .meta :global(h2) {
-    background-color: #6cb999;
-    border: 1px solid #1f6f54;
+    background-color: var(--color-green-bg);
+    border: 1px solid var(--color-green);
     font-family: var(--font-sans);
     font-size: var(--text-sm);
     font-weight: var(--font-semibold);
@@ -125,9 +128,19 @@ const topicLabel = topicNames[entry.data.topic] ?? entry.data.topic;
     padding: var(--space-xs) var(--space-md);
   }
 
+  .meta :global(h2:first-child) {
+    margin-top: 0;
+  }
+
+  .meta {
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
   .meta :global(h2 ~ table) {
-    background-color: #6cb999;
-    border: 1px solid #1f6f54;
+    background-color: var(--color-green-bg);
+    border: 1px solid var(--color-green);
     border-top: none;
     width: 100%;
     border-collapse: collapse;
@@ -135,19 +148,21 @@ const topicLabel = topicNames[entry.data.topic] ?? entry.data.topic;
     font-size: var(--text-sm);
     color: var(--color-warm-dark);
     margin-bottom: var(--space-lg);
+    min-width: 500px;
   }
 
   .meta :global(h2 ~ table thead th) {
     text-align: left;
     font-weight: var(--font-semibold);
     color: var(--color-warm-dark);
-    padding: var(--space-xs) var(--space-md);
-    border-bottom: 2px solid #1f6f54;
+    padding: var(--space-xs) var(--space-sm);
+    border-bottom: 2px solid var(--color-green);
+    white-space: nowrap;
   }
 
   .meta :global(h2 ~ table tbody td) {
-    padding: var(--space-sm) var(--space-md);
-    border-bottom: 1px solid #1f6f54;
+    padding: var(--space-xs) var(--space-sm);
+    border-bottom: 1px solid var(--color-green);
     vertical-align: middle;
     word-break: break-word;
   }
@@ -156,13 +171,41 @@ const topicLabel = topicNames[entry.data.topic] ?? entry.data.topic;
     border-bottom: none;
   }
 
+  .meta :global(.code-block) {
+    background: var(--color-green-bg);
+    border: 1px solid rgba(31, 111, 84, 0.35);
+    padding: var(--space-md);
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin: 0 0 var(--space-lg);
+    font-size: var(--text-sm);
+    line-height: var(--leading-normal);
+    tab-size: 2;
+    max-width: 100%;
+    word-wrap: normal;
+    white-space: pre;
+  }
+
+  .meta :global(.code-block code) {
+    font-family: var(--font-mono);
+    color: var(--color-warm-dark);
+  }
+
   .meta :global(.dataset-table td code) {
     word-break: break-word;
   }
 
-  @media (max-width: 480px) {
+  .meta :global(.dataset-table td:first-child) {
+    white-space: nowrap;
+  }
+
+  @media (max-width: 768px) {
     .meta :global(.dataset-table thead) {
       display: none;
+    }
+
+    .meta :global(.dataset-table) {
+      min-width: 0;
     }
 
     .meta :global(.dataset-table tbody tr) {

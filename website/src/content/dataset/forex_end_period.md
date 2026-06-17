@@ -84,40 +84,35 @@ sourceUrl: "https://www.centralbank.go.ke/uploads/exchange_rates/677633335_Month
 
 ## Sample Data
 
-<table class="dataset-table">
-<thead>
-<tr><th>year</th><th>month</th><th>metric</th><th>value</th></tr>
-</thead>
-<tbody>
-<tr>
-<td data-label="year">1993</td>
-<td data-label="month">january</td>
-<td data-label="metric">united states dollar</td>
-<td data-label="value">35.92</td>
-</tr>
-<tr>
-<td data-label="year">1993</td>
-<td data-label="month">january</td>
-<td data-label="metric">sterling pound</td>
-<td data-label="value">54.48</td>
-</tr>
-<tr>
-<td data-label="year">1993</td>
-<td data-label="month">january</td>
-<td data-label="metric">deutch mark</td>
-<td data-label="value">22.67</td>
-</tr>
-<tr>
-<td data-label="year">1993</td>
-<td data-label="month">january</td>
-<td data-label="metric">canadian dollar</td>
-<td data-label="value">28.3</td>
-</tr>
-<tr>
-<td data-label="year">1993</td>
-<td data-label="month">january</td>
-<td data-label="metric">french franc</td>
-<td data-label="value">6.69</td>
-</tr>
-</tbody>
-</table>
+<pre class="code-block"><code>[
+  {
+    &quot;year&quot;: 1993,
+    &quot;month&quot;: &quot;january&quot;,
+    &quot;metric&quot;: &quot;united states dollar&quot;,
+    &quot;value&quot;: 35.92
+  },
+  {
+    &quot;year&quot;: 1993,
+    &quot;month&quot;: &quot;january&quot;,
+    &quot;metric&quot;: &quot;sterling pound&quot;,
+    &quot;value&quot;: 54.48
+  },
+  {
+    &quot;year&quot;: 1993,
+    &quot;month&quot;: &quot;january&quot;,
+    &quot;metric&quot;: &quot;deutch mark&quot;,
+    &quot;value&quot;: 22.67
+  },
+  {
+    &quot;year&quot;: 1993,
+    &quot;month&quot;: &quot;january&quot;,
+    &quot;metric&quot;: &quot;canadian dollar&quot;,
+    &quot;value&quot;: 28.3
+  },
+  {
+    &quot;year&quot;: 1993,
+    &quot;month&quot;: &quot;january&quot;,
+    &quot;metric&quot;: &quot;french franc&quot;,
+    &quot;value&quot;: 6.69
+  }
+]</code></pre>

@@ -8,6 +8,9 @@
     </div>
     <div class="featured-chart">
       <div class="chart-wrapper">
+        <div class="chart-fallback" hidden>
+          <p>Chart could not be loaded. <a href="https://datawrapper.dwcdn.net/tKoO3/11/" target="_blank" rel="noopener noreferrer">Open in new tab</a>.</p>
+        </div>
         <iframe
           title="Mombasa Tea Auction Supply and Demand Index"
           aria-label="Line chart"
@@ -19,6 +22,7 @@
           loading="lazy"
           scrolling="no"
           data-external="1"
+          onerror="this.previousElementSibling.hidden = false; this.hidden = true;"
         ></iframe>
         <script type="text/javascript">
           (function() {
@@ -72,12 +76,15 @@
 
   .featured-title {
     font-family: var(--font-serif);
-    font-size: var(--text-lg);
+    font-size: var(--text-xl);
     font-weight: var(--font-semibold);
     line-height: 1.25;
     letter-spacing: -0.01em;
     color: var(--color-warm-dark);
     margin: 0 0 var(--space-sm);
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
   }
 
   .featured-desc {
@@ -119,6 +126,28 @@
 
   .chart-wrapper iframe {
     display: block;
+  }
+
+  .chart-fallback {
+    background: var(--color-green-bg);
+    border: 1px solid rgba(31, 111, 84, 0.35);
+    padding: var(--space-xl) var(--space-md);
+    text-align: center;
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    color: var(--color-warm-mid);
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .chart-fallback a {
+    color: var(--color-green);
+  }
+
+  .chart-fallback[hidden] {
+    display: none;
   }
 
   @media (max-width: 768px) {

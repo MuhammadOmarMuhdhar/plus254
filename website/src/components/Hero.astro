@@ -4,11 +4,12 @@
 
 <section class="hero">
   <div class="hero-text">
-    <h1>Kenya's data. Open and accessible.</h1>
+    <h1>Kenya's data.<br />Open and accessible.</h1>
     <p>Data about Kenya is buried in PDFs, messy Excel files, poorly documented, and hard to access. Getting it ready for analysis or development is a headache. +254 extracts data from Kenyan institutions, cleans and processes it, and serves it through a plug-and-play API.</p>
     <div class="hero-btns">
       <a href="/datasets/" class="btn-primary">Explore data <span aria-hidden="true">→</span></a>
       <a href="/api-docs/" class="btn-secondary">API docs <span aria-hidden="true">→</span></a>
+      <a href="/about/#mission" class="btn-ghost">About +254 <span aria-hidden="true">→</span></a>
     </div>
   </div>
 </section>
@@ -24,13 +25,16 @@
 
   .hero h1 {
     font-family: var(--font-serif);
-    font-size: 3rem;
+    font-size: var(--text-3xl);
     font-weight: var(--font-semibold);
     line-height: 1.25;
     letter-spacing: -0.02em;
     color: var(--color-warm-dark);
     margin-bottom: var(--space-sm);
     margin-top: 0;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: none;
   }
 
   .hero p {
@@ -60,27 +64,27 @@
     font-weight: var(--font-medium);
     text-decoration: none;
     text-align: center;
-    border: 1.5px solid #1f6f54;
+    border: 1.5px solid var(--color-green);
     transition: background-color 0.2s var(--ease-out), color 0.2s var(--ease-out), transform 0.15s var(--ease-out);
   }
 
   .hero-btns .btn-primary {
-    background: #1f6f54;
+    background: var(--color-green);
     color: #fff;
   }
 
   .hero-btns .btn-primary:hover {
     background: transparent;
-    color: #1f6f54;
+    color: var(--color-green);
   }
 
   .hero-btns .btn-secondary {
     background: transparent;
-    color: #1f6f54;
+    color: var(--color-green);
   }
 
   .hero-btns .btn-secondary:hover {
-    background: #1f6f54;
+    background: var(--color-green);
     color: #fff;
   }
 
@@ -90,10 +94,29 @@
   }
 
   .hero-btns .btn-primary:focus-visible,
-  .hero-btns .btn-secondary:focus-visible {
+  .hero-btns .btn-secondary:focus-visible,
+  .hero-btns .btn-ghost:focus-visible {
     outline: 2px solid #fff;
     outline-offset: 2px;
-    box-shadow: 0 0 0 4px #1f6f54;
+    box-shadow: 0 0 0 4px var(--color-green);
+  }
+
+  .hero-btns .btn-ghost {
+    min-width: 140px;
+    padding: var(--space-sm) var(--space-md);
+    border-radius: 0;
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    text-decoration: none;
+    text-align: center;
+    border: 1.5px solid transparent;
+    color: var(--color-warm-light);
+    transition: color 0.2s var(--ease-out);
+  }
+
+  .hero-btns .btn-ghost:hover {
+    color: var(--color-warm-dark);
   }
 
   @media (max-width: 768px) {

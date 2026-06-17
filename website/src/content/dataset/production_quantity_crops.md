@@ -90,50 +90,45 @@ lastUpdated: "2026-06-15T12:42:19"
 
 ## Sample Data
 
-<table class="dataset-table">
-<thead>
-<tr><th>year</th><th>area_level</th><th>area_name</th><th>metric</th><th>item</th><th>value</th></tr>
-</thead>
-<tbody>
-<tr>
-<td data-label="year">2025</td>
-<td data-label="area_level">county</td>
-<td data-label="area_name">bungoma</td>
-<td data-label="metric">crops</td>
-<td data-label="item">bambara groundnuts</td>
-<td data-label="value">94.0</td>
-</tr>
-<tr>
-<td data-label="year">2025</td>
-<td data-label="area_level">county</td>
-<td data-label="area_name">bungoma</td>
-<td data-label="metric">crops</td>
-<td data-label="item">sesame</td>
-<td data-label="value">7.0</td>
-</tr>
-<tr>
-<td data-label="year">2025</td>
-<td data-label="area_level">county</td>
-<td data-label="area_name">busia</td>
-<td data-label="metric">crops</td>
-<td data-label="item">sesame</td>
-<td data-label="value">29.0</td>
-</tr>
-<tr>
-<td data-label="year">2025</td>
-<td data-label="area_level">county</td>
-<td data-label="area_name">busia</td>
-<td data-label="metric">crops</td>
-<td data-label="item">sunflower</td>
-<td data-label="value">132.0</td>
-</tr>
-<tr>
-<td data-label="year">2025</td>
-<td data-label="area_level">county</td>
-<td data-label="area_name">busia</td>
-<td data-label="metric">crops</td>
-<td data-label="item">bambara groundnuts</td>
-<td data-label="value">82.0</td>
-</tr>
-</tbody>
-</table>
+<pre class="code-block"><code>[
+  {
+    &quot;year&quot;: &quot;2025&quot;,
+    &quot;area_level&quot;: &quot;county&quot;,
+    &quot;area_name&quot;: &quot;bungoma&quot;,
+    &quot;metric&quot;: &quot;crops&quot;,
+    &quot;item&quot;: &quot;bambara groundnuts&quot;,
+    &quot;value&quot;: 94.0
+  },
+  {
+    &quot;year&quot;: &quot;2025&quot;,
+    &quot;area_level&quot;: &quot;county&quot;,
+    &quot;area_name&quot;: &quot;bungoma&quot;,
+    &quot;metric&quot;: &quot;crops&quot;,
+    &quot;item&quot;: &quot;sesame&quot;,
+    &quot;value&quot;: 7.0
+  },
+  {
+    &quot;year&quot;: &quot;2025&quot;,
+    &quot;area_level&quot;: &quot;county&quot;,
+    &quot;area_name&quot;: &quot;busia&quot;,
+    &quot;metric&quot;: &quot;crops&quot;,
+    &quot;item&quot;: &quot;sesame&quot;,
+    &quot;value&quot;: 29.0
+  },
+  {
+    &quot;year&quot;: &quot;2025&quot;,
+    &quot;area_level&quot;: &quot;county&quot;,
+    &quot;area_name&quot;: &quot;busia&quot;,
+    &quot;metric&quot;: &quot;crops&quot;,
+    &quot;item&quot;: &quot;sunflower&quot;,
+    &quot;value&quot;: 132.0
+  },
+  {
+    &quot;year&quot;: &quot;2025&quot;,
+    &quot;area_level&quot;: &quot;county&quot;,
+    &quot;area_name&quot;: &quot;busia&quot;,
+    &quot;metric&quot;: &quot;crops&quot;,
+    &quot;item&quot;: &quot;bambara groundnuts&quot;,
+    &quot;value&quot;: 82.0
+  }
+]</code></pre>

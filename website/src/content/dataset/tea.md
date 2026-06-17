@@ -111,50 +111,45 @@ sourceUrl: "https://eatta.co.ke/statistics"
 
 ## Sample Data
 
-<table class="dataset-table">
-<thead>
-<tr><th>date</th><th>year</th><th>month</th><th>sale_week</th><th>metric</th><th>value</th></tr>
-</thead>
-<tbody>
-<tr>
-<td data-label="date">2026-01-01 00:00:00</td>
-<td data-label="year">2026</td>
-<td data-label="month">None</td>
-<td data-label="sale_week">1</td>
-<td data-label="metric">average price (usd)</td>
-<td data-label="value">2.13</td>
-</tr>
-<tr>
-<td data-label="date">2026-01-01 00:00:00</td>
-<td data-label="year">2026</td>
-<td data-label="month">None</td>
-<td data-label="sale_week">1</td>
-<td data-label="metric">tea offered (kgs)</td>
-<td data-label="value">9575196.0</td>
-</tr>
-<tr>
-<td data-label="date">2026-01-01 00:00:00</td>
-<td data-label="year">2026</td>
-<td data-label="month">None</td>
-<td data-label="sale_week">1</td>
-<td data-label="metric">tea sold (kgs)</td>
-<td data-label="value">8243508.0</td>
-</tr>
-<tr>
-<td data-label="date">2026-01-01 00:00:00</td>
-<td data-label="year">2026</td>
-<td data-label="month">None</td>
-<td data-label="sale_week">1</td>
-<td data-label="metric">unsold tea (%)</td>
-<td data-label="value">14.0</td>
-</tr>
-<tr>
-<td data-label="date">2026-01-08 00:00:00</td>
-<td data-label="year">2026</td>
-<td data-label="month">None</td>
-<td data-label="sale_week">2</td>
-<td data-label="metric">average price (usd)</td>
-<td data-label="value">2.19</td>
-</tr>
-</tbody>
-</table>
+<pre class="code-block"><code>[
+  {
+    &quot;date&quot;: &quot;2026-01-01 00:00:00&quot;,
+    &quot;year&quot;: 2026,
+    &quot;month&quot;: null,
+    &quot;sale_week&quot;: 1,
+    &quot;metric&quot;: &quot;average price (usd)&quot;,
+    &quot;value&quot;: 2.13
+  },
+  {
+    &quot;date&quot;: &quot;2026-01-01 00:00:00&quot;,
+    &quot;year&quot;: 2026,
+    &quot;month&quot;: null,
+    &quot;sale_week&quot;: 1,
+    &quot;metric&quot;: &quot;tea offered (kgs)&quot;,
+    &quot;value&quot;: 9575196.0
+  },
+  {
+    &quot;date&quot;: &quot;2026-01-01 00:00:00&quot;,
+    &quot;year&quot;: 2026,
+    &quot;month&quot;: null,
+    &quot;sale_week&quot;: 1,
+    &quot;metric&quot;: &quot;tea sold (kgs)&quot;,
+    &quot;value&quot;: 8243508.0
+  },
+  {
+    &quot;date&quot;: &quot;2026-01-01 00:00:00&quot;,
+    &quot;year&quot;: 2026,
+    &quot;month&quot;: null,
+    &quot;sale_week&quot;: 1,
+    &quot;metric&quot;: &quot;unsold tea (%)&quot;,
+    &quot;value&quot;: 14.0
+  },
+  {
+    &quot;date&quot;: &quot;2026-01-08 00:00:00&quot;,
+    &quot;year&quot;: 2026,
+    &quot;month&quot;: null,
+    &quot;sale_week&quot;: 2,
+    &quot;metric&quot;: &quot;average price (usd)&quot;,
+    &quot;value&quot;: 2.19
+  }
+]</code></pre>

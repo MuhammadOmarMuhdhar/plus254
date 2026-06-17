@@ -76,35 +76,30 @@ sourceUrl: "https://www.centralbank.go.ke/uploads/balance_of_payment_statistics/
 
 ## Sample Data
 
-<table class="dataset-table">
-<thead>
-<tr><th>year</th><th>metric</th><th>value</th></tr>
-</thead>
-<tbody>
-<tr>
-<td data-label="year">2019</td>
-<td data-label="metric">a. current account, n.i.e.</td>
-<td data-label="value">-507653.0</td>
-</tr>
-<tr>
-<td data-label="year">2019</td>
-<td data-label="metric">other debt instruments</td>
-<td data-label="value">57834.0</td>
-</tr>
-<tr>
-<td data-label="year">2019</td>
-<td data-label="metric">central bank</td>
-<td data-label="value">0.0</td>
-</tr>
-<tr>
-<td data-label="year">2019</td>
-<td data-label="metric">deposit-taking corporations, except the central bank</td>
-<td data-label="value">55710.0</td>
-</tr>
-<tr>
-<td data-label="year">2019</td>
-<td data-label="metric">general government</td>
-<td data-label="value">0.0</td>
-</tr>
-</tbody>
-</table>
+<pre class="code-block"><code>[
+  {
+    &quot;year&quot;: 2019,
+    &quot;metric&quot;: &quot;a. current account, n.i.e.&quot;,
+    &quot;value&quot;: -507653.0
+  },
+  {
+    &quot;year&quot;: 2019,
+    &quot;metric&quot;: &quot;other debt instruments&quot;,
+    &quot;value&quot;: 57834.0
+  },
+  {
+    &quot;year&quot;: 2019,
+    &quot;metric&quot;: &quot;central bank&quot;,
+    &quot;value&quot;: 0.0
+  },
+  {
+    &quot;year&quot;: 2019,
+    &quot;metric&quot;: &quot;deposit-taking corporations, except the central bank&quot;,
+    &quot;value&quot;: 55710.0
+  },
+  {
+    &quot;year&quot;: 2019,
+    &quot;metric&quot;: &quot;general government&quot;,
+    &quot;value&quot;: 0.0
+  }
+]</code></pre>

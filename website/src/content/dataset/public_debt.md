@@ -84,40 +84,35 @@ sourceUrl: "https://www.centralbank.go.ke/uploads/government_finance_statistics/
 
 ## Sample Data
 
-<table class="dataset-table">
-<thead>
-<tr><th>year</th><th>month</th><th>metric</th><th>value</th></tr>
-</thead>
-<tbody>
-<tr>
-<td data-label="year">1999</td>
-<td data-label="month">september</td>
-<td data-label="metric">domestic debt</td>
-<td data-label="value">183417.0</td>
-</tr>
-<tr>
-<td data-label="year">1999</td>
-<td data-label="month">december</td>
-<td data-label="metric">domestic debt</td>
-<td data-label="value">190300.0</td>
-</tr>
-<tr>
-<td data-label="year">2000</td>
-<td data-label="month">march</td>
-<td data-label="metric">domestic debt</td>
-<td data-label="value">201463.22</td>
-</tr>
-<tr>
-<td data-label="year">2000</td>
-<td data-label="month">june</td>
-<td data-label="metric">domestic debt</td>
-<td data-label="value">206127.0</td>
-</tr>
-<tr>
-<td data-label="year">2000</td>
-<td data-label="month">july</td>
-<td data-label="metric">domestic debt</td>
-<td data-label="value">202362.0</td>
-</tr>
-</tbody>
-</table>
+<pre class="code-block"><code>[
+  {
+    &quot;year&quot;: 1999,
+    &quot;month&quot;: &quot;september&quot;,
+    &quot;metric&quot;: &quot;domestic debt&quot;,
+    &quot;value&quot;: 183417.0
+  },
+  {
+    &quot;year&quot;: 1999,
+    &quot;month&quot;: &quot;december&quot;,
+    &quot;metric&quot;: &quot;domestic debt&quot;,
+    &quot;value&quot;: 190300.0
+  },
+  {
+    &quot;year&quot;: 2000,
+    &quot;month&quot;: &quot;march&quot;,
+    &quot;metric&quot;: &quot;domestic debt&quot;,
+    &quot;value&quot;: 201463.22
+  },
+  {
+    &quot;year&quot;: 2000,
+    &quot;month&quot;: &quot;june&quot;,
+    &quot;metric&quot;: &quot;domestic debt&quot;,
+    &quot;value&quot;: 206127.0
+  },
+  {
+    &quot;year&quot;: 2000,
+    &quot;month&quot;: &quot;july&quot;,
+    &quot;metric&quot;: &quot;domestic debt&quot;,
+    &quot;value&quot;: 202362.0
+  }
+]</code></pre>

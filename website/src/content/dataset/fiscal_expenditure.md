@@ -84,40 +84,35 @@ sourceUrl: "https://www.centralbank.go.ke/uploads/government_finance_statistics/
 
 ## Sample Data
 
-<table class="dataset-table">
-<thead>
-<tr><th>fiscal_year</th><th>month</th><th>metric</th><th>value</th></tr>
-</thead>
-<tbody>
-<tr>
-<td data-label="fiscal_year">1999</td>
-<td data-label="month">september</td>
-<td data-label="metric">domestic interest</td>
-<td data-label="value">3816.0</td>
-</tr>
-<tr>
-<td data-label="fiscal_year">1999</td>
-<td data-label="month">december</td>
-<td data-label="metric">domestic interest</td>
-<td data-label="value">8935.0</td>
-</tr>
-<tr>
-<td data-label="fiscal_year">2000</td>
-<td data-label="month">march</td>
-<td data-label="metric">domestic interest</td>
-<td data-label="value">15784.0</td>
-</tr>
-<tr>
-<td data-label="fiscal_year">2000</td>
-<td data-label="month">june</td>
-<td data-label="metric">domestic interest</td>
-<td data-label="value">20752.0</td>
-</tr>
-<tr>
-<td data-label="fiscal_year">2000</td>
-<td data-label="month">july</td>
-<td data-label="metric">domestic interest</td>
-<td data-label="value">2739.0</td>
-</tr>
-</tbody>
-</table>
+<pre class="code-block"><code>[
+  {
+    &quot;fiscal_year&quot;: 1999,
+    &quot;month&quot;: &quot;september&quot;,
+    &quot;metric&quot;: &quot;domestic interest&quot;,
+    &quot;value&quot;: 3816.0
+  },
+  {
+    &quot;fiscal_year&quot;: 1999,
+    &quot;month&quot;: &quot;december&quot;,
+    &quot;metric&quot;: &quot;domestic interest&quot;,
+    &quot;value&quot;: 8935.0
+  },
+  {
+    &quot;fiscal_year&quot;: 2000,
+    &quot;month&quot;: &quot;march&quot;,
+    &quot;metric&quot;: &quot;domestic interest&quot;,
+    &quot;value&quot;: 15784.0
+  },
+  {
+    &quot;fiscal_year&quot;: 2000,
+    &quot;month&quot;: &quot;june&quot;,
+    &quot;metric&quot;: &quot;domestic interest&quot;,
+    &quot;value&quot;: 20752.0
+  },
+  {
+    &quot;fiscal_year&quot;: 2000,
+    &quot;month&quot;: &quot;july&quot;,
+    &quot;metric&quot;: &quot;domestic interest&quot;,
+    &quot;value&quot;: 2739.0
+  }
+]</code></pre>

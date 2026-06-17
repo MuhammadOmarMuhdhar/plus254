@@ -84,40 +84,35 @@ sourceUrl: "https://www.centralbank.go.ke/uploads/balance_of_payment_statistics/
 
 ## Sample Data
 
-<table class="dataset-table">
-<thead>
-<tr><th>year</th><th>month</th><th>metric</th><th>value</th></tr>
-</thead>
-<tbody>
-<tr>
-<td data-label="year">1998</td>
-<td data-label="month">august</td>
-<td data-label="metric">food and live animals</td>
-<td data-label="value">1413.87</td>
-</tr>
-<tr>
-<td data-label="year">1998</td>
-<td data-label="month">september</td>
-<td data-label="metric">food and live animals</td>
-<td data-label="value">533.13</td>
-</tr>
-<tr>
-<td data-label="year">1998</td>
-<td data-label="month">october</td>
-<td data-label="metric">food and live animals</td>
-<td data-label="value">586.56</td>
-</tr>
-<tr>
-<td data-label="year">1998</td>
-<td data-label="month">november</td>
-<td data-label="metric">food and live animals</td>
-<td data-label="value">522.81</td>
-</tr>
-<tr>
-<td data-label="year">1998</td>
-<td data-label="month">december</td>
-<td data-label="metric">food and live animals</td>
-<td data-label="value">717.97</td>
-</tr>
-</tbody>
-</table>
+<pre class="code-block"><code>[
+  {
+    &quot;year&quot;: 1998,
+    &quot;month&quot;: &quot;august&quot;,
+    &quot;metric&quot;: &quot;food and live animals&quot;,
+    &quot;value&quot;: 1413.87
+  },
+  {
+    &quot;year&quot;: 1998,
+    &quot;month&quot;: &quot;september&quot;,
+    &quot;metric&quot;: &quot;food and live animals&quot;,
+    &quot;value&quot;: 533.13
+  },
+  {
+    &quot;year&quot;: 1998,
+    &quot;month&quot;: &quot;october&quot;,
+    &quot;metric&quot;: &quot;food and live animals&quot;,
+    &quot;value&quot;: 586.56
+  },
+  {
+    &quot;year&quot;: 1998,
+    &quot;month&quot;: &quot;november&quot;,
+    &quot;metric&quot;: &quot;food and live animals&quot;,
+    &quot;value&quot;: 522.81
+  },
+  {
+    &quot;year&quot;: 1998,
+    &quot;month&quot;: &quot;december&quot;,
+    &quot;metric&quot;: &quot;food and live animals&quot;,
+    &quot;value&quot;: 717.97
+  }
+]</code></pre>

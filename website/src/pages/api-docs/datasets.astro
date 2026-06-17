@@ -1,13 +1,71 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import APIDocsLayout from "../../components/APIDocsLayout.astro";
+import { getCollection } from "astro:content";
+
+const datasets = await getCollection("dataset");
+const topicNames: Record<string, string> = {
+  economy: "Economy",
+  agriculture: "Agriculture",
+  governance: "Governance",
+};
+const grouped = datasets.reduce(
+  (acc, d) => {
+    (acc[d.data.topic] ??= []).push(d);
+    return acc;
+  },
+  {} as Record<string, typeof datasets>,
+);
+const topicOrder = ["economy", "agriculture", "governance"];
 ---
 
-<BaseLayout title="Datasets - plus254 API Reference">
+<BaseLayout title="Datasets — +254 API Reference">
   <APIDocsLayout activeSection="datasets">
     <header class="page-heading">
       <h1>Datasets</h1>
     </header>
+
+    <section class="section">
+      <h2 class="section-eyebrow">Available Datasets</h2>
+      <div class="narrative">
+        <p>
+          The API provides access to {datasets.length} datasets across {topicOrder.length} topics.
+          Each dataset is served from a unique endpoint path.
+        </p>
+      </div>
+
+      {
+        topicOrder.map((topic) => {
+          const items = grouped[topic];
+          if (!items) return null;
+          return (
+            <div class="dataset-panel" style="margin-bottom: var(--space-md);">
+              <h4>{topicNames[topic] || topic} — {items.length} {items.length === 1 ? "dataset" : "datasets"}</h4>
+              <table class="dataset-table">
+                <thead>
+                  <tr><th>Dataset</th><th>Source</th><th>Rows</th></tr>
+                </thead>
+                <tbody>
+                  {
+                    items.map((d) => (
+                      <tr>
+                        <td data-label="Dataset">
+                          <a href={`/datasets/${d.id}/`} style="color: var(--color-warm-dark); text-decoration: underline; text-underline-offset: 2px;">
+                            {d.data.title}
+                          </a>
+                        </td>
+                        <td data-label="Source">{d.data.source}</td>
+                        <td data-label="Rows">{d.data.rows.toLocaleString()}</td>
+                      </tr>
+                    ))
+                  }
+                </tbody>
+              </table>
+            </div>
+          );
+        })
+      }
+    </section>
 
     <a href="/api-docs/clients/" class="next-btn">Next: Client Libraries <span aria-hidden="true">→</span></a>
   </APIDocsLayout>

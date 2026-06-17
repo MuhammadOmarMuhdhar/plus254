@@ -90,50 +90,45 @@ lastUpdated: "2026-06-15T12:42:19"
 
 ## Sample Data
 
-<table class="dataset-table">
-<thead>
-<tr><th>year</th><th>area_level</th><th>area_name</th><th>metric</th><th>item</th><th>value</th></tr>
-</thead>
-<tbody>
-<tr>
-<td data-label="year">2024</td>
-<td data-label="area_level">country</td>
-<td data-label="area_name">kenya</td>
-<td data-label="metric">crops</td>
-<td data-label="item">tea( green leaf tea)</td>
-<td data-label="value">37502000.0</td>
-</tr>
-<tr>
-<td data-label="year">2024</td>
-<td data-label="area_level">country</td>
-<td data-label="area_name">kenya</td>
-<td data-label="metric">land, inputs and sustainability</td>
-<td data-label="item">fertilizer</td>
-<td data-label="value">723637.0</td>
-</tr>
-<tr>
-<td data-label="year">2023</td>
-<td data-label="area_level">country</td>
-<td data-label="area_name">kenya</td>
-<td data-label="metric">crops</td>
-<td data-label="item">tea( green leaf tea)</td>
-<td data-label="value">37303000.0</td>
-</tr>
-<tr>
-<td data-label="year">2022</td>
-<td data-label="area_level">country</td>
-<td data-label="area_name">kenya</td>
-<td data-label="metric">crops</td>
-<td data-label="item">tea( green leaf tea)</td>
-<td data-label="value">36352809.0</td>
-</tr>
-<tr>
-<td data-label="year">2022</td>
-<td data-label="area_level">county</td>
-<td data-label="area_name">narok</td>
-<td data-label="metric">crops</td>
-<td data-label="item">cowpeas</td>
-<td data-label="value">20.0</td>
-</tr>
-</tbody>
-</table>
+<pre class="code-block"><code>[
+  {
+    &quot;year&quot;: &quot;2024&quot;,
+    &quot;area_level&quot;: &quot;country&quot;,
+    &quot;area_name&quot;: &quot;kenya&quot;,
+    &quot;metric&quot;: &quot;crops&quot;,
+    &quot;item&quot;: &quot;tea( green leaf tea)&quot;,
+    &quot;value&quot;: 37502000.0
+  },
+  {
+    &quot;year&quot;: &quot;2024&quot;,
+    &quot;area_level&quot;: &quot;country&quot;,
+    &quot;area_name&quot;: &quot;kenya&quot;,
+    &quot;metric&quot;: &quot;land, inputs and sustainability&quot;,
+    &quot;item&quot;: &quot;fertilizer&quot;,
+    &quot;value&quot;: 723637.0
+  },
+  {
+    &quot;year&quot;: &quot;2023&quot;,
+    &quot;area_level&quot;: &quot;country&quot;,
+    &quot;area_name&quot;: &quot;kenya&quot;,
+    &quot;metric&quot;: &quot;crops&quot;,
+    &quot;item&quot;: &quot;tea( green leaf tea)&quot;,
+    &quot;value&quot;: 37303000.0
+  },
+  {
+    &quot;year&quot;: &quot;2022&quot;,
+    &quot;area_level&quot;: &quot;country&quot;,
+    &quot;area_name&quot;: &quot;kenya&quot;,
+    &quot;metric&quot;: &quot;crops&quot;,
+    &quot;item&quot;: &quot;tea( green leaf tea)&quot;,
+    &quot;value&quot;: 36352809.0
+  },
+  {
+    &quot;year&quot;: &quot;2022&quot;,
+    &quot;area_level&quot;: &quot;county&quot;,
+    &quot;area_name&quot;: &quot;narok&quot;,
+    &quot;metric&quot;: &quot;crops&quot;,
+    &quot;item&quot;: &quot;cowpeas&quot;,
+    &quot;value&quot;: 20.0
+  }
+]</code></pre>

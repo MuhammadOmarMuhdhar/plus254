@@ -90,50 +90,45 @@ lastUpdated: "2026-06-15T12:42:19"
 
 ## Sample Data
 
-<table class="dataset-table">
-<thead>
-<tr><th>year</th><th>area_level</th><th>area_name</th><th>metric</th><th>item</th><th>value</th></tr>
-</thead>
-<tbody>
-<tr>
-<td data-label="year">2025</td>
-<td data-label="area_level">county</td>
-<td data-label="area_name">baringo</td>
-<td data-label="metric">livestock</td>
-<td data-label="item">hides</td>
-<td data-label="value">30618.0</td>
-</tr>
-<tr>
-<td data-label="year">2025</td>
-<td data-label="area_level">county</td>
-<td data-label="area_name">baringo</td>
-<td data-label="metric">livestock</td>
-<td data-label="item">milk</td>
-<td data-label="value">47494407.0</td>
-</tr>
-<tr>
-<td data-label="year">2025</td>
-<td data-label="area_level">county</td>
-<td data-label="area_name">baringo</td>
-<td data-label="metric">livestock</td>
-<td data-label="item">eggs</td>
-<td data-label="value">810983.0</td>
-</tr>
-<tr>
-<td data-label="year">2025</td>
-<td data-label="area_level">county</td>
-<td data-label="area_name">baringo</td>
-<td data-label="metric">livestock</td>
-<td data-label="item">honey</td>
-<td data-label="value">1552232.0</td>
-</tr>
-<tr>
-<td data-label="year">2025</td>
-<td data-label="area_level">county</td>
-<td data-label="area_name">baringo</td>
-<td data-label="metric">livestock</td>
-<td data-label="item">pork</td>
-<td data-label="value">13124.0</td>
-</tr>
-</tbody>
-</table>
+<pre class="code-block"><code>[
+  {
+    &quot;year&quot;: &quot;2025&quot;,
+    &quot;area_level&quot;: &quot;county&quot;,
+    &quot;area_name&quot;: &quot;baringo&quot;,
+    &quot;metric&quot;: &quot;livestock&quot;,
+    &quot;item&quot;: &quot;hides&quot;,
+    &quot;value&quot;: 30618.0
+  },
+  {
+    &quot;year&quot;: &quot;2025&quot;,
+    &quot;area_level&quot;: &quot;county&quot;,
+    &quot;area_name&quot;: &quot;baringo&quot;,
+    &quot;metric&quot;: &quot;livestock&quot;,
+    &quot;item&quot;: &quot;milk&quot;,
+    &quot;value&quot;: 47494407.0
+  },
+  {
+    &quot;year&quot;: &quot;2025&quot;,
+    &quot;area_level&quot;: &quot;county&quot;,
+    &quot;area_name&quot;: &quot;baringo&quot;,
+    &quot;metric&quot;: &quot;livestock&quot;,
+    &quot;item&quot;: &quot;eggs&quot;,
+    &quot;value&quot;: 810983.0
+  },
+  {
+    &quot;year&quot;: &quot;2025&quot;,
+    &quot;area_level&quot;: &quot;county&quot;,
+    &quot;area_name&quot;: &quot;baringo&quot;,
+    &quot;metric&quot;: &quot;livestock&quot;,
+    &quot;item&quot;: &quot;honey&quot;,
+    &quot;value&quot;: 1552232.0
+  },
+  {
+    &quot;year&quot;: &quot;2025&quot;,
+    &quot;area_level&quot;: &quot;county&quot;,
+    &quot;area_name&quot;: &quot;baringo&quot;,
+    &quot;metric&quot;: &quot;livestock&quot;,
+    &quot;item&quot;: &quot;pork&quot;,
+    &quot;value&quot;: 13124.0
+  }
+]</code></pre>

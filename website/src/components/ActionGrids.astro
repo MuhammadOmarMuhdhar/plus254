@@ -64,6 +64,7 @@
   .section-title {
     font-family: var(--font-serif);
     font-size: var(--text-xl);
+    font-weight: var(--font-bold);
     font-weight: var(--font-semibold);
     letter-spacing: -0.01em;
     color: var(--color-warm-dark);
@@ -98,16 +99,19 @@
   .action-item {
     display: block;
     position: relative;
-    background-color: #6cb999;
+    background-color: var(--color-green-bg);
     border: 1px solid rgba(31, 111, 84, 0.35);
     padding: var(--space-md);
     padding-right: calc(var(--space-md) + 1.25rem);
     text-decoration: none;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
     transition: border-color 0.25s var(--ease-out), background-color 0.25s var(--ease-out), transform 0.15s var(--ease-out);
   }
 
   .action-item:hover {
-    border-color: #1f6f54;
+    border-color: var(--color-green);
     background-color: #66b392;
   }
 
@@ -129,7 +133,7 @@
 
   .action-title {
     font-family: var(--font-sans);
-    font-size: var(--text-md);
+    font-size: var(--text-lg);
     font-weight: var(--font-semibold);
     color: var(--color-warm-dark);
     flex: 1;

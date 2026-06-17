@@ -90,18 +90,13 @@ lastUpdated: "2026-06-15T12:42:19"
 
 ## Sample Data
 
-<table class="dataset-table">
-<thead>
-<tr><th>year</th><th>area_level</th><th>area_name</th><th>metric</th><th>item</th><th>value</th></tr>
-</thead>
-<tbody>
-<tr>
-<td data-label="year">2024</td>
-<td data-label="area_level">country</td>
-<td data-label="area_name">kenya</td>
-<td data-label="metric">investments and financing</td>
-<td data-label="item">agriculture orientation index</td>
-<td data-label="value">0.175</td>
-</tr>
-</tbody>
-</table>
+<pre class="code-block"><code>[
+  {
+    &quot;year&quot;: &quot;2024&quot;,
+    &quot;area_level&quot;: &quot;country&quot;,
+    &quot;area_name&quot;: &quot;kenya&quot;,
+    &quot;metric&quot;: &quot;investments and financing&quot;,
+    &quot;item&quot;: &quot;agriculture orientation index&quot;,
+    &quot;value&quot;: 0.175
+  }
+]</code></pre>

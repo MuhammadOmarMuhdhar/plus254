@@ -84,40 +84,35 @@ sourceUrl: "https://www.centralbank.go.ke/uploads/balance_of_payment_statistics/
 
 ## Sample Data
 
-<table class="dataset-table">
-<thead>
-<tr><th>year</th><th>month</th><th>metric</th><th>value</th></tr>
-</thead>
-<tbody>
-<tr>
-<td data-label="year">1998</td>
-<td data-label="month">january</td>
-<td data-label="metric">uganda</td>
-<td data-label="value">2.06</td>
-</tr>
-<tr>
-<td data-label="year">1998</td>
-<td data-label="month">february</td>
-<td data-label="metric">uganda</td>
-<td data-label="value">3.52</td>
-</tr>
-<tr>
-<td data-label="year">1998</td>
-<td data-label="month">march</td>
-<td data-label="metric">uganda</td>
-<td data-label="value">5.72</td>
-</tr>
-<tr>
-<td data-label="year">1998</td>
-<td data-label="month">april</td>
-<td data-label="metric">uganda</td>
-<td data-label="value">5.43</td>
-</tr>
-<tr>
-<td data-label="year">1998</td>
-<td data-label="month">may</td>
-<td data-label="metric">uganda</td>
-<td data-label="value">11.65</td>
-</tr>
-</tbody>
-</table>
+<pre class="code-block"><code>[
+  {
+    &quot;year&quot;: 1998,
+    &quot;month&quot;: &quot;january&quot;,
+    &quot;metric&quot;: &quot;uganda&quot;,
+    &quot;value&quot;: 2.06
+  },
+  {
+    &quot;year&quot;: 1998,
+    &quot;month&quot;: &quot;february&quot;,
+    &quot;metric&quot;: &quot;uganda&quot;,
+    &quot;value&quot;: 3.52
+  },
+  {
+    &quot;year&quot;: 1998,
+    &quot;month&quot;: &quot;march&quot;,
+    &quot;metric&quot;: &quot;uganda&quot;,
+    &quot;value&quot;: 5.72
+  },
+  {
+    &quot;year&quot;: 1998,
+    &quot;month&quot;: &quot;april&quot;,
+    &quot;metric&quot;: &quot;uganda&quot;,
+    &quot;value&quot;: 5.43
+  },
+  {
+    &quot;year&quot;: 1998,
+    &quot;month&quot;: &quot;may&quot;,
+    &quot;metric&quot;: &quot;uganda&quot;,
+    &quot;value&quot;: 11.65
+  }
+]</code></pre>

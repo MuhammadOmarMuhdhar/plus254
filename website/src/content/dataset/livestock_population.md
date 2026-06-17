@@ -90,50 +90,45 @@ lastUpdated: "2026-06-15T12:42:19"
 
 ## Sample Data
 
-<table class="dataset-table">
-<thead>
-<tr><th>year</th><th>area_level</th><th>area_name</th><th>metric</th><th>item</th><th>value</th></tr>
-</thead>
-<tbody>
-<tr>
-<td data-label="year">2025</td>
-<td data-label="area_level">county</td>
-<td data-label="area_name">baringo</td>
-<td data-label="metric">livestock</td>
-<td data-label="item">guinea fowl</td>
-<td data-label="value">461.0</td>
-</tr>
-<tr>
-<td data-label="year">2025</td>
-<td data-label="area_level">county</td>
-<td data-label="area_name">baringo</td>
-<td data-label="metric">livestock</td>
-<td data-label="item">dairy cattle</td>
-<td data-label="value">159945.0</td>
-</tr>
-<tr>
-<td data-label="year">2025</td>
-<td data-label="area_level">county</td>
-<td data-label="area_name">baringo</td>
-<td data-label="metric">livestock</td>
-<td data-label="item">hair sheep</td>
-<td data-label="value">371871.0</td>
-</tr>
-<tr>
-<td data-label="year">2025</td>
-<td data-label="area_level">county</td>
-<td data-label="area_name">baringo</td>
-<td data-label="metric">livestock</td>
-<td data-label="item">log hives</td>
-<td data-label="value">181080.0</td>
-</tr>
-<tr>
-<td data-label="year">2025</td>
-<td data-label="area_level">county</td>
-<td data-label="area_name">baringo</td>
-<td data-label="metric">livestock</td>
-<td data-label="item">kenya top bar hive (ktbh)</td>
-<td data-label="value">35544.0</td>
-</tr>
-</tbody>
-</table>
+<pre class="code-block"><code>[
+  {
+    &quot;year&quot;: &quot;2025&quot;,
+    &quot;area_level&quot;: &quot;county&quot;,
+    &quot;area_name&quot;: &quot;baringo&quot;,
+    &quot;metric&quot;: &quot;livestock&quot;,
+    &quot;item&quot;: &quot;guinea fowl&quot;,
+    &quot;value&quot;: 461.0
+  },
+  {
+    &quot;year&quot;: &quot;2025&quot;,
+    &quot;area_level&quot;: &quot;county&quot;,
+    &quot;area_name&quot;: &quot;baringo&quot;,
+    &quot;metric&quot;: &quot;livestock&quot;,
+    &quot;item&quot;: &quot;dairy cattle&quot;,
+    &quot;value&quot;: 159945.0
+  },
+  {
+    &quot;year&quot;: &quot;2025&quot;,
+    &quot;area_level&quot;: &quot;county&quot;,
+    &quot;area_name&quot;: &quot;baringo&quot;,
+    &quot;metric&quot;: &quot;livestock&quot;,
+    &quot;item&quot;: &quot;hair sheep&quot;,
+    &quot;value&quot;: 371871.0
+  },
+  {
+    &quot;year&quot;: &quot;2025&quot;,
+    &quot;area_level&quot;: &quot;county&quot;,
+    &quot;area_name&quot;: &quot;baringo&quot;,
+    &quot;metric&quot;: &quot;livestock&quot;,
+    &quot;item&quot;: &quot;log hives&quot;,
+    &quot;value&quot;: 181080.0
+  },
+  {
+    &quot;year&quot;: &quot;2025&quot;,
+    &quot;area_level&quot;: &quot;county&quot;,
+    &quot;area_name&quot;: &quot;baringo&quot;,
+    &quot;metric&quot;: &quot;livestock&quot;,
+    &quot;item&quot;: &quot;kenya top bar hive (ktbh)&quot;,
+    &quot;value&quot;: 35544.0
+  }
+]</code></pre>

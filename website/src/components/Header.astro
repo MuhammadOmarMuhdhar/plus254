@@ -30,32 +30,68 @@ const currentPath = Astro.url.pathname;
       ))}
     </div>
 
-    <label class="header__drawer" for="menu-drawer" aria-label="Open menu">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+    <button class="header__drawer" aria-label="Open menu" aria-expanded="false" aria-controls="header-drawer-nav" data-drawer-toggle>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
         <line x1="3" y1="6" x2="21" y2="6" />
         <line x1="3" y1="12" x2="21" y2="12" />
         <line x1="3" y1="18" x2="21" y2="18" />
       </svg>
-    </label>
+    </button>
+  </nav>
+  <nav class="header__drawer-nav" id="header-drawer-nav" aria-label="Mobile navigation" hidden>
+    {navItems.map((item) => (
+      <a
+        href={item.href}
+        class:list={[
+          "header__drawer-link",
+          { "header__link--active": currentPath.startsWith(item.href) },
+        ]}
+      >
+        {item.label}
+      </a>
+    ))}
   </nav>
 </header>
 
+<script>
+  const toggle = document.querySelector('[data-drawer-toggle]');
+  const drawer = document.getElementById('header-drawer-nav');
+  if (toggle && drawer) {
+    toggle.addEventListener('click', function() {
+      const open = drawer.hidden;
+      drawer.hidden = !open;
+      toggle.setAttribute('aria-expanded', String(!open));
+      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && !drawer.hidden) {
+        drawer.hidden = true;
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Open menu');
+        toggle.focus();
+      }
+    });
+  }
+</script>
+
 <style>
   .header {
-    border-top: 3px solid #1f6f54;
     border-bottom: 1px solid rgba(31, 111, 84, 0.15);
+    padding-top: var(--space-lg);
     background-color: #ffffff;
     background-image:
       linear-gradient(rgba(108, 185, 153, 0.15) 1px, transparent 1px),
       linear-gradient(to right, rgba(108, 185, 153, 0.15) 1px, transparent 1px);
     background-size: 20px 20px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
   }
 
   .header__inner {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    padding: var(--space-md) var(--space-md) 0 var(--space-md);
+    padding: 0 var(--space-md) 0 var(--space-md);
     max-width: 960px;
     margin: 0 auto;
   }
@@ -75,7 +111,7 @@ const currentPath = Astro.url.pathname;
 
   .logo-text {
     font-family: var(--font-serif);
-    font-size: var(--text-xl);
+    font-size: var(--text-2xl);
     font-weight: var(--font-semibold);
     letter-spacing: -0.02em;
   }
@@ -126,18 +162,68 @@ const currentPath = Astro.url.pathname;
     display: none;
     color: var(--color-warm-mid);
     align-self: center;
+    padding: 0;
     padding-bottom: var(--space-sm);
     min-height: 44px;
     min-width: 44px;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    background: none;
+    border: none;
+    font: inherit;
   }
 
   .header__drawer:hover {
-    background: transparent;
-    border: none;
+    color: var(--color-warm-dark);
+  }
+
+  .header__drawer:focus-visible {
+    outline: 2px solid #1f6f54;
+    outline-offset: 2px;
+  }
+
+  .header__drawer-nav {
+    display: none;
+    flex-direction: column;
+    padding: var(--space-sm) var(--space-md);
+    border-bottom: 1px solid rgba(31, 111, 84, 0.15);
+    background-color: #ffffff;
+  }
+
+  .header__drawer-nav:not([hidden]) {
+    display: flex;
+  }
+
+  .header__drawer-link {
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+    font-weight: var(--font-medium);
     color: var(--color-warm-mid);
+    text-decoration: none;
+    padding: var(--space-sm) 0;
+    border-bottom: 1px solid rgba(31, 111, 84, 0.1);
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  .header__drawer-link:last-child {
+    border-bottom: none;
+  }
+
+  .header__drawer-link:hover {
+    color: var(--color-warm-dark);
+  }
+
+  .header__drawer-link.header__link--active {
+    color: var(--color-green);
+    font-weight: var(--font-semibold);
+  }
+
+  .header__drawer-link:focus-visible {
+    outline: 2px solid #1f6f54;
+    outline-offset: -2px;
   }
 
   @media (max-width: 768px) {

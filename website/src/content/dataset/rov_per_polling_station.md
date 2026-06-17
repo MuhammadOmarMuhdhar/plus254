@@ -129,75 +129,70 @@ sourceUrl: "https://www.iebc.or.ke/docs/rov_per_polling_station.pdf"
 
 ## Sample Data
 
-<table class="dataset-table">
-<thead>
-<tr><th>county_code</th><th>county_name</th><th>const_code</th><th>const_name</th><th>caw_code</th><th>caw_name</th><th>reg_centre_code</th><th>reg_centre_name</th><th>polling_station_code</th><th>polling_station_name_name</th><th>value</th></tr>
-</thead>
-<tbody>
-<tr>
-<td data-label="county_code">001</td>
-<td data-label="county_name">mombasa</td>
-<td data-label="const_code">001</td>
-<td data-label="const_name">changamwe</td>
-<td data-label="caw_code">0001</td>
-<td data-label="caw_name">port reitz</td>
-<td data-label="reg_centre_code">001</td>
-<td data-label="reg_centre_name">bomu primary school</td>
-<td data-label="polling_station_code">001001000100101</td>
-<td data-label="polling_station_name_name">bomu primary school</td>
-<td data-label="value">673.0</td>
-</tr>
-<tr>
-<td data-label="county_code">001</td>
-<td data-label="county_name">mombasa</td>
-<td data-label="const_code">001</td>
-<td data-label="const_name">changamwe</td>
-<td data-label="caw_code">0001</td>
-<td data-label="caw_name">port reitz</td>
-<td data-label="reg_centre_code">001</td>
-<td data-label="reg_centre_name">bomu primary school</td>
-<td data-label="polling_station_code">001001000100102</td>
-<td data-label="polling_station_name_name">bomu primary school</td>
-<td data-label="value">673.0</td>
-</tr>
-<tr>
-<td data-label="county_code">001</td>
-<td data-label="county_name">mombasa</td>
-<td data-label="const_code">001</td>
-<td data-label="const_name">changamwe</td>
-<td data-label="caw_code">0001</td>
-<td data-label="caw_name">port reitz</td>
-<td data-label="reg_centre_code">001</td>
-<td data-label="reg_centre_name">bomu primary school</td>
-<td data-label="polling_station_code">001001000100103</td>
-<td data-label="polling_station_name_name">bomu primary school</td>
-<td data-label="value">673.0</td>
-</tr>
-<tr>
-<td data-label="county_code">001</td>
-<td data-label="county_name">mombasa</td>
-<td data-label="const_code">001</td>
-<td data-label="const_name">changamwe</td>
-<td data-label="caw_code">0001</td>
-<td data-label="caw_name">port reitz</td>
-<td data-label="reg_centre_code">001</td>
-<td data-label="reg_centre_name">bomu primary school</td>
-<td data-label="polling_station_code">001001000100104</td>
-<td data-label="polling_station_name_name">bomu primary school</td>
-<td data-label="value">672.0</td>
-</tr>
-<tr>
-<td data-label="county_code">001</td>
-<td data-label="county_name">mombasa</td>
-<td data-label="const_code">001</td>
-<td data-label="const_name">changamwe</td>
-<td data-label="caw_code">0001</td>
-<td data-label="caw_name">port reitz</td>
-<td data-label="reg_centre_code">001</td>
-<td data-label="reg_centre_name">bomu primary school</td>
-<td data-label="polling_station_code">001001000100105</td>
-<td data-label="polling_station_name_name">bomu primary school</td>
-<td data-label="value">672.0</td>
-</tr>
-</tbody>
-</table>
+<pre class="code-block"><code>[
+  {
+    &quot;county_code&quot;: &quot;001&quot;,
+    &quot;county_name&quot;: &quot;mombasa&quot;,
+    &quot;const_code&quot;: &quot;001&quot;,
+    &quot;const_name&quot;: &quot;changamwe&quot;,
+    &quot;caw_code&quot;: &quot;0001&quot;,
+    &quot;caw_name&quot;: &quot;port reitz&quot;,
+    &quot;reg_centre_code&quot;: &quot;001&quot;,
+    &quot;reg_centre_name&quot;: &quot;bomu primary school&quot;,
+    &quot;polling_station_code&quot;: &quot;001001000100101&quot;,
+    &quot;polling_station_name_name&quot;: &quot;bomu primary school&quot;,
+    &quot;value&quot;: 673.0
+  },
+  {
+    &quot;county_code&quot;: &quot;001&quot;,
+    &quot;county_name&quot;: &quot;mombasa&quot;,
+    &quot;const_code&quot;: &quot;001&quot;,
+    &quot;const_name&quot;: &quot;changamwe&quot;,
+    &quot;caw_code&quot;: &quot;0001&quot;,
+    &quot;caw_name&quot;: &quot;port reitz&quot;,
+    &quot;reg_centre_code&quot;: &quot;001&quot;,
+    &quot;reg_centre_name&quot;: &quot;bomu primary school&quot;,
+    &quot;polling_station_code&quot;: &quot;001001000100102&quot;,
+    &quot;polling_station_name_name&quot;: &quot;bomu primary school&quot;,
+    &quot;value&quot;: 673.0
+  },
+  {
+    &quot;county_code&quot;: &quot;001&quot;,
+    &quot;county_name&quot;: &quot;mombasa&quot;,
+    &quot;const_code&quot;: &quot;001&quot;,
+    &quot;const_name&quot;: &quot;changamwe&quot;,
+    &quot;caw_code&quot;: &quot;0001&quot;,
+    &quot;caw_name&quot;: &quot;port reitz&quot;,
+    &quot;reg_centre_code&quot;: &quot;001&quot;,
+    &quot;reg_centre_name&quot;: &quot;bomu primary school&quot;,
+    &quot;polling_station_code&quot;: &quot;001001000100103&quot;,
+    &quot;polling_station_name_name&quot;: &quot;bomu primary school&quot;,
+    &quot;value&quot;: 673.0
+  },
+  {
+    &quot;county_code&quot;: &quot;001&quot;,
+    &quot;county_name&quot;: &quot;mombasa&quot;,
+    &quot;const_code&quot;: &quot;001&quot;,
+    &quot;const_name&quot;: &quot;changamwe&quot;,
+    &quot;caw_code&quot;: &quot;0001&quot;,
+    &quot;caw_name&quot;: &quot;port reitz&quot;,
+    &quot;reg_centre_code&quot;: &quot;001&quot;,
+    &quot;reg_centre_name&quot;: &quot;bomu primary school&quot;,
+    &quot;polling_station_code&quot;: &quot;001001000100104&quot;,
+    &quot;polling_station_name_name&quot;: &quot;bomu primary school&quot;,
+    &quot;value&quot;: 672.0
+  },
+  {
+    &quot;county_code&quot;: &quot;001&quot;,
+    &quot;county_name&quot;: &quot;mombasa&quot;,
+    &quot;const_code&quot;: &quot;001&quot;,
+    &quot;const_name&quot;: &quot;changamwe&quot;,
+    &quot;caw_code&quot;: &quot;0001&quot;,
+    &quot;caw_name&quot;: &quot;port reitz&quot;,
+    &quot;reg_centre_code&quot;: &quot;001&quot;,
+    &quot;reg_centre_name&quot;: &quot;bomu primary school&quot;,
+    &quot;polling_station_code&quot;: &quot;001001000100105&quot;,
+    &quot;polling_station_name_name&quot;: &quot;bomu primary school&quot;,
+    &quot;value&quot;: 672.0
+  }
+]</code></pre>

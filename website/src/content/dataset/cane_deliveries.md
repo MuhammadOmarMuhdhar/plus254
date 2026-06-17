@@ -90,50 +90,45 @@ lastUpdated: "2026-06-15T12:42:19"
 
 ## Sample Data
 
-<table class="dataset-table">
-<thead>
-<tr><th>year</th><th>area_level</th><th>area_name</th><th>metric</th><th>item</th><th>value</th></tr>
-</thead>
-<tbody>
-<tr>
-<td data-label="year">2023</td>
-<td data-label="area_level">county</td>
-<td data-label="area_name">bungoma</td>
-<td data-label="metric">crops</td>
-<td data-label="item">sugarcane</td>
-<td data-label="value">1086003.0</td>
-</tr>
-<tr>
-<td data-label="year">2023</td>
-<td data-label="area_level">county</td>
-<td data-label="area_name">bungoma</td>
-<td data-label="metric">crops</td>
-<td data-label="item">sugarcane</td>
-<td data-label="value">1086003.0</td>
-</tr>
-<tr>
-<td data-label="year">2023</td>
-<td data-label="area_level">county</td>
-<td data-label="area_name">busia</td>
-<td data-label="metric">crops</td>
-<td data-label="item">sugarcane</td>
-<td data-label="value">479136.0</td>
-</tr>
-<tr>
-<td data-label="year">2023</td>
-<td data-label="area_level">county</td>
-<td data-label="area_name">homa-bay</td>
-<td data-label="metric">crops</td>
-<td data-label="item">sugarcane</td>
-<td data-label="value">306987.0</td>
-</tr>
-<tr>
-<td data-label="year">2023</td>
-<td data-label="area_level">county</td>
-<td data-label="area_name">kakamega</td>
-<td data-label="metric">crops</td>
-<td data-label="item">sugarcane</td>
-<td data-label="value">1026746.0</td>
-</tr>
-</tbody>
-</table>
+<pre class="code-block"><code>[
+  {
+    &quot;year&quot;: &quot;2023&quot;,
+    &quot;area_level&quot;: &quot;county&quot;,
+    &quot;area_name&quot;: &quot;bungoma&quot;,
+    &quot;metric&quot;: &quot;crops&quot;,
+    &quot;item&quot;: &quot;sugarcane&quot;,
+    &quot;value&quot;: 1086003.0
+  },
+  {
+    &quot;year&quot;: &quot;2023&quot;,
+    &quot;area_level&quot;: &quot;county&quot;,
+    &quot;area_name&quot;: &quot;bungoma&quot;,
+    &quot;metric&quot;: &quot;crops&quot;,
+    &quot;item&quot;: &quot;sugarcane&quot;,
+    &quot;value&quot;: 1086003.0
+  },
+  {
+    &quot;year&quot;: &quot;2023&quot;,
+    &quot;area_level&quot;: &quot;county&quot;,
+    &quot;area_name&quot;: &quot;busia&quot;,
+    &quot;metric&quot;: &quot;crops&quot;,
+    &quot;item&quot;: &quot;sugarcane&quot;,
+    &quot;value&quot;: 479136.0
+  },
+  {
+    &quot;year&quot;: &quot;2023&quot;,
+    &quot;area_level&quot;: &quot;county&quot;,
+    &quot;area_name&quot;: &quot;homa-bay&quot;,
+    &quot;metric&quot;: &quot;crops&quot;,
+    &quot;item&quot;: &quot;sugarcane&quot;,
+    &quot;value&quot;: 306987.0
+  },
+  {
+    &quot;year&quot;: &quot;2023&quot;,
+    &quot;area_level&quot;: &quot;county&quot;,
+    &quot;area_name&quot;: &quot;kakamega&quot;,
+    &quot;metric&quot;: &quot;crops&quot;,
+    &quot;item&quot;: &quot;sugarcane&quot;,
+    &quot;value&quot;: 1026746.0
+  }
+]</code></pre>

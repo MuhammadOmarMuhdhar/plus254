@@ -84,40 +84,35 @@ sourceUrl: "https://www.centralbank.go.ke/uploads/national_accounts_statistics/1
 
 ## Sample Data
 
-<table class="dataset-table">
-<thead>
-<tr><th>year</th><th>quarter</th><th>metric</th><th>value</th></tr>
-</thead>
-<tbody>
-<tr>
-<td data-label="year">2009</td>
-<td data-label="quarter">q1</td>
-<td data-label="metric">accommodation &amp; restaurant</td>
-<td data-label="value">20371.0</td>
-</tr>
-<tr>
-<td data-label="year">2009</td>
-<td data-label="quarter">q1</td>
-<td data-label="metric">agriculture</td>
-<td data-label="value">312740.0</td>
-</tr>
-<tr>
-<td data-label="year">2009</td>
-<td data-label="quarter">q1</td>
-<td data-label="metric">all industries at basic prices</td>
-<td data-label="value">1231237.0</td>
-</tr>
-<tr>
-<td data-label="year">2009</td>
-<td data-label="quarter">q1</td>
-<td data-label="metric">construction</td>
-<td data-label="value">50218.0</td>
-</tr>
-<tr>
-<td data-label="year">2009</td>
-<td data-label="quarter">q1</td>
-<td data-label="metric">education</td>
-<td data-label="value">61140.0</td>
-</tr>
-</tbody>
-</table>
+<pre class="code-block"><code>[
+  {
+    &quot;year&quot;: 2009,
+    &quot;quarter&quot;: &quot;q1&quot;,
+    &quot;metric&quot;: &quot;accommodation &amp; restaurant&quot;,
+    &quot;value&quot;: 20371.0
+  },
+  {
+    &quot;year&quot;: 2009,
+    &quot;quarter&quot;: &quot;q1&quot;,
+    &quot;metric&quot;: &quot;agriculture&quot;,
+    &quot;value&quot;: 312740.0
+  },
+  {
+    &quot;year&quot;: 2009,
+    &quot;quarter&quot;: &quot;q1&quot;,
+    &quot;metric&quot;: &quot;all industries at basic prices&quot;,
+    &quot;value&quot;: 1231237.0
+  },
+  {
+    &quot;year&quot;: 2009,
+    &quot;quarter&quot;: &quot;q1&quot;,
+    &quot;metric&quot;: &quot;construction&quot;,
+    &quot;value&quot;: 50218.0
+  },
+  {
+    &quot;year&quot;: 2009,
+    &quot;quarter&quot;: &quot;q1&quot;,
+    &quot;metric&quot;: &quot;education&quot;,
+    &quot;value&quot;: 61140.0
+  }
+]</code></pre>

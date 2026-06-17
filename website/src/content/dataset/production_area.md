@@ -90,50 +90,45 @@ lastUpdated: "2026-06-15T12:42:19"
 
 ## Sample Data
 
-<table class="dataset-table">
-<thead>
-<tr><th>year</th><th>area_level</th><th>area_name</th><th>metric</th><th>item</th><th>value</th></tr>
-</thead>
-<tbody>
-<tr>
-<td data-label="year">2025</td>
-<td data-label="area_level">county</td>
-<td data-label="area_name">embu</td>
-<td data-label="metric">livestock</td>
-<td data-label="item">rhodes grass</td>
-<td data-label="value">429.0</td>
-</tr>
-<tr>
-<td data-label="year">2025</td>
-<td data-label="area_level">county</td>
-<td data-label="area_name">embu</td>
-<td data-label="metric">livestock</td>
-<td data-label="item">columbus grass</td>
-<td data-label="value">14.0</td>
-</tr>
-<tr>
-<td data-label="year">2025</td>
-<td data-label="area_level">county</td>
-<td data-label="area_name">embu</td>
-<td data-label="metric">livestock</td>
-<td data-label="item">sesbania</td>
-<td data-label="value">6.0</td>
-</tr>
-<tr>
-<td data-label="year">2025</td>
-<td data-label="area_level">county</td>
-<td data-label="area_name">embu</td>
-<td data-label="metric">livestock</td>
-<td data-label="item">nappier grass</td>
-<td data-label="value">12177.0</td>
-</tr>
-<tr>
-<td data-label="year">2025</td>
-<td data-label="area_level">county</td>
-<td data-label="area_name">embu</td>
-<td data-label="metric">livestock</td>
-<td data-label="item">acacia</td>
-<td data-label="value">14.0</td>
-</tr>
-</tbody>
-</table>
+<pre class="code-block"><code>[
+  {
+    &quot;year&quot;: &quot;2025&quot;,
+    &quot;area_level&quot;: &quot;county&quot;,
+    &quot;area_name&quot;: &quot;embu&quot;,
+    &quot;metric&quot;: &quot;livestock&quot;,
+    &quot;item&quot;: &quot;rhodes grass&quot;,
+    &quot;value&quot;: 429.0
+  },
+  {
+    &quot;year&quot;: &quot;2025&quot;,
+    &quot;area_level&quot;: &quot;county&quot;,
+    &quot;area_name&quot;: &quot;embu&quot;,
+    &quot;metric&quot;: &quot;livestock&quot;,
+    &quot;item&quot;: &quot;columbus grass&quot;,
+    &quot;value&quot;: 14.0
+  },
+  {
+    &quot;year&quot;: &quot;2025&quot;,
+    &quot;area_level&quot;: &quot;county&quot;,
+    &quot;area_name&quot;: &quot;embu&quot;,
+    &quot;metric&quot;: &quot;livestock&quot;,
+    &quot;item&quot;: &quot;sesbania&quot;,
+    &quot;value&quot;: 6.0
+  },
+  {
+    &quot;year&quot;: &quot;2025&quot;,
+    &quot;area_level&quot;: &quot;county&quot;,
+    &quot;area_name&quot;: &quot;embu&quot;,
+    &quot;metric&quot;: &quot;livestock&quot;,
+    &quot;item&quot;: &quot;nappier grass&quot;,
+    &quot;value&quot;: 12177.0
+  },
+  {
+    &quot;year&quot;: &quot;2025&quot;,
+    &quot;area_level&quot;: &quot;county&quot;,
+    &quot;area_name&quot;: &quot;embu&quot;,
+    &quot;metric&quot;: &quot;livestock&quot;,
+    &quot;item&quot;: &quot;acacia&quot;,
+    &quot;value&quot;: 14.0
+  }
+]</code></pre>

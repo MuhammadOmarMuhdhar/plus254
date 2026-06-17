@@ -92,45 +92,40 @@ sourceUrl: "https://www.centralbank.go.ke/uploads/monetary_and_finance_statistic
 
 ## Sample Data
 
-<table class="dataset-table">
-<thead>
-<tr><th>section</th><th>metric</th><th>year</th><th>month</th><th>value</th></tr>
-</thead>
-<tbody>
-<tr>
-<td data-label="section">central bank of kenya</td>
-<td data-label="metric">    excess reserves</td>
-<td data-label="year">2014</td>
-<td data-label="month">january</td>
-<td data-label="value">4792.0</td>
-</tr>
-<tr>
-<td data-label="section">central bank of kenya</td>
-<td data-label="metric">    required reserves</td>
-<td data-label="year">2014</td>
-<td data-label="month">january</td>
-<td data-label="value">100001.0</td>
-</tr>
-<tr>
-<td data-label="section">central bank of kenya</td>
-<td data-label="metric">banks reserves at cbk</td>
-<td data-label="year">2014</td>
-<td data-label="month">january</td>
-<td data-label="value">104793.0</td>
-</tr>
-<tr>
-<td data-label="section">central bank of kenya</td>
-<td data-label="metric">county government (net)</td>
-<td data-label="year">2014</td>
-<td data-label="month">january</td>
-<td data-label="value">0.0</td>
-</tr>
-<tr>
-<td data-label="section">central bank of kenya</td>
-<td data-label="metric">credit to other depository corporations</td>
-<td data-label="year">2014</td>
-<td data-label="month">january</td>
-<td data-label="value">4014.0</td>
-</tr>
-</tbody>
-</table>
+<pre class="code-block"><code>[
+  {
+    &quot;section&quot;: &quot;central bank of kenya&quot;,
+    &quot;metric&quot;: &quot;    excess reserves&quot;,
+    &quot;year&quot;: 2014,
+    &quot;month&quot;: &quot;january&quot;,
+    &quot;value&quot;: 4792.0
+  },
+  {
+    &quot;section&quot;: &quot;central bank of kenya&quot;,
+    &quot;metric&quot;: &quot;    required reserves&quot;,
+    &quot;year&quot;: 2014,
+    &quot;month&quot;: &quot;january&quot;,
+    &quot;value&quot;: 100001.0
+  },
+  {
+    &quot;section&quot;: &quot;central bank of kenya&quot;,
+    &quot;metric&quot;: &quot;banks reserves at cbk&quot;,
+    &quot;year&quot;: 2014,
+    &quot;month&quot;: &quot;january&quot;,
+    &quot;value&quot;: 104793.0
+  },
+  {
+    &quot;section&quot;: &quot;central bank of kenya&quot;,
+    &quot;metric&quot;: &quot;county government (net)&quot;,
+    &quot;year&quot;: 2014,
+    &quot;month&quot;: &quot;january&quot;,
+    &quot;value&quot;: 0.0
+  },
+  {
+    &quot;section&quot;: &quot;central bank of kenya&quot;,
+    &quot;metric&quot;: &quot;credit to other depository corporations&quot;,
+    &quot;year&quot;: 2014,
+    &quot;month&quot;: &quot;january&quot;,
+    &quot;value&quot;: 4014.0
+  }
+]</code></pre>

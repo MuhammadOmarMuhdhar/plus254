@@ -124,6 +124,9 @@ const activeLabel =
   .docs-main {
     flex: 1;
     min-width: 0;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .page-heading {
@@ -211,14 +214,18 @@ const activeLabel =
   }
 
   .code-block {
-    background: #6cb999;
+    background: var(--color-green-bg);
     border: 1px solid rgba(31, 111, 84, 0.35);
     padding: var(--space-md);
     overflow-x: auto;
+    overflow-y: hidden;
     margin: 0 0 var(--space-md);
     font-size: var(--text-sm);
     line-height: var(--leading-normal);
     tab-size: 2;
+    max-width: 100%;
+    word-wrap: normal;
+    white-space: pre;
   }
 
   .code-block code {
@@ -289,15 +296,15 @@ const activeLabel =
     font-family: var(--font-sans);
     font-size: var(--text-sm);
     font-weight: var(--font-medium);
-    color: #1f6f54;
+    color: var(--color-green);
     text-decoration: none;
     padding: var(--space-sm) var(--space-md);
-    border: 1.5px solid #1f6f54;
+    border: 1.5px solid var(--color-green);
     transition: background-color 0.15s var(--ease-out), color 0.15s var(--ease-out);
   }
 
   .next-btn:hover {
-    background: #1f6f54;
+    background: var(--color-green);
     color: #fff;
   }
 
@@ -311,10 +318,12 @@ const activeLabel =
   }
 
   .dataset-panel {
-    background-color: #6cb999;
-    border: 1px solid #1f6f54;
+    background-color: var(--color-green-bg);
+    border: 1px solid var(--color-green);
     font-family: var(--font-sans);
     margin-bottom: var(--space-lg);
+    overflow-wrap: break-word;
+    word-wrap: break-word;
   }
 
   .dataset-panel h4 {
@@ -341,12 +350,13 @@ const activeLabel =
     text-align: left;
     font-weight: var(--font-semibold);
     color: var(--color-warm-dark);
-    padding: var(--space-xs) var(--space-md);
+    padding: var(--space-xs) var(--space-sm);
     border-bottom: 2px solid #1f6f54;
+    white-space: nowrap;
   }
 
   .dataset-table tbody td {
-    padding: var(--space-sm) var(--space-md);
+    padding: var(--space-xs) var(--space-sm);
     border-bottom: 1px solid #1f6f54;
     vertical-align: middle;
   }
@@ -368,18 +378,20 @@ const activeLabel =
     font-family: var(--font-sans);
     font-size: var(--text-sm);
     margin: 0 0 var(--space-md);
+    min-width: 400px;
   }
 
   .param-table th {
     text-align: left;
     font-weight: var(--font-semibold);
     color: var(--color-warm-dark);
-    padding: var(--space-sm) var(--space-md);
+    padding: var(--space-xs) var(--space-sm);
     border-bottom: 2px solid rgba(31, 111, 84, 0.3);
+    white-space: nowrap;
   }
 
   .param-table td {
-    padding: var(--space-sm) var(--space-md);
+    padding: var(--space-xs) var(--space-sm);
     color: var(--color-warm-mid);
     border-bottom: 1px solid rgba(31, 111, 84, 0.15);
     line-height: var(--leading-normal);
@@ -417,8 +429,8 @@ const activeLabel =
     cursor: pointer;
     min-height: 44px;
     list-style: none;
-    border: 1px solid #1f6f54;
-    background: #6cb999;
+    border: 1px solid var(--color-green);
+    background: var(--color-green-bg);
   }
 
   .sidebar-mobile-summary::-webkit-details-marker {
@@ -446,9 +458,9 @@ const activeLabel =
   .sidebar-mobile-nav {
     display: flex;
     flex-direction: column;
-    border: 1px solid #1f6f54;
+    border: 1px solid var(--color-green);
     border-top: none;
-    background: #6cb999;
+    background: var(--color-green-bg);
     max-height: 60vh;
     overflow-y: auto;
   }

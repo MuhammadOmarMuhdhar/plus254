@@ -90,50 +90,45 @@ lastUpdated: "2026-06-15T12:42:19"
 
 ## Sample Data
 
-<table class="dataset-table">
-<thead>
-<tr><th>year</th><th>area_level</th><th>area_name</th><th>metric</th><th>item</th><th>value</th></tr>
-</thead>
-<tbody>
-<tr>
-<td data-label="year">2024</td>
-<td data-label="area_level">country</td>
-<td data-label="area_name">kenya</td>
-<td data-label="metric">crops</td>
-<td data-label="item">cashew nuts</td>
-<td data-label="value">296770000.0</td>
-</tr>
-<tr>
-<td data-label="year">2024</td>
-<td data-label="area_level">country</td>
-<td data-label="area_name">kenya</td>
-<td data-label="metric">crops</td>
-<td data-label="item">sisal</td>
-<td data-label="value">5737942389.16</td>
-</tr>
-<tr>
-<td data-label="year">2024</td>
-<td data-label="area_level">country</td>
-<td data-label="area_name">kenya</td>
-<td data-label="metric">crops</td>
-<td data-label="item">tea( green leaf tea)</td>
-<td data-label="value">181690088120.0</td>
-</tr>
-<tr>
-<td data-label="year">2023/24</td>
-<td data-label="area_level">country</td>
-<td data-label="area_name">kenya</td>
-<td data-label="metric">crops</td>
-<td data-label="item">coffee</td>
-<td data-label="value">39950000000.0</td>
-</tr>
-<tr>
-<td data-label="year">2023</td>
-<td data-label="area_level">country</td>
-<td data-label="area_name">kenya</td>
-<td data-label="metric">crops</td>
-<td data-label="item">sisal</td>
-<td data-label="value">5343490000.0</td>
-</tr>
-</tbody>
-</table>
+<pre class="code-block"><code>[
+  {
+    &quot;year&quot;: &quot;2024&quot;,
+    &quot;area_level&quot;: &quot;country&quot;,
+    &quot;area_name&quot;: &quot;kenya&quot;,
+    &quot;metric&quot;: &quot;crops&quot;,
+    &quot;item&quot;: &quot;cashew nuts&quot;,
+    &quot;value&quot;: 296770000.0
+  },
+  {
+    &quot;year&quot;: &quot;2024&quot;,
+    &quot;area_level&quot;: &quot;country&quot;,
+    &quot;area_name&quot;: &quot;kenya&quot;,
+    &quot;metric&quot;: &quot;crops&quot;,
+    &quot;item&quot;: &quot;sisal&quot;,
+    &quot;value&quot;: 5737942389.16
+  },
+  {
+    &quot;year&quot;: &quot;2024&quot;,
+    &quot;area_level&quot;: &quot;country&quot;,
+    &quot;area_name&quot;: &quot;kenya&quot;,
+    &quot;metric&quot;: &quot;crops&quot;,
+    &quot;item&quot;: &quot;tea( green leaf tea)&quot;,
+    &quot;value&quot;: 181690088120.0
+  },
+  {
+    &quot;year&quot;: &quot;2023/24&quot;,
+    &quot;area_level&quot;: &quot;country&quot;,
+    &quot;area_name&quot;: &quot;kenya&quot;,
+    &quot;metric&quot;: &quot;crops&quot;,
+    &quot;item&quot;: &quot;coffee&quot;,
+    &quot;value&quot;: 39950000000.0
+  },
+  {
+    &quot;year&quot;: &quot;2023&quot;,
+    &quot;area_level&quot;: &quot;country&quot;,
+    &quot;area_name&quot;: &quot;kenya&quot;,
+    &quot;metric&quot;: &quot;crops&quot;,
+    &quot;item&quot;: &quot;sisal&quot;,
+    &quot;value&quot;: 5343490000.0
+  }
+]</code></pre>
