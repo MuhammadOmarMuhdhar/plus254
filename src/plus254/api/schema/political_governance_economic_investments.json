@@ -22,7 +22,7 @@
     {
       "name": "area_level",
       "type": "object",
-      "description": "Geographic level (always county)",
+      "description": "Geographic level",
       "nullable": false,
       "null_count": 0,
       "non_null_count": 1,

@@ -72,11 +72,11 @@
       "null_count": 0,
       "non_null_count": 12325,
       "sample_values": [
-        "January",
-        "January",
-        "January",
-        "January",
-        "January"
+        "january",
+        "january",
+        "january",
+        "january",
+        "january"
       ],
       "stats": null
     },

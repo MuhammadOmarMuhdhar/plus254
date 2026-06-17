@@ -40,11 +40,11 @@
       "null_count": 0,
       "non_null_count": 3320,
       "sample_values": [
-        "August",
-        "September",
-        "October",
-        "November",
-        "December"
+        "august",
+        "september",
+        "october",
+        "november",
+        "december"
       ],
       "stats": null
     },

@@ -10,7 +10,7 @@ production_value_livestock:
       description: Calendar year
     area_level:
       type: string
-      description: Geographic level (always county)
+      description: Geographic level
     area_name:
       type: string
       description: County name (lowercased)
@@ -37,7 +37,7 @@ crop_area:
       description: Calendar year
     area_level:
       type: string
-      description: Geographic level (always county)
+      description: Geographic level
     area_name:
       type: string
       description: County name (lowercased)
@@ -64,7 +64,7 @@ production_quantity_livestock:
       description: Calendar year
     area_level:
       type: string
-      description: Geographic level (always county)
+      description: Geographic level
     area_name:
       type: string
       description: County name (lowercased)
@@ -91,7 +91,7 @@ livestock_population:
       description: Calendar year
     area_level:
       type: string
-      description: Geographic level (always county)
+      description: Geographic level
     area_name:
       type: string
       description: County name (lowercased)
@@ -118,7 +118,7 @@ crop_yield:
       description: Calendar year
     area_level:
       type: string
-      description: Geographic level (always county)
+      description: Geographic level
     area_name:
       type: string
       description: County name (lowercased)
@@ -145,7 +145,7 @@ production_value_crops:
       description: Calendar year
     area_level:
       type: string
-      description: Geographic level (always county)
+      description: Geographic level
     area_name:
       type: string
       description: County name (lowercased)
@@ -172,7 +172,7 @@ production_quantity_crops:
       description: Calendar year
     area_level:
       type: string
-      description: Geographic level (always county)
+      description: Geographic level
     area_name:
       type: string
       description: County name (lowercased)
@@ -199,7 +199,7 @@ production_area:
       description: Calendar year
     area_level:
       type: string
-      description: Geographic level (always county)
+      description: Geographic level
     area_name:
       type: string
       description: County name (lowercased)
@@ -226,7 +226,7 @@ export_quantity:
       description: Calendar year
     area_level:
       type: string
-      description: Geographic level (always county)
+      description: Geographic level
     area_name:
       type: string
       description: County name (lowercased)
@@ -253,7 +253,7 @@ import_quantity:
       description: Calendar year
     area_level:
       type: string
-      description: Geographic level (always county)
+      description: Geographic level
     area_name:
       type: string
       description: County name (lowercased)
@@ -280,7 +280,7 @@ apparent_consumption:
       description: Calendar year
     area_level:
       type: string
-      description: Geographic level (always county)
+      description: Geographic level
     area_name:
       type: string
       description: County name (lowercased)
@@ -307,7 +307,7 @@ total_value_of_import:
       description: Calendar year
     area_level:
       type: string
-      description: Geographic level (always county)
+      description: Geographic level
     area_name:
       type: string
       description: County name (lowercased)
@@ -334,7 +334,7 @@ total_value_of_export:
       description: Calendar year
     area_level:
       type: string
-      description: Geographic level (always county)
+      description: Geographic level
     area_name:
       type: string
       description: County name (lowercased)
@@ -361,7 +361,7 @@ political_governance_economic_investments:
       description: Calendar year
     area_level:
       type: string
-      description: Geographic level (always county)
+      description: Geographic level
     area_name:
       type: string
       description: County name (lowercased)
@@ -388,7 +388,7 @@ cane_deliveries:
       description: Calendar year
     area_level:
       type: string
-      description: Geographic level (always county)
+      description: Geographic level
     area_name:
       type: string
       description: County name (lowercased)
@@ -415,7 +415,7 @@ quantity_of_gok_subsidized_fertilizer:
       description: Calendar year
     area_level:
       type: string
-      description: Geographic level (always county)
+      description: Geographic level
     area_name:
       type: string
       description: County name (lowercased)
@@ -442,7 +442,7 @@ gok_fertilizer_subsidy_beneficiaries:
       description: Calendar year
     area_level:
       type: string
-      description: Geographic level (always county)
+      description: Geographic level
     area_name:
       type: string
       description: County name (lowercased)
@@ -469,7 +469,7 @@ gok_fertilizer_subsidy_funds_allocated:
       description: Calendar year
     area_level:
       type: string
-      description: Geographic level (always county)
+      description: Geographic level
     area_name:
       type: string
       description: County name (lowercased)
@@ -496,7 +496,7 @@ gok_fertilizer_subsidy_expenditure:
       description: Calendar year
     area_level:
       type: string
-      description: Geographic level (always county)
+      description: Geographic level
     area_name:
       type: string
       description: County name (lowercased)
