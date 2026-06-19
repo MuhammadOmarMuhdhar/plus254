@@ -9,7 +9,7 @@ export interface Props {
   description?: string;
 }
 
-const { title = "plus254", description = "A unified API for Kenyan official statistics" } = Astro.props;
+const { title = "plus254", description = "Kenya's data. Open and accessible." } = Astro.props;
 const siteTitle = title.startsWith("+254") || title.includes("—") ? title : `${title} — +254`;
 ---
 
