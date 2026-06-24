@@ -1,10 +1,9 @@
 import logging
 import time
 from pathlib import Path
-
 import pandas as pd
 from dotenv import load_dotenv
-from plus254.utils.hf_utils import save_to_hf
+from plus254.utils.hf import save_to_hf
 from plus254.scrapers.central_bank import central_bank_links
 from plus254.scrapers.central_bank.parsers import (
     process_bop_annual,
