@@ -1,17 +1,12 @@
 import pandas as pd
-from plus254.utils.df_utils import (
-    normalize_columns,
-    snake_case_columns,
-    lowercase_values,
-    clean_numeric_values,
-)
+from plus254.utils.tidy import tidy, normalize_column_names
 
 
 def process_bop_annual(df_dict):
     df = df_dict["bop_annual"]
 
     df.columns = df.iloc[1]
-    df = normalize_columns(df)
+    df = normalize_column_names(df)
     df = df.iloc[2:].reset_index(drop=True)
 
     df_long = df.melt(
@@ -20,12 +15,9 @@ def process_bop_annual(df_dict):
         value_name="value",
     )
 
-    df_long = clean_numeric_values(df_long, "value")
+    df_long = tidy(df_long)
     df_long["year"] = df_long["year"].astype(int)
     df_long = df_long.sort_values(["year"]).reset_index(drop=True)
-    df_long.rename(columns={"bpm6 concept": "metric"}, inplace=True)
-
-    df_long = lowercase_values(df_long)
-    df_long = snake_case_columns(df_long)
+    df_long.rename(columns={"bpm6_concept": "metric"}, inplace=True)
     df_long = df_long[["year", "metric", "value"]]
     return df_long

@@ -1,11 +1,6 @@
 import numpy as np
 import pandas as pd
-from plus254.utils.df_utils import (
-    clean_numeric_values,
-    set_month_categorical,
-    snake_case_columns,
-    lowercase_values,
-)
+from plus254.utils.tidy import tidy
 
 
 def process_monetary_survey(df_dict):
@@ -50,14 +45,10 @@ def process_monetary_survey(df_dict):
     df_long["month"] = df_long["month"].str.replace("Sept", "Sep")
     df_long["month"] = pd.to_datetime(df_long["month"], format="%b").dt.strftime("%B")
 
-    df_long = clean_numeric_values(df_long, "value")
+    df_long = tidy(df_long, month_col="month")
     df_long = df_long.rename(columns={"indicator": "metric"})
     df_long = df_long[["section", "metric", "year", "month", "value"]].sort_values(
         ["section", "metric", "year", "month"]
     ).reset_index(drop=True)
-
-    df_long = set_month_categorical(df_long, "month")
     df_long = df_long.sort_values(["year", "month"]).reset_index(drop=True)
-    df_long = lowercase_values(df_long)
-    df_long = snake_case_columns(df_long)
     return df_long

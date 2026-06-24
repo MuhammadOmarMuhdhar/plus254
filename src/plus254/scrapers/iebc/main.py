@@ -5,8 +5,8 @@ from pathlib import Path
 import pandas as pd
 from dotenv import load_dotenv
 from plus254.utils.hf_utils import save_to_hf
-from plus254.utils.scraping_utils import scrape_url, extract_pdf, extract_table
-from plus254.scrapers.iebc.voters import process_registered_voters
+from plus254.utils.pdf_utils import fetch_page_soup, download_pdf, _extract_pdf_table as extract_pdf_table
+from plus254.scrapers.iebc.parsers import process_registered_voters
 
 
 load_dotenv()
@@ -22,9 +22,9 @@ def run():
     logger.info("IEBC scraper started")
     start = time.time()
     try:
-        soup = scrape_url("https://www.iebc.or.ke/registration/?Statistics_of_Voter_2022")
-        pdf_bytes, pdf_name  = extract_pdf(soup, "https://www.iebc.or.ke/docs/", "Registered Voters per Polling Station" )
-        df = extract_table(pdf_bytes)
+        soup = fetch_page_soup("https://www.iebc.or.ke/registration/?Statistics_of_Voter_2022")
+        pdf_bytes, pdf_name = download_pdf(soup, "https://www.iebc.or.ke/docs/", "Registered Voters per Polling Station")
+        df = extract_pdf_table(pdf_bytes)
         procesed_df = process_registered_voters(df)
         logger.info(f"Saving {pdf_name} to hf")
         save_to_hf(procesed_df, config_name=pdf_name.replace(".pdf", ""), overwrite=False, yaml_path=Path(__file__).parent / "datasets.yaml")

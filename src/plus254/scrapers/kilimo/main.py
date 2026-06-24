@@ -9,12 +9,7 @@ import requests
 import yaml
 from dotenv import load_dotenv
 from plus254.utils.api_utils import check_freshness, fetch_paginated
-from plus254.utils.df_utils import (
-    clean_numeric_values,
-    lowercase_values,
-    normalize_columns,
-    snake_case_columns,
-)
+from plus254.scrapers.kilimo.parsers import process_indicator
 from plus254.utils.hf_utils import save_to_hf
 
 load_dotenv()
@@ -94,18 +89,7 @@ def run():
                 continue
             
             indicator_df = df[df["indicator_name"] == item].reset_index(drop=True)
-            indicator_df = normalize_columns(indicator_df)
-            indicator_df = clean_numeric_values(indicator_df, "item")
-            indicator_df = lowercase_values(indicator_df)
-            indicator_df = snake_case_columns(indicator_df)
-            indicator_df["area_level"] = indicator_df["area_level"].replace("admin_1", "county")
-            indicator_df = indicator_df.rename(columns={
-                "time_period": "year",
-                "domain_name": "metric",
-                "item_name": "item",
-                "data_value": "value",
-            })
-            indicator_df = indicator_df[["year", "area_level", "area_name", "metric", "item", "value"]]
+            indicator_df = process_indicator(indicator_df)
 
             config_name = slugify(item)
             logger.info(f"Saving '{item}' as '{config_name}' ({len(indicator_df)} rows)")

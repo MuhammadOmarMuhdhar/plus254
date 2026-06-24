@@ -1,46 +1,29 @@
 import pandas as pd
-from plus254.utils.df_utils import (
-    extract_columns,
-    normalize_columns,
-    convert_month_to_name,
-    set_month_categorical,
-    snake_case_columns,
-    lowercase_values,
-    clean_numeric_values,
-)
+from plus254.utils.tidy import tidy, promote_header_row, normalize_column_names, month_int_to_name
 
 
 def process_public_debt(df_dict):
     df = df_dict["public_debt"]
-    df = extract_columns(df, 2, 3)
-    df = normalize_columns(df)
-
-    id_vars = ["year", "month"]
-    value_vars = ["domestic debt", "external debt", "total"]
-
-    df.dropna(subset=id_vars, inplace=True)
+    df = promote_header_row(df, 2, 3)
+    df = normalize_column_names(df)
+    df.dropna(subset=["year", "month"], inplace=True)
     df["year"] = df["year"].astype(int)
     df["month"] = df["month"].astype(int)
-    df = convert_month_to_name(df, "month")
-
+    df = month_int_to_name(df, "month")
     df_long = df.melt(
-        id_vars=id_vars,
-        value_vars=value_vars,
+        id_vars=["year", "month"],
+        value_vars=["domestic debt", "external debt", "total"],
         var_name="metric",
         value_name="value",
     )
-
-    df_long = clean_numeric_values(df_long, "value")
-    df_long = set_month_categorical(df_long, "month")
-    df_long = lowercase_values(df_long)
-    df_long = snake_case_columns(df_long)
+    df_long = tidy(df_long, month_col="month")
     return df_long
 
 
 def process_domestic_debt(df_dict):
     df = df_dict["domestic_debt"]
-    df = extract_columns(df, 1, 3)
-    df = normalize_columns(df)
+    df = promote_header_row(df, 1, 3)
+    df = normalize_column_names(df)
     df["fiscal year"] = df["fiscal year"].str.strip()
     df = df[df["fiscal year"].str.match(r"^[\w]+-[\w]+$", na=False)]
 
@@ -50,29 +33,18 @@ def process_domestic_debt(df_dict):
     df = df.drop(columns="parsed")
     df.columns = df.columns.str.strip().str.replace(r"\*+", "", regex=True).str.strip().str.lower()
 
-    id_vars = ["year", "month"]
-    value_vars = [
-        "treasury bills",
-        "treasury bonds",
-        "government stocks",
-        "overdraft at central bank",
-        "advances from commercial banks",
-        "other domestic debt",
-        "total domestic debt",
-    ]
-
-    df.dropna(subset=id_vars, inplace=True)
+    df.dropna(subset=["year", "month"], inplace=True)
     df["year"] = df["year"].astype(int)
 
     df_long = df.melt(
-        id_vars=id_vars,
-        value_vars=value_vars,
+        id_vars=["year", "month"],
+        value_vars=[
+            "treasury bills", "treasury bonds", "government stocks",
+            "overdraft at central bank", "advances from commercial banks",
+            "other domestic debt", "total domestic debt",
+        ],
         var_name="metric",
         value_name="value",
     )
-
-    df_long = clean_numeric_values(df_long, "value")
-    df_long = set_month_categorical(df_long, "month")
-    df_long = lowercase_values(df_long)
-    df_long = snake_case_columns(df_long)
+    df_long = tidy(df_long, month_col="month")
     return df_long

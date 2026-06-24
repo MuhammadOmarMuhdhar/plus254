@@ -1,10 +1,6 @@
 import numpy as np
 import pandas as pd
-from plus254.utils.df_utils import (
-    clean_numeric_values,
-    snake_case_columns,
-    lowercase_values,
-)
+from plus254.utils.tidy import tidy
 
 
 def process_gdp_quarterly(df_dict):
@@ -31,12 +27,9 @@ def process_gdp_quarterly(df_dict):
     df_long["quarter"] = df_long["quarter"].str.strip()
     df_long.drop(columns=["period"], inplace=True)
 
-    df_long = clean_numeric_values(df_long, "value")
-
+    df_long = tidy(df_long)
     df_long = df_long.rename(columns={"activity": "metric"})
     df_long = df_long.sort_values(["year", "quarter", "metric"]).reset_index(drop=True)
-    df_long = lowercase_values(df_long)
-    df_long = snake_case_columns(df_long)
     df_long = df_long[["year", "quarter", "metric", "value"]]
 
     return df_long
