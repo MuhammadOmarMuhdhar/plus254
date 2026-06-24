@@ -53,6 +53,15 @@ def month_int_to_name(df, month_col="month"):
     )
     return df
 
+def extract_year_month(df, date_col, date_format="%d-%m-%Y", year_col="year", month_col="month"):
+    """Parse a date column (e.g. '15-12-2025') into year (int) + month (string) columns."""
+    df = df.copy()
+    parsed = pd.to_datetime(df[date_col], format=date_format)
+
+    df[year_col] = parsed.dt.year.astype(int)
+    df[month_col] = parsed.dt.strftime("%B")  
+    return df
+
 
 # ---------------------------------------------------------------------------
 # Private: frame utilities
