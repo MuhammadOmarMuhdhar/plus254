@@ -11,9 +11,7 @@ const currentPath = Astro.url.pathname;
 <header class="header">
   <nav class="header__inner" aria-label="Main navigation">
     <a href="/" class="header__logo" aria-label="plus254 home">
-      <span class="logo-text">
-        <span class="logo-plus">+</span><span class="logo-num">254</span>
-      </span>
+      <img src="/logo2.png" alt="plus254" class="header__logo-img" width="2000" height="2000" />
     </a>
 
     <div class="header__nav">
@@ -110,15 +108,11 @@ const currentPath = Astro.url.pathname;
     outline-offset: 2px;
   }
 
-  .logo-text {
-    font-family: var(--font-serif);
-    font-size: var(--text-2xl);
-    font-weight: var(--font-semibold);
-    letter-spacing: -0.02em;
+  .header__logo-img {
+    height: 2.3rem;
+    width: auto;
+    display: block;
   }
-
-  .logo-plus { color: var(--color-warm-dark); }
-  .logo-num  { color: #1f6f54; }
 
   .header__nav {
     display: flex;
