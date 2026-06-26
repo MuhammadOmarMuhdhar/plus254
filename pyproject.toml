@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "plus254"
+version = "0.1.0"
+description = "Kenyan economic data scraper and pipeline"
+requires-python = ">=3.10"
+dependencies = [
+    "requests",
+    "beautifulsoup4",
+    "pdfplumber",
+    "pandas",
+    "numpy",
+    "tqdm",
+    "python-dotenv",
+    "datasets",
+    "huggingface_hub",
+    "fastapi>=0.110.0",
+    "uvicorn[standard]>=0.27.0",
+    "duckdb>=1.0.0",
+]
+[tool.setuptools.packages.find]
+where = ["src"]
