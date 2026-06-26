@@ -3,51 +3,218 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import APIDocsLayout from "../../components/APIDocsLayout.astro";
 ---
 
-<BaseLayout title="API Reference plus254">
+<BaseLayout title="API Reference — plus254">
   <APIDocsLayout activeSection="quickstart">
     <header class="page-heading">
       <h1>API Reference</h1>
     </header>
 
-    <section class="section">
+    <section class="section" id="overview">
       <span class="eyebrow">Overview</span>
       <div class="narrative">
-        <p>plus254 provides programmatic access to Kenyan official statistics &mdash; economic indicators, trade data, exchange rates, agricultural figures, and demographic records sourced directly from Kenyan institutions.</p>
-        <p>Built for data analysts, researchers, and developers who need reliable data without the overhead of scraping PDFs or wrestling with inconsistent formats. Use the REST API directly with any HTTP client.</p>
+        <p>
+          Make a GET request to <code>/v1/&#123;topic&#125;/&#123;dataset&#125;</code>.
+          All responses are paginated JSON with a consistent structure across endpoints.
+        </p>
+        <p>
+          Datasets are organized across Economy, Agriculture, and Governance.
+          See the <a href="/datasets/">Datasets</a> page for the full catalog with
+          column descriptions and sample data.
+        </p>
       </div>
     </section>
 
-    <section id="quickstart" class="section">
-      <h2 class="section-eyebrow">Quickstart</h2>
+    <section class="section" id="documentation">
+      <span class="eyebrow">Documentation</span>
+      <div class="ds-grid">
+        <a href="/api-docs/quickstart/" class="ds-card">
+          <div class="ds-card-header">
+            <span class="ds-card-title">Quickstart</span>
+            <span class="ds-card-arrow" aria-hidden="true">&rarr;</span>
+          </div>
+          <p class="ds-card-desc">Make your first API call in under 10 seconds. No authentication required.</p>
+        </a>
 
-      <div class="narrative">
-        <p>Make your first API call in under 10 seconds. The API is public and requires no authentication.</p>
+        <a href="/api-docs/endpoints/" class="ds-card">
+          <div class="ds-card-header">
+            <span class="ds-card-title">Endpoints</span>
+            <span class="ds-card-arrow" aria-hidden="true">&rarr;</span>
+          </div>
+          <p class="ds-card-desc">Available paths, parameters, and request examples for every endpoint.</p>
+        </a>
+
+        <a href="/api-docs/response-format/" class="ds-card">
+          <div class="ds-card-header">
+            <span class="ds-card-title">Response Format</span>
+            <span class="ds-card-arrow" aria-hidden="true">&rarr;</span>
+          </div>
+          <p class="ds-card-desc">JSON structure, field definitions, and pagination metadata.</p>
+        </a>
+
+        <a href="/api-docs/errors/" class="ds-card">
+          <div class="ds-card-header">
+            <span class="ds-card-title">Error Handling</span>
+            <span class="ds-card-arrow" aria-hidden="true">&rarr;</span>
+          </div>
+          <p class="ds-card-desc">Status codes, error response format, and what to do when things go wrong.</p>
+        </a>
       </div>
-
-      <pre class="code-block"><code>curl https://api.plus254.dev/</code></pre>
-
-      <div class="narrative">
-        <p>You&#8217;ll receive a list of all available datasets grouped by source:</p>
-      </div>
-
-      <pre class="code-block"><code>&#123;
-  "count": 19,
-  "groups": &#123;
-    "centralbank": [
-      &#123;
-        "config": "forex_period_average",
-        "name": "Monthly Exchange Rates (Period Average)",
-        "description": "Monthly exchange rates of major currencies against KES (period average)",
-        "source": "Central Bank of Kenya"
-      }
-    ],
-    "teaboard": [
-      &#123; "config": "tea", "name": "Tea Exports" }
-    ]
-  }
-}</code></pre>
     </section>
-
-    <a href="/api-docs/endpoints/" class="next-btn">Next: Endpoints <span aria-hidden="true">→</span></a>
   </APIDocsLayout>
 </BaseLayout>
+
+<style>
+  .page-heading {
+    margin-bottom: var(--space-md);
+  }
+
+  .page-heading h1 {
+    font-family: var(--font-serif);
+    font-size: var(--text-xl);
+    font-weight: var(--font-semibold);
+    color: var(--color-warm-dark);
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-tight);
+    margin: 0 0 var(--space-sm);
+  }
+
+  .section {
+    margin-bottom: var(--space-fluid-xl);
+  }
+
+  .eyebrow {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    color: var(--color-warm-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: var(--space-smd);
+  }
+
+  .narrative {
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+    color: var(--color-warm-mid);
+    line-height: var(--leading-relaxed);
+    max-width: 65ch;
+    margin-bottom: var(--space-md);
+  }
+
+  .narrative p {
+    margin: 0;
+  }
+
+  .narrative p + p {
+    margin-top: var(--space-smd);
+  }
+
+  .narrative code {
+    font-family: var(--font-mono);
+    font-size: 0.85em;
+    background: rgba(31, 111, 84, 0.15);
+    padding: 0.0625rem 0.25rem;
+    color: var(--color-warm-dark);
+  }
+
+  .topic-count {
+    font-family: var(--font-sans);
+    font-size: var(--text-xs);
+    font-weight: var(--font-semibold);
+    color: var(--color-warm-light);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin: 0 0 var(--space-smd);
+  }
+
+  /* ===== Card grid (matching datasets/index.astro) ===== */
+  .ds-grid {
+    display: grid;
+    gap: var(--space-smd);
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ds-card {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: var(--color-green-bg);
+    border: 1px solid rgba(31, 111, 84, 0.35);
+    padding: var(--space-md) var(--space-md) var(--space-sm);
+    padding-right: calc(var(--space-md) + 1.25rem);
+    text-decoration: none;
+    min-height: 10rem;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+    transition: border-color 0.25s var(--ease-out), background-color 0.25s var(--ease-out), transform 0.15s var(--ease-out);
+  }
+
+  .ds-card:hover {
+    border-color: #1f6f54;
+    background-color: #66b392;
+  }
+
+  .ds-card:active {
+    transform: translateY(1px);
+  }
+
+  .ds-card:focus-visible {
+    outline: 2px solid #1f6f54;
+    outline-offset: 2px;
+  }
+
+  .ds-card-header {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-md);
+    margin-bottom: var(--space-xs);
+  }
+
+  .ds-card-title {
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+    font-weight: var(--font-semibold);
+    color: var(--color-warm-dark);
+    flex: 1;
+  }
+
+  .ds-card-arrow {
+    position: absolute;
+    top: var(--space-md);
+    right: var(--space-md);
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    color: #1f6f54;
+    font-weight: var(--font-medium);
+    transition: transform 0.2s var(--ease-out);
+  }
+
+  .ds-card:hover .ds-card-arrow {
+    transform: translateX(4px);
+  }
+
+  .ds-card-desc {
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    color: var(--color-warm-dark);
+    line-height: var(--leading-normal);
+    margin: 0;
+    opacity: 0.75;
+  }
+
+  @media (max-width: 768px) {
+    .page-heading {
+      margin-bottom: var(--space-fluid-lg);
+    }
+
+    .ds-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .ds-card {
+      padding: var(--space-md);
+    }
+  }
+</style>

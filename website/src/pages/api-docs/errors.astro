@@ -10,8 +10,10 @@ import APIDocsLayout from "../../components/APIDocsLayout.astro";
     </header>
 
     <section class="section">
-      <h2 class="section-eyebrow">HTTP Status Codes</h2>
-      <div class="endpoint-desc">The API uses conventional HTTP status codes to indicate success or failure.</div>
+      <span class="eyebrow">HTTP Status Codes</span>
+      <div class="narrative">
+        <p>The API uses conventional HTTP status codes to indicate success or failure.</p>
+      </div>
 
       <table class="param-table">
         <thead>
@@ -21,21 +23,24 @@ import APIDocsLayout from "../../components/APIDocsLayout.astro";
           <tr><td data-label="Status"><code>200 OK</code></td><td data-label="Meaning">The request succeeded</td><td data-label="What to do">Parse the response body</td></tr>
           <tr><td data-label="Status"><code>400 Bad Request</code></td><td data-label="Meaning">Invalid request parameters</td><td data-label="What to do">Check your query parameters for typos</td></tr>
           <tr><td data-label="Status"><code>404 Not Found</code></td><td data-label="Meaning">The dataset or endpoint doesn't exist</td><td data-label="What to do">Verify the slug and config name in the URL</td></tr>
-          <tr><td data-label="Status"><code>429 Too Many Requests</code></td><td data-label="Meaning">Rate limit exceeded</td><td data-label="What to do">Wait and retry with exponential backoff</td></tr>
+          <tr><td data-label="Status"><code>422 Unprocessable Entity</code></td><td data-label="Meaning">Request validation failed</td><td data-label="What to do">Fix the parameter values and retry</td></tr>
           <tr><td data-label="Status"><code>500 Internal Server Error</code></td><td data-label="Meaning">Something went wrong on our end</td><td data-label="What to do">Wait a moment and retry; <a href="https://github.com/plus254/plus254/issues">report</a> if it persists</td></tr>
+          <tr><td data-label="Status"><code>502 Bad Gateway</code></td><td data-label="Meaning">Data source temporarily unavailable</td><td data-label="What to do">Wait and retry with exponential backoff</td></tr>
+          <tr><td data-label="Status"><code>504 Gateway Timeout</code></td><td data-label="Meaning">Data source took too long to respond</td><td data-label="What to do">Wait and retry with exponential backoff</td></tr>
         </tbody>
       </table>
     </section>
 
     <section class="section">
-      <h2 class="section-eyebrow">Error Response Format</h2>
+      <span class="eyebrow">Error Response Format</span>
       <div class="narrative">
         <p>When an error occurs, the API returns a JSON body with details:</p>
       </div>
       <pre class="code-block"><code>&#123;
   "error": &#123;
     "code": "not_found",
-    "message": "Dataset 'tea' not found for source 'unknown'"
+    "message": "Dataset 'tea' not found for source 'unknown'",
+    "link": "https://plus254.co.ke/api-docs/errors#not_found"
   &#125;
 &#125;</code></pre>
 
@@ -48,24 +53,29 @@ import APIDocsLayout from "../../components/APIDocsLayout.astro";
           <tbody>
             <tr><td data-label="Field"><code>error.code</code></td><td data-label="Type">string</td><td data-label="Description">Machine-readable error identifier</td></tr>
             <tr><td data-label="Field"><code>error.message</code></td><td data-label="Type">string</td><td data-label="Description">Human-readable description of what went wrong</td></tr>
+            <tr><td data-label="Field"><code>error.link</code></td><td data-label="Type">string</td><td data-label="Description">URL to detailed documentation for this error code</td></tr>
           </tbody>
         </table>
       </div>
     </section>
 
     <section class="section">
-      <h2 class="section-eyebrow">Error Codes</h2>
+      <span class="eyebrow">Error Codes</span>
       <table class="param-table">
         <thead>
-          <tr><th>Code</th><th>Meaning</th></tr>
+          <tr><th>Code</th><th>HTTP Status</th><th>Meaning</th></tr>
         </thead>
         <tbody>
-          <tr><td data-label="Code"><code>not_found</code></td><td data-label="Meaning">The requested dataset or source doesn't exist</td></tr>
-          <tr><td data-label="Code"><code>invalid_parameter</code></td><td data-label="Meaning">A query parameter has an invalid value</td></tr>
-          <tr><td data-label="Code"><code>rate_limited</code></td><td data-label="Meaning">Too many requests in a short period</td></tr>
-          <tr><td data-label="Code"><code>internal_error</code></td><td data-label="Meaning">An unexpected error occurred on the server</td></tr>
+          <tr id="not_found"><td data-label="Code"><code>not_found</code></td><td data-label="HTTP Status">404</td><td data-label="Meaning">The requested dataset or source doesn't exist</td></tr>
+          <tr id="invalid_parameter"><td data-label="Code"><code>invalid_parameter</code></td><td data-label="HTTP Status">400, 422</td><td data-label="Meaning">A query parameter has an invalid value</td></tr>
+          <tr id="upstream_error"><td data-label="Code"><code>upstream_error</code></td><td data-label="HTTP Status">502, 504</td><td data-label="Meaning">The data source could not be reached or responded with an error</td></tr>
+          <tr id="internal_error"><td data-label="Code"><code>internal_error</code></td><td data-label="HTTP Status">500</td><td data-label="Meaning">An unexpected error occurred on the server</td></tr>
         </tbody>
       </table>
     </section>
+
+    <a href="/api-docs/quickstart/" class="next-btn">
+      Back to Quickstart
+    </a>
   </APIDocsLayout>
 </BaseLayout>

@@ -3,63 +3,129 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import APIDocsLayout from "../../components/APIDocsLayout.astro";
 ---
 
-<BaseLayout title="Response Format - plus254 API Reference">
+<BaseLayout title="Response Format — +254 API Reference">
   <APIDocsLayout activeSection="response">
     <header class="page-heading">
       <h1>Response Format</h1>
     </header>
 
-    <section id="response" class="section">
-      <h2 class="section-eyebrow">Response Format</h2>
-
+    <section class="section">
+      <span class="eyebrow">JSON Structure</span>
       <div class="narrative">
-        <p>Every endpoint returns JSON. The response structure varies by endpoint.</p>
+        <p>
+          Every successful endpoint returns JSON. All list and data responses
+          include a <code>metadata.resultset</code> object describing pagination.
+        </p>
       </div>
 
-      <div class="dataset-panel">
-        <h4>GET /</h4>
+      <div class="common-patterns">
+        <div class="common-patterns-header">Shared Pagination Object</div>
         <table class="dataset-table">
           <thead>
             <tr><th>Field</th><th>Type</th><th>Description</th></tr>
           </thead>
           <tbody>
-            <tr><td data-label="Field"><code>count</code></td><td data-label="Type">number</td><td data-label="Description">Total number of datasets available</td></tr>
-            <tr><td data-label="Field"><code>groups</code></td><td data-label="Type">object</td><td data-label="Description">Datasets keyed by source slug. Each group contains an array of dataset objects.</td></tr>
-            <tr><td data-label="Field"><code>groups.&#123;slug&#125;[].config</code></td><td data-label="Type">string</td><td data-label="Description">Dataset config name, used in path parameters</td></tr>
-            <tr><td data-label="Field"><code>groups.&#123;slug&#125;[].name</code></td><td data-label="Type">string</td><td data-label="Description">Human-readable dataset title</td></tr>
-            <tr><td data-label="Field"><code>groups.&#123;slug&#125;[].description</code></td><td data-label="Type">string</td><td data-label="Description">Short description of the dataset</td></tr>
-            <tr><td data-label="Field"><code>groups.&#123;slug&#125;[].source</code></td><td data-label="Type">string</td><td data-label="Description">Institution that publishes the data</td></tr>
+            <tr><td data-label="Field"><code>metadata.resultset.count</code></td><td data-label="Type">number</td><td data-label="Description">Total number of records available</td></tr>
+            <tr><td data-label="Field"><code>metadata.resultset.offset</code></td><td data-label="Type">number</td><td data-label="Description">Number of records skipped</td></tr>
+            <tr><td data-label="Field"><code>metadata.resultset.limit</code></td><td data-label="Type">number</td><td data-label="Description">Maximum records in this response</td></tr>
           </tbody>
         </table>
       </div>
+    </section>
 
+    <section class="section">
+      <span class="eyebrow">List Datasets</span>
+      <p class="endpoint-signature">
+        <span class="method get">GET</span>
+        <code>/v1/datasets</code>
+      </p>
       <div class="dataset-panel">
-        <h4>GET /&lt;slug&gt;/&lt;config_name&gt;</h4>
+        <h4>Response Fields</h4>
         <table class="dataset-table">
           <thead>
             <tr><th>Field</th><th>Type</th><th>Description</th></tr>
           </thead>
           <tbody>
+            <tr><td data-label="Field"><code>metadata</code></td><td data-label="Type">object</td><td data-label="Description">Wrapper containing pagination metadata</td></tr>
+            <tr><td data-label="Field"><code>metadata.resultset</code></td><td data-label="Type">object</td><td data-label="Description">Pagination state (see shared object above)</td></tr>
+            <tr><td data-label="Field"><code>results[]</code></td><td data-label="Type">array</td><td data-label="Description">Array of dataset objects</td></tr>
+            <tr><td data-label="Field"><code>results[].config</code></td><td data-label="Type">string</td><td data-label="Description">Dataset config name, used in path parameters</td></tr>
+            <tr><td data-label="Field"><code>results[].name</code></td><td data-label="Type">string</td><td data-label="Description">Human-readable dataset title</td></tr>
+            <tr><td data-label="Field"><code>results[].slug</code></td><td data-label="Type">string</td><td data-label="Description">Topic slug (<code>economy</code>, <code>agriculture</code>, <code>governance</code>)</td></tr>
+            <tr><td data-label="Field"><code>results[].description</code></td><td data-label="Type">string</td><td data-label="Description">Short description of the dataset</td></tr>
+            <tr><td data-label="Field"><code>results[].source</code></td><td data-label="Type">string</td><td data-label="Description">Institution that publishes the data</td></tr>
+            <tr><td data-label="Field"><code>results[].url</code></td><td data-label="Type">string</td><td data-label="Description">Link to the original source</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <span class="eyebrow">Single Dataset</span>
+      <p class="endpoint-signature">
+        <span class="method get">GET</span>
+        <code>/v1/datasets/&#123;config_name&#125;</code>
+      </p>
+      <div class="dataset-panel">
+        <h4>Response Fields</h4>
+        <table class="dataset-table">
+          <thead>
+            <tr><th>Field</th><th>Type</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr><td data-label="Field"><code>metadata</code></td><td data-label="Type">object</td><td data-label="Description">Wrapper containing pagination metadata</td></tr>
+            <tr><td data-label="Field"><code>metadata.resultset</code></td><td data-label="Type">object</td><td data-label="Description">Pagination state (see shared object above)</td></tr>
             <tr><td data-label="Field"><code>source</code></td><td data-label="Type">string</td><td data-label="Description">Institution that publishes the data</td></tr>
             <tr><td data-label="Field"><code>description</code></td><td data-label="Type">string</td><td data-label="Description">Short description of the dataset</td></tr>
-            <tr><td data-label="Field"><code>url</code></td><td data-label="Type">string</td><td data-label="Description">Link to the original source data</td></tr>
-            <tr><td data-label="Field"><code>data</code></td><td data-label="Type">array</td><td data-label="Description">Array of record objects. Each record&#8217;s fields correspond to the dataset columns.</td></tr>
+            <tr><td data-label="Field"><code>url</code></td><td data-label="Type">string</td><td data-label="Description">Link to the original source</td></tr>
+            <tr><td data-label="Field"><code>results[]</code></td><td data-label="Type">array</td><td data-label="Description">Array of data records. Fields correspond to the dataset's columns</td></tr>
           </tbody>
         </table>
       </div>
+    </section>
 
+    <section class="section">
+      <span class="eyebrow">Dataset Info</span>
+      <p class="endpoint-signature">
+        <span class="method get">GET</span>
+        <code>/v1/datasets/&#123;config_name&#125;/info</code>
+      </p>
       <div class="dataset-panel">
-        <h4>GET /schema/&lt;slug&gt;/&lt;config_name&gt;</h4>
+        <h4>Response Fields</h4>
         <table class="dataset-table">
           <thead>
             <tr><th>Field</th><th>Type</th><th>Description</th></tr>
           </thead>
           <tbody>
             <tr><td data-label="Field"><code>config</code></td><td data-label="Type">string</td><td data-label="Description">Dataset config name</td></tr>
-            <tr><td data-label="Field"><code>slug</code></td><td data-label="Type">string</td><td data-label="Description">Source group slug</td></tr>
+            <tr><td data-label="Field"><code>name</code></td><td data-label="Type">string</td><td data-label="Description">Human-readable dataset title</td></tr>
+            <tr><td data-label="Field"><code>slug</code></td><td data-label="Type">string</td><td data-label="Description">Topic slug</td></tr>
+            <tr><td data-label="Field"><code>description</code></td><td data-label="Type">string</td><td data-label="Description">Short description of the dataset</td></tr>
+            <tr><td data-label="Field"><code>source</code></td><td data-label="Type">string</td><td data-label="Description">Institution that publishes the data</td></tr>
+            <tr><td data-label="Field"><code>url</code></td><td data-label="Type">string</td><td data-label="Description">Link to the original source</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <span class="eyebrow">Dataset Schema</span>
+      <p class="endpoint-signature">
+        <span class="method get">GET</span>
+        <code>/v1/datasets/&#123;config_name&#125;/schema</code>
+      </p>
+      <div class="dataset-panel">
+        <h4>Response Fields</h4>
+        <table class="dataset-table">
+          <thead>
+            <tr><th>Field</th><th>Type</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr><td data-label="Field"><code>config</code></td><td data-label="Type">string</td><td data-label="Description">Dataset config name</td></tr>
+            <tr><td data-label="Field"><code>slug</code></td><td data-label="Type">string</td><td data-label="Description">Topic slug</td></tr>
             <tr><td data-label="Field"><code>name</code></td><td data-label="Type">string</td><td data-label="Description">Human-readable dataset title</td></tr>
             <tr><td data-label="Field"><code>source</code></td><td data-label="Type">string</td><td data-label="Description">Institution that publishes the data</td></tr>
-            <tr><td data-label="Field"><code>row_count</code></td><td data-label="Type">number</td><td data-label="Description">Number of records in the dataset</td></tr>
+            <tr><td data-label="Field"><code>row_count</code></td><td data-label="Type">number</td><td data-label="Description">Total number of records in the dataset</td></tr>
             <tr><td data-label="Field"><code>columns[]</code></td><td data-label="Type">array</td><td data-label="Description">Column definitions (see below)</td></tr>
           </tbody>
         </table>
@@ -76,14 +142,16 @@ import APIDocsLayout from "../../components/APIDocsLayout.astro";
             <tr><td data-label="Field"><code>type</code></td><td data-label="Type">string</td><td data-label="Description">Data type (<code>int64</code>, <code>float64</code>, <code>object</code>)</td></tr>
             <tr><td data-label="Field"><code>description</code></td><td data-label="Type">string</td><td data-label="Description">What the column represents</td></tr>
             <tr><td data-label="Field"><code>nullable</code></td><td data-label="Type">boolean</td><td data-label="Description">Whether null values are allowed</td></tr>
-            <tr><td data-label="Field"><code>null_count</code></td><td data-label="Type">number</td><td data-label="Description">Number of null values in the column</td></tr>
+            <tr><td data-label="Field"><code>null_count</code></td><td data-label="Type">number</td><td data-label="Description">Number of null values</td></tr>
             <tr><td data-label="Field"><code>sample_values</code></td><td data-label="Type">array</td><td data-label="Description">Up to 5 example values from the column</td></tr>
-            <tr><td data-label="Field"><code>stats</code></td><td data-label="Type">object|null</td><td data-label="Description">Numeric summary (mean, std, min, max, quartiles) for numeric columns; null for non-numeric</td></tr>
+            <tr><td data-label="Field"><code>stats</code></td><td data-label="Type">object|null</td><td data-label="Description">Numeric summary (mean, std, min, max, quartiles) for numeric columns; <code>null</code> for non-numeric</td></tr>
           </tbody>
         </table>
       </div>
     </section>
 
-    <a href="/api-docs/datasets/" class="next-btn">Next: Datasets <span aria-hidden="true">→</span></a>
+    <a href="/api-docs/errors/" class="next-btn">
+      Next: Error Handling
+    </a>
   </APIDocsLayout>
 </BaseLayout>
