@@ -6,11 +6,25 @@ Data about Kenya is buried in PDFs, messy Excel files, poorly documented, and ha
 
 ## Quick start
 
-All endpoints are open and require no authentication. Make your first call in seconds, a GET request to any endpoint returns JSON.
+All endpoints are open and require no authentication. Make your first call in seconds — a GET request to any endpoint returns JSON.
 
 ```bash
 curl "https://api.plus254.co.ke/v1/datasets"
 ```
+
+```python
+import requests
+response = requests.get("https://api.plus254.co.ke/v1/datasets")
+print(response.json())
+```
+
+```javascript
+fetch("https://api.plus254.co.ke/v1/datasets")
+  .then(r => r.json())
+  .then(console.log);
+```
+
+That gives you the full catalog. Now here's how to fetch actual data, get metadata, or inspect a dataset's schema:
 
 | Endpoint | Description |
 |---|---|
