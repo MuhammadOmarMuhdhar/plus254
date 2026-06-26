@@ -1,0 +1,43 @@
+name: Collect Weekly
+
+on:
+  schedule:
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -e .
+      - run: python -m plus254.collectors.teaboard.main
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+      - name: Generate docs
+        run: python src/scripts/docs/main.py
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --staged --quiet || git commit -m "chore: update weekly datasets [bot]"
+          git push
+      - name: Push docs to website repo
+        uses: actions/checkout@v4
+        with:
+          repository: muhammadomarmuhdhar/plus254-website
+          token: ${{ secrets.WEBSITE_PAT }}
+          path: website-repo
+      - run: cp -r .generated/dataset-docs/* website-repo/src/content/dataset/
+      - run: |
+          cd website-repo
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --staged --quiet || git commit -m "chore: update dataset docs [bot]"
+          git push
