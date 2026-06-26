@@ -24,6 +24,7 @@ production_value_livestock:
       type: float
       description: Numeric value of the indicator
   last_updated: '2026-06-15T12:42:19'
+  update_frequency: annually
 
 crop_area:
   name: Crop Area
@@ -51,6 +52,7 @@ crop_area:
       type: float
       description: Numeric value of the indicator
   last_updated: '2026-06-15T12:42:19'
+  update_frequency: annually
 
 production_quantity_livestock:
   name: Production Quantity (Livestock)
@@ -78,6 +80,7 @@ production_quantity_livestock:
       type: float
       description: Numeric value of the indicator
   last_updated: '2026-06-15T12:42:19'
+  update_frequency: annually
 
 livestock_population:
   name: Livestock Population
@@ -105,6 +108,7 @@ livestock_population:
       type: float
       description: Numeric value of the indicator
   last_updated: '2026-06-15T12:42:19'
+  update_frequency: annually
 
 crop_yield:
   name: Crop Yield
@@ -132,6 +136,7 @@ crop_yield:
       type: float
       description: Numeric value of the indicator
   last_updated: '2026-06-15T12:42:19'
+  update_frequency: annually
 
 production_value_crops:
   name: Production Value (Crops)
@@ -159,6 +164,7 @@ production_value_crops:
       type: float
       description: Numeric value of the indicator
   last_updated: '2026-06-15T12:42:19'
+  update_frequency: annually
 
 production_quantity_crops:
   name: Production Quantity (Crops)
@@ -186,6 +192,7 @@ production_quantity_crops:
       type: float
       description: Numeric value of the indicator
   last_updated: '2026-06-15T12:42:19'
+  update_frequency: annually
 
 production_area:
   name: Production Area
@@ -213,6 +220,7 @@ production_area:
       type: float
       description: Numeric value of the indicator
   last_updated: '2026-06-15T12:42:19'
+  update_frequency: annually
 
 export_quantity:
   name: Export Quantity
@@ -240,6 +248,7 @@ export_quantity:
       type: float
       description: Numeric value of the indicator
   last_updated: '2026-06-15T12:42:19'
+  update_frequency: annually
 
 import_quantity:
   name: Import Quantity
@@ -267,6 +276,7 @@ import_quantity:
       type: float
       description: Numeric value of the indicator
   last_updated: '2026-06-15T12:42:19'
+  update_frequency: annually
 
 apparent_consumption:
   name: Apparent Consumption
@@ -294,6 +304,7 @@ apparent_consumption:
       type: float
       description: Numeric value of the indicator
   last_updated: '2026-06-15T12:42:19'
+  update_frequency: annually
 
 total_value_of_import:
   name: Total Value of Imports
@@ -321,6 +332,7 @@ total_value_of_import:
       type: float
       description: Numeric value of the indicator
   last_updated: '2026-06-15T12:42:19'
+  update_frequency: annually
 
 total_value_of_export:
   name: Total Value of Exports
@@ -348,6 +360,7 @@ total_value_of_export:
       type: float
       description: Numeric value of the indicator
   last_updated: '2026-06-15T12:42:19'
+  update_frequency: annually
 
 political_governance_economic_investments:
   name: Political Governance & Economic Investments
@@ -375,6 +388,7 @@ political_governance_economic_investments:
       type: float
       description: Numeric value of the indicator
   last_updated: '2026-06-15T12:42:19'
+  update_frequency: annually
 
 cane_deliveries:
   name: Cane Deliveries
@@ -402,6 +416,7 @@ cane_deliveries:
       type: float
       description: Numeric value of the indicator
   last_updated: '2026-06-15T12:42:19'
+  update_frequency: annually
 
 quantity_of_gok_subsidized_fertilizer:
   name: GOK Subsidized Fertilizer Quantity
@@ -429,6 +444,7 @@ quantity_of_gok_subsidized_fertilizer:
       type: float
       description: Numeric value of the indicator
   last_updated: '2026-06-15T12:42:19'
+  update_frequency: annually
 
 gok_fertilizer_subsidy_beneficiaries:
   name: GOK Fertilizer Subsidy Beneficiaries
@@ -456,6 +472,7 @@ gok_fertilizer_subsidy_beneficiaries:
       type: float
       description: Numeric value of the indicator
   last_updated: '2026-06-15T12:42:19'
+  update_frequency: annually
 
 gok_fertilizer_subsidy_funds_allocated:
   name: GOK Fertilizer Subsidy Funds Allocated
@@ -483,6 +500,7 @@ gok_fertilizer_subsidy_funds_allocated:
       type: float
       description: Numeric value of the indicator
   last_updated: '2026-06-15T12:42:19'
+  update_frequency: annually
 
 gok_fertilizer_subsidy_expenditure:
   name: GOK Fertilizer Subsidy Expenditure
@@ -510,3 +528,4 @@ gok_fertilizer_subsidy_expenditure:
       type: float
       description: Numeric value of the indicator
   last_updated: '2026-06-15T12:42:19'
+  update_frequency: annually

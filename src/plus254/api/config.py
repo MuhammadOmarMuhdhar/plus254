@@ -10,7 +10,7 @@ HF_REPO_ID = os.environ.get("HF_REPO_ID")
 def _load_datasets():
     import yaml
 
-    scrapers_dir = Path(__file__).resolve().parent.parent / "scrapers"
+    scrapers_dir = Path(__file__).resolve().parent.parent / "collectors"
     datasets = {}
     for yaml_path in sorted(scrapers_dir.glob("*/datasets.yaml")):
         with open(yaml_path) as f:

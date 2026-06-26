@@ -6,7 +6,7 @@ import pandas as pd
 from dotenv import load_dotenv
 from plus254.utils.hf import save_to_hf
 from plus254.utils.pdf import fetch_page_soup, download_pdf, _extract_pdf_table as extract_pdf_table
-from plus254.scrapers.iebc.parsers import process_registered_voters
+from plus254.collectors.iebc.parsers import process_registered_voters
 
 
 load_dotenv()

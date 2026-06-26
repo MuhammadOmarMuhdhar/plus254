@@ -45,6 +45,8 @@ def list_datasets(pagination: PaginationParams = Depends()):
                 source=info["source"],
                 url=info["url"],
                 slug=info["slug"],
+                last_updated=info.get("last_updated"),
+                update_frequency=info.get("update_frequency"),
             )
         )
 
@@ -116,4 +118,6 @@ def get_dataset_info(config_name: str, info: dict = Depends(validate_config)):
         description=info["description"],
         source=info["source"],
         url=info["url"],
+        last_updated=info.get("last_updated"),
+        update_frequency=info.get("update_frequency"),
     )

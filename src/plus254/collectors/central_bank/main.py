@@ -4,8 +4,8 @@ from pathlib import Path
 import pandas as pd
 from dotenv import load_dotenv
 from plus254.utils.hf import save_to_hf
-from plus254.scrapers.central_bank import central_bank_links
-from plus254.scrapers.central_bank.parsers import (
+from plus254.collectors.central_bank import central_bank_links
+from plus254.collectors.central_bank.parsers import (
     process_bop_annual,
     process_domestic_debt,
     process_domestic_exports,
@@ -49,6 +49,23 @@ PROCESSORS = {
     "gdp_quarterly": process_gdp_quarterly,
 }
 
+PROCESSOR_FREQUENCIES = {
+    "forex": "monthly",
+    "monetary_survey": "monthly",
+    "bop_annual": "annually",
+    "exports_global": "monthly",
+    "exports_africa": "monthly",
+    "domestic_exports": "monthly",
+    "imports_global": "monthly",
+    "imports_africa": "monthly",
+    "imports_commodity": "monthly",
+    "principal_exports": "monthly",
+    "fiscal_revenue_expenditure": "monthly",
+    "public_debt": "monthly",
+    "domestic_debt": "monthly",
+    "gdp_quarterly": "quarterly",
+}
+
 
 def fetch_all():
     logger.info(f"Fetching {len(central_bank_links)} CSV tables")
@@ -63,9 +80,12 @@ def fetch_all():
     return df_dict
 
 
-def run_all(df_dict):
+def run_all(df_dict, frequency="all"):
     results = {}
     for name, processor in PROCESSORS.items():
+        if frequency != "all" and PROCESSOR_FREQUENCIES.get(name) != frequency:
+            logger.info(f"Skipping {name} (frequency={PROCESSOR_FREQUENCIES.get(name)}, requested={frequency})")
+            continue
         logger.info(f"Processing: {name}")
         try:
             result = processor(df_dict)
@@ -84,12 +104,12 @@ def run_all(df_dict):
     return results
 
 
-def run():
-    logger.info("Central Bank scraper started")
+def run(frequency="all"):
+    logger.info(f"Central Bank scraper started (frequency={frequency})")
     start = time.time()
     try:
         df_dict = fetch_all()
-        results = run_all(df_dict)
+        results = run_all(df_dict, frequency=frequency)
         logger.info(f"Saving {len(results)} datasets")
         yaml_path = Path(__file__).parent / "datasets.yaml"
         for name, df in results.items():
@@ -101,4 +121,6 @@ def run():
 
 
 if __name__ == "__main__":
-    run()
+    import sys
+    frequency = sys.argv[1] if len(sys.argv) > 1 else "all"
+    run(frequency=frequency)

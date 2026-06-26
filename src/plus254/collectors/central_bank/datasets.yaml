@@ -16,8 +16,10 @@ forex_end_period:
       description: Foreign currency name (e.g., united states dollar, sterling pound)
     value:
       type: string
-      description: End-period exchange rate in KES per unit of foreign currency (comma-formatted number)
-
+      description: End-period exchange rate in KES per unit of foreign currency (comma-formatted
+        number)
+  last_updated: '2026-06-19T12:00:00'
+  update_frequency: monthly
 forex_period_average:
   name: Monthly Exchange Rates (Period Average)
   slug: economy
@@ -36,8 +38,10 @@ forex_period_average:
       description: Foreign currency name (e.g., united states dollar, sterling pound)
     value:
       type: string
-      description: Period-average exchange rate in KES per unit of foreign currency (comma-formatted number)
-
+      description: Period-average exchange rate in KES per unit of foreign currency
+        (comma-formatted number)
+  last_updated: '2026-06-19T12:00:00'
+  update_frequency: monthly
 monetary_survey:
   name: Depository Corporation Survey
   slug: economy
@@ -47,10 +51,12 @@ monetary_survey:
   columns:
     section:
       type: string
-      description: Sub-survey section (Central Bank of Kenya, Other Depository Corporation Survey, Depository Corporation Survey)
+      description: Sub-survey section (Central Bank of Kenya, Other Depository Corporation
+        Survey, Depository Corporation Survey)
     metric:
       type: string
-      description: Monetary indicator name (e.g., Excess reserves, Required reserves, Broad Money M3)
+      description: Monetary indicator name (e.g., Excess reserves, Required reserves,
+        Broad Money M3)
     year:
       type: integer
       description: Calendar year
@@ -60,7 +66,8 @@ monetary_survey:
     value:
       type: float
       description: Monetary value in KES millions
-
+  last_updated: '2026-06-19T12:00:00'
+  update_frequency: monthly
 bop_annual:
   name: Balance of Payments (Annual)
   slug: economy
@@ -73,11 +80,13 @@ bop_annual:
       description: Calendar year
     metric:
       type: string
-      description: BPM6 balance of payments category (e.g., A. Current Account, n.i.e., General government)
+      description: BPM6 balance of payments category (e.g., A. Current Account, n.i.e.,
+        General government)
     value:
       type: string
       description: Value in USD millions (comma-formatted number)
-
+  last_updated: '2026-06-19T12:00:00'
+  update_frequency: annually
 exports_global:
   name: Value of Exports to Rest of World
   slug: economy
@@ -97,7 +106,8 @@ exports_global:
     value:
       type: string
       description: Export value in KES millions (comma-formatted number)
-
+  last_updated: '2026-06-19T12:00:00'
+  update_frequency: monthly
 exports_africa:
   name: Value of Exports to Africa
   slug: economy
@@ -117,7 +127,8 @@ exports_africa:
     value:
       type: string
       description: Export value in KES millions (comma-formatted number)
-
+  last_updated: '2026-06-19T12:00:00'
+  update_frequency: monthly
 domestic_exports:
   name: Value of Selected Domestic Exports
   slug: economy
@@ -137,7 +148,8 @@ domestic_exports:
     value:
       type: string
       description: Export value in KES millions (comma-formatted number)
-
+  last_updated: '2026-06-19T12:00:00'
+  update_frequency: monthly
 imports_global:
   name: Value of Imports from Rest of World
   slug: economy
@@ -157,7 +169,8 @@ imports_global:
     value:
       type: string
       description: Import value in KES millions (comma-formatted number)
-
+  last_updated: '2026-06-19T12:00:00'
+  update_frequency: monthly
 imports_africa:
   name: Value of Imports from Africa
   slug: economy
@@ -177,7 +190,8 @@ imports_africa:
     value:
       type: string
       description: Import value in KES millions (comma-formatted number)
-
+  last_updated: '2026-06-19T12:00:00'
+  update_frequency: monthly
 imports_commodity:
   name: Value of Imports by Commodity
   slug: economy
@@ -193,16 +207,19 @@ imports_commodity:
       description: Calendar month name
     metric:
       type: string
-      description: SITC commodity section (e.g., food and live animals, chemicals, machinery and transport equipment, total)
+      description: SITC commodity section (e.g., food and live animals, chemicals,
+        machinery and transport equipment, total)
     value:
       type: string
       description: Import value in KES millions (comma-formatted number)
-
+  last_updated: '2026-06-19T12:00:00'
+  update_frequency: monthly
 principal_exports:
   name: Principal Exports — Volume, Value, Unit Prices
   slug: economy
   source: Central Bank of Kenya
-  description: Monthly volume, value, and average unit prices of principal exports (coffee, tea, horticulture)
+  description: Monthly volume, value, and average unit prices of principal exports
+    (coffee, tea, horticulture)
   url: https://www.centralbank.go.ke/uploads/balance_of_payment_statistics/766913717_Principal%20Exports_Volume,%20Value%20and%20Unit%20Prices.csv
   columns:
     year:
@@ -213,11 +230,15 @@ principal_exports:
       description: Calendar month name
     metric:
       type: string
-      description: Commodity and measure (coffee volume, coffee value, coffee average, tea volume, tea value, tea average, horticulture volume, horticulture value, horticulture average)
+      description: Commodity and measure (coffee volume, coffee value, coffee average,
+        tea volume, tea value, tea average, horticulture volume, horticulture value,
+        horticulture average)
     value:
       type: string
-      description: Volume in Kgs, value in KES millions, or average price in KES per kg (comma-formatted number; see Metric for unit)
-
+      description: Volume in Kgs, value in KES millions, or average price in KES per
+        kg (comma-formatted number; see Metric for unit)
+  last_updated: '2026-06-19T12:00:00'
+  update_frequency: monthly
 fiscal_revenue:
   name: Government Revenue
   slug: economy
@@ -233,11 +254,13 @@ fiscal_revenue:
       description: Calendar month name
     metric:
       type: string
-      description: Revenue category (e.g., import duty, excise duty, income tax, vat, total revenue)
+      description: Revenue category (e.g., import duty, excise duty, income tax, vat,
+        total revenue)
     value:
       type: string
       description: Revenue in KES millions (comma-formatted number)
-
+  last_updated: '2026-06-19T12:00:00'
+  update_frequency: monthly
 fiscal_grants:
   name: Government Grants
   slug: economy
@@ -257,7 +280,8 @@ fiscal_grants:
     value:
       type: string
       description: Grants in KES millions (comma-formatted number)
-
+  last_updated: '2026-06-19T12:00:00'
+  update_frequency: monthly
 fiscal_expenditure:
   name: Government Expenditure
   slug: economy
@@ -273,11 +297,13 @@ fiscal_expenditure:
       description: Calendar month name
     metric:
       type: string
-      description: Expenditure category (e.g., domestic interest, wages salaries, development expenditure, total expenditure)
+      description: Expenditure category (e.g., domestic interest, wages salaries,
+        development expenditure, total expenditure)
     value:
       type: string
       description: Expenditure in KES millions (comma-formatted number)
-
+  last_updated: '2026-06-19T12:00:00'
+  update_frequency: monthly
 public_debt:
   name: Public Debt
   slug: economy
@@ -297,7 +323,8 @@ public_debt:
     value:
       type: string
       description: Debt in KES millions (comma-formatted number)
-
+  last_updated: '2026-06-19T12:00:00'
+  update_frequency: monthly
 domestic_debt:
   name: Domestic Debt by Instrument
   slug: economy
@@ -313,11 +340,13 @@ domestic_debt:
       description: Calendar month name
     metric:
       type: string
-      description: Debt instrument (treasury bills, treasury bonds, government stocks, advances from commercial banks, total domestic debt)
+      description: Debt instrument (treasury bills, treasury bonds, government stocks,
+        advances from commercial banks, total domestic debt)
     value:
       type: string
       description: Debt in KES millions
-
+  last_updated: '2026-06-19T12:00:00'
+  update_frequency: monthly
 gdp_quarterly:
   name: Quarterly GDP
   slug: economy
@@ -333,7 +362,10 @@ gdp_quarterly:
       description: Calendar quarter (Q1, Q2, Q3, Q4)
     metric:
       type: string
-      description: Economic sector or activity (e.g., Agriculture, Manufacturing, Construction, Total GDP)
+      description: Economic sector or activity (e.g., Agriculture, Manufacturing,
+        Construction, Total GDP)
     value:
       type: float
       description: GDP value in KES millions
+  last_updated: '2026-06-19T12:00:00'
+  update_frequency: quarterly

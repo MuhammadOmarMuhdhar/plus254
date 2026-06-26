@@ -1,4 +1,4 @@
-from plus254.scrapers.epra.parsers import fuel_prices
+from plus254.collectors.epra.parsers import fuel_prices
 from plus254.utils.scraping import table_from_url
 from plus254.utils.hf import save_to_hf
 from dotenv import load_dotenv

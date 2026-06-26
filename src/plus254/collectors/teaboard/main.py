@@ -4,7 +4,7 @@ from pathlib import Path
 import logging
 from dotenv import load_dotenv
 from plus254.utils.hf import save_to_hf
-from plus254.scrapers.teaboard.parsers import process_tea_auction_table
+from plus254.collectors.teaboard.parsers import process_tea_auction_table
 from plus254.utils.pdf import fetch_page_soup, download_pdf
 
 load_dotenv()

@@ -19,6 +19,8 @@ class DatasetInfo(BaseModel):
     description: str
     source: str
     url: str
+    last_updated: str | None = None
+    update_frequency: str | None = None
 
 class DatasetListResponse(BaseModel):
     """Response shape for GET /datasets"""

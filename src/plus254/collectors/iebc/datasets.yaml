@@ -38,3 +38,5 @@ rov_per_polling_station:
     value:
       type: integer
       description: Number of registered voters at the polling station
+  last_updated: '2026-06-19T12:00:00'
+  update_frequency: one_time

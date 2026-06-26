@@ -23,3 +23,5 @@ tea:
     value:
       type: float
       description: Numeric value of the metric
+  last_updated: '2026-06-19T12:00:00'
+  update_frequency: weekly

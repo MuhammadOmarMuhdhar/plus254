@@ -24,3 +24,4 @@ pump_prices:
       type: float
       description: Pump price in Kenyan Shillings (KES)
   last_updated: '2026-06-24T17:38:39'
+  update_frequency: monthly

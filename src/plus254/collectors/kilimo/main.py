@@ -9,7 +9,7 @@ import requests
 import yaml
 from dotenv import load_dotenv
 from plus254.utils.api import check_freshness, fetch_paginated
-from plus254.scrapers.kilimo.parsers import process_indicator
+from plus254.collectors.kilimo.parsers import process_indicator
 from plus254.utils.hf import save_to_hf
 
 load_dotenv()
