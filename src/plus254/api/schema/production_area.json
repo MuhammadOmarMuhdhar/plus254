@@ -1,6 +1,6 @@
 {
   "config": "production_area",
-  "slug": "agriculture",
+  "category": "agriculture",
   "name": "Production Area",
   "source": "Kenya Agricultural Observatory Platform (Kilimo)",
   "description": "Area under agricultural production across Kenyan counties",

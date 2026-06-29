@@ -1,6 +1,6 @@
 {
   "config": "gok_fertilizer_subsidy_expenditure",
-  "slug": "agriculture",
+  "category": "agriculture",
   "name": "GOK Fertilizer Subsidy Expenditure",
   "source": "Kenya Agricultural Observatory Platform (Kilimo)",
   "description": "Expenditure on the government fertilizer subsidy program across Kenyan counties",

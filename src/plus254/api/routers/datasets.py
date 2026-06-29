@@ -34,9 +34,14 @@ def validate_config(config_name: str):
 
 
 @router.get("/datasets", response_model=DatasetListResponse)
-def list_datasets(pagination: PaginationParams = Depends()):
+def list_datasets(
+    pagination: PaginationParams = Depends(),
+    category: str | None = None,
+):
     all_items = []
     for config_name, info in DATASETS.items():
+        if category and info["category"] != category:
+            continue
         all_items.append(
             DatasetInfo(
                 config=config_name,
@@ -44,7 +49,7 @@ def list_datasets(pagination: PaginationParams = Depends()):
                 description=info["description"],
                 source=info["source"],
                 url=info["url"],
-                slug=info["slug"],
+                category=info["category"],
                 last_updated=info.get("last_updated"),
                 update_frequency=info.get("update_frequency"),
             )
@@ -85,6 +90,7 @@ def get_dataset_data(
                 limit=pagination.limit,
             )
         ),
+        category=info["category"],
         source=info["source"],
         description=info["description"],
         url=info["url"],
@@ -114,7 +120,7 @@ def get_dataset_info(config_name: str, info: dict = Depends(validate_config)):
     return DatasetInfo(
         config=config_name,
         name=info["name"],
-        slug=info["slug"],
+        category=info["category"],
         description=info["description"],
         source=info["source"],
         url=info["url"],

@@ -1,6 +1,6 @@
 tea:
   name: Tea Production and Exports
-  slug: agriculture
+  category: agriculture
   source: Tea Board of Kenya
   description: Weekly tea auction data — production, export volume, and prices
   url: https://eatta.co.ke/statistics

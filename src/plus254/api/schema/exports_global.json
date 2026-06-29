@@ -1,6 +1,6 @@
 {
   "config": "exports_global",
-  "slug": "economy",
+  "category": "economy",
   "name": "Value of Exports to Rest of World",
   "source": "Central Bank of Kenya",
   "description": "Monthly value of exports to selected countries outside Africa",

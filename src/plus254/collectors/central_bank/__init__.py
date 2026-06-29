@@ -1,8 +1,8 @@
 import yaml
-from .forex import process_forex
-from .monetary import process_monetary_survey
-from .bop import process_bop_annual
-from .trade import (
+from .parsers.forex import process_forex
+from .parsers.monetary import process_monetary_survey
+from .parsers.bop import process_bop_annual
+from .parsers.trade import (
     process_exports_global,
     process_exports_africa,
     process_domestic_exports,
@@ -11,9 +11,9 @@ from .trade import (
     process_imports_commodity,
     process_principal_exports,
 )
-from .fiscal import process_fiscal_revenue_expenditure
-from .debt import process_public_debt, process_domestic_debt
-from .gdp import process_gdp_quarterly
+from .parsers.fiscal import process_fiscal_revenue_expenditure
+from .parsers.debt import process_public_debt, process_domestic_debt
+from .parsers.gdp import process_gdp_quarterly
 from pathlib import Path
 
 _yaml_path = Path(__file__).resolve().parent / "datasets.yaml"

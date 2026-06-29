@@ -1,6 +1,6 @@
 {
   "config": "imports_africa",
-  "slug": "economy",
+  "category": "economy",
   "name": "Value of Imports from Africa",
   "source": "Central Bank of Kenya",
   "description": "Monthly value of direct imports from selected African countries",

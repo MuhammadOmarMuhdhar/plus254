@@ -8,14 +8,14 @@ def _fmt_num(v):
 
 def _render_header(config_name, df, info):
     lines = []
-    endpoint = f"GET /{info['slug']}/{config_name}"
+    endpoint = f"GET /{info['category']}/{config_name}"
     lines.append("---")
     lines.append(f'title: "{info["name"]}"')
     lines.append(f'description: "{info["description"]}"')
     lines.append(f'source: "{info["source"]}"')
     lines.append(f"endpoint: \"{endpoint}\"")
     lines.append(f"rows: {len(df)}")
-    lines.append(f'topic: "{info["slug"]}"')
+    lines.append(f'category: "{info["category"]}"')
     if info.get("url"):
         lines.append(f'sourceUrl: "{info["url"]}"')
     if info.get("last_updated"):
@@ -131,17 +131,17 @@ def generate_index(datasets_info):
 
     groups = {}
     for config_name, info in sorted(datasets_info.items()):
-        groups.setdefault(info["slug"], []).append((config_name, info))
+        groups.setdefault(info["category"], []).append((config_name, info))
 
-    for slug, datasets in sorted(groups.items()):
-        lines.append(f"## {slug}")
+    for category, datasets in sorted(groups.items()):
+        lines.append(f"## {category}")
         lines.append("")
         lines.append("| Dataset | Description | Rows | Endpoint |")
         lines.append("|---------|-------------|------|----------|")
         for config_name, info in sorted(datasets):
             rows = info.get("row_count", "?")
             lines.append(
-                f"| [{info['name']}]({config_name}.md) | {info['description']} | {rows} | `GET /{slug}/{config_name}` |"
+                f"| [{info['name']}]({config_name}.md) | {info['description']} | {rows} | `GET /{category}/{config_name}` |"
             )
         lines.append("")
 

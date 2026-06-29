@@ -1,6 +1,6 @@
 {
   "config": "production_quantity_livestock",
-  "slug": "agriculture",
+  "category": "agriculture",
   "name": "Production Quantity (Livestock)",
   "source": "Kenya Agricultural Observatory Platform (Kilimo)",
   "description": "Quantity of livestock production across Kenyan counties",

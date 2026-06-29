@@ -1,6 +1,6 @@
 {
   "config": "gok_fertilizer_subsidy_funds_allocated",
-  "slug": "agriculture",
+  "category": "agriculture",
   "name": "GOK Fertilizer Subsidy Funds Allocated",
   "source": "Kenya Agricultural Observatory Platform (Kilimo)",
   "description": "Funds allocated for the government fertilizer subsidy program across Kenyan counties",

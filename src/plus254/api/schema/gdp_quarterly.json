@@ -1,6 +1,6 @@
 {
   "config": "gdp_quarterly",
-  "slug": "economy",
+  "category": "economy",
   "name": "Quarterly GDP",
   "source": "Central Bank of Kenya",
   "description": "Quarterly GDP estimates by sector",

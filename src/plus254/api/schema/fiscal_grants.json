@@ -1,6 +1,6 @@
 {
   "config": "fiscal_grants",
-  "slug": "economy",
+  "category": "economy",
   "name": "Government Grants",
   "source": "Central Bank of Kenya",
   "description": "Monthly government grants received",

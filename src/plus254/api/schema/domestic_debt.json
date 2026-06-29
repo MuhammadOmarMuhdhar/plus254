@@ -1,6 +1,6 @@
 {
   "config": "domestic_debt",
-  "slug": "economy",
+  "category": "economy",
   "name": "Domestic Debt by Instrument",
   "source": "Central Bank of Kenya",
   "description": "Monthly domestic debt breakdown by instrument (T-bills, bonds, etc.)",

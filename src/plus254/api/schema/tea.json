@@ -1,6 +1,6 @@
 {
   "config": "tea",
-  "slug": "agriculture",
+  "category": "agriculture",
   "name": "Tea Production and Exports",
   "source": "Tea Board of Kenya",
   "description": "Weekly tea auction data \u2014 production, export volume, and prices",

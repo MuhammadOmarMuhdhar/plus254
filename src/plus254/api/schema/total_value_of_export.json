@@ -1,6 +1,6 @@
 {
   "config": "total_value_of_export",
-  "slug": "agriculture",
+  "category": "agriculture",
   "name": "Total Value of Exports",
   "source": "Kenya Agricultural Observatory Platform (Kilimo)",
   "description": "Total value of agricultural exports across Kenyan counties",

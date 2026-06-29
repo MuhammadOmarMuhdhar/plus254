@@ -62,6 +62,34 @@ def extract_year_month(df, date_col, date_format="%d-%m-%Y", year_col="year", mo
     df[month_col] = parsed.dt.strftime("%B")  
     return df
 
+def _drop_header_artifact_rows(df: pd.DataFrame, n_cols: int = 3) -> pd.DataFrame:
+    """Remove leading rows where the first n columns are all empty/None."""
+    while len(df) > 0:
+        first_vals = [df.iloc[0, i] for i in range(min(n_cols, len(df.columns)))]
+        if all(x is None or (isinstance(x, str) and x.strip().lower() in ('', 'none'))
+               for x in first_vals):
+            df = df.iloc[1:]
+        else:
+            break
+    return df
+
+
+def _normalise_nulls(df: pd.DataFrame) -> pd.DataFrame:
+    """Coerce empty strings and 'None' strings to actual None, drop all-null rows."""
+    return (
+        df.replace('None', None)
+          .replace('', None)
+          .dropna(how='all')
+    )
+
+
+def _forward_fill(df: pd.DataFrame, label_indices: list) -> pd.DataFrame:
+    """Replace empty strings with None, then forward-fill label columns."""
+    df = df.replace('', None)
+    for col_idx in label_indices:
+        col = df.columns[col_idx]
+        df[col] = df[col].ffill()
+    return df
 
 # ---------------------------------------------------------------------------
 # Private: frame utilities

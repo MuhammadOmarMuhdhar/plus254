@@ -1,10 +1,10 @@
-from plus254.collectors.central_bank.bop import process_bop_annual
-from plus254.collectors.central_bank.debt import process_domestic_debt, process_public_debt
-from plus254.collectors.central_bank.fiscal import process_fiscal_revenue_expenditure
-from plus254.collectors.central_bank.forex import process_forex
-from plus254.collectors.central_bank.gdp import process_gdp_quarterly
-from plus254.collectors.central_bank.monetary import process_monetary_survey
-from plus254.collectors.central_bank.trade import (
+from plus254.collectors.central_bank.parsers.bop import process_bop_annual
+from plus254.collectors.central_bank.parsers.debt import process_domestic_debt, process_public_debt
+from plus254.collectors.central_bank.parsers.fiscal import process_fiscal_revenue_expenditure
+from plus254.collectors.central_bank.parsers.forex import process_forex
+from plus254.collectors.central_bank.parsers.gdp import process_gdp_quarterly
+from plus254.collectors.central_bank.parsers.monetary import process_monetary_survey
+from plus254.collectors.central_bank.parsers.trade import (
     process_domestic_exports,
     process_exports_africa,
     process_exports_global,

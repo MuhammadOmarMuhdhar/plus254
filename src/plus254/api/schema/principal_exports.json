@@ -1,6 +1,6 @@
 {
   "config": "principal_exports",
-  "slug": "economy",
+  "category": "economy",
   "name": "Principal Exports \u2014 Volume, Value, Unit Prices",
   "source": "Central Bank of Kenya",
   "description": "Monthly volume, value, and average unit prices of principal exports (coffee, tea, horticulture)",

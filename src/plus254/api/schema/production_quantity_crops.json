@@ -1,6 +1,6 @@
 {
   "config": "production_quantity_crops",
-  "slug": "agriculture",
+  "category": "agriculture",
   "name": "Production Quantity (Crops)",
   "source": "Kenya Agricultural Observatory Platform (Kilimo)",
   "description": "Quantity of crop production across Kenyan counties",

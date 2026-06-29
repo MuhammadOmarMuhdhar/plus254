@@ -1,6 +1,6 @@
 {
   "config": "crop_yield",
-  "slug": "agriculture",
+  "category": "agriculture",
   "name": "Crop Yield",
   "source": "Kenya Agricultural Observatory Platform (Kilimo)",
   "description": "Crop yield per unit area across Kenyan counties",

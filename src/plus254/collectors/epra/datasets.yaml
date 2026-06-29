@@ -1,6 +1,6 @@
 pump_prices:
   name: Fuel Pump Prices
-  slug: energy
+  category: energy
   source: Energy and Petroleum Regulatory Authority (EPRA)
   description: Monthly pump prices of petroleum products in Kenya
   url: https://www.epra.go.ke/pump-prices

@@ -1,6 +1,6 @@
 {
   "config": "gok_fertilizer_subsidy_beneficiaries",
-  "slug": "agriculture",
+  "category": "agriculture",
   "name": "GOK Fertilizer Subsidy Beneficiaries",
   "source": "Kenya Agricultural Observatory Platform (Kilimo)",
   "description": "Beneficiaries of the government fertilizer subsidy program across Kenyan counties",

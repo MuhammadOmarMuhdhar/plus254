@@ -1,7 +1,7 @@
 def build_schema(config_name, info, row_count, columns_info):
     return {
         "config": config_name,
-        "slug": info["slug"],
+        "category": info["category"],
         "name": info["name"],
         "source": info["source"],
         "description": info["description"],

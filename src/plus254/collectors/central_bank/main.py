@@ -5,7 +5,7 @@ import pandas as pd
 from dotenv import load_dotenv
 from plus254.utils.hf import save_to_hf
 from plus254.collectors.central_bank import central_bank_links
-from plus254.collectors.central_bank.parsers import (
+from plus254.collectors.central_bank.parsers.main import (
     process_bop_annual,
     process_domestic_debt,
     process_domestic_exports,

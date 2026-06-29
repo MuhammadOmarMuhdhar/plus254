@@ -1,6 +1,6 @@
 {
   "config": "monetary_survey",
-  "slug": "economy",
+  "category": "economy",
   "name": "Depository Corporation Survey",
   "source": "Central Bank of Kenya",
   "description": "Monetary aggregates from the Depository Corporation Survey",

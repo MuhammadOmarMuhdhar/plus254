@@ -15,7 +15,7 @@ class DatasetInfo(BaseModel):
     """A single dataset in the list view."""
     config: str
     name: str
-    slug: str
+    category: str
     description: str
     source: str
     url: str
@@ -31,6 +31,7 @@ class DatasetListResponse(BaseModel):
 class DatasetDataResponse(BaseModel):
     """Response shape for GET /datasets/{config_name}"""
     metadata: MetadataWrapper
+    category: str
     source: str
     description: str
     url: str

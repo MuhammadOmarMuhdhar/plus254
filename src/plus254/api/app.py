@@ -12,8 +12,8 @@ _SCHEMA_DIR = Path(__file__).resolve().parent / "schema"
 def list_datasets():
     grouped = {}
     for name, info in DATASETS.items():
-        slug = info["slug"]
-        grouped.setdefault(slug, []).append({
+        cat = info["category"]
+        grouped.setdefault(cat, []).append({
             "config": name,
             "name": info["name"],
             "description": info["description"],
@@ -25,14 +25,14 @@ def list_datasets():
         "groups": grouped,
     })
 
-@app.get("/<slug>/<config_name>")
-def get_dataset_endpoint(slug, config_name):
+@app.get("/<category>/<config_name>")
+def get_dataset_endpoint(category, config_name):
     if config_name not in DATASETS:
         abort(404, description=f"Unknown dataset: {config_name}")
 
     info = DATASETS[config_name]
-    if info["slug"] != slug:
-        abort(404, description=f"Dataset {config_name} not found in group {slug}")
+    if info["category"] != category:
+        abort(404, description=f"Dataset {config_name} not found in category {category}")
 
     try:
         df = get_dataset(config_name)
@@ -49,8 +49,8 @@ def get_dataset_endpoint(slug, config_name):
         abort(500, description=f"Failed to load dataset: {str(e)}")
 
 
-@app.get("/schema/<slug>/<config_name>")
-def get_dataset_schema(slug, config_name):
+@app.get("/schema/<category>/<config_name>")
+def get_dataset_schema(category, config_name):
     schema_path = _SCHEMA_DIR / f"{config_name}.json"
     if not schema_path.exists():
         abort(404, description=f"Schema not found: {config_name}")

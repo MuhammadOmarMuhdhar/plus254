@@ -1,6 +1,6 @@
 {
   "config": "political_governance_economic_investments",
-  "slug": "agriculture",
+  "category": "agriculture",
   "name": "Political Governance & Economic Investments",
   "source": "Kenya Agricultural Observatory Platform (Kilimo)",
   "description": "Political governance and economic investment indicators in agriculture across Kenyan counties",

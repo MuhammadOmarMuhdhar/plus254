@@ -1,6 +1,6 @@
 {
   "config": "bop_annual",
-  "slug": "economy",
+  "category": "economy",
   "name": "Balance of Payments (Annual)",
   "source": "Central Bank of Kenya",
   "description": "Annual balance of payments statement",

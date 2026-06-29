@@ -1,6 +1,6 @@
 {
   "config": "export_quantity",
-  "slug": "agriculture",
+  "category": "agriculture",
   "name": "Export Quantity",
   "source": "Kenya Agricultural Observatory Platform (Kilimo)",
   "description": "Quantity of agricultural exports across Kenyan counties",
