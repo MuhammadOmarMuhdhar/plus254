@@ -7,7 +7,12 @@ def _strip_column(series: pd.Series) -> pd.Series:
     col = col[col.str.lower() != 'none']
     return col
 
-def _classify_column(col_vals: pd.Series, min_data_ratio: float, min_label_ratio: float, n_rows: int) -> str:
+def _classify_column(
+    col_vals: pd.Series, 
+    min_data_ratio: float, 
+    min_label_ratio: float, 
+    n_rows: int
+) -> str:
     """Classify a single cleaned column as 'data', 'label', or 'padding'."""
     fill_ratio = len(col_vals) / n_rows
     min_req = min(min_data_ratio, min_label_ratio)
@@ -18,7 +23,11 @@ def _classify_column(col_vals: pd.Series, min_data_ratio: float, min_label_ratio
     return 'label' if fill_ratio >= min_label_ratio else 'padding'
 
 
-def prune(df: pd.DataFrame, min_data_ratio: float = 0.15, min_label_ratio: float = 0.10):
+def prune(
+    df: pd.DataFrame, 
+    min_data_ratio: float = 0.15, 
+    min_label_ratio: float = 0.10
+):
     """Filter sparse/padding columns, returning label indices, data indices, and cleaned df."""
     n_rows = len(df)
     col_types = [
