@@ -1,0 +1,29 @@
+standards:
+  # Temporal columns
+  year: integer
+  quarter: integer
+  month: string
+  date: date
+  week: integer
+
+  # Value / measure
+  value: float
+
+  # Categorical / dimension columns
+  item: string
+  metric: string
+  operator: string
+  location: string
+  county: string
+  area_level: string
+  section: string
+
+  # Geographic / IEBC columns
+  polling_station_code: string
+  polling_station_name: string
+  ward_code: string
+  ward_name: string
+  constituency_code: string
+  constituency_name: string
+  county_code: string
+  county_name: string
