@@ -1,0 +1,458 @@
+- pdf_name: "Sector Statistics Report Q3 2025-2026.pdf"
+  year: 2025
+  quarter: 3
+  download_page: 0
+  tables:
+    - dataset: mobile_traffic_by_operator
+      pdf_page_num: [14]
+      search_term: null
+      return_all: false
+    - dataset: minutes_of_use_by_operator
+      pdf_page_num: [15]
+      search_term: "Jamii"
+      return_all: false
+    - dataset: international_mobile_traffic
+      pdf_page_num: [16]
+      search_term: "EAC"
+      return_all: false
+    - dataset: roaming_traffic
+      pdf_page_num: [17]
+      search_term: "Uganda"
+      return_all: true
+    - dataset: internet_subscriptions_by_technology
+      pdf_page_num: [20]
+      search_term: "Subscriptions"
+      return_all: false
+    - dataset: broadband_subscriptions_by_speed
+      pdf_page_num: [20, 21]
+      search_term: "Kbps"
+      return_all: false
+    - dataset: broadband_subscriptions_by_operator
+      pdf_page_num: [21]
+      search_term: "Wananchi"
+      return_all: false
+    - dataset: postal_and_courier_traffic
+      pdf_page_num: [21, 22]
+      search_term: "Letters"
+      return_all: true
+    - dataset: broadcasting_subscriptions_by_platform
+      pdf_page_num: [23]
+      search_term: "DTT"
+      return_all: false
+    - dataset: ke_domain_registrations
+      pdf_page_num: [24]
+      search_term: "CO.KE"
+      return_all: false
+    - dataset: cybersecurity_incidents
+      pdf_page_num: [25]
+      search_term: "Malware"
+      return_all: false
+
+- pdf_name: "Sector Statistics Report Q2 2025-2026.pdf"
+  year: 2025
+  quarter: 2
+  download_page: 0
+  tables:
+    - dataset: mobile_traffic_by_operator
+      pdf_page_num: [13]
+      search_term: null
+      return_all: false
+    - dataset: minutes_of_use_by_operator
+      pdf_page_num: [14]
+      search_term: "Jamii"
+      return_all: false
+    - dataset: international_mobile_traffic
+      pdf_page_num: [15]
+      search_term: "EAC"
+      return_all: false
+    - dataset: roaming_traffic
+      pdf_page_num: [16]
+      search_term: "Uganda"
+      return_all: true
+    - dataset: internet_subscriptions_by_technology
+      pdf_page_num: [19]
+      search_term: "Subscriptions"
+      return_all: false
+    - dataset: broadband_subscriptions_by_speed
+      pdf_page_num: [19]
+      search_term: "Kbps"
+      return_all: false
+    - dataset: broadband_subscriptions_by_operator
+      pdf_page_num: [20]
+      search_term: "Wananchi"
+      return_all: false
+    - dataset: postal_and_courier_traffic
+      pdf_page_num: [21]
+      search_term: "Letters"
+      return_all: true
+    - dataset: broadcasting_subscriptions_by_platform
+      pdf_page_num: [22]
+      search_term: "DTT"
+      return_all: false
+    - dataset: ke_domain_registrations
+      pdf_page_num: [23]
+      search_term: "CO.KE"
+      return_all: false
+    - dataset: cybersecurity_incidents
+      pdf_page_num: [23, 24]
+      search_term: "Malware"
+      return_all: false
+
+- pdf_name: "Sector Statistics Report Q1 2025-2026_0.pdf"
+  year: 2025
+  quarter: 1
+  download_page: 0
+  tables:
+    - dataset: mobile_traffic_by_operator
+      pdf_page_num: [14]
+      search_term: null
+      return_all: false
+    - dataset: minutes_of_use_by_operator
+      pdf_page_num: [15]
+      search_term: "Jamii"
+      return_all: false
+    - dataset: international_mobile_traffic
+      pdf_page_num: [16]
+      search_term: "EAC"
+      return_all: false
+    - dataset: roaming_traffic
+      pdf_page_num: [17]
+      search_term: "Uganda"
+      return_all: true
+    - dataset: internet_subscriptions_by_technology
+      pdf_page_num: [20]
+      search_term: "Subscriptions"
+      return_all: false
+    - dataset: broadband_subscriptions_by_speed
+      pdf_page_num: [20, 21]
+      search_term: "Kbps"
+      return_all: false
+    - dataset: broadband_subscriptions_by_operator
+      pdf_page_num: [21]
+      search_term: "Poa"
+      return_all: false
+    - dataset: postal_and_courier_traffic
+      pdf_page_num: [22, 23]
+      search_term: "Letters"
+      return_all: true
+    - dataset: broadcasting_subscriptions_by_platform
+      pdf_page_num: [23]
+      search_term: "DTT"
+      return_all: false
+    - dataset: ke_domain_registrations
+      pdf_page_num: [24]
+      search_term: "CO.KE"
+      return_all: false
+    - dataset: cybersecurity_incidents
+      pdf_page_num: [24, 25]
+      search_term: "Threats"
+      return_all: false
+
+- pdf_name: "Sector Statistics Report Q4 2024-2025_1.pdf"
+  year: 2024
+  quarter: 4
+  download_page: 0
+  tables:
+    - dataset: mobile_traffic_by_operator
+      pdf_page_num: [15, 16, 17]
+      search_term: null
+    - dataset: minutes_of_use_by_operator
+      pdf_page_num: [16]
+      search_term: "Jamii"
+    - dataset: international_mobile_traffic
+      pdf_page_num: [18, 19]
+      search_term: "EAC"
+    - dataset: roaming_traffic
+      pdf_page_num: [19]
+      search_term: "Uganda"
+      return_all: true
+    - dataset: internet_subscriptions_by_technology
+      pdf_page_num: [26]
+      search_term: "Subscriptions"
+      return_all: false
+    - dataset: broadband_subscriptions_by_speed
+      pdf_page_num: [26]
+      search_term: "Kbps"
+      return_all: false
+    - dataset: broadband_subscriptions_by_operator
+      pdf_page_num: [27]
+      search_term: "Wananchi"
+      return_all: false
+    - dataset: postal_and_courier_traffic
+      pdf_page_num: [28, 29]
+      search_term: "Letters"
+      return_all: true
+    - dataset: broadcasting_subscriptions_by_platform
+      pdf_page_num: [30]
+      search_term: "DTT"
+      return_all: false
+    - dataset: ke_domain_registrations
+      pdf_page_num: [31]
+      search_term: "CO.KE"
+      return_all: false
+    - dataset: cybersecurity_incidents
+      pdf_page_num: [32]
+      search_term: "Malware"
+      return_all: false
+
+- pdf_name: "Sector Statistics Report Q3 2024-2025.pdf"
+  year: 2024
+  quarter: 3
+  download_page: 0
+  tables:
+    - dataset: mobile_traffic_by_operator
+      pdf_page_num: [15]
+      search_term: null
+    - dataset: minutes_of_use_by_operator
+      pdf_page_num: [16]
+      search_term: "Total Average"
+    - dataset: international_mobile_traffic
+      pdf_page_num: [17]
+      search_term: "EAC"
+    - dataset: roaming_traffic
+      pdf_page_num: [18]
+      search_term: "Uganda"
+      return_all: true
+    - dataset: internet_subscriptions_by_technology
+      pdf_page_num: [21]
+      search_term: "Subscriptions"
+      return_all: false
+    - dataset: broadband_subscriptions_by_speed
+      pdf_page_num: [22]
+      search_term: "Kbps"
+      return_all: false
+    - dataset: broadband_subscriptions_by_operator
+      pdf_page_num: [22]
+      search_term: "Wananchi"
+      return_all: false
+    - dataset: postal_and_courier_traffic
+      pdf_page_num: [23, 24]
+      search_term: "Letters"
+      return_all: true
+    - dataset: broadcasting_subscriptions_by_platform
+      pdf_page_num: [24]
+      search_term: "DTT"
+      return_all: false
+    - dataset: ke_domain_registrations
+      pdf_page_num: [25]
+      search_term: "CO.KE"
+      return_all: false
+    - dataset: cybersecurity_incidents
+      pdf_page_num: [26]
+      search_term: "Malware"
+      return_all: false
+
+- pdf_name: "Sector Statistics Report Q2 2024-2025.pdf"
+  year: 2024
+  quarter: 2
+  download_page: 0
+  tables:
+    - dataset: mobile_traffic_by_operator
+      pdf_page_num: [14]
+      search_term: null
+    - dataset: minutes_of_use_by_operator
+      pdf_page_num: [15]
+      search_term: "Jamii"
+    - dataset: international_mobile_traffic
+      pdf_page_num: [16]
+      search_term: "EAC"
+    - dataset: roaming_traffic
+      pdf_page_num: [17]
+      search_term: "Uganda"
+      return_all: true
+    - dataset: internet_subscriptions_by_technology
+      pdf_page_num: [20]
+      search_term: "Subscriptions"
+      return_all: false
+    - dataset: broadband_subscriptions_by_speed
+      pdf_page_num: [21]
+      search_term: "Kbps"
+      return_all: false
+    - dataset: broadband_subscriptions_by_operator
+      pdf_page_num: [21]
+      search_term: "Wananchi"
+      return_all: false
+    - dataset: postal_and_courier_traffic
+      pdf_page_num: [23]
+      search_term: "Letters"
+      return_all: false
+    - dataset: broadcasting_subscriptions_by_platform
+      pdf_page_num: [24]
+      search_term: "DTT"
+      return_all: false
+    - dataset: ke_domain_registrations
+      pdf_page_num: [25]
+      search_term: "CO.KE"
+      return_all: false
+    - dataset: cybersecurity_incidents
+      pdf_page_num: [25, 26]
+      search_term: "Malware"
+      return_all: false
+
+- pdf_name: "Sector Statistics Report Q1 2024-2025.pdf"
+  year: 2024
+  quarter: 1
+  download_page: 0
+  tables:
+    - dataset: mobile_traffic_by_operator
+      pdf_page_num: [15]
+      search_term: null
+    - dataset: minutes_of_use_by_operator
+      pdf_page_num: [16]
+      search_term: "Jamii"
+    - dataset: international_mobile_traffic
+      pdf_page_num: [17]
+      search_term: "EAC"
+    - dataset: roaming_traffic
+      pdf_page_num: [18]
+      search_term: "Uganda"
+      return_all: true
+    - dataset: internet_subscriptions_by_technology
+      pdf_page_num: [21]
+      search_term: "Subscriptions"
+      return_all: false
+    - dataset: broadband_subscriptions_by_speed
+      pdf_page_num: [21, 22]
+      search_term: "FTTH"
+      return_all: false
+    - dataset: broadband_subscriptions_by_operator
+      pdf_page_num: [22]
+      search_term: "Wananchi"
+      return_all: false
+    - dataset: postal_and_courier_traffic
+      pdf_page_num: [23, 24]
+      search_term: "Letters"
+      return_all: true
+    - dataset: broadcasting_subscriptions_by_platform
+      pdf_page_num: [24]
+      search_term: "DTT"
+      return_all: false
+    - dataset: ke_domain_registrations
+      pdf_page_num: [25]
+      search_term: "CO.KE"
+      return_all: false
+    - dataset: cybersecurity_incidents
+      pdf_page_num: [26]
+      search_term: "Malware"
+      return_all: false
+
+- pdf_name: "Sector Statistics Report Q4 2023-2024.pdf"
+  year: 2023
+  quarter: 4
+  download_page: 0
+  tables:
+    - dataset: mobile_traffic_by_operator
+      pdf_page_num: [14]
+      search_term: null
+    - dataset: minutes_of_use_by_operator
+      pdf_page_num: [15]
+      search_term: "Jamii"
+    - dataset: international_mobile_traffic
+      pdf_page_num: [17]
+      search_term: "EAC"
+    - dataset: roaming_traffic
+      pdf_page_num: [17, 18]
+      search_term: "Uganda"
+      return_all: true
+    - dataset: internet_subscriptions_by_technology
+      pdf_page_num: [23]
+      search_term: "Subscriptions"
+      return_all: false
+    - dataset: broadband_subscriptions_by_speed
+      pdf_page_num: [24]
+      search_term: "bps"
+      return_all: false
+    - dataset: broadband_subscriptions_by_operator
+      pdf_page_num: [24]
+      search_term: "Wananchi"
+      return_all: false
+    - dataset: broadcasting_subscriptions_by_platform
+      pdf_page_num: [28]
+      search_term: "DTT"
+      return_all: false
+    - dataset: ke_domain_registrations
+      pdf_page_num: [29]
+      search_term: "CO.KE"
+      return_all: false
+    - dataset: cybersecurity_incidents
+      pdf_page_num: [30]
+      search_term: "Malware"
+      return_all: false
+
+- pdf_name: "Sector Statistics Report Q3 FY 2023-24.pdf"
+  year: 2023
+  quarter: 3
+  download_page: 0
+  tables:
+    - dataset: mobile_traffic_by_operator
+      pdf_page_num: [16]
+      search_term: null
+    - dataset: minutes_of_use_by_operator
+      pdf_page_num: [15]
+      search_term: "Jamii"
+    - dataset: international_mobile_traffic
+      pdf_page_num: [17]
+      search_term: "EAC"
+    - dataset: roaming_traffic
+      pdf_page_num: [18]
+      search_term: "Uganda"
+      return_all: true
+    - dataset: broadband_subscriptions_by_speed
+      pdf_page_num: [21]
+      search_term: "bps"
+      return_all: false
+    - dataset: broadband_subscriptions_by_operator
+      pdf_page_num: [21]
+      search_term: "Wananchi"
+      return_all: false
+    - dataset: broadcasting_subscriptions_by_platform
+      pdf_page_num: [24]
+      search_term: "DTT"
+      return_all: false
+    - dataset: ke_domain_registrations
+      pdf_page_num: [25]
+      search_term: "CO.KE"
+      return_all: false
+    - dataset: cybersecurity_incidents
+      pdf_page_num: [25, 26]
+      search_term: "Malware"
+      return_all: false
+
+- pdf_name: "Sector Statistics Report Q2 2023-2024_0.pdf"
+  year: 2023
+  quarter: 2
+  download_page: 0
+  tables:
+    - dataset: mobile_traffic_by_operator
+      pdf_page_num: [16]
+      search_term: null
+    - dataset: minutes_of_use_by_operator
+      pdf_page_num: null
+      search_term: "Jamii"
+    - dataset: international_mobile_traffic
+      pdf_page_num: [17]
+      search_term: "EAC"
+    - dataset: roaming_traffic
+      pdf_page_num: [18]
+      search_term: "Uganda"
+      return_all: true
+    - dataset: broadband_subscriptions_by_speed
+      pdf_page_num: [21]
+      search_term: "bps"
+      return_all: false
+    - dataset: broadband_subscriptions_by_operator
+      pdf_page_num: [21]
+      search_term: "Wananchi"
+      return_all: false
+    - dataset: broadcasting_subscriptions_by_platform
+      pdf_page_num: [24]
+      search_term: "Star"
+      return_all: false
+    - dataset: ke_domain_registrations
+      pdf_page_num: [25]
+      search_term: "CO.KE"
+      return_all: false
+    - dataset: cybersecurity_incidents
+      pdf_page_num: [25]
+      search_term: "Malware"
+      return_all: true
