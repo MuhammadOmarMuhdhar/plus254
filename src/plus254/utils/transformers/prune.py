@@ -22,8 +22,35 @@ def _classify_column(
         return 'data' if fill_ratio >= min_data_ratio else 'padding'
     return 'label' if fill_ratio >= min_label_ratio else 'padding'
 
+def build_date_columns(
+    df: pd.DataFrame,
+    *,
+    start_col: int = 2,
+    month_header_row: int = 1,
+    year_col_start: int = 2,
+    separator: str = "-",
+    year_row: int | None = None,
+) -> list[str]:
+    """Build year-month column labels from two-row header.
+    """
+    years_raw = (
+        df.iloc[year_row, year_col_start:].values
+        if year_row is not None
+        else df.columns[year_col_start:].values
+    )
+    months_raw = df.iloc[month_header_row, start_col:].values
 
-def prune(
+    date_cols = []
+    current_year = None
+    for y, m in zip(years_raw, months_raw):
+        try:
+            current_year = int(float(y))
+        except (ValueError, TypeError):
+            pass
+        date_cols.append(f"{current_year}{separator}{m}")
+    return date_cols
+
+def prune_columns(
     df: pd.DataFrame, 
     min_data_ratio: float = 0.15, 
     min_label_ratio: float = 0.10

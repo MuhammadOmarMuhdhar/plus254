@@ -6,6 +6,7 @@ import logging
 import pdfplumber
 from tqdm import tqdm
 from urllib.parse import urljoin
+from .html import fetch_soup
 
 logging.basicConfig(
     level=logging.INFO,
@@ -16,19 +17,7 @@ logging.getLogger("pdfminer").setLevel(logging.ERROR)
 logger = logging.getLogger(__name__)
 
 
-def _fetch_page_soup(url, verify=False):
-    try:
-        logger.info("Fetching page: %s", url)
-        page = requests.get(url, verify=verify)
-        page.raise_for_status()
-        logger.info("Page fetched successfully")
-        return BeautifulSoup(page.content, "html.parser")
-    except requests.RequestException as e:
-        logger.error(f"Failed to fetch page: {e}")
-        raise
-
-
-def _download_pdf(soup, url=None, name=None):
+def download_pdf(soup, url=None, name=None):
     try:
         logger.info("Extracting PDF link")
         pdf_file = None
@@ -60,6 +49,33 @@ def _download_pdf(soup, url=None, name=None):
         raise
 
 
+def get_table(
+    url,
+    page_num=None,
+    search_term=None,
+    return_all=False,
+    pdf_name=None,
+):
+    """Fetch a page, download its PDF, and extract table(s).
+    """
+    logger.info("Fetching statistics page from %s", url)
+    soup = fetch_soup(url, verify=False)
+
+    logger.info("Downloading PDF" + (f" ({pdf_name})" if pdf_name else ""))
+    pdf_bytes, downloaded_name = download_pdf(soup, url=url, name=pdf_name)
+    logger.info("Downloaded PDF: %s", downloaded_name)
+
+    logger.info("Extracting table from PDF")
+    raw_df = extract_pdf_table(
+        pdf_bytes,
+        page_num=page_num,
+        pick_table_with=search_term,
+        return_all=return_all,
+    )
+
+    return raw_df
+
+
 def _trim_continuation_rows(rows):
     """Skip leading empty rows, keep table rows, stop at prose markers."""
     trimmed = []
@@ -71,20 +87,18 @@ def _trim_continuation_rows(rows):
                 trimmed.append(row)
             continue
         started = True
-        # Stop at obvious non-table prose
         first = non_empty[0].lower()
         if first.startswith("source:"):
             break
         if "page" in first and any(ch.isdigit() for ch in first):
             break
         trimmed.append(row)
-    # Strip trailing empty rows
     while trimmed and not [c for c in trimmed[-1] if c and str(c).strip()]:
         trimmed.pop()
     return trimmed
 
 
-def _extract_pdf_table(
+def extract_pdf_table(
     pdf_bytes,
     page_num=None,
     explicit_vertical_lines=None,
@@ -195,12 +209,6 @@ def _extract_pdf_table(
             raise ValueError("No table found in PDF")
 
         ncols = len(header)
-
-        # Identify "real" column positions from the richest data row on the
-        # first page (most non-null values, excluding header-artifact rows
-        # that only contain merged-cell sub-headers like.
-        # Continuation pages may have fewer columns (no merged-cell artifacts);
-        # we spread their values across the correct header positions.
         real_indices = None
         best_row = None
         best_count = 0
@@ -309,7 +317,6 @@ def _extract_all_pdf_tables(
                         page_matches.append(tables[0])
                         match_indices.append(0)
 
-                # Handle orphan continuation rows that appear BEFORE the first keyword match
                 if (
                     last_match_header is not None
                     and all_dfs
@@ -372,9 +379,8 @@ def _extract_all_pdf_tables(
                         if table_data:
                             header = last_match_header
                             ncols = len(header)
-                            # On continuation pages every row is data; there is no
-                            # repeated header because borders (and often the header
-                            # row itself) are missing.
+
+                            
                             rows = table_data
                             normalized = [
                                 (row + [None] * (ncols - len(row)))[:ncols]

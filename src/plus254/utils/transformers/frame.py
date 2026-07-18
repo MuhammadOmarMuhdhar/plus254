@@ -2,7 +2,7 @@ import pandas as pd
 
 
 
-def _promote_header_row(df, header_row, data_start_row):
+def promote_header_row(df, header_row, data_start_row):
     """Promote a specific row to column names and slice data starting from another row."""
     df = df.copy()
     df.columns = df.iloc[header_row].reset_index(drop=True)
@@ -11,7 +11,7 @@ def _promote_header_row(df, header_row, data_start_row):
 
 
 
-def _clean_two_layer_header(df: pd.DataFrame, header_row: int = 0) -> pd.DataFrame:
+def clean_two_layer_header(df: pd.DataFrame, header_row: int = 0) -> pd.DataFrame:
     """Clean where actual headers are in value rows
     """
     df = df.copy()
@@ -19,7 +19,7 @@ def _clean_two_layer_header(df: pd.DataFrame, header_row: int = 0) -> pd.DataFra
     return df
 
 
-def _drop_header_artifact_rows(df: pd.DataFrame, n_cols: int = 3) -> pd.DataFrame:
+def drop_header_artifact_rows(df: pd.DataFrame, n_cols: int = 3) -> pd.DataFrame:
     """Remove leading rows where the first n columns are all empty/None."""
     while len(df) > 0:
         first_vals = [df.iloc[0, i] for i in range(min(n_cols, len(df.columns)))]
@@ -31,7 +31,7 @@ def _drop_header_artifact_rows(df: pd.DataFrame, n_cols: int = 3) -> pd.DataFram
     return df
 
 
-def _merge_shifted_columns(df, column_pairs=None, column_groups=None):
+def merge_shifted_columns(df, column_pairs=None, column_groups=None):
     """Merge columns where values are shifted across adjacent columns.
 
     Parameters

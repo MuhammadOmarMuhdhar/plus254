@@ -69,6 +69,31 @@ def parse_html_table(
     return df
 
 
+def get_table(
+    url: str,
+    table_id: Optional[str] = None,
+    table_class: Optional[str] = None,
+    table_index: int = 0,
+    header_row: int = 0,
+    strip: bool = True,
+    return_all: bool = False,
+    **kwargs,
+):
+    """Fetch a URL and extract one or all HTML tables as a DataFrame.
+    """
+    if return_all:
+        return tables_from_url(url, header_row=header_row, strip=strip, **kwargs)
+    return table_from_url(
+        url,
+        table_id=table_id,
+        table_class=table_class,
+        table_index=table_index,
+        header_row=header_row,
+        strip=strip,
+        **kwargs,
+    )
+
+
 def table_from_url(
     url: str,
     table_id: Optional[str] = None,

@@ -1,8 +1,23 @@
 from typing import Dict
 import numpy as np
 import pandas as pd
-from .text import _snake_case
+from .text import snake_case
+import calendar
+import pandas as pd
 
+def sort_by_date(df):
+    month_order = {m: i for i, m in enumerate(calendar.month_name[1:], start=1)}
+
+    priority = ["year", "quarter", "month"]
+    sort_cols = [c for c in priority if c in df.columns]
+
+    if not sort_cols:
+        return df
+
+    return df.sort_values(
+        by=sort_cols,
+        key=lambda s: s.map(month_order) if s.name == "month" else s
+    )
 
 def normalize_column_names(df: pd.DataFrame) -> pd.DataFrame:
     """Strip whitespace, lowercase, and collapse internal spaces in column names."""
@@ -13,7 +28,7 @@ def normalize_column_names(df: pd.DataFrame) -> pd.DataFrame:
 def _snake_case_column_names(df: pd.DataFrame) -> pd.DataFrame:
     """Convert all column names to snake_case."""
     df = df.copy()
-    df.columns = [_snake_case(c) for c in df.columns]
+    df.columns = [snake_case(c) for c in df.columns]
     return df
 
 def month_int_to_name(df: pd.DataFrame, month_col: str = "month") -> pd.DataFrame:
@@ -25,7 +40,7 @@ def month_int_to_name(df: pd.DataFrame, month_col: str = "month") -> pd.DataFram
     return df
 
 
-def extract_year_month(
+def _extract_year_month(
     df: pd.DataFrame, 
     date_col: str, 
     date_format: str = "%d-%m-%Y", 
@@ -41,7 +56,7 @@ def extract_year_month(
     return df
 
 
-def _normalise_nulls(df: pd.DataFrame) -> pd.DataFrame:
+def normalise_nulls(df: pd.DataFrame) -> pd.DataFrame:
     """Coerce empty strings and 'None' strings to actual None, drop all-null rows."""
     return (
         df.replace('None', None)
@@ -57,7 +72,7 @@ def _replace_by_position(col: str, pos_map: Dict[int, str]) -> pd.Series:
     return col
 
 
-def _forward_fill(df: pd.DataFrame, label_indices: list) -> pd.DataFrame:
+def forward_fill(df: pd.DataFrame, label_indices: list) -> pd.DataFrame:
     """Replace empty strings with None, then forward-fill label columns."""
     df = df.replace('', None)
     for col_idx in label_indices:
@@ -67,17 +82,88 @@ def _forward_fill(df: pd.DataFrame, label_indices: list) -> pd.DataFrame:
 
 
 def _filter_totals(df: pd.DataFrame) -> pd.DataFrame:
-    """Remove aggregated 'total' rows from metric and operator dimensions."""
-    return (
-        df[df['metric'] != 'total']
-          .pipe(lambda d: d[d['operator'] != 'total'])
-          .reset_index(drop=True)
-    )
+    """Remove rows where any cell contains 'total' (case-insensitive)."""
+    return df[~df.astype(str).apply(
+        lambda col: col.str.lower().str.strip().str.contains('total')
+    ).any(axis=1)]
 
-
-def _replace_words(
+def _build_date_columns(
     df: pd.DataFrame,
-    col: int, mapping: Dict[str, str], 
+    *,
+    start_col: int = 2,
+    month_header_row: int = 1,
+    year_col_start: int = 2,
+    separator: str = "-",
+    year_row: int | None = None,
+) -> list[str]:
+    """Build year-month column labels from the two-row header.
+
+    Parameters
+    ----------
+    df : pd.DataFrame
+        Source dataframe with a two-row header (years in column labels,
+        months in `month_header_row`).
+    start_col : int, default 2
+        Index of the first data column (columns before this are skipped,
+        e.g. ID/name columns).
+    month_header_row : int, default 1
+        Row index (via .iloc) containing the month labels.
+    year_col_start : int, default 2
+        Index into df.columns where year values begin. Usually matches
+        `start_col`, but kept separate in case the year header and data
+        columns are offset differently.
+    separator : str, default "-"
+        String used to join year and month, e.g. "2023-Jan".
+    year_row : int | None, default None
+        If years are stored in a row (like months) rather than in the
+        column labels, pass the row index here. If None, years are read
+        from df.columns as before.
+
+    Returns
+    -------
+    list[str]
+        Labels like "2023-Jan" for each data column.
+    """
+    years_raw = (
+        df.iloc[year_row, year_col_start:].values
+        if year_row is not None
+        else df.columns[year_col_start:].values
+    )
+    months_raw = df.iloc[month_header_row, start_col:].values
+
+    date_cols = []
+    current_year = None
+    for y, m in zip(years_raw, months_raw):
+        try:
+            current_year = int(float(y))
+        except (ValueError, TypeError):
+            pass
+        date_cols.append(f"{current_year}{separator}{m}")
+    return date_cols
+
+
+def _parse_month_name(
+    month: str,
+    *,
+    abbrev_fixes: dict[str, str] | None = None,
+    input_format: str = "%b",
+    output_format: str = "%B",
+) -> str:
+    """Normalize abbreviated month names to full names."""
+    if abbrev_fixes is None:
+        abbrev_fixes = {"Sept": "Sep"}
+
+    month = month.strip()
+    for wrong, right in abbrev_fixes.items():
+        month = month.replace(wrong, right)
+
+    return pd.to_datetime(month, format=input_format).strftime(output_format)
+
+
+def replace_words(
+    df: pd.DataFrame,
+    col: int, 
+    mapping: Dict[str, str], 
     case: bool = False, 
     default=None
 ) -> pd.DataFrame:
@@ -94,31 +180,29 @@ def _replace_words(
     return np.select(conditions, choices, default=fallback)
 
 
-def _order_month_categorical(df: pd.DataFrame, month_col: str = "month") -> pd.DataFrame:
-    """Convert month column to an ordered pandas Categorical (Jan-Dec)."""
-    df = df.copy()
-    month_order = pd.date_range("2000-01", periods=12, freq="MS").strftime("%B").tolist()
-    df[month_col] = pd.Categorical(df[month_col], categories=month_order, ordered=True)
-    return df
+# def _order_month_categorical(df: pd.DataFrame, month_col: str = "month") -> pd.DataFrame:
+#     """Convert month column to an ordered pandas Categorical (Jan-Dec)."""
+#     df = df.copy()
+#     month_order = pd.date_range("2000-01", periods=12, freq="MS").strftime("%B").tolist()
+#     df[month_col] = pd.Categorical(df[month_col], categories=month_order, ordered=True)
+#     return df
 
 
 def _coerce_numeric(df: pd.DataFrame, col: str = "value") -> pd.DataFrame:
     """Convert a column to numeric, stripping commas and dropping NaN rows."""
     df = df.copy()
-    df[col] = pd.to_numeric(df[col].astype(str).str.replace(",", "", regex=False), errors="coerce")
+    df[col] = pd.to_numeric(df[col].astype(str).str.replace(",", "", regex=False), errors="coerce").astype(float)
     df = df.dropna(subset=[col])
     return df
 
-
 def _lowercase_strings(df: pd.DataFrame) -> pd.DataFrame:
-    """Lowercase all string-type columns."""
+    """Lowercase all string-type columns, including ordered categoricals."""
     df = df.copy()
-    for col in df.select_dtypes(include="object").columns:
+    for col in df.select_dtypes(include=["object", "category"]).columns:
         df[col] = df[col].str.lower()
     return df
 
-
-def _tidy(
+def tidy(
     df: pd.DataFrame, 
     *, 
     value_col: str = "value",
@@ -134,10 +218,13 @@ def _tidy(
     month_col : str, optional
         Column name for month ordering (post-normalize, e.g. "month").
     """
-    if month_col:
-        df = _order_month_categorical(df, month_col=month_col)
-    df = normalize_column_names(df)
-    df = _coerce_numeric(df, col=value_col)
-    df = _lowercase_strings(df)
-    df = _snake_case_column_names(df)
-    return df
+    return (
+        df.copy()
+        .pipe(sort_by_date)
+        .pipe(normalize_column_names)
+        .pipe(_coerce_numeric, col=value_col)
+        .pipe(_lowercase_strings)
+        .pipe(_snake_case_column_names)
+        .pipe(_filter_totals)
+        .reset_index(drop=True)
+    )

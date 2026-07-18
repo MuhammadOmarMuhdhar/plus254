@@ -1,6 +1,6 @@
 import re
 
-def _snake_case(text: str) -> str:
+def snake_case(text: str) -> str:
     """Convert text to snake_case."""
     return re.sub(r"[^A-Za-z0-9]+", "_", str(text)).strip("_").lower()
 
