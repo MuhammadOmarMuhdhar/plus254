@@ -4,8 +4,8 @@ import pandas as pd
 def transform(df):
     df_cleaned = (
         df
-        .pipe(tidy._normalise_nulls)
-        .pipe(frame._promote_header_row, 0, 1)
+        .pipe(tidy.normalise_nulls)
+        .pipe(frame.promote_header_row, 0, 1)
         .dropna(how="any")
         .pipe(lambda d: d.assign(
             **{"Sale week": d["Sale week"].str.replace(r"WEEK ", "", regex=True)}
@@ -18,8 +18,8 @@ def transform(df):
         ))
         .melt(id_vars=["date"], value_vars=["price", "sold", "offered"],
               var_name="metric", value_name="value")
-        .pipe(tidy._sort_by_date)
-        .pipe(tidy._tidy)
+        .pipe(tidy.sort_by_date)
+        .pipe(tidy.tidy)
         .reset_index(drop=True)
     )
 

@@ -7,18 +7,18 @@ def transform(df):
     return (
         df.copy()
         .pipe(
-            frame._promote_header_row, 1, 2
+            frame.promote_header_row, 1, 2
             )
-        .pipe(tidy._normalize_column_names)
+        .pipe(tidy.normalize_column_names)
         .dropna()
         .assign(year=lambda d: d["year"].astype(int), month=lambda d: d["month"].astype(int))
-        .pipe(tidy._month_int_to_name, month_col="month")
+        .pipe(tidy.month_int_to_name, month_col="month")
         .pipe(lambda d: d.melt(
             id_vars=id_vars,
             value_vars=[c for c in d.columns if c not in id_vars + ['total']],
             var_name="item",
             value_name="value"
         ))
-        .pipe(tidy._tidy)
+        .pipe(tidy.tidy)
         .reset_index(drop=True)
     )

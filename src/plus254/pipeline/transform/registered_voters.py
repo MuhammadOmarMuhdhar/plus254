@@ -15,7 +15,7 @@ def transform(df):
             axis=1,
         )
         .query("county != 'Total' and constituency != 'Total'")
-        .pipe(tidy._tidy)
+        .pipe(tidy.tidy)
         .dropna()
         .reset_index(drop=True)
     )

@@ -11,9 +11,9 @@ def transform(records):
 
         transformed = (
                 raw_df
-                .pipe(tidy._normalise_nulls)
-                .pipe(frame._drop_header_artifact_rows)
-                .pipe(frame._clean_two_layer_header)
+                .pipe(tidy.normalise_nulls)
+                .pipe(frame.drop_header_artifact_rows)
+                .pipe(frame.clean_two_layer_header)
                 .iloc[1:]                          
                 .reset_index(drop=True)
                 .dropna(axis=1, how='all')
@@ -21,8 +21,8 @@ def transform(records):
                 .pipe(lambda d: d.set_axis(['entity', 'on-net', 'off-net'], axis=1))
                 .melt(id_vars=['entity'], var_name='item', value_name='value')
                 .assign(year=year, quarter=quarter)
-                .pipe(tidy._tidy)
-                .assign(entity=lambda d: tidy._replace_words(d, 0, {
+                .pipe(tidy.tidy)
+                .assign(entity=lambda d: tidy.replace_words(d, 0, {
                     'safaricom': 'safaricom plc',
                     'airtel': 'airtel ltd',
                     'telkom': 'telkom ltd', 
@@ -35,5 +35,5 @@ def transform(records):
         dfs.append(transformed)
 
     df_combined = pd.concat(dfs, ignore_index=True)
-    df_combined  = tidy._sort_by_date(df_combined)
+    df_combined  = tidy.sort_by_date(df_combined)
     return df_combined.reset_index(drop=True)

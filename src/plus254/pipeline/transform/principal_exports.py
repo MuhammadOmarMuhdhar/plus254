@@ -17,7 +17,7 @@ def transform(df):
                                 pd.MultiIndex.from_arrays([d.columns, d.iloc[3]]),
                                 axis=1
                             ))
-        .pipe(tidy._normalise_nulls)
+        .pipe(tidy.normalise_nulls)
         .pipe(lambda d: d.drop(index=1))
         .pipe(lambda d: d.drop(index=4))
         .pipe(lambda d: d.drop(index=5))
@@ -28,9 +28,9 @@ def transform(df):
         .stack(level='item', future_stack=True)
         .melt(id_vars=['year', 'month', 'item'], var_name='measure', value_name='value')
         .assign(value=lambda d: d['value'].astype(str).str.replace(',', '', regex=False).astype(float))
-        .pipe(tidy._month_int_to_name)
+        .pipe(tidy.month_int_to_name)
         .assign(year=lambda d: d["year"].astype(int))
-        .pipe(tidy._tidy)
+        .pipe(tidy.tidy)
         .reset_index(drop=True)
 
     )

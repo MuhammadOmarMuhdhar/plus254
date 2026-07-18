@@ -9,16 +9,16 @@ def transform(records):
         quarter = record["quarter"]
         raw_df = record["raw_df"]
 
-        label_indices, _, cleaned = prune._prune(raw_df)
+        label_indices, _, cleaned = prune.prune_columns(raw_df)
         transformed = (
                 cleaned
-                .pipe(tidy._normalise_nulls)
-                .pipe(frame._drop_header_artifact_rows)
-                .pipe(frame._merge_shifted_columns)
+                .pipe(tidy.normalise_nulls)
+                .pipe(frame.drop_header_artifact_rows)
+                .pipe(frame.merge_shifted_columns)
                 .pipe(
                         lambda df: df.drop(df.columns[2], axis=1) if df.shape[1] > 5 else df
                 )
-                .pipe(tidy._forward_fill, [0])
+                .pipe(tidy.forward_fill, [0])
                 .iloc[:, 0:3]
                 .pipe(lambda d: d.assign(**{d.columns[1]: ['Domestic',
                                                             'International Outgoing',
@@ -33,12 +33,12 @@ def transform(records):
                             "value"
                         ], axis=1)
                 .assign(year=year,quarter=quarter)
-                .pipe(tidy._tidy)
+                .pipe(tidy.tidy)
                 [["year", "quarter", "metric", "item", "value"]]
                 .reset_index(drop=True)
             )
         dfs.append(transformed)
 
     df_combined = pd.concat(dfs, ignore_index=True)
-    df_combined  = tidy._sort_by_date(df_combined)
+    df_combined  = tidy.sort_by_date(df_combined)
     return df_combined.reset_index(drop=True)

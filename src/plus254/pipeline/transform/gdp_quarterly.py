@@ -11,7 +11,7 @@ def transform(df: pd.DataFrame) -> pd.DataFrame:
         df.copy()
         .set_axis(["0", "activity"] + date_cols, axis=1)
         .iloc[3:]
-        .pipe(tidy._normalise_nulls)
+        .pipe(tidy.normalise_nulls)
         .dropna(subset=["activity"], how="all")
         .melt(id_vars=["activity"], var_name="period", value_name="value")
         .assign(
@@ -20,7 +20,7 @@ def transform(df: pd.DataFrame) -> pd.DataFrame:
         )
         .drop(columns=["period"])
         .rename(columns={"activity": "item"})
-        .pipe(tidy._tidy, value_col="value")
+        .pipe(tidy.tidy, value_col="value")
         .assign(
             year=lambda d: d["year"].astype(int),
             quarter=lambda d: d["quarter"].astype(int)

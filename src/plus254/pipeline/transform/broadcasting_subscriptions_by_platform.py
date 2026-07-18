@@ -11,9 +11,9 @@ def transform(records):
 
         transformed = (
             raw_df
-            .pipe(tidy._normalise_nulls)
-            .pipe(tidy._forward_fill, [0])
-            .pipe(frame._merge_shifted_columns, column_groups=[(2,3,4)])
+            .pipe(tidy.normalise_nulls)
+            .pipe(tidy.forward_fill, [0])
+            .pipe(frame.merge_shifted_columns, column_groups=[(2,3,4)])
             .iloc[:, 0:3]
             .pipe(
                 lambda d: d.replace({
@@ -27,9 +27,9 @@ def transform(records):
                         "value"
                     ], axis=1)
             .assign(year=year,quarter=quarter)
-            .pipe(tidy._tidy)
+            .pipe(tidy.tidy)
             [["year", "quarter", "operator", "item", "value"]]
-            .assign(operator=lambda d: tidy._replace_words(d, 2, {
+            .assign(operator=lambda d: tidy.replace_words(d, 2, {
                         'wananchi': 'wananchi (zuku)',
                         'wadani': 'wadani cable',
                         'star': 'star times',
@@ -44,5 +44,5 @@ def transform(records):
         dfs.append(transformed)
 
     df_combined = pd.concat(dfs, ignore_index=True)
-    df_combined  = tidy._sort_by_date(df_combined)
+    df_combined  = tidy.sort_by_date(df_combined)
     return df_combined.reset_index(drop=True)

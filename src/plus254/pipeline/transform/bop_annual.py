@@ -5,7 +5,7 @@ def process(df: pd.DataFrame) -> pd.DataFrame:
     return (
         df.copy()
         .pipe(lambda d: d.set_axis(d.iloc[1].tolist(), axis=1))
-        .pipe(tidy._normalize_column_names)
+        .pipe(tidy.normalize_column_names)
         .iloc[2:]
         .assign(**{
             "bpm6 concept": lambda d: (
@@ -24,7 +24,7 @@ def process(df: pd.DataFrame) -> pd.DataFrame:
         .melt(id_vars=["bpm6 concept"], var_name="year", value_name="value")
         .assign(year=lambda d: d["year"].astype(int))
         .rename(columns={"bpm6_concept": "item"})
-        .pipe(tidy._tidy, value_col="value")
+        .pipe(tidy.tidy, value_col="value")
         .pipe(lambda d: d.rename(columns={"bpm6_concept": "item"}))
         .drop_duplicates(keep="last")
         .reset_index(drop=True)

@@ -25,21 +25,21 @@ def transform(records):
         quarter = record["quarter"]
         raw_df = record["raw_df"]
 
-        _, _, cleaned = prune._prune(raw_df)
+        _, _, cleaned = prune.prune_columns(raw_df)
 
         transformed = (
             cleaned
-            .pipe(tidy._normalise_nulls)
+            .pipe(tidy.normalise_nulls)
             .iloc[:, 0:2]
             .set_axis(["entity", "value"], axis=1)
             .assign(year=year, quarter=quarter)
-            .pipe(tidy._tidy)
-            .assign(entity=lambda d: tidy._replace_words(d, 0, isp_lablels))
+            .pipe(tidy.tidy)
+            .assign(entity=lambda d: tidy.replace_words(d, 0, isp_lablels))
             [["year", "quarter", "entity", "value"]]
             .reset_index(drop=True)
         )
         dfs.append(transformed)
 
     df_combined = pd.concat(dfs, ignore_index=True)
-    df_combined  = tidy._sort_by_date(df_combined)
+    df_combined  = tidy.sort_by_date(df_combined)
     return df_combined.reset_index(drop=True)

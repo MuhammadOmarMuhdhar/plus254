@@ -45,9 +45,9 @@ def transform(records):
 
         transformed = (
             df_working
-            .pipe(tidy._normalise_nulls)
-            .pipe(frame._drop_header_artifact_rows)
-            .pipe(frame._merge_shifted_columns)
+            .pipe(tidy.normalise_nulls)
+            .pipe(frame.drop_header_artifact_rows)
+            .pipe(frame.merge_shifted_columns)
             .pipe(lambda d: (
                 d.assign(**{d.columns[0]: d.iloc[:, 0].fillna(d.iloc[:, 1])})
                 .iloc[:, [i for i in range(d.shape[1]) if i != 1]]
@@ -56,13 +56,13 @@ def transform(records):
                 and d.iloc[:, 1].isna().mean() > 0.5
                 else d
             ))
-            .pipe(tidy._forward_fill, [0])
+            .pipe(tidy.forward_fill, [0])
             .pipe(lambda d: d.dropna(how="all", axis=1))
             .iloc[:, 0:3]
             .set_axis(["metric", "item", "value"], axis=1)
             .assign(year=year, quarter=quarter)
-            .pipe(tidy._tidy)
-            .assign(item=lambda d: tidy._replace_words(d, 1, {
+            .pipe(tidy.tidy)
+            .assign(item=lambda d: tidy.replace_words(d, 1, {
                 "malware": "malware",
                 "brute": "brute force attacks",
                 "web": "web application attacks",
@@ -78,5 +78,5 @@ def transform(records):
         dfs.append(transformed)
 
     df_combined = pd.concat(dfs, ignore_index=True)
-    df_combined = tidy._sort_by_date(df_combined)
+    df_combined = tidy.sort_by_date(df_combined)
     return df_combined.reset_index(drop=True)

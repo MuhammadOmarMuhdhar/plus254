@@ -9,14 +9,14 @@ def transform(records):
         quarter = record["quarter"]
         raw_df = record["raw_df"]
 
-        label_indices, _, cleaned = prune._prune(raw_df)
+        label_indices, _, cleaned = prune.prune_columns(raw_df)
         transformed = (
             cleaned
-            .pipe(tidy._normalise_nulls)
-            .pipe(frame._drop_header_artifact_rows)
-            .pipe(frame._merge_shifted_columns, column_pairs=[(7,8),(9,10)])
+            .pipe(tidy.normalise_nulls)
+            .pipe(frame.drop_header_artifact_rows)
+            .pipe(frame.merge_shifted_columns, column_pairs=[(7,8),(9,10)])
             .pipe(lambda d: d.loc[:, d.isna().mean() < 0.5]) 
-            .pipe(frame._drop_header_artifact_rows)
+            .pipe(frame.drop_header_artifact_rows)
             .pipe(
                 lambda d: d.iloc[0:8] if len(d.columns) == 8 else d.iloc[0:8, 0:8])
             .pipe(lambda d: d.replace("-", 0))
@@ -32,8 +32,8 @@ def transform(records):
                     ], axis=1)
             .melt(id_vars="item", var_name="metric", value_name="value")
             .assign(year=year,quarter=quarter)
-            .pipe(tidy._tidy)
-            .assign(item=lambda d: tidy._replace_words(d, 0, {
+            .pipe(tidy.tidy)
+            .assign(item=lambda d: tidy.replace_words(d, 0, {
                     'cable': 'cable',
                     'dsl': 'dsl (copper)',
                     'ftth': 'ftth',
@@ -50,5 +50,5 @@ def transform(records):
         dfs.append(transformed)
 
     df_combined = pd.concat(dfs, ignore_index=True)
-    df_combined  = tidy._sort_by_date(df_combined)
+    df_combined  = tidy.sort_by_date(df_combined)
     return df_combined.reset_index(drop=True)

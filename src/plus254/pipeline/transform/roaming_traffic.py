@@ -5,7 +5,7 @@ def transform(records):
     def process(df, year, quarter):
         return (
             df
-            .pipe(tidy._normalise_nulls)
+            .pipe(tidy.normalise_nulls)
             .pipe(lambda d: d.loc[:, d.isna().mean() < 0.5])
             .replace('-', 0)
             .set_axis(
@@ -15,7 +15,7 @@ def transform(records):
             )
             .melt(id_vars=['country'], var_name='item', value_name='value')
             .assign(year=year, quarter=quarter)
-            .pipe(tidy._tidy, value_col='value')
+            .pipe(tidy.tidy, value_col='value')
             .assign(metric=lambda d: [item[1] for item in d['item'].str.split()], 
                     item=lambda d: [item[0] for item in d['item'].str.split()]
                     )
@@ -40,11 +40,11 @@ def transform(records):
         outbound_frames.append(process(tables[0], year, quarter))
         inbound_frames.append(process(tables[1], year, quarter))
 
-    outbound_combined = tidy._sort_by_date(
+    outbound_combined = tidy.sort_by_date(
         pd.concat(outbound_frames, ignore_index=True)
     ).reset_index(drop=True)
 
-    inbound_combined = tidy._sort_by_date(
+    inbound_combined = tidy.sort_by_date(
         pd.concat(inbound_frames, ignore_index=True)
     ).reset_index(drop=True)
 

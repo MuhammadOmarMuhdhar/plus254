@@ -9,18 +9,18 @@ def transform(records):
         quarter = record["quarter"]
         raw_df = record["raw_df"]
 
-        label_indices, _, cleaned = prune._prune(raw_df)
+        label_indices, _, cleaned = prune.prune_columns(raw_df)
         transformed = (
                 cleaned
-                .pipe(tidy._normalise_nulls)
+                .pipe(tidy.normalise_nulls)
                 .pipe(lambda d: d.loc[:, d.isna().mean() < 0.5])
-                .pipe(frame._drop_header_artifact_rows)
+                .pipe(frame.drop_header_artifact_rows)
                 .iloc[:, 0:2]
                 .set_axis(["item", "value"], axis=1)
-                .pipe(tidy._tidy)
+                .pipe(tidy.tidy)
                 .assign(year=year, quarter=quarter)
                 [["year", "quarter", "item", "value"]]
-                .assign(item=lambda d: tidy._replace_words(d, 2, {
+                .assign(item=lambda d: tidy.replace_words(d, 2, {
                     "terrestrial": "terrestrial wireless",
                     "satellite": "satellite",
                     "dsl": "dsl (copper)",
@@ -34,5 +34,5 @@ def transform(records):
         dfs.append(transformed)
 
     df_combined = pd.concat(dfs, ignore_index=True)
-    df_combined  = tidy._sort_by_date(df_combined)
+    df_combined  = tidy.sort_by_date(df_combined)
     return df_combined.reset_index(drop=True)
