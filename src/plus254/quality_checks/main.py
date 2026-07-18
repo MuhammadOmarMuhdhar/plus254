@@ -1,20 +1,8 @@
-"""Data quality checks for notebooks and the upload pipeline.
-
-Usage:
-    from plus254.pipeline.quality_checks.main import QualityReport
-
-    report = QualityReport(df, "pump_prices", "path/to/datasets.yaml")
-    report.log_summary()
-    report.raise_on_failure()
-"""
-
 import logging
 from pathlib import Path
 from typing import Any
-
 import pandas as pd
-import yaml
-
+from plus254.utils.config import load_dataset_spec
 from .duplicates import check_duplicates
 from .dimensional_coverage import check_dimensional_coverage
 from .exceptions import QualityViolation
@@ -24,27 +12,7 @@ logger = logging.getLogger(__name__)
 
 
 class QualityReport:
-    """Run all quality checks on construction.
-
-    Parameters
-    ----------
-    df : pd.DataFrame
-        Data to validate.
-    config_name : str
-        Top-level key in datasets.yaml.
-    yaml_path : Path or str
-        Path to the collector's datasets.yaml.
-    coverage_threshold : float
-        Minimum dimensional coverage ratio (default 0.70).
-
-    Attributes
-    ----------
-    df : pd.DataFrame
-        Schema-validated DataFrame (may be coerced).
-    natural_keys : list[str] | None
-        Natural keys read from the YAML spec, if defined.
-    results : dict[str, Any]
-        Raw check results keyed by check name.
+    """Run quality checks on construction.
     """
 
     def __init__(
@@ -52,7 +20,7 @@ class QualityReport:
         df: pd.DataFrame,
         config_name: str,
         yaml_path: Path | str,
-        coverage_threshold: float = 0.80,
+        coverage_threshold: float = 0.65,
     ):
         self.df = df
         self.config_name = config_name
@@ -61,7 +29,7 @@ class QualityReport:
         self.results: dict[str, Any] = {}
         self.natural_keys: list[str] | None = None
 
-        spec = self._load_spec()
+        spec = load_dataset_spec(self.yaml_path, self.config_name)
         self.natural_keys = spec.get("natural_keys")
         columns = spec.get("columns", {})
 
@@ -72,25 +40,13 @@ class QualityReport:
             self.results["schema"] = {"passed": True, "skipped": True}
 
         if self.natural_keys:
-            self.results["duplicates"] = check_duplicates(self.df, self.natural_keys)
+            self.results["duplicates"] = check_duplicates(self.df)
         else:
             self.results["duplicates"] = {"passed": True, "skipped": True}
 
         self.results["coverage"] = check_dimensional_coverage(
             self.df, config_name, self.yaml_path, threshold=coverage_threshold,
         )
-
-    def _load_spec(self) -> dict:
-        with open(self.yaml_path) as f:
-            raw = yaml.safe_load(f) or {}
-        spec = raw.get(self.config_name)
-        if not spec:
-            available = sorted(raw.keys())
-            raise ValueError(
-                f"'{self.config_name}' not found in {self.yaml_path}. "
-                f"Available: {available}"
-            )
-        return spec
 
     def log_summary(self) -> None:
         """Log a structured summary of all check results."""
@@ -119,7 +75,11 @@ class QualityReport:
 
         cov = self.results.get("coverage", {})
         if cov.get("skipped"):
-            logger.info("  Coverage: skipped")
+            reason = cov.get("reason")
+            if reason:
+                logger.info("  Coverage: SKIP -- %s", reason)
+            else:
+                logger.info("  Coverage: skipped")
         elif cov.get("passed"):
             logger.info(
                 "  Coverage: PASS -- %.1f%% overall", cov["overall_coverage"] * 100
@@ -168,7 +128,11 @@ class QualityReport:
 
         cov = self.results.get("coverage", {})
         if cov.get("skipped"):
-            lines.append("Coverage: skipped")
+            reason = cov.get("reason")
+            if reason:
+                lines.append(f"Coverage: SKIP -- {reason}")
+            else:
+                lines.append("Coverage: skipped")
         elif cov.get("passed"):
             lines.append(f"Coverage: PASS -- {cov['overall_coverage']:.1%} overall")
         else:

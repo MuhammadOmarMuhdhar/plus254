@@ -3,6 +3,7 @@ import logging
 from pathlib import Path
 from typing import List
 from plus254.quality_checks.exceptions import ContractViolation
+from plus254.utils.config import load_dataset_spec
 import pandas as pd
 import pandera.pandas as pa
 import yaml
@@ -19,7 +20,6 @@ _TYPE_MAP = {
 
 @lru_cache(maxsize=1)
 def _load_standards() -> dict[str, str]:
-    """Load the global column-type standards once."""
     standards_path = Path(__file__).resolve().parent / "standards.yaml"
     if not standards_path.exists():
         logger.warning("standards.yaml not found - falling back to dataset-level types")
@@ -66,46 +66,8 @@ def _build_schema(
 
 
 def check_schema(df: pd.DataFrame, config_name: str, yaml_path: Path | str) -> pd.DataFrame:
-    """
-    Validate df against its column-type contract.
-
-    Global standards in standards/*  take precedence over per-dataset types
-    in datasets.yaml. Natural-key columns are enforced as non-nullable.
-    
-    Parameters
-    ----------
-    df : pd.DataFrame
-    config_name : str
-        Top-level key in the YAML file.
-    yaml_path : Path or str
-        Path to the collector's datasets.yaml.
-
-    Returns
-    -------
-    pd.DataFrame
-        The validated DataFrame (types may be coerced).
-
-    Raises
-    ------
-    ContractViolation
-        If schema constraints fail.
-    ValueError
-        If config or natural_keys are missing.
-    """
-    yaml_path = Path(yaml_path)
-    if not yaml_path.exists():
-        raise ValueError(f"datasets.yaml not found: {yaml_path}")
-
-    with open(yaml_path) as f:
-        raw = yaml.safe_load(f) or {}
-
-    spec = raw.get(config_name)
-    if not spec:
-        available = sorted(raw.keys())
-        raise ValueError(
-            f"'{config_name}' not found in {yaml_path}. Available: {available}"
-        )
-
+    """Validate df against its column-type contract."""
+    spec = load_dataset_spec(yaml_path, config_name)
     columns = spec.get("columns", {})
     natural_keys = spec.get("natural_keys", [])
     if not natural_keys:

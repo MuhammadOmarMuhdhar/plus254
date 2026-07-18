@@ -14,9 +14,14 @@ standards:
   metric: string
   operator: string
   location: string
+  country: string
+  region: string
+  constituency: string
+  ward: string
   county: string
   area_level: string
   section: string
+  entity: string
 
   # Geographic / IEBC columns
   polling_station_code: string
