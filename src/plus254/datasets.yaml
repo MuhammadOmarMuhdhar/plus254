@@ -33,7 +33,7 @@ mombasa_tea_auction_prices:
   last_updated: '2026-06-19T12:00:00'
   update_frequency: weekly
 
-voters_per_polling_station:
+registered_voters:
   name: Registered Voters per Polling Station
   category: governance
   source: Independent Electoral and Boundaries Commission (IEBC) Kenya

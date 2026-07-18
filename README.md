@@ -6,7 +6,7 @@ Data about Kenya is buried in PDFs, messy Excel files, poorly documented, and ha
 
 ## Quick start
 
-All endpoints are open and require no authentication. Make your first call in seconds — a GET request to any endpoint returns JSON.
+All endpoints are open and require no authentication.
 
 ```bash
 curl "https://api.plus254.co.ke/v1/datasets"

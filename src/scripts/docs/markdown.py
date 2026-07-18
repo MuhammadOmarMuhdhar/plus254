@@ -113,11 +113,43 @@ def _render_sample_data(df):
     return lines
 
 
-def generate_markdown(config_name, df, info, columns_info):
+def _render_coverage(config_name, df, yaml_path):
+    from plus254.pipeline2.quality_checks.dimensional_coverage import check_dimensional_coverage
+
+    result = check_dimensional_coverage(
+        df, config_name, yaml_path, threshold=0.0
+    )
+
+    lines = []
+    lines.append("## Dimensional Coverage")
+    lines.append("")
+
+    if result.get("skipped"):
+        lines.append("_Coverage analysis not applicable for this dataset._")
+        lines.append("")
+        return lines
+
+    lines.append(f"Overall coverage: **{result['overall_coverage']:.1%}**")
+    lines.append("")
+    lines.append("| Period | Expected | Actual | Coverage |")
+    lines.append("|--------|----------|--------|----------|")
+    for g in result["groups"]:
+        period = ", ".join(f"{k}={v}" for k, v in g["group"].items())
+        flag = "!" if g["coverage"] < 0.80 else "OK"
+        lines.append(
+            f"| {period} | {g['expected']} | {g['actual']} | {flag} {g['coverage']:.1%} |"
+        )
+    lines.append("")
+    return lines
+
+
+def generate_markdown(config_name, df, info, columns_info, yaml_path=None):
     lines = []
     lines.extend(_render_header(config_name, df, info))
     lines.extend(_render_column_table(columns_info, df))
     lines.extend(_render_stats_table(columns_info))
+    if yaml_path:
+        lines.extend(_render_coverage(config_name, df, yaml_path))
     lines.extend(_render_sample_data(df))
     return "\n".join(lines)
 

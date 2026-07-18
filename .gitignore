@@ -211,6 +211,7 @@ data/
 .impeccable.md 
 workspace.ipynb
 src/scripts/migrations
+.csv
 
 # Generated docs
 .generated/

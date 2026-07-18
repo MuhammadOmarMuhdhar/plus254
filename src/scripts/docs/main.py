@@ -18,18 +18,21 @@ from scripts.docs.schema import build_schema
 
 def _load_scraper_yamls():
     schema_config = {}
+    yaml_paths = {}
     for yaml_path in sorted(SCRAPERS_DIR.glob("*/datasets.yaml")):
         with open(yaml_path) as f:
             raw = yaml.safe_load(f)
+        for key in raw:
+            yaml_paths[key] = str(yaml_path)
         schema_config.update(raw)
-    return schema_config
+    return schema_config, yaml_paths
 
 
 def run():
     ASTRO_DIR.mkdir(parents=True, exist_ok=True)
     SCHEMA_DIR.mkdir(parents=True, exist_ok=True)
 
-    schema_config = _load_scraper_yamls()
+    schema_config, yaml_paths = _load_scraper_yamls()
 
     datasets_info = {}
 
@@ -63,11 +66,12 @@ def run():
             json.dump(schema, f, indent=2, default=str)
         print(f"  Schema -> {schema_path}")
 
-        md = generate_markdown(config_name, df, info, columns_info)
+        yaml_path = yaml_paths.get(config_name)
+        md = generate_markdown(config_name, df, info, columns_info, yaml_path=yaml_path)
         astro_path = ASTRO_DIR / f"{config_name}.md"
         with open(astro_path, "w") as f:
             f.write(md)
-        print(f"  Markdown -> {astro_path}")
+        print(f"Markdown -> {astro_path}")
 
     print(f"\nDone. Generated {len(datasets_info)} dataset docs.")
 
