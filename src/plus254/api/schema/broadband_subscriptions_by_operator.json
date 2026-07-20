@@ -1,0 +1,102 @@
+{
+  "config": "broadband_subscriptions_by_operator",
+  "category": "network",
+  "name": "Fixed Data Subscriptions by Operator",
+  "source": "Communications Authority of Kenya",
+  "description": "Quarterly fixed (non-mobile) data subscriptions by operator",
+  "url": "https://ca.go.ke/statistics/",
+  "row_count": 108,
+  "columns": [
+    {
+      "name": "year",
+      "type": "int64",
+      "description": "Fiscal year (e.g., 1999 means FY 1999/2000)",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 108,
+      "sample_values": [
+        2023,
+        2023,
+        2023,
+        2023,
+        2023
+      ],
+      "stats": {
+        "count": 108,
+        "mean": 2024.0185185185185,
+        "std": 0.7731653772566627,
+        "min": 2023.0,
+        "25%": 2023.0,
+        "50%": 2024.0,
+        "75%": 2025.0,
+        "max": 2025.0
+      }
+    },
+    {
+      "name": "quarter",
+      "type": "int64",
+      "description": "Fiscal quarter",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 108,
+      "sample_values": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "stats": {
+        "count": 108,
+        "mean": 2.5,
+        "std": 1.036709387986907,
+        "min": 1.0,
+        "25%": 2.0,
+        "50%": 2.5,
+        "75%": 3.0,
+        "max": 4.0
+      }
+    },
+    {
+      "name": "entity",
+      "type": "object",
+      "description": "Fixed data service provider (operator)",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 108,
+      "sample_values": [
+        "safaricom",
+        "jamii telecommunications",
+        "wananchi group",
+        "poa internet",
+        "mawingu networks"
+      ],
+      "stats": null
+    },
+    {
+      "name": "value",
+      "type": "float64",
+      "description": "Number of fixed data subscriptions",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 108,
+      "sample_values": [
+        487924.0,
+        315819.0,
+        261723.0,
+        169738.0,
+        26907.0
+      ],
+      "stats": {
+        "count": 108,
+        "mean": 175343.39814814815,
+        "std": 212018.8573291484,
+        "min": 5131.0,
+        "25%": 18775.25,
+        "50%": 67806.5,
+        "75%": 265327.75,
+        "max": 941501.0
+      }
+    }
+  ]
+}

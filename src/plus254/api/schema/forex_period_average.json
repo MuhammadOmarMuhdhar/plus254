@@ -1,7 +1,7 @@
 {
   "config": "forex_period_average",
   "category": "economy",
-  "name": "Monthly Exchange Rates (Period Average)",
+  "name": "Monthly Foreign Exchange Rates (Period Average)",
   "source": "Central Bank of Kenya",
   "description": "Monthly exchange rates of major currencies against KES (period average)",
   "url": "https://www.centralbank.go.ke/uploads/exchange_rates/2034093818_Monthly%20Exchange%20rate%20(period%20average).csv",
@@ -40,16 +40,16 @@
       "null_count": 0,
       "non_null_count": 7980,
       "sample_values": [
-        "january",
-        "january",
-        "january",
-        "january",
-        "january"
+        "april",
+        "april",
+        "april",
+        "april",
+        "april"
       ],
       "stats": null
     },
     {
-      "name": "metric",
+      "name": "item",
       "type": "object",
       "description": "Foreign currency name (e.g., united states dollar, sterling pound)",
       "nullable": false,
@@ -67,16 +67,16 @@
     {
       "name": "value",
       "type": "float64",
-      "description": "Period-average exchange rate in KES per unit of foreign currency (comma-formatted number)",
+      "description": "Period-average exchange rate in KES per unit of foreign currency",
       "nullable": false,
       "null_count": 0,
       "non_null_count": 7980,
       "sample_values": [
-        36.23,
-        55.62,
-        22.44,
-        28.36,
-        6.62
+        51.88,
+        80.34,
+        32.57,
+        41.12,
+        9.63
       ],
       "stats": {
         "count": 7980,

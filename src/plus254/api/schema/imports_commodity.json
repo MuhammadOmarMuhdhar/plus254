@@ -5,7 +5,7 @@
   "source": "Central Bank of Kenya",
   "description": "Monthly value of direct imports classified by SITC sections",
   "url": "https://www.centralbank.go.ke/uploads/balance_of_payment_statistics/1126743207_Value%20of%20Direct%20Imports%20by%20Commodities.csv",
-  "row_count": 3320,
+  "row_count": 2988,
   "columns": [
     {
       "name": "year",
@@ -13,7 +13,7 @@
       "description": "Calendar year",
       "nullable": false,
       "null_count": 0,
-      "non_null_count": 3320,
+      "non_null_count": 2988,
       "sample_values": [
         1998,
         1998,
@@ -22,9 +22,9 @@
         1998
       ],
       "stats": {
-        "count": 3320,
+        "count": 2988,
         "mean": 2011.9156626506024,
-        "std": 7.9962401819828335,
+        "std": 7.996374031551948,
         "min": 1998.0,
         "25%": 2005.0,
         "50%": 2012.0,
@@ -38,55 +38,55 @@
       "description": "Calendar month name",
       "nullable": false,
       "null_count": 0,
-      "non_null_count": 3320,
+      "non_null_count": 2988,
       "sample_values": [
         "august",
-        "september",
-        "october",
-        "november",
-        "december"
+        "august",
+        "august",
+        "august",
+        "august"
       ],
       "stats": null
     },
     {
-      "name": "metric",
+      "name": "item",
       "type": "object",
       "description": "SITC commodity section (e.g., food and live animals, chemicals, machinery and transport equipment, total)",
       "nullable": false,
       "null_count": 0,
-      "non_null_count": 3320,
+      "non_null_count": 2988,
       "sample_values": [
         "food and live animals",
-        "food and live animals",
-        "food and live animals",
-        "food and live animals",
-        "food and live animals"
+        "beverages and tobacco",
+        "crude materials inedible except fuels",
+        "mineral fuels lubricants and related materials",
+        "animals and vegetable oils and fats"
       ],
       "stats": null
     },
     {
       "name": "value",
       "type": "float64",
-      "description": "Import value in KES millions (comma-formatted number)",
+      "description": "Import value in KES millions",
       "nullable": false,
       "null_count": 0,
-      "non_null_count": 3320,
+      "non_null_count": 2988,
       "sample_values": [
         1413.87,
-        533.13,
-        586.56,
-        522.81,
-        717.97
+        52.95,
+        569.55,
+        1927.76,
+        688.28
       ],
       "stats": {
-        "count": 3320,
-        "mean": 22462.592593373494,
-        "std": 42207.77544697834,
+        "count": 2988,
+        "mean": 12479.218058902277,
+        "std": 15974.151334800621,
         "min": 36.09,
-        "25%": 2277.2175,
-        "50%": 7664.275,
-        "75%": 23063.785,
-        "max": 332367.64
+        "25%": 1981.4099999999999,
+        "50%": 6010.4400000000005,
+        "75%": 18032.9975,
+        "max": 125832.25
       }
     }
   ]

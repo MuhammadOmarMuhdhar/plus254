@@ -1,0 +1,102 @@
+{
+  "config": "internet_subscriptions_by_technology",
+  "category": "network",
+  "name": "Internet Subscriptions by Technology",
+  "source": "Communications Authority of Kenya",
+  "description": "Quarterly internet subscriptions by technology (fixed and mobile)",
+  "url": "https://ca.go.ke/statistics/",
+  "row_count": 48,
+  "columns": [
+    {
+      "name": "year",
+      "type": "int64",
+      "description": "Fiscal year (e.g., 1999 means FY 1999/2000)",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 48,
+      "sample_values": [
+        2023,
+        2023,
+        2023,
+        2023,
+        2023
+      ],
+      "stats": {
+        "count": 48,
+        "mean": 2024.25,
+        "std": 0.6684373647831918,
+        "min": 2023.0,
+        "25%": 2024.0,
+        "50%": 2024.0,
+        "75%": 2025.0,
+        "max": 2025.0
+      }
+    },
+    {
+      "name": "quarter",
+      "type": "int64",
+      "description": "Fiscal quarter",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 48,
+      "sample_values": [
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "stats": {
+        "count": 48,
+        "mean": 2.5,
+        "std": 1.129865365732064,
+        "min": 1.0,
+        "25%": 1.75,
+        "50%": 2.5,
+        "75%": 3.25,
+        "max": 4.0
+      }
+    },
+    {
+      "name": "item",
+      "type": "object",
+      "description": "Internet technology (cable, dsl etc)",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 48,
+      "sample_values": [
+        "terrestrial wireless",
+        "satellite",
+        "dsl (copper)",
+        "fibre",
+        "cable"
+      ],
+      "stats": null
+    },
+    {
+      "name": "value",
+      "type": "float64",
+      "description": "Number of internet subscriptions",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 48,
+      "sample_values": [
+        356721.0,
+        8324.0,
+        137.0,
+        939553.0,
+        195319.0
+      ],
+      "stats": {
+        "count": 48,
+        "mean": 337650.5416666667,
+        "std": 456190.5578724731,
+        "min": 31.0,
+        "25%": 2098.0,
+        "50%": 106814.5,
+        "75%": 558543.0,
+        "max": 1474201.0
+      }
+    }
+  ]
+}

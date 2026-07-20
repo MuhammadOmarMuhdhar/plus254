@@ -5,7 +5,7 @@
   "source": "Central Bank of Kenya",
   "description": "Monthly value of direct imports from selected countries outside Africa",
   "url": "https://www.centralbank.go.ke/uploads/balance_of_payment_statistics/1436491729_Value%20of%20Direct%20Imports%20from%20Selected%20Rest%20of%20the%20World%20Countries.csv",
-  "row_count": 4371,
+  "row_count": 3636,
   "columns": [
     {
       "name": "year",
@@ -13,21 +13,21 @@
       "description": "Calendar year",
       "nullable": false,
       "null_count": 0,
-      "non_null_count": 4371,
+      "non_null_count": 3636,
       "sample_values": [
-        1998,
-        1998,
-        1998,
-        1998,
-        1998
+        2001,
+        2001,
+        2001,
+        2001,
+        2001
       ],
       "stats": {
-        "count": 4371,
-        "mean": 2011.732326698696,
-        "std": 8.108627806577442,
-        "min": 1998.0,
-        "25%": 2005.0,
-        "50%": 2012.0,
+        "count": 3636,
+        "mean": 2013.1287128712872,
+        "std": 7.2908482585422325,
+        "min": 2001.0,
+        "25%": 2007.0,
+        "50%": 2013.0,
         "75%": 2019.0,
         "max": 2026.0
       }
@@ -38,55 +38,55 @@
       "description": "Calendar month name",
       "nullable": false,
       "null_count": 0,
-      "non_null_count": 4371,
+      "non_null_count": 3636,
       "sample_values": [
         "january",
-        "february",
-        "march",
-        "april",
-        "may"
+        "january",
+        "january",
+        "january",
+        "january"
       ],
       "stats": null
     },
     {
-      "name": "metric",
+      "name": "item",
       "type": "object",
       "description": "Origin country (e.g., u.k, u.s.a, china, india, total)",
       "nullable": false,
       "null_count": 0,
-      "non_null_count": 4371,
+      "non_null_count": 3636,
       "sample_values": [
         "u.k",
-        "u.k",
-        "u.k",
-        "u.k",
-        "u.k"
+        "u.s.a",
+        "germany",
+        "italy",
+        "u.a.e"
       ],
       "stats": null
     },
     {
       "name": "value",
       "type": "float64",
-      "description": "Import value in KES millions (comma-formatted number)",
+      "description": "Import value in KES millions",
       "nullable": false,
       "null_count": 0,
-      "non_null_count": 4371,
+      "non_null_count": 3636,
       "sample_values": [
-        1870.74,
-        1725.03,
-        1986.62,
-        1581.62,
-        1835.51
+        1868.15,
+        1001.11,
+        1252.24,
+        578.28,
+        2749.31
       ],
       "stats": {
-        "count": 4371,
-        "mean": 17128.709361702127,
-        "std": 38763.90042166063,
-        "min": 88.27,
-        "25%": 1739.975,
-        "50%": 3845.89,
-        "75%": 12251.810000000001,
-        "max": 332367.64
+        "count": 3636,
+        "mean": 10119.494438943895,
+        "std": 17430.924024123044,
+        "min": 168.38,
+        "25%": 1914.2125,
+        "50%": 3810.605,
+        "75%": 9643.0175,
+        "max": 166947.1
       }
     }
   ]

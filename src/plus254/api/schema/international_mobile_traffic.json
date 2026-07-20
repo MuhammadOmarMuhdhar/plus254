@@ -1,0 +1,118 @@
+{
+  "config": "international_mobile_traffic",
+  "category": "network",
+  "name": "International Mobile Traffic",
+  "source": "Communications Authority of Kenya",
+  "description": "Incoming and outgoing International mobile voice minutes",
+  "url": "https://ca.go.ke/statistics/",
+  "row_count": 40,
+  "columns": [
+    {
+      "name": "year",
+      "type": "int64",
+      "description": "Fiscal year (e.g., 1999 means FY 1999/2000)",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 40,
+      "sample_values": [
+        2023,
+        2023,
+        2023,
+        2023,
+        2023
+      ],
+      "stats": {
+        "count": 40,
+        "mean": 2024.0,
+        "std": 0.7844645405527362,
+        "min": 2023.0,
+        "25%": 2023.0,
+        "50%": 2024.0,
+        "75%": 2025.0,
+        "max": 2025.0
+      }
+    },
+    {
+      "name": "quarter",
+      "type": "int64",
+      "description": "Fiscal quarter",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 40,
+      "sample_values": [
+        2,
+        2,
+        2,
+        2,
+        3
+      ],
+      "stats": {
+        "count": 40,
+        "mean": 2.5,
+        "std": 1.0377490433255416,
+        "min": 1.0,
+        "25%": 2.0,
+        "50%": 2.5,
+        "75%": 3.0,
+        "max": 4.0
+      }
+    },
+    {
+      "name": "region",
+      "type": "object",
+      "description": "Region of international mobile traffic (eac / rest of world)",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 40,
+      "sample_values": [
+        "eac",
+        "others",
+        "eac",
+        "others",
+        "eac"
+      ],
+      "stats": null
+    },
+    {
+      "name": "item",
+      "type": "object",
+      "description": "Type of international mobile traffic (incoming / outgoing)",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 40,
+      "sample_values": [
+        "incoming",
+        "incoming",
+        "outgoing",
+        "outgoing",
+        "incoming"
+      ],
+      "stats": null
+    },
+    {
+      "name": "value",
+      "type": "float64",
+      "description": "Volume of international mobile traffic in minutes",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 40,
+      "sample_values": [
+        71579076.0,
+        20010363.0,
+        112885463.0,
+        68860574.0,
+        86651182.0
+      ],
+      "stats": {
+        "count": 40,
+        "mean": 83129423.975,
+        "std": 41942377.58751193,
+        "min": 20010363.0,
+        "25%": 48500773.5,
+        "50%": 71838945.0,
+        "75%": 116197055.5,
+        "max": 179316050.0
+      }
+    }
+  ]
+}

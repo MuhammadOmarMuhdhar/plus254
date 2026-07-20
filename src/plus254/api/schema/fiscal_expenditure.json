@@ -5,30 +5,30 @@
   "source": "Central Bank of Kenya",
   "description": "Monthly government expenditure breakdown",
   "url": "https://www.centralbank.go.ke/uploads/government_finance_statistics/2118703754_Revenue%20and%20Expenditure.csv",
-  "row_count": 2656,
+  "row_count": 939,
   "columns": [
     {
-      "name": "fiscal_year",
+      "name": "year",
       "type": "int64",
       "description": "Fiscal year (e.g., 1999 means FY 1999/2000)",
       "nullable": false,
       "null_count": 0,
-      "non_null_count": 2656,
+      "non_null_count": 939,
       "sample_values": [
         1999,
         1999,
-        2000,
-        2000,
-        2000
+        1999,
+        1999,
+        1999
       ],
       "stats": {
-        "count": 2656,
-        "mean": 2013.0869728915663,
-        "std": 7.543843207776885,
+        "count": 939,
+        "mean": 2012.7028753993611,
+        "std": 7.550124064303645,
         "min": 1999.0,
-        "25%": 2007.0,
+        "25%": 2006.0,
         "50%": 2013.0,
-        "75%": 2020.0,
+        "75%": 2019.0,
         "max": 2026.0
       }
     },
@@ -38,29 +38,29 @@
       "description": "Calendar month name",
       "nullable": false,
       "null_count": 0,
-      "non_null_count": 2656,
+      "non_null_count": 939,
       "sample_values": [
         "september",
+        "september",
+        "september",
         "december",
-        "march",
-        "june",
-        "july"
+        "december"
       ],
       "stats": null
     },
     {
-      "name": "metric",
+      "name": "item",
       "type": "object",
       "description": "Expenditure category (e.g., domestic interest, wages salaries, development expenditure, total expenditure)",
       "nullable": false,
       "null_count": 0,
-      "non_null_count": 2656,
+      "non_null_count": 939,
       "sample_values": [
-        "domestic interest",
-        "domestic interest",
-        "domestic interest",
-        "domestic interest",
-        "domestic interest"
+        "foreign interest",
+        "pensions",
+        "development expenditure",
+        "foreign interest",
+        "pensions"
       ],
       "stats": null
     },
@@ -70,23 +70,23 @@
       "description": "Expenditure in KES millions (comma-formatted number)",
       "nullable": false,
       "null_count": 0,
-      "non_null_count": 2656,
+      "non_null_count": 939,
       "sample_values": [
-        3816.0,
-        8935.0,
-        15784.0,
-        20752.0,
-        2739.0
+        3068.0,
+        1387.0,
+        6539.0,
+        4597.0,
+        2520.0
       ],
       "stats": {
-        "count": 2656,
-        "mean": 236916.45546210953,
-        "std": 426253.668079469,
+        "count": 939,
+        "mean": 67334.25919842534,
+        "std": 109208.02119399629,
         "min": 0.0,
-        "25%": 21307.579999999998,
-        "50%": 85394.29707999999,
-        "75%": 249362.4775,
-        "max": 3967816.803
+        "25%": 5803.0,
+        "50%": 20300.0,
+        "75%": 75892.002955,
+        "max": 660000.9
       }
     }
   ]

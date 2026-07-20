@@ -1,0 +1,118 @@
+{
+  "config": "broadcasting_subscriptions_by_platform",
+  "category": "network",
+  "name": "Broadcasting Subscriptions by Platform",
+  "source": "Communications Authority of Kenya",
+  "description": "Quarterly broadcasting subscriptions by platform",
+  "url": "https://ca.go.ke/statistics/",
+  "row_count": 111,
+  "columns": [
+    {
+      "name": "year",
+      "type": "int64",
+      "description": "Fiscal year (e.g., 1999 means FY 1999/2000)",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 111,
+      "sample_values": [
+        2023,
+        2023,
+        2023,
+        2023,
+        2023
+      ],
+      "stats": {
+        "count": 111,
+        "mean": 2023.990990990991,
+        "std": 0.7803902927439635,
+        "min": 2023.0,
+        "25%": 2023.0,
+        "50%": 2024.0,
+        "75%": 2025.0,
+        "max": 2025.0
+      }
+    },
+    {
+      "name": "quarter",
+      "type": "int64",
+      "description": "Fiscal quarter",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 111,
+      "sample_values": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "stats": {
+        "count": 111,
+        "mean": 2.5135135135135136,
+        "std": 1.0345386750964274,
+        "min": 1.0,
+        "25%": 2.0,
+        "50%": 3.0,
+        "75%": 3.0,
+        "max": 4.0
+      }
+    },
+    {
+      "name": "operator",
+      "type": "object",
+      "description": "Broadcasting service provider (operator)",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 111,
+      "sample_values": [
+        "go tv",
+        "star times",
+        "azam",
+        "multichoice (dstv)",
+        "star times"
+      ],
+      "stats": null
+    },
+    {
+      "name": "item",
+      "type": "object",
+      "description": "Broadcasting platform (dth, cable)",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 111,
+      "sample_values": [
+        "dtt",
+        "dtt",
+        "dth",
+        "dth",
+        "dth"
+      ],
+      "stats": null
+    },
+    {
+      "name": "value",
+      "type": "float64",
+      "description": "Number of broadcasting subscriptions",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 111,
+      "sample_values": [
+        2746512.0,
+        1741365.0,
+        76714.0,
+        1152998.0,
+        304610.0
+      ],
+      "stats": {
+        "count": 111,
+        "mean": 397720.23423423426,
+        "std": 729180.9343040367,
+        "min": 0.0,
+        "25%": 1306.0,
+        "50%": 69674.0,
+        "75%": 309565.0,
+        "max": 2835399.0
+      }
+    }
+  ]
+}

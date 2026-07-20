@@ -5,26 +5,26 @@
   "source": "Central Bank of Kenya",
   "description": "Monthly government revenue breakdown",
   "url": "https://www.centralbank.go.ke/uploads/government_finance_statistics/2118703754_Revenue%20and%20Expenditure.csv",
-  "row_count": 2326,
+  "row_count": 1700,
   "columns": [
     {
-      "name": "fiscal_year",
+      "name": "year",
       "type": "int64",
       "description": "Fiscal year (e.g., 1999 means FY 1999/2000)",
       "nullable": false,
       "null_count": 0,
-      "non_null_count": 2326,
+      "non_null_count": 1700,
       "sample_values": [
         1999,
         1999,
-        2000,
-        2000,
-        2000
+        1999,
+        1999,
+        1999
       ],
       "stats": {
-        "count": 2326,
-        "mean": 2013.134135855546,
-        "std": 7.569325465695178,
+        "count": 1700,
+        "mean": 2013.2929411764705,
+        "std": 7.571674985885802,
         "min": 1999.0,
         "25%": 2007.0,
         "50%": 2014.0,
@@ -38,29 +38,29 @@
       "description": "Calendar month name",
       "nullable": false,
       "null_count": 0,
-      "non_null_count": 2326,
+      "non_null_count": 1700,
       "sample_values": [
         "september",
-        "december",
-        "march",
-        "june",
-        "july"
+        "september",
+        "september",
+        "september",
+        "september"
       ],
       "stats": null
     },
     {
-      "name": "metric",
+      "name": "item",
       "type": "object",
       "description": "Revenue category (e.g., import duty, excise duty, income tax, vat, total revenue)",
       "nullable": false,
       "null_count": 0,
-      "non_null_count": 2326,
+      "non_null_count": 1700,
       "sample_values": [
         "import duty",
-        "import duty",
-        "import duty",
-        "import duty",
-        "import duty"
+        "excise duty",
+        "income tax",
+        "vat",
+        "other tax"
       ],
       "stats": null
     },
@@ -70,23 +70,23 @@
       "description": "Revenue in KES millions (comma-formatted number)",
       "nullable": false,
       "null_count": 0,
-      "non_null_count": 2326,
+      "non_null_count": 1700,
       "sample_values": [
         7157.0,
-        13912.0,
-        21407.0,
-        28605.0,
-        2813.0
+        6869.0,
+        12054.0,
+        9255.0,
+        12919.0
       ],
       "stats": {
-        "count": 2326,
-        "mean": 215787.29429511089,
-        "std": 355462.3430796764,
+        "count": 1700,
+        "mean": 126548.05846941646,
+        "std": 169949.81733751405,
         "min": 987.0,
-        "25%": 28213.709977500002,
-        "50%": 73828.76926,
-        "75%": 231773.139975,
-        "max": 2956871.282
+        "25%": 24112.1225,
+        "50%": 56947.40742,
+        "75%": 154516.69,
+        "max": 1146997.369
       }
     }
   ]

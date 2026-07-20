@@ -1,0 +1,118 @@
+{
+  "config": "broadband_subscriptions_by_speed",
+  "category": "network",
+  "name": "Broadband Subscriptions by Speed",
+  "source": "Communications Authority of Kenya",
+  "description": "Quarterly broadband subscriptions by speed",
+  "url": "https://ca.go.ke/statistics/",
+  "row_count": 490,
+  "columns": [
+    {
+      "name": "year",
+      "type": "int64",
+      "description": "Fiscal year (e.g., 1999 means FY 1999/2000)",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 490,
+      "sample_values": [
+        2023,
+        2023,
+        2023,
+        2023,
+        2023
+      ],
+      "stats": {
+        "count": 490,
+        "mean": 2024.0,
+        "std": 0.7753882858703958,
+        "min": 2023.0,
+        "25%": 2023.0,
+        "50%": 2024.0,
+        "75%": 2025.0,
+        "max": 2025.0
+      }
+    },
+    {
+      "name": "quarter",
+      "type": "int64",
+      "description": "Fiscal quarter",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 490,
+      "sample_values": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "stats": {
+        "count": 490,
+        "mean": 2.5,
+        "std": 1.0257422869628625,
+        "min": 1.0,
+        "25%": 2.0,
+        "50%": 2.5,
+        "75%": 3.0,
+        "max": 4.0
+      }
+    },
+    {
+      "name": "metric",
+      "type": "object",
+      "description": "Broadband speed range/category",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 490,
+      "sample_values": [
+        "< 256 kbps",
+        "< 256 kbps",
+        "< 256 kbps",
+        "< 256 kbps",
+        "< 256 kbps"
+      ],
+      "stats": null
+    },
+    {
+      "name": "item",
+      "type": "object",
+      "description": "Internet technology (cable, dsl etc)",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 490,
+      "sample_values": [
+        "cable",
+        "dsl (copper)",
+        "ftth",
+        "ftto",
+        "fixed wireless"
+      ],
+      "stats": null
+    },
+    {
+      "name": "value",
+      "type": "float64",
+      "description": "Number of broadband subscriptions",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 490,
+      "sample_values": [
+        0.0,
+        5.0,
+        0.0,
+        0.0,
+        10025.0
+      ],
+      "stats": {
+        "count": 490,
+        "mean": 38647.11632653061,
+        "std": 98759.19508930741,
+        "min": 0.0,
+        "25%": 0.0,
+        "50%": 151.5,
+        "75%": 17121.0,
+        "max": 634994.0
+      }
+    }
+  ]
+}

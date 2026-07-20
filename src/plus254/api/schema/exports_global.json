@@ -1,11 +1,11 @@
 {
   "config": "exports_global",
   "category": "economy",
-  "name": "Value of Exports to Rest of World",
+  "name": "Value of Exports From Kenya to Countries Outside of Africa",
   "source": "Central Bank of Kenya",
   "description": "Monthly value of exports to selected countries outside Africa",
   "url": "https://www.centralbank.go.ke/uploads/balance_of_payment_statistics/310335175_Value%20of%20Exports%20to%20Selected%20Rest%20of%20World%20Countries.csv",
-  "row_count": 4067,
+  "row_count": 3728,
   "columns": [
     {
       "name": "year",
@@ -13,7 +13,7 @@
       "description": "Calendar year",
       "nullable": false,
       "null_count": 0,
-      "non_null_count": 4067,
+      "non_null_count": 3728,
       "sample_values": [
         1998,
         1998,
@@ -22,9 +22,9 @@
         1998
       ],
       "stats": {
-        "count": 4067,
-        "mean": 2011.6294566019178,
-        "std": 8.15746093993071,
+        "count": 3728,
+        "mean": 2011.6295600858368,
+        "std": 8.15761396138237,
         "min": 1998.0,
         "25%": 2005.0,
         "50%": 2012.0,
@@ -38,55 +38,55 @@
       "description": "Calendar month name",
       "nullable": false,
       "null_count": 0,
-      "non_null_count": 4067,
+      "non_null_count": 3728,
       "sample_values": [
         "january",
-        "february",
-        "march",
-        "april",
-        "may"
+        "january",
+        "january",
+        "january",
+        "january"
       ],
       "stats": null
     },
     {
-      "name": "metric",
+      "name": "item",
       "type": "object",
       "description": "Destination country or region (e.g., u.k, germany, u.s.a, total)",
       "nullable": false,
       "null_count": 0,
-      "non_null_count": 4067,
+      "non_null_count": 3728,
       "sample_values": [
         "u.k",
-        "u.k",
-        "u.k",
-        "u.k",
-        "u.k"
+        "germany",
+        "u.s.a",
+        "netherlands",
+        "uganda"
       ],
       "stats": null
     },
     {
       "name": "value",
       "type": "float64",
-      "description": "Export value in KES millions (comma-formatted number)",
+      "description": "Export value in KES millions",
       "nullable": false,
       "null_count": 0,
-      "non_null_count": 4067,
+      "non_null_count": 3728,
       "sample_values": [
         1420.32,
-        1465.24,
-        1570.5,
-        1372.71,
-        1721.72
+        265.96,
+        260.76,
+        455.95,
+        1386.42
       ],
       "stats": {
-        "count": 4067,
-        "mean": 7964.640659928031,
-        "std": 17945.014730563373,
+        "count": 3728,
+        "mean": 4344.446548800241,
+        "std": 8304.970750921488,
         "min": 9.58,
-        "25%": 715.545,
-        "50%": 2060.13,
-        "75%": 4958.42,
-        "max": 178625.91
+        "25%": 650.275,
+        "50%": 1784.395,
+        "75%": 3932.6275,
+        "max": 90884.11
       }
     }
   ]

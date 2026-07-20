@@ -5,7 +5,7 @@
   "source": "Central Bank of Kenya",
   "description": "Monthly value of selected domestic export commodities",
   "url": "https://www.centralbank.go.ke/uploads/balance_of_payment_statistics/1306010805_Value%20of%20Selected%20Domestic%20Exports%20-%20Selected%20Comms.csv",
-  "row_count": 2987,
+  "row_count": 2655,
   "columns": [
     {
       "name": "year",
@@ -13,7 +13,7 @@
       "description": "Calendar year",
       "nullable": false,
       "null_count": 0,
-      "non_null_count": 2987,
+      "non_null_count": 2655,
       "sample_values": [
         1998,
         1998,
@@ -22,9 +22,9 @@
         1998
       ],
       "stats": {
-        "count": 2987,
-        "mean": 2011.9173083361231,
-        "std": 7.99720679550983,
+        "count": 2655,
+        "mean": 2011.9175141242938,
+        "std": 7.99747830436536,
         "min": 1998.0,
         "25%": 2005.0,
         "50%": 2012.0,
@@ -38,55 +38,55 @@
       "description": "Calendar month name",
       "nullable": false,
       "null_count": 0,
-      "non_null_count": 2987,
+      "non_null_count": 2655,
       "sample_values": [
         "august",
-        "september",
-        "october",
-        "november",
-        "december"
+        "august",
+        "august",
+        "august",
+        "august"
       ],
       "stats": null
     },
     {
-      "name": "metric",
+      "name": "item",
       "type": "object",
       "description": "Export commodity (e.g., coffee, tea, petroleum, horticulture, total)",
       "nullable": false,
       "null_count": 0,
-      "non_null_count": 2987,
+      "non_null_count": 2655,
       "sample_values": [
         "coffee",
-        "coffee",
-        "coffee",
-        "coffee",
-        "coffee"
+        "tea",
+        "petroleum",
+        "chemicals",
+        "fish"
       ],
       "stats": null
     },
     {
       "name": "value",
       "type": "float64",
-      "description": "Export value in KES millions (comma-formatted number)",
+      "description": "Export value in KES millions",
       "nullable": false,
       "null_count": 0,
-      "non_null_count": 2987,
+      "non_null_count": 2655,
       "sample_values": [
         500.47,
-        536.21,
-        584.32,
-        578.74,
-        574.54
+        2404.7,
+        850.6,
+        695.15,
+        183.19
       ],
       "stats": {
-        "count": 2987,
-        "mean": 8078.078454111148,
-        "std": 13787.331201281675,
+        "count": 2655,
+        "mean": 4546.669085661018,
+        "std": 6644.970061484948,
         "min": 4.98,
-        "25%": 503.805,
-        "50%": 2527.26,
-        "75%": 9460.5,
-        "max": 91579.94
+        "25%": 440.21500000000003,
+        "50%": 1665.62,
+        "75%": 5974.175,
+        "max": 44310.57
       }
     }
   ]

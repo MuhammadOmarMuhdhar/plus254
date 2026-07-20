@@ -1,7 +1,7 @@
 {
   "config": "forex_end_period",
   "category": "economy",
-  "name": "Monthly Exchange Rates (End Period)",
+  "name": "Monthly Foreign Exchange Rates (End Period)",
   "source": "Central Bank of Kenya",
   "description": "Monthly exchange rates of major currencies against KES (end period)",
   "url": "https://www.centralbank.go.ke/uploads/exchange_rates/677633335_Monthly%20exchange%20rate%20(end%20period).csv",
@@ -24,7 +24,7 @@
       "stats": {
         "count": 7970,
         "mean": 2009.7092848180678,
-        "std": 9.575121306755491,
+        "std": 9.575121306755571,
         "min": 1993.0,
         "25%": 2001.0,
         "50%": 2010.0,
@@ -35,21 +35,21 @@
     {
       "name": "month",
       "type": "object",
-      "description": "Calendar month name (e.g., January)",
+      "description": "Calendar month name",
       "nullable": false,
       "null_count": 0,
       "non_null_count": 7970,
       "sample_values": [
         "january",
-        "january",
-        "january",
-        "january",
-        "january"
+        "february",
+        "march",
+        "april",
+        "may"
       ],
       "stats": null
     },
     {
-      "name": "metric",
+      "name": "item",
       "type": "object",
       "description": "Foreign currency name (e.g., united states dollar, sterling pound)",
       "nullable": false,
@@ -57,31 +57,31 @@
       "non_null_count": 7970,
       "sample_values": [
         "united states dollar",
-        "sterling pound",
-        "deutch mark",
-        "canadian dollar",
-        "french franc"
+        "united states dollar",
+        "united states dollar",
+        "united states dollar",
+        "united states dollar"
       ],
       "stats": null
     },
     {
       "name": "value",
       "type": "float64",
-      "description": "End-period exchange rate in KES per unit of foreign currency (comma-formatted number)",
+      "description": "End-period exchange rate in KES per unit of foreign currency",
       "nullable": false,
       "null_count": 0,
       "non_null_count": 7970,
       "sample_values": [
         35.92,
-        54.48,
-        22.67,
-        28.3,
-        6.69
+        36.46,
+        45.53,
+        59.87,
+        63.18
       ],
       "stats": {
         "count": 7970,
         "mean": 41.649609786700125,
-        "std": 40.28992809183422,
+        "std": 40.28992809183432,
         "min": 1.08,
         "25%": 11.25,
         "50%": 21.7,

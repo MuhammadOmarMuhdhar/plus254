@@ -1,0 +1,118 @@
+{
+  "config": "cybersecurity_incidents",
+  "category": "network",
+  "name": "Cybersecurity Incidents",
+  "source": "Communications Authority of Kenya",
+  "description": "Quarterly cybersecurity incidents reported to the CAK",
+  "url": "https://ca.go.ke/statistics/",
+  "row_count": 122,
+  "columns": [
+    {
+      "name": "year",
+      "type": "int64",
+      "description": "Fiscal year (e.g., 1999 means FY 1999/2000)",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 122,
+      "sample_values": [
+        2023,
+        2023,
+        2023,
+        2023,
+        2023
+      ],
+      "stats": {
+        "count": 122,
+        "mean": 2023.983606557377,
+        "std": 0.7818563051738578,
+        "min": 2023.0,
+        "25%": 2023.0,
+        "50%": 2024.0,
+        "75%": 2025.0,
+        "max": 2025.0
+      }
+    },
+    {
+      "name": "quarter",
+      "type": "int64",
+      "description": "Fiscal quarter",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 122,
+      "sample_values": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "stats": {
+        "count": 122,
+        "mean": 2.5081967213114753,
+        "std": 1.0224415895082242,
+        "min": 1.0,
+        "25%": 2.0,
+        "50%": 3.0,
+        "75%": 3.0,
+        "max": 4.0
+      }
+    },
+    {
+      "name": "metric",
+      "type": "object",
+      "description": "Threat or advisory",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 122,
+      "sample_values": [
+        "threats",
+        "threats",
+        "threats",
+        "threats",
+        "threats"
+      ],
+      "stats": null
+    },
+    {
+      "name": "item",
+      "type": "object",
+      "description": "Type of cybersecurity incident",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 122,
+      "sample_values": [
+        "malware",
+        "brute force attacks",
+        "web application attacks",
+        "system vulnerabilities",
+        "mobile application attacks"
+      ],
+      "stats": null
+    },
+    {
+      "name": "value",
+      "type": "float64",
+      "description": "Number of cybersecurity incidents reported",
+      "nullable": false,
+      "null_count": 0,
+      "non_null_count": 122,
+      "sample_values": [
+        13221698.0,
+        9670849.0,
+        72536.0,
+        1269267620.0,
+        52705.0
+      ],
+      "stats": {
+        "count": 122,
+        "mean": 171519379.29508197,
+        "std": 688333343.8253845,
+        "min": 59.0,
+        "25%": 235945.0,
+        "50%": 3212724.5,
+        "75%": 14626837.25,
+        "max": 4492325076.0
+      }
+    }
+  ]
+}

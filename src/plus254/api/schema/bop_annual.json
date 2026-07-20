@@ -5,7 +5,7 @@
   "source": "Central Bank of Kenya",
   "description": "Annual balance of payments statement",
   "url": "https://www.centralbank.go.ke/uploads/balance_of_payment_statistics/1657248905_Balance%20of%20Payments%20Statement%20(Annual%20Calender%20Year).csv",
-  "row_count": 357,
+  "row_count": 350,
   "columns": [
     {
       "name": "year",
@@ -13,7 +13,7 @@
       "description": "Calendar year",
       "nullable": false,
       "null_count": 0,
-      "non_null_count": 357,
+      "non_null_count": 350,
       "sample_values": [
         2019,
         2019,
@@ -22,9 +22,9 @@
         2019
       ],
       "stats": {
-        "count": 357,
+        "count": 350,
         "mean": 2022.0,
-        "std": 2.002807018925233,
+        "std": 2.002863279919919,
         "min": 2019.0,
         "25%": 2020.0,
         "50%": 2022.0,
@@ -33,18 +33,18 @@
       }
     },
     {
-      "name": "metric",
+      "name": "item",
       "type": "object",
       "description": "BPM6 balance of payments category (e.g., A. Current Account, n.i.e., General government)",
       "nullable": false,
       "null_count": 0,
-      "non_null_count": 357,
+      "non_null_count": 350,
       "sample_values": [
-        "a. current account, n.i.e.",
-        "other debt instruments",
-        "central bank",
-        "deposit-taking corporations, except the central bank",
-        "general government"
+        "current account, n.i.e.",
+        "general government",
+        "other sectors",
+        "other financial corporations",
+        "nonfinancial corporations, households, and npishs"
       ],
       "stats": null
     },
@@ -54,22 +54,22 @@
       "description": "Value in USD millions (comma-formatted number)",
       "nullable": false,
       "null_count": 0,
-      "non_null_count": 357,
+      "non_null_count": 350,
       "sample_values": [
         -507653.0,
-        57834.0,
         0.0,
-        55710.0,
-        0.0
+        2125.0,
+        213.620931,
+        1911.0
       ],
       "stats": {
-        "count": 357,
-        "mean": 111566.80325656442,
-        "std": 512985.74708364235,
+        "count": 350,
+        "mean": 113798.13932169572,
+        "std": 517858.9530585688,
         "min": -1400944.0,
-        "25%": -306.704603,
-        "50%": 9230.0,
-        "75%": 133316.0,
+        "25%": -387.0715,
+        "50%": 11112.5,
+        "75%": 134666.75,
         "max": 3062906.0
       }
     }
