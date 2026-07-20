@@ -2,7 +2,8 @@ mombasa_tea_auction:
   name: Tea Sold and Offered at the Mombasa Tea Auction
   category: agriculture
   source: Tea Board of Kenya
-  description: Weekly volume of tea offered for sale and tea actually sold at the Mombasa Tea Auction
+  description: Weekly volume of tea offered for sale and tea actually sold at the
+    Mombasa Tea Auction
   url: https://eatta.co.ke/statistics
   columns:
     date:
@@ -12,11 +13,10 @@ mombasa_tea_auction:
     value:
       description: Quantity of tea, in kilograms
   natural_keys:
-    - date
-    - metric
-  last_updated: '2026-06-19T12:00:00'
+  - date
+  - metric
+  last_updated: '2026-07-20T14:31:59'
   update_frequency: weekly
-
 mombasa_tea_auction_prices:
   name: Average Tea Prices at the Mombasa Tea Auction
   category: agriculture
@@ -29,10 +29,9 @@ mombasa_tea_auction_prices:
     value:
       description: Average price of tea sold, in USD per kilogram
   natural_keys:
-    - date
+  - date
   last_updated: '2026-06-19T12:00:00'
   update_frequency: weekly
-
 registered_voters:
   name: Registered Voters per Polling Station
   category: governance
@@ -57,7 +56,6 @@ registered_voters:
   - ward
   last_updated: '2026-06-19T12:00:00'
   update_frequency: one_time
-
 forex_end_period:
   name: Monthly Foreign Exchange Rates (End Period)
   category: economy
@@ -77,9 +75,8 @@ forex_end_period:
   - year
   - month
   - item
-  last_updated: '2026-06-19T12:00:00'
+  last_updated: '2026-07-20T14:29:57'
   update_frequency: monthly
-
 forex_period_average:
   name: Monthly Foreign Exchange Rates (Period Average)
   category: economy
@@ -99,9 +96,8 @@ forex_period_average:
   - year
   - month
   - item
-  last_updated: '2026-06-19T12:00:00'
+  last_updated: '2026-07-20T14:30:18'
   update_frequency: monthly
-
 monetary_survey:
   name: Depository Corporation Survey
   category: economy
@@ -114,7 +110,8 @@ monetary_survey:
     month:
       description: Calendar month name
     category:
-      description: Sub-survey section (Central Bank of Kenya, Other Depository Corporation Survey, Depository Corporation Survey)
+      description: Sub-survey section (Central Bank of Kenya, Other Depository Corporation
+        Survey, Depository Corporation Survey)
     item:
       description: Monetary indicator name (e.g., Excess reserves, Required reserves,
         Broad Money M3)
@@ -124,9 +121,8 @@ monetary_survey:
   - year
   - month
   - category
-  last_updated: '2026-06-19T12:00:00'
+  last_updated: '2026-07-20T14:32:20'
   update_frequency: monthly
-
 bop_annual:
   name: Balance of Payments (Annual)
   category: economy
@@ -144,9 +140,8 @@ bop_annual:
   natural_keys:
   - year
   - item
-  last_updated: '2026-06-19T12:00:00'
+  last_updated: '2026-07-20T14:27:53'
   update_frequency: annually
-  
 exports_global:
   name: Value of Exports From Kenya to Countries Outside of Africa
   category: economy
@@ -161,14 +156,13 @@ exports_global:
     item:
       description: Destination country or region (e.g., u.k, germany, u.s.a, total)
     value:
-      description: Export value in KES millions 
+      description: Export value in KES millions
   natural_keys:
   - year
   - month
   - item
-  last_updated: '2026-06-19T12:00:00'
+  last_updated: '2026-07-20T14:28:57'
   update_frequency: monthly
-
 exports_africa:
   name: Value of Exports to Africa
   category: economy
@@ -183,14 +177,13 @@ exports_africa:
     item:
       description: Destination African country (e.g., uganda, tanzania, egypt, total)
     value:
-      description: Export value in KES millions 
+      description: Export value in KES millions
   natural_keys:
   - year
   - month
   - item
-  last_updated: '2026-06-19T12:00:00'
+  last_updated: '2026-07-20T14:28:36'
   update_frequency: monthly
-
 domestic_exports:
   name: Value of Selected Domestic Exports
   category: economy
@@ -210,9 +203,8 @@ domestic_exports:
   - year
   - month
   - item
-  last_updated: '2026-06-19T12:00:00'
+  last_updated: '2026-07-20T14:28:15'
   update_frequency: monthly
-
 imports_global:
   name: Value of Imports from Rest of World
   category: economy
@@ -232,9 +224,8 @@ imports_global:
   - year
   - month
   - item
-  last_updated: '2026-06-19T12:00:00'
+  last_updated: '2026-07-20T14:31:42'
   update_frequency: monthly
-
 imports_africa:
   name: Value of Imports from Africa
   category: economy
@@ -254,9 +245,8 @@ imports_africa:
   - year
   - month
   - item
-  last_updated: '2026-06-19T12:00:00'
+  last_updated: '2026-07-20T14:31:00'
   update_frequency: monthly
-
 imports_commodity:
   name: Value of Imports by Commodity
   category: economy
@@ -272,20 +262,18 @@ imports_commodity:
       description: SITC commodity section (e.g., food and live animals, chemicals,
         machinery and transport equipment, total)
     value:
-      description: Import value in KES millions 
+      description: Import value in KES millions
   natural_keys:
   - year
   - month
   - item
-  last_updated: '2026-06-19T12:00:00'
+  last_updated: '2026-07-20T14:31:20'
   update_frequency: monthly
-
 principal_exports:
   name: Principal Exports - Volume
   category: economy
   source: Central Bank of Kenya
-  description: Monthly volume of principal exports
-    (coffee, tea, horticulture)
+  description: Monthly volume of principal exports (coffee, tea, horticulture)
   url: https://www.centralbank.go.ke/uploads/balance_of_payment_statistics/766913717_Principal%20Exports_Volume,%20Value%20and%20Unit%20Prices.csv
   columns:
     year:
@@ -293,7 +281,7 @@ principal_exports:
     month:
       description: Calendar month name
     item:
-      description: Commodity and measure 
+      description: Commodity and measure
     value:
       description: Volume in tonnes
   natural_keys:
@@ -302,13 +290,11 @@ principal_exports:
   - item
   last_updated: '2026-06-19T12:00:00'
   update_frequency: monthly
-
 principal_exports_value:
   name: Principal Exports — Value
   category: economy
   source: Central Bank of Kenya
-  description: Monthly value of principal exports
-    (coffee, tea, horticulture)
+  description: Monthly value of principal exports (coffee, tea, horticulture)
   url: https://www.centralbank.go.ke/uploads/balance_of_payment_statistics/766913717_Principal%20Exports_Volume,%20Value%20and%20Unit%20Prices.csv
   columns:
     year:
@@ -316,22 +302,20 @@ principal_exports_value:
     month:
       description: Calendar month name
     item:
-      description: Commodity and measure 
+      description: Commodity and measure
     value:
-      description:  Value in KES millions 
+      description: Value in KES millions
   natural_keys:
   - year
   - month
   - item
   last_updated: '2026-06-19T12:00:00'
   update_frequency: monthly
-
 principal_exports_average_price:
   name: Principal Exports - average unit price
   category: economy
   source: Central Bank of Kenya
-  description: Monthly average unit prices of principal exports
-    (coffee, tea, horticulture)
+  description: Monthly average unit prices of principal exports (coffee, tea, horticulture)
   url: https://www.centralbank.go.ke/uploads/balance_of_payment_statistics/766913717_Principal%20Exports_Volume,%20Value%20and%20Unit%20Prices.csv
   columns:
     year:
@@ -339,7 +323,7 @@ principal_exports_average_price:
     month:
       description: Calendar month name
     item:
-      description: Commodity and measure 
+      description: Commodity and measure
     value:
       description: Average unit price in KES per kilogram
   natural_keys:
@@ -348,7 +332,6 @@ principal_exports_average_price:
   - item
   last_updated: '2026-06-19T12:00:00'
   update_frequency: monthly
-
 fiscal_revenue:
   name: Government Revenue
   category: economy
@@ -369,9 +352,8 @@ fiscal_revenue:
   - year
   - month
   - item
-  last_updated: '2026-06-19T12:00:00'
+  last_updated: '2026-07-20T14:29:18'
   update_frequency: monthly
-
 fiscal_grants:
   name: Government Grants
   category: economy
@@ -391,9 +373,8 @@ fiscal_grants:
   - year
   - month
   - item
-  last_updated: '2026-06-19T12:00:00'
+  last_updated: '2026-07-20T14:29:28'
   update_frequency: monthly
-  
 fiscal_expenditure:
   name: Government Expenditure
   category: economy
@@ -414,9 +395,8 @@ fiscal_expenditure:
   - year
   - month
   - item
-  last_updated: '2026-06-19T12:00:00'
+  last_updated: '2026-07-20T14:29:37'
   update_frequency: monthly
-
 public_debt:
   name: Public Debt
   category: economy
@@ -436,9 +416,8 @@ public_debt:
   - year
   - month
   - item
-  last_updated: '2026-06-19T12:00:00'
+  last_updated: '2026-07-20T14:32:52'
   update_frequency: monthly
-
 gdp_quarterly:
   name: Quarterly GDP
   category: economy
@@ -449,7 +428,7 @@ gdp_quarterly:
     year:
       description: Calendar year
     quarter:
-      description: Calendar quarter 
+      description: Calendar quarter
     item:
       description: Economic sector or activity (e.g., Agriculture, Manufacturing,
         Construction, Total GDP)
@@ -459,9 +438,8 @@ gdp_quarterly:
   - year
   - quarter
   - item
-  last_updated: '2026-06-19T12:00:00'
+  last_updated: '2026-07-20T14:30:39'
   update_frequency: quarterly
-
 broadband_subscriptions_by_operator:
   name: Fixed Data Subscriptions by Operator
   category: network
@@ -472,7 +450,7 @@ broadband_subscriptions_by_operator:
     year:
       description: Fiscal year (e.g., 1999 means FY 1999/2000)
     quarter:
-      description: Fiscal quarter 
+      description: Fiscal quarter
     entity:
       description: Fixed data service provider (operator)
     value:
@@ -481,37 +459,36 @@ broadband_subscriptions_by_operator:
   - year
   - quarter
   - entity
-  last_updated: '2026-06-19T12:00:00'
+  last_updated: '2026-07-20T14:46:27'
   update_frequency: quarterly
-
 mobile_traffic_by_operator:
   name: Domestic Mobile Traffic by Operator
   catrgory: network
   source: Communications Authority of Kenya
   description: Domestic mobile traffic, by operator, type of traffic
   url: https://ca.go.ke/statistics/
-  columns: 
+  columns:
     year:
       description: Fiscal year (e.g., 1999 means FY 1999/2000)
     quarter:
       description: Fiscal quarter
     entity:
       description: Mobile service provider (operator)
-    metric: 
+    metric:
       description: Type of mobile traffic (voice, sms)
     item:
-      description: on net / offnet 
+      description: on net / offnet
     value:
-      description: Volume of mobile traffic (minutes for voice, number of messages for sms)
-  natural_keys: 
+      description: Volume of mobile traffic (minutes for voice, number of messages
+        for sms)
+  natural_keys:
   - year
   - quarter
   - entity
   - metric
   - item
-  last_updated: '2026-06-19T12:00:00'
+  last_updated: '2026-07-20T14:48:08'
   update_frequency: quarterly
-
 minutes_of_use_by_operator:
   name: Minutes of Use per Call per Operator
   category: network
@@ -534,10 +511,8 @@ minutes_of_use_by_operator:
   - quarter
   - entity
   - item
-  last_updated: '2026-06-19T12:00:00'
+  last_updated: '2026-07-20T14:47:55'
   update_frequency: quarterly
-
-
 international_mobile_traffic:
   name: International Mobile Traffic
   category: network
@@ -559,38 +534,14 @@ international_mobile_traffic:
   - year
   - quarter
   - item
-  last_updated: '2026-06-19T12:00:00'
+  last_updated: '2026-07-20T14:47:17'
   update_frequency: quarterly
-
-international_mobile_traffic:
-  name: International Mobile Traffic
-  category: network
-  source: Communications Authority of Kenya
-  description: Incoming and outgoing International mobile voice minutes
-  url: https://ca.go.ke/statistics/
-  columns:
-    year:
-      description: Fiscal year (e.g., 1999 means FY 1999/2000)
-    quarter:
-      description: Fiscal quarter
-    region:
-      description: Region of international mobile traffic (eac / rest of world)
-    item:
-      description: Type of international mobile traffic (incoming / outgoing)
-    value:
-      description: Volume of international mobile traffic in minutes
-  natural_keys:
-  - year
-  - quarter
-  - item
-  last_updated: '2026-06-19T12:00:00'
-  update_frequency: quarterly 
-
 inbound_roaming_traffic:
   name: Inbound Roaming Traffic
   category: network
   source: Communications Authority of Kenya
-  description: inbound roaming traffic, by country and type of traffic (voice, sms, data)
+  description: inbound roaming traffic, by country and type of traffic (voice, sms,
+    data)
   url: https://ca.go.ke/statistics/
   columns:
     year:
@@ -599,32 +550,26 @@ inbound_roaming_traffic:
       description: Fiscal quarter
     country:
       description: Country of outbound roaming traffic
-    metric: 
+    metric:
       description: Type of mobile traffic (voice, sms)
     item:
       description: inbound/ outbound
-    value: 
+    value:
       description: (minutes for voice, number of messages for sms, MB for data)
-    natural_keys:
-    - year
-    - quarter
-    - country 
-    - metric 
-    - item
   natural_keys:
   - year
   - quarter
-  - country 
-  - metric 
+  - country
+  - metric
   - item
   last_updated: '2026-06-19T12:00:00'
   update_frequency: quarterly
-
 roaming_traffic:
   name: Outbound Roaming Traffic
   category: network
   source: Communications Authority of Kenya
-  description: Outbound roaming traffic, by country and type of traffic (voice, sms, data)
+  description: Outbound roaming traffic, by country and type of traffic (voice, sms,
+    data)
   url: https://ca.go.ke/statistics/
   columns:
     year:
@@ -633,47 +578,19 @@ roaming_traffic:
       description: Fiscal quarter
     country:
       description: Country of outbound roaming traffic
-    metric: 
+    metric:
       description: Type of mobile traffic (voice, sms)
     item:
       description: inbound/ outbound
-    value: 
+    value:
       description: (minutes for voice, number of messages for sms, MB for data)
   natural_keys:
   - year
   - quarter
-  - country 
-  - metric 
-  last_updated: '2026-06-19T12:00:00'
+  - country
+  - metric
+  last_updated: '2026-07-20T14:48:33'
   update_frequency: quarterly
-
-inbound_roaming_traffic:
-  name: Inbound Roaming Traffic
-  category: network
-  source: Communications Authority of Kenya
-  description: inbound roaming traffic, by country and type of traffic (voice, sms, data)
-  url: https://ca.go.ke/statistics/
-  columns:
-    year:
-      description: Fiscal year (e.g., 1999 means FY 1999/2000)
-    quarter:
-      description: Fiscal quarter
-    country:
-      description: Country of outbound roaming traffic
-    metric: 
-      description: Type of mobile traffic (voice, sms)
-    item:
-      description: inbound/ outbound
-    value: 
-      description: (minutes for voice, number of messages for sms, MB for data)
-  natural_keys:
-  - year
-  - quarter
-  - country 
-  - metric 
-  last_updated: '2026-06-19T12:00:00'
-  update_frequency: quarterly
-
 internet_subscriptions_by_technology:
   name: Internet Subscriptions by Technology
   category: network
@@ -686,16 +603,15 @@ internet_subscriptions_by_technology:
     quarter:
       description: Fiscal quarter
     item:
-      description:  Internet technology (cable, dsl etc)
+      description: Internet technology (cable, dsl etc)
     value:
       description: Number of internet subscriptions
   natural_keys:
   - year
   - quarter
   - item
-  last_updated: '2026-06-19T12:00:00'
+  last_updated: '2026-07-20T14:47:29'
   update_frequency: quarterly
-
 broadband_subscriptions_by_speed:
   name: Broadband Subscriptions by Speed
   category: network
@@ -718,9 +634,8 @@ broadband_subscriptions_by_speed:
   - quarter
   - metric
   - item
-  last_updated: '2026-06-19T12:00:00'
+  last_updated: '2026-07-20T14:46:39'
   update_frequency: quarterly
-
 postal_and_courier_traffic:
   name: Postal and Courier Traffic
   category: network
@@ -743,9 +658,8 @@ postal_and_courier_traffic:
   - quarter
   - metric
   - item
-  last_updated: '2026-06-19T12:00:00'
+  last_updated: '2026-07-20T14:48:21'
   update_frequency: quarterly
-
 broadcasting_subscriptions_by_platform:
   name: Broadcasting Subscriptions by Platform
   category: network
@@ -767,9 +681,8 @@ broadcasting_subscriptions_by_platform:
   - year
   - quarter
   - operator
-  last_updated: '2026-06-19T12:00:00'
+  last_updated: '2026-07-20T14:46:51'
   update_frequency: quarterly
-
 ke_domain_registrations:
   name: .ke Domain Registrations
   category: network
@@ -789,9 +702,8 @@ ke_domain_registrations:
   - year
   - quarter
   - item
-  last_updated: '2026-06-19T12:00:00'
+  last_updated: '2026-07-20T14:47:42'
   update_frequency: quarterly
-    
 cybersecurity_incidents:
   name: Cybersecurity Incidents
   category: network
@@ -803,7 +715,7 @@ cybersecurity_incidents:
       description: Fiscal year (e.g., 1999 means FY 1999/2000)
     quarter:
       description: Fiscal quarter
-    metric: 
+    metric:
       description: Threat or advisory
     item:
       description: Type of cybersecurity incident
@@ -813,9 +725,8 @@ cybersecurity_incidents:
   - year
   - quarter
   - metric
-  last_updated: '2026-06-19T12:00:00'
+  last_updated: '2026-07-20T14:47:04'
   update_frequency: quarterly
-
 pump_prices:
   name: Fuel Pump Prices
   category: energy
