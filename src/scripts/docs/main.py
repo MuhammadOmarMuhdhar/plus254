@@ -67,7 +67,15 @@ def run(output_dir: Path):
             f.write(md)
         print(f"  Markdown -> {md_path}")
 
-    print(f"\nDone. Generated {len(datasets_info)} dataset docs.")
+    generated = set(schema_config.keys())
+    removed = 0
+    for path in sorted(output_dir.glob("*.md")):
+        if path.stem not in generated:
+            path.unlink()
+            print(f"  Removed stale: {path.name}")
+            removed += 1
+
+    print(f"\nDone. Generated {len(datasets_info)} dataset docs, removed {removed} stale.")
 
 
 if __name__ == "__main__":
