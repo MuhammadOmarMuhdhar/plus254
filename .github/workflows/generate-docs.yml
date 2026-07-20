@@ -1,0 +1,48 @@
+name: Generate Dataset Docs
+
+on:
+  schedule:
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: plus254
+
+      - uses: actions/checkout@v4
+        with:
+          repository: MuhammadOmarMuhdhar/plus254-website
+          token: ${{ secrets.GH_PAT }}
+          path: website
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -e .
+        working-directory: plus254
+
+      - name: Generate docs
+        run: python -m scripts.docs.main --output-dir ../website/src/content/dataset
+        working-directory: plus254
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          HF_REPO_ID: ${{ secrets.HF_REPO_ID }}
+
+      - name: Commit & push
+        working-directory: website
+        run: |
+          git config user.name "plus254-bot"
+          git config user.email "bot@plus254.co.ke"
+          git add src/content/dataset/
+          if git diff --quiet --staged; then
+            echo "No changes to commit"
+          else
+            git commit -m "auto: update dataset docs"
+            git push
+          fi
