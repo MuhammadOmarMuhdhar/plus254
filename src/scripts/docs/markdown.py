@@ -8,7 +8,7 @@ def _fmt_num(v):
 
 def _render_header(config_name, df, info):
     lines = []
-    endpoint = f"GET /{info['category']}/{config_name}"
+    endpoint = f"GET /v1/datasets/{config_name}"
     lines.append("---")
     lines.append(f'title: "{info["name"]}"')
     lines.append(f'description: "{info["description"]}"')
@@ -114,7 +114,7 @@ def _render_sample_data(df):
 
 
 def _render_coverage(config_name, df, yaml_path):
-    from plus254.pipeline2.quality_checks.dimensional_coverage import check_dimensional_coverage
+    from plus254.quality_checks.dimensional_coverage import check_dimensional_coverage
 
     result = check_dimensional_coverage(
         df, config_name, yaml_path, threshold=0.0
