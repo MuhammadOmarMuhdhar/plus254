@@ -463,7 +463,7 @@ broadband_subscriptions_by_operator:
   update_frequency: quarterly
 mobile_traffic_by_operator:
   name: Domestic Mobile Traffic by Operator
-  catrgory: network
+  category: network
   source: Communications Authority of Kenya
   description: Domestic mobile traffic, by operator, type of traffic
   url: https://ca.go.ke/statistics/
