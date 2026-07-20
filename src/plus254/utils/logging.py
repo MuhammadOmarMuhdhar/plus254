@@ -9,6 +9,8 @@ import logging
 NOISY_LOGGERS = [
     "datasets",
     "datasets.packaged_modules.cache.cache",
+    "httpx",
+    "httpcore",
     "huggingface_hub",
     "urllib3",
     "urllib3.connectionpool",
