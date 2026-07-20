@@ -1,6 +1,6 @@
 import pandas as pd
 from plus254.utils.transformers import prune
-from src.plus254.utils.transformers import tidy
+from plus254.utils.transformers import tidy
 
 def transform(records):
 

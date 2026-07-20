@@ -29,5 +29,5 @@ def transform(df):
     
     return {
         "mombasa_tea_auction": tea_volumes,
-        "mombasa_tea_auction_price": tea_prices
+        "mombasa_tea_auction_prices": tea_prices
     }

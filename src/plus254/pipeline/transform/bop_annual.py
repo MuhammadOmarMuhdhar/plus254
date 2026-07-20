@@ -1,7 +1,7 @@
 import pandas as pd
-from src.plus254.utils.transformers import tidy
+from plus254.utils.transformers import tidy
 
-def process(df: pd.DataFrame) -> pd.DataFrame:
+def transform(df: pd.DataFrame) -> pd.DataFrame:
     return (
         df.copy()
         .pipe(lambda d: d.set_axis(d.iloc[1].tolist(), axis=1))
