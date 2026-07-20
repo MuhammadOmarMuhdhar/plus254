@@ -44,7 +44,8 @@ def main():
     args = parser.parse_args()
 
     start = time.time()
-    seeded = skipped = failures = 0
+    seeded = skipped = 0
+    failed_slugs: list[str] = []
 
     load_datasets(YAML_PATH)  # validate YAML loads early
     fixed = get_slugs(YAML_PATH, source_type="fixed")
@@ -92,7 +93,7 @@ def main():
             seeded += 1
         except Exception as e:
             logger.error("[%s] Failed: %s", slug, e)
-            failures += 1
+            failed_slugs.append(slug)
 
     for slug in static:
         if not should_seed(slug):
@@ -108,7 +109,7 @@ def main():
             seeded += 1
         except Exception as e:
             logger.error("[%s] Failed: %s", slug, e)
-            failures += 1
+            failed_slugs.append(slug)
 
     for source, slugs in rolling_sources.items():
         logger.info("[rolling:%s] Extracting …", source)
@@ -119,7 +120,7 @@ def main():
             all_records = mod.extract()
         except Exception as e:
             logger.error("[rolling:%s] Extraction failed: %s", source, e)
-            failures += len(slugs)
+            failed_slugs.extend(slugs)
             continue
 
         for slug in slugs:
@@ -130,7 +131,7 @@ def main():
                             if r.get("dataset") == slug]
             if not slug_records:
                 logger.warning("[%s] No records found → skipping", slug)
-                failures += 1
+                failed_slugs.append(slug)
                 continue
             try:
                 mod = importlib.import_module(
@@ -139,14 +140,16 @@ def main():
                 seeded += 1
             except Exception as e:
                 logger.error("[%s] Failed: %s", slug, e)
-                failures += 1
+                failed_slugs.append(slug)
 
     elapsed = time.time() - start
     logger.info("=" * 60)
     logger.info("SEED COMPLETE — %d seeded, %d skipped, %d failures (%.1fs)",
-                seeded, skipped, failures, elapsed)
+                seeded, skipped, len(failed_slugs), elapsed)
+    if failed_slugs:
+        logger.info("Failed slugs: %s", ", ".join(failed_slugs))
     logger.info("=" * 60)
-    sys.exit(1 if failures else 0)
+    sys.exit(1 if failed_slugs else 0)
 
 
 if __name__ == "__main__":
