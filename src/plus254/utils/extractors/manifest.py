@@ -28,8 +28,9 @@ def _process_report(report: dict, soup, base_url: str) -> list[dict]:
     quarter = report["quarter"]
     records: list[dict[str, Any]] = []
 
+    pdf_url = report.get("pdf_url", base_url)
     try:
-        pdf_bytes, _ = pdf.download_pdf(soup, url=base_url, name=pdf_name)
+        pdf_bytes, _ = pdf.download_pdf(soup, url=pdf_url, name=pdf_name)
     except Exception:
         logger.warning(f"[{pdf_name}] Download failed — skipping")
         return records
@@ -79,12 +80,17 @@ def extract_from_manifest(
     manifest_path: str | Path,
     base_url: str,
     page_field: str = "download_page",
+    slugs: set[str] | None = None,
 ) -> list[dict]:
     """Generic manifest-driven PDF extraction for rolling sources.
 
     Loads the manifest YAML, groups reports by download page, fetches each
     page, downloads PDFs, and extracts tables. Returns records consumable by
     transform functions.
+
+    If *slugs* is provided, only reports whose tables reference at least one
+    of the given dataset slugs are processed, and within each report only
+    the matching table specs are extracted.
     """
     with open(manifest_path) as f:
         manifest = yaml.safe_load(f)
@@ -96,23 +102,45 @@ def extract_from_manifest(
     pdf_counter = 0
     for download_page, reports in page_groups.items():
         page_prefix = f"[page {download_page}]"
-        logger.info(
-            f"{page_prefix} Fetching page (hosts {len(reports)} PDFs) — "
-            f"[{pdf_counter + 1}–{pdf_counter + len(reports)}/{total_pdfs}]"
-        )
+        needs_page = any("pdf_url" not in r for r in reports)
 
-        try:
-            soup = html.fetch_soup(f"{base_url}?page={download_page}")
-        except Exception as e:
-            logger.warning(
-                f"{page_prefix} Page fetch failed: {e} — "
-                f"skipping all {len(reports)} PDFs on this page"
+        if needs_page:
+            logger.info(
+                f"{page_prefix} Fetching page (hosts {len(reports)} PDFs) — "
+                f"[{pdf_counter + 1}–{pdf_counter + len(reports)}/{total_pdfs}]"
             )
-            pdf_counter += len(reports)
-            continue
+
+            try:
+                soup = html.fetch_soup(f"{base_url}?page={download_page}")
+            except Exception as e:
+                logger.warning(
+                    f"{page_prefix} Page fetch failed: {e} — "
+                    f"skipping all {len(reports)} PDFs on this page"
+                )
+                pdf_counter += len(reports)
+                continue
+        else:
+            soup = None
+            logger.info(
+                f"{page_prefix} Direct URLs only ({len(reports)} PDFs) — "
+                f"[{pdf_counter + 1}–{pdf_counter + len(reports)}/{total_pdfs}]"
+            )
 
         for report in reports:
             pdf_counter += 1
+
+            if slugs is not None:
+                needed_tables = [
+                    t for t in report.get("tables", [])
+                    if t.get("dataset") in slugs
+                ]
+                if not needed_tables:
+                    logger.info(
+                        f"[{report['pdf_name']}] No needed tables — skipping"
+                    )
+                    continue
+                report = {**report, "tables": needed_tables}
+
             log_prefix = f"[{report['pdf_name']}]"
 
             logger.info(

@@ -3,14 +3,14 @@ import logging
 import sys
 import time
 from pathlib import Path
-
 import pandas as pd
-
 from plus254.pipeline.load.load import load
 from plus254.utils.config import load_datasets
 from plus254.utils.loaders import huggingface
 from plus254.utils.logging import setup_logging
 from plus254.pipeline.orchestrator.registry import get_slugs
+import argparse
+
 
 setup_logging()
 logger = logging.getLogger("seed")
@@ -36,7 +36,6 @@ def _dispatch(slug: str, result: pd.DataFrame | dict[str, pd.DataFrame],
 
 
 def main():
-    import argparse
 
     parser = argparse.ArgumentParser(description="Seed HF datasets")
     parser.add_argument("--dry-run", action="store_true")
@@ -111,22 +110,24 @@ def main():
             logger.error("[%s] Failed: %s", slug, e)
             failed_slugs.append(slug)
 
-    for source, slugs in rolling_sources.items():
-        logger.info("[rolling:%s] Extracting …", source)
+    for source, source_slugs in rolling_sources.items():
+        needed = [s for s in source_slugs if should_seed(s)]
+        if not needed:
+            skipped += len(source_slugs)
+            continue
+
+        logger.info("[rolling:%s] Extracting (needed: %s) …", source, needed)
         try:
             mod = importlib.import_module(
                 "plus254.pipeline.extract.dynamic.rolling_source."
                 + source + ".extract")
-            all_records = mod.extract()
+            all_records = mod.extract(slugs=set(needed))
         except Exception as e:
             logger.error("[rolling:%s] Extraction failed: %s", source, e)
-            failed_slugs.extend(slugs)
+            failed_slugs.extend(needed)
             continue
 
-        for slug in slugs:
-            if not should_seed(slug):
-                skipped += 1
-                continue
+        for slug in needed:
             slug_records = [r for r in all_records
                             if r.get("dataset") == slug]
             if not slug_records:
