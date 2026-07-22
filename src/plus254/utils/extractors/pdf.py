@@ -10,9 +10,29 @@ from .html import fetch_soup
 
 logger = logging.getLogger(__name__)
 
+_pdf_cache: dict[str, bytes] = {}
 
-def download_pdf(soup, url=None, name=None):
+
+def download_pdf(soup=None, url=None, name=None):
     try:
+        if url and url.strip().lower().endswith(".pdf"):
+            pdf_url = url
+            pdf_name = url.split("/")[-1]
+
+            if pdf_url in _pdf_cache:
+                logger.info("Using cached PDF: %s", pdf_name)
+                return io.BytesIO(_pdf_cache[pdf_url]), pdf_name
+
+            logger.info("Downloading PDF: %s", pdf_name)
+            response = requests.get(pdf_url, stream=True, verify=False, timeout=120)
+            response.raise_for_status()
+            if not response.content.startswith(b"%PDF"):
+                raise ValueError(
+                    f"Downloaded content is not a PDF (starts with {response.content[:30]})"
+                )
+            _pdf_cache[pdf_url] = response.content
+            logger.info("PDF downloaded successfully (%d bytes)", len(response.content))
+            return io.BytesIO(response.content), pdf_name
         logger.info("Extracting PDF link")
         pdf_file = None
         if name:
