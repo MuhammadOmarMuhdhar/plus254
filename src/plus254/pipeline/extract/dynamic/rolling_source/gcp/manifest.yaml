@@ -1,0 +1,10 @@
+- pdf_name: "2025-Gross-County-Product.pdf"
+  pdf_url: "https://www.knbs.or.ke/wp-content/uploads/2025/12/2025-Gross-County-Product.pdf"
+  year: null
+  quarter: null
+  download_page: 0
+  tables:
+    - dataset: county_gcp_by_sector
+      pdf_page_num: [53, 54, 55, 56, 57, 58]
+      search_term: "County"
+      return_all: false

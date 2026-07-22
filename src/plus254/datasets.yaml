@@ -752,3 +752,25 @@ pump_prices:
   - item
   last_updated: '2026-06-24T17:38:39'
   update_frequency: monthly
+
+county_gcp_by_sector:
+  name: County Gross County Product by Sector
+  category: economy
+  source: Kenya National Bureau of Statistics (KNBS)
+  description: Annual Gross County Product (GCP) estimates for each Kenyan county, broken down by economic sector, in KES millions.
+  url: https://www.knbs.or.ke/
+  columns:
+    year:
+      description: Calendar year the estimate refers to
+    county:
+      description: Name of the Kenyan county
+    sector:
+      description: Economic sector or activity contributing to county output (e.g. agriculture, manufacturing, services)
+    value:
+      description: Gross County Product (GCP) value for the given year, county, and sector, in KES millions
+  natural_keys:
+    - year
+    - county
+    - sector
+  last_updated: '2026-07-20T14:30:55'
+  update_frequency: yearly
